@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-09-20T02:11:43.177Z</updated>
+  <updated>2019-09-20T02:46:26.443Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/"/>
     <id>https://blog.kanari.moe/2019/09/20/stock-with-mathematica/</id>
     <published>2019-09-20T01:33:23.000Z</published>
-    <updated>2019-09-20T02:11:43.177Z</updated>
+    <updated>2019-09-20T02:46:26.443Z</updated>
     
     <summary type="html">
     
@@ -30,8 +30,7 @@
         
         
           &lt;p&gt;Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。&lt;/p&gt;
-&lt;p&gt;原本研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，中途&lt;strong&gt;停止&lt;/strong&gt;，只完成了一小部分。&lt;/p&gt;
-&lt;h2
+&lt;p&gt;原本因为课程原因，研究了一下如何在Mathematica里绘制股票数据。不过现在&lt;strong&gt;停止&lt;/strong&gt;，只完成了一小部分。剩下的……想折腾的话，按照已经有的代
         
       
     

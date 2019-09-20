@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，中途停止，只完成了一小部分。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取大量需要的数据。具体可以查看文档。不过问题是，不知何种原因，该">
+  <meta name="description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本因为课程原因，研究了一下如何在Mathematica里绘制股票数据。不过现在停止，只完成了一小部分。剩下的……想折腾的话，按照已经有的代码，能容易改出来其他功能。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取">
 <meta name="keywords" content="mathematica">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Mathematica绘制股票相关曲线">
 <meta property="og:url" content="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/index.html">
 <meta property="og:site_name" content="Kanari&#39;s blog">
-<meta property="og:description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，中途停止，只完成了一小部分。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取大量需要的数据。具体可以查看文档。不过问题是，不知何种原因，该">
+<meta property="og:description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本因为课程原因，研究了一下如何在Mathematica里绘制股票数据。不过现在停止，只完成了一小部分。剩下的……想折腾的话，按照已经有的代码，能容易改出来其他功能。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-20T02:11:43.177Z">
+<meta property="og:updated_time" content="2019-09-20T02:46:26.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Mathematica绘制股票相关曲线">
-<meta name="twitter:description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，中途停止，只完成了一小部分。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取大量需要的数据。具体可以查看文档。不过问题是，不知何种原因，该">
+<meta name="twitter:description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本因为课程原因，研究了一下如何在Mathematica里绘制股票数据。不过现在停止，只完成了一小部分。剩下的……想折腾的话，按照已经有的代码，能容易改出来其他功能。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取">
   <link rel="canonical" href="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/">
 
 
@@ -296,7 +296,7 @@
                 
               
 
-              <time title="创建时间：2019-09-20 09:33:23 / 修改时间：10:11:43" itemprop="dateCreated datePublished" datetime="2019-09-20T09:33:23+08:00">2019-09-20</time>
+              <time title="创建时间：2019-09-20 09:33:23 / 修改时间：10:46:26" itemprop="dateCreated datePublished" datetime="2019-09-20T09:33:23+08:00">2019-09-20</time>
             </span>
           
             
@@ -329,7 +329,7 @@
 
       
         <p>Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。</p>
-<p>原本研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，中途<strong>停止</strong>，只完成了一小部分。</p>
+<p>原本因为课程原因，研究了一下如何在Mathematica里绘制股票数据。不过现在<strong>停止</strong>，只完成了一小部分。剩下的……想折腾的话，按照已经有的代码，能容易改出来其他功能。</p>
 <h2 id="数据来源">数据来源</h2>
 <p>首先要说的是，Mathematica中<strong>自行提供</strong>了非权威的金融数据。这对我们很方便。</p>
 <p>使用命令<code>FinancialData</code>,就可以获取大量需要的数据。具体可以查看文档。不过问题是，不知何种原因，该函数对深沪股票支持很差，所以在实际使用时，并不能直接使用该函数，比较可惜……</p>
@@ -340,6 +340,10 @@
 <h2 id="图表绘制">图表绘制</h2>
 <p>在实际使用时，首先需要导入该库，并且初始化链接后，灵活组合各部分功能即可。</p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt; (<span class="keyword">NotebookDirectory</span>[] &lt;&gt; <span class="string">"StockLink.wl"</span>);</span><br><span class="line">conn = StockLink[];</span><br><span class="line"></span><br><span class="line">(:例如获取某个日期区间内的数据并转化，绘制交互图标:)</span><br><span class="line">DailyKLine[conn, <span class="string">"ss.000001"</span>, <span class="keyword">Today</span>, <span class="keyword">Today</span>] // TradingChartData // <span class="keyword">InteractiveTradingChart</span></span><br></pre></td></tr></table></figure>
+<p>输入日期时，可以直接按<code>ctrl+=</code>，在框中描述时间，比较方便。</p>
+<h2 id="可能遇到的问题">可能遇到的问题</h2>
+<p>如果python配置不对的话，可能会出现Mathematica找不到python。问题的解决方法在官方文档上非常清晰。</p>
+<p>不过我不折腾股票，就这样了。</p>
 
     </div>
 
@@ -422,7 +426,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据来源"><span class="nav-number">1.</span> <span class="nav-text">数据来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图表绘制"><span class="nav-number">2.</span> <span class="nav-text">图表绘制</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据来源"><span class="nav-number">1.</span> <span class="nav-text">数据来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图表绘制"><span class="nav-number">2.</span> <span class="nav-text">图表绘制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可能遇到的问题"><span class="nav-number">3.</span> <span class="nav-text">可能遇到的问题</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
