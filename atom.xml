@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-09-19T01:06:44.817Z</updated>
+  <updated>2019-09-20T01:59:33.843Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Mathematica绘制股票相关曲线</title>
+    <link href="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/"/>
+    <id>https://blog.kanari.moe/2019/09/20/stock-with-mathematica/</id>
+    <published>2019-09-20T01:33:23.000Z</published>
+    <updated>2019-09-20T01:59:33.843Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。&lt;/p&gt;
+&lt;p&gt;原本这个学期选了一门有关股票的选修，所以研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，现在退课了，所以就中途&lt;strong&gt;停止&lt;/strong&gt;，
+        
+      
+    
+    </summary>
+    
+    
+      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
+    
+    
+      <category term="mathematica" scheme="https://blog.kanari.moe/tags/mathematica/"/>
+    
+  </entry>
   
   <entry>
     <title>一些筛法的题</title>
@@ -239,32 +267,6 @@
   </entry>
   
   <entry>
-    <title>水的合集 1</title>
-    <link href="https://blog.kanari.moe/2019/07/22/waterful-summary-1/"/>
-    <id>https://blog.kanari.moe/2019/07/22/waterful-summary-1/</id>
-    <published>2019-07-22T07:59:12.000Z</published>
-    <updated>2019-09-19T02:18:42.954Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;集合挑选&quot;&gt;集合挑选&lt;/h2&gt;
-&lt;p&gt;从给定的N个集合中各挑出一个数并求和，求出前&lt;span class=&quot;math inline&quot;&gt;\(K\)&lt;/span&gt;大的&lt;span class=&quot;math
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>咸鱼数论</title>
     <link href="https://blog.kanari.moe/2019/07/22/numeric-water/"/>
     <id>https://blog.kanari.moe/2019/07/22/numeric-water/</id>
@@ -290,6 +292,32 @@
     
     
       <category term="数论" scheme="https://blog.kanari.moe/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>水的合集 1</title>
+    <link href="https://blog.kanari.moe/2019/07/22/waterful-summary-1/"/>
+    <id>https://blog.kanari.moe/2019/07/22/waterful-summary-1/</id>
+    <published>2019-07-22T07:59:12.000Z</published>
+    <updated>2019-09-19T02:18:42.954Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;集合挑选&quot;&gt;集合挑选&lt;/h2&gt;
+&lt;p&gt;从给定的N个集合中各挑出一个数并求和，求出前&lt;span class=&quot;math inline&quot;&gt;\(K\)&lt;/span&gt;大的&lt;span class=&quot;math
+        
+      
+    
+    </summary>
+    
+    
+      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
+    
     
   </entry>
   
@@ -401,7 +429,7 @@ N \leq 1000
     <link href="https://blog.kanari.moe/2019/07/12/fft/"/>
     <id>https://blog.kanari.moe/2019/07/12/fft/</id>
     <published>2019-07-12T06:03:31.000Z</published>
-    <updated>2019-09-19T01:53:40.124Z</updated>
+    <updated>2019-09-19T13:07:38.811Z</updated>
     
     <summary type="html">
     

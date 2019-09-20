@@ -56,19 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="众所周知，快速排序的时间复杂度是\(O(n\lg n)\)的。然而因为我太菜，写出来的快速排序一不小心就成了\(O(n^2)\)...">
-<meta name="keywords" content="排序">
+  <meta name="description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本这个学期选了一门有关股票的选修，所以研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，现在退课了，所以就中途停止，只完成了一小部分。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取大量需要">
+<meta name="keywords" content="mathematica">
 <meta property="og:type" content="article">
-<meta property="og:title" content="did-i-write-qsort-right">
-<meta property="og:url" content="https://blog.kanari.moe/2019/07/12/did-i-write-qsort-right/index.html">
+<meta property="og:title" content="使用Mathematica绘制股票相关曲线">
+<meta property="og:url" content="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/index.html">
 <meta property="og:site_name" content="Kanari&#39;s blog">
-<meta property="og:description" content="众所周知，快速排序的时间复杂度是\(O(n\lg n)\)的。然而因为我太菜，写出来的快速排序一不小心就成了\(O(n^2)\)...">
+<meta property="og:description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本这个学期选了一门有关股票的选修，所以研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，现在退课了，所以就中途停止，只完成了一小部分。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取大量需要">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-19T01:48:19.424Z">
+<meta property="og:updated_time" content="2019-09-20T01:59:33.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="did-i-write-qsort-right">
-<meta name="twitter:description" content="众所周知，快速排序的时间复杂度是\(O(n\lg n)\)的。然而因为我太菜，写出来的快速排序一不小心就成了\(O(n^2)\)...">
-  <link rel="canonical" href="https://blog.kanari.moe/2019/07/12/did-i-write-qsort-right/">
+<meta name="twitter:title" content="使用Mathematica绘制股票相关曲线">
+<meta name="twitter:description" content="Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本这个学期选了一门有关股票的选修，所以研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，现在退课了，所以就中途停止，只完成了一小部分。 数据来源 首先要说的是，Mathematica中自行提供了非权威的金融数据。这对我们很方便。 使用命令FinancialData,就可以获取大量需要">
+  <link rel="canonical" href="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>did-i-write-qsort-right | Kanari's blog</title>
+  <title>使用Mathematica绘制股票相关曲线 | Kanari's blog</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2"></script>
   <script>
@@ -268,7 +268,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/07/12/did-i-write-qsort-right/">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kanari">
@@ -280,7 +280,7 @@
       <meta itemprop="name" content="Kanari's blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">did-i-write-qsort-right
+        <h1 class="post-title" itemprop="name headline">使用Mathematica绘制股票相关曲线
 
           
         </h1>
@@ -296,19 +296,11 @@
                 
               
 
-              <time title="创建时间：2019-07-12 14:02:33" itemprop="dateCreated datePublished" datetime="2019-07-12T14:02:33+08:00">2019-07-12</time>
+              <time title="创建时间：2019-09-20 09:33:23 / 修改时间：09:59:33" itemprop="dateCreated datePublished" datetime="2019-09-20T09:33:23+08:00">2019-09-20</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 09:48:19" itemprop="dateModified" datetime="2019-09-19T09:48:19+08:00">2019-09-19</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -336,16 +328,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>众所周知，快速排序的时间复杂度是<span class="math inline">\(O(n\lg n)\)</span>的。然而因为我太菜，写出来的快速排序一不小心就成了<span class="math inline">\(O(n^2)\)</span>...</p>
-<a id="more"></a>
-<h2 id="这个辣鸡问题">这个辣鸡问题</h2>
-<p>这个应该都知道，当待排序数组已经有序时，固定选择某一个位置的数字当哨兵的快排会变成<span class="math inline">\(O(n^2)\)</span>。一个解决方法就是随机选择哨兵，或者干脆将输入的数组打乱后再排序。</p>
-<p>然而，如果输入的数组数字全部相同呢？</p>
-<p>当然这在实际中很少见，但是在实现的时候就要小心。在这种情况下，所实现的快排必须对于相同数字也交换位置，否则就会退化为<span class="math inline">\(O(n^2)\)</span>。</p>
-<p>比如说，这个 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> i,j,t,temp;</span><br><span class="line"><span class="keyword">if</span>(left&gt;right)</span><br><span class="line">   <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">temp=a[left]; <span class="comment">//temp中存的就是基准数</span></span><br><span class="line">i=left;</span><br><span class="line">j=right;</span><br><span class="line"><span class="keyword">while</span>(i!=j)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="comment">//顺序很重要，要先从右边开始找</span></span><br><span class="line">   <span class="keyword">while</span>(a[j]&gt;=temp &amp;&amp; i&lt;j)</span><br><span class="line">j--;</span><br><span class="line">   <span class="comment">//再找右边的</span></span><br><span class="line">   <span class="keyword">while</span>(a[i]&lt;=temp &amp;&amp; i&lt;j)</span><br><span class="line">i++;</span><br><span class="line">   <span class="comment">//交换两个数在数组中的位置</span></span><br><span class="line">   <span class="keyword">if</span>(i&lt;j)</span><br><span class="line">   &#123;</span><br><span class="line">t=a[i];</span><br><span class="line">a[i]=a[j];</span><br><span class="line">a[j]=t;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//最终将基准数归位</span></span><br><span class="line">a[left]=a[i];</span><br><span class="line">a[i]=temp;</span><br><span class="line"></span><br><span class="line">quicksort(left,i<span class="number">-1</span>);<span class="comment">//继续处理左边的，这里是一个递归的过程</span></span><br><span class="line">quicksort(i+<span class="number">1</span>,right);<span class="comment">//继续处理右边的 ，这里是一个递归的过程</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>还有这个， <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> s[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="comment">//Swap(s[l], s[(l + r) / 2]); //将中间的这个数和第一个数交换 参见注1</span></span><br><span class="line">        <span class="keyword">int</span> i = l, j = r, x = s[l];</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[j] &gt;= x) <span class="comment">// 从右向左找第一个小于x的数</span></span><br><span class="line">				j--;  </span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) </span><br><span class="line">				s[i++] = s[j];</span><br><span class="line">			</span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; s[i] &lt; x) <span class="comment">// 从左向右找第一个大于等于x的数</span></span><br><span class="line">				i++;  </span><br><span class="line">            <span class="keyword">if</span>(i &lt; j) </span><br><span class="line">				s[j--] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        s[i] = x;</span><br><span class="line">        quick_sort(s, l, i - <span class="number">1</span>); <span class="comment">// 递归调用 </span></span><br><span class="line">        quick_sort(s, i + <span class="number">1</span>, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>它们都会跳过相同的数字，每次排序后哨兵总会在边界上，导致算法劣化到<span class="math inline">\(O(n^2)\)</span>。</p>
-<p>大概就是这回事，没别的了。这种情况当然有改进的快速排序可以直接避免这种罕见的情况，在不大幅度改动算法的前提下，就要对相同的元素也进行换位才可以，即使会增加交换次数。</p>
+        <p>Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。</p>
+<p>原本这个学期选了一门有关股票的选修，所以研究了一下如何在Mathematica里绘制股票数据。不过因为一些原因，现在退课了，所以就中途<strong>停止</strong>，只完成了一小部分。</p>
+<h2 id="数据来源">数据来源</h2>
+<p>首先要说的是，Mathematica中<strong>自行提供</strong>了非权威的金融数据。这对我们很方便。</p>
+<p>使用命令<code>FinancialData</code>,就可以获取大量需要的数据。具体可以查看文档。不过问题是，不知何种原因，该函数对深沪股票支持很差，所以在实际使用时，并不能直接使用该函数，比较可惜……</p>
+<p>我们需要实现自己的数据处理。</p>
+<p>经过一番寻找后，我发现了一个基于Python的证券数据平台<code>baostock</code>。经过简单的封装后，Mathematica就可以使用Python从平台上拉取数据了。</p>
+<p>这个例子只能拉取日K。</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">BeginPackage</span>[<span class="string">"StockLink`"</span>]</span><br><span class="line"></span><br><span class="line">StockLink::usage=<span class="string">"StockLink"</span>;</span><br><span class="line">CloseLink::usage=<span class="string">"CloseLink"</span>;</span><br><span class="line"></span><br><span class="line">DailyKLine::usage=<span class="string">"Get KLine data"</span>;</span><br><span class="line"></span><br><span class="line">CandlestickData::usage=<span class="string">"adjust KLine data to fit Candlestick Chart"</span>;</span><br><span class="line">TradingChartData::usage=<span class="string">"adjust KLine data to fit Trading Chart"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Begin</span>[<span class="string">"`Private`"</span>]</span><br><span class="line"></span><br><span class="line">StockLink[]:=<span class="keyword">Module</span>[&#123;conn&#125;,</span><br><span class="line">conn=<span class="keyword">StartExternalSession</span>[<span class="string">"Python"</span>];</span><br><span class="line"><span class="keyword">ExternalEvaluate</span>[conn,<span class="string">"</span></span><br><span class="line"><span class="string">import baostock as bs</span></span><br><span class="line"><span class="string">lg=bs.login()</span></span><br><span class="line"><span class="string">"</span>];</span><br><span class="line">conn</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">CloseLink[conn_]:=<span class="keyword">Module</span>[&#123;&#125;,</span><br><span class="line"><span class="keyword">ExternalEvaluate</span>[conn,<span class="string">"</span></span><br><span class="line"><span class="string">bs.logout()</span></span><br><span class="line"><span class="string">"</span>];</span><br><span class="line"><span class="keyword">DeleteObject</span>[conn];</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">MMAListToPythonList[list_]:=<span class="keyword">StringReplace</span>[<span class="keyword">ToString</span>[list,<span class="keyword">InputForm</span>],&#123;<span class="string">"\" "</span>-&gt;<span class="string">"'"</span>,<span class="string">"&#123;"</span>-&gt;<span class="string">"["</span>,<span class="string">"&#125;"</span>-&gt;<span class="string">"]"</span>&#125;];</span><br><span class="line">DateObjectToStr[date_]:=<span class="keyword">DateString</span>[date,<span class="string">"ISODate"</span>];</span><br><span class="line"></span><br><span class="line">DailyKLine[conn_,code_,startDate_,endDate_]:=<span class="keyword">Module</span>[&#123;&#125;,</span><br><span class="line">raw=<span class="keyword">ExternalEvaluate</span>[conn,</span><br><span class="line"><span class="keyword">StringTemplate</span>[<span class="string">"</span></span><br><span class="line"><span class="string">rs = bs.query_history_k_data_plus('``',</span></span><br><span class="line"><span class="string">    'date,open,high,low,close,preclose,volume,amount,adjustflag,turn,tradestatus,pctChg,isST',</span></span><br><span class="line"><span class="string">    start_date='``', end_date='``',</span></span><br><span class="line"><span class="string">    frequency='d', adjustflag='3')</span></span><br><span class="line"><span class="string">data_list = &#123;&#125;</span></span><br><span class="line"><span class="string">while (rs.error_code == '0') &amp; rs.next():</span></span><br><span class="line"><span class="string">    temp=rs.get_row_data()</span></span><br><span class="line"><span class="string">    data_list[temp[0]]=temp[1:];</span></span><br><span class="line"><span class="string">data_list"</span>][code,DateObjectToStr[startDate],DateObjectToStr[endDate]]];</span><br><span class="line"><span class="keyword">ToExpression</span>[#]&amp; /@ raw</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">CandlestickData[raw_]:=<span class="keyword">Table</span>[&#123;<span class="keyword">DateObject</span>[key],raw[key][[<span class="number">1</span>;;<span class="number">4</span>]]&#125;,&#123;key,<span class="keyword">Keys</span>[raw]&#125;];</span><br><span class="line">TradingChartData[raw_]:=<span class="keyword">Table</span>[&#123;<span class="keyword">DateObject</span>[key],raw[key][[<span class="number">1</span>;;<span class="number">5</span>]]&#125;,&#123;key,<span class="keyword">Keys</span>[raw]&#125;];</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span>[]</span><br><span class="line"></span><br><span class="line"><span class="keyword">EndPackage</span>[]</span><br></pre></td></tr></table></figure>
+<h2 id="图表绘制">图表绘制</h2>
+<p>在实际使用时，首先需要导入该库，并且初始化链接后，灵活组合各部分功能即可。</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt; (<span class="keyword">NotebookDirectory</span>[] &lt;&gt; <span class="string">"StockLink.wl"</span>);</span><br><span class="line">conn = StockLink[];</span><br><span class="line"></span><br><span class="line">(:例如获取某个日期区间内的数据并转化，绘制交互图标:)</span><br><span class="line">DailyKLine[conn, <span class="string">"ss.000001"</span>, <span class="keyword">Today</span>, <span class="keyword">Today</span>] // TradingChartData // <span class="keyword">InteractiveTradingChart</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -361,7 +355,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/排序/" rel="tag"># 排序</a>
+              <a href="/tags/mathematica/" rel="tag"># mathematica</a>
             
           </div>
         
@@ -371,8 +365,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/07/12/implment-of-splay-based-on-PBDS/" rel="next" title="基于PBDS的splay">
-                  <i class="fa fa-chevron-left"></i> 基于PBDS的splay
+                <a href="/2019/09/05/some-sieves/" rel="next" title="一些筛法的题">
+                  <i class="fa fa-chevron-left"></i> 一些筛法的题
                 </a>
               
             </div>
@@ -380,10 +374,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/07/12/fft/" rel="prev" title="快速傅里叶变换">
-                  快速傅里叶变换 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -432,7 +422,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#这个辣鸡问题"><span class="nav-number">1.</span> <span class="nav-text">这个辣鸡问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据来源"><span class="nav-number">1.</span> <span class="nav-text">数据来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图表绘制"><span class="nav-number">2.</span> <span class="nav-text">图表绘制</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -568,56 +558,6 @@
 
   
 
-  
-    
-      
-<script type="text/x-mathjax-config">
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
-</script>
-
-    
   
 
   
