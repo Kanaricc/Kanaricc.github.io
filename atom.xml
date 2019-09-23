@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-09-20T02:46:26.443Z</updated>
+  <updated>2019-09-23T15:51:32.251Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[CF1221F] Choose a Sequence</title>
+    <link href="https://blog.kanari.moe/2019/09/23/problem-choose-a-sequence/"/>
+    <id>https://blog.kanari.moe/2019/09/23/problem-choose-a-sequence/</id>
+    <published>2019-09-23T15:46:09.000Z</published>
+    <updated>2019-09-23T15:51:32.251Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Petya recently found a game &quot;Choose a Square&quot;. In this game, there are nn points numbered from 11 to nn on an infinite field. The ii-th
+        
+      
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>来康康Gatsby.js</title>
+    <link href="https://blog.kanari.moe/2019/09/21/starting-gatsbyjs/"/>
+    <id>https://blog.kanari.moe/2019/09/21/starting-gatsbyjs/</id>
+    <published>2019-09-21T13:00:54.000Z</published>
+    <updated>2019-09-23T15:58:01.193Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;昨天发现notion用学生邮箱可以免费领personal
+        
+      
+    
+    </summary>
+    
+    
+      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
+    
+    
+      <category term="gatsby" scheme="https://blog.kanari.moe/tags/gatsby/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Mathematica绘制股票相关曲线</title>
