@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-09-23T15:51:32.251Z</updated>
+  <updated>2019-09-24T15:21:00.991Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rust学习记录</title>
+    <link href="https://blog.kanari.moe/2019/09/24/learning-rust/"/>
+    <id>https://blog.kanari.moe/2019/09/24/learning-rust/</id>
+    <published>2019-09-24T14:56:47.000Z</published>
+    <updated>2019-09-24T15:21:00.991Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;基于对Rust的浅薄理解，它一定是未来一门重要的语言。因此，为了进一步了解这哥们，对Rust的学习将逐步展开。&lt;/p&gt;
+&lt;h2 id=&quot;参考资料&quot;&gt;参考资料&lt;/h2&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
+    
+    
+      <category term="rust" scheme="https://blog.kanari.moe/tags/rust/"/>
+    
+  </entry>
   
   <entry>
     <title>[CF1221F] Choose a Sequence</title>
@@ -522,31 +552,6 @@ N \leq 1000
     
     
       <category term="排序" scheme="https://blog.kanari.moe/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于PBDS的splay</title>
-    <link href="https://blog.kanari.moe/2019/07/12/implment-of-splay-based-on-PBDS/"/>
-    <id>https://blog.kanari.moe/2019/07/12/implment-of-splay-based-on-PBDS/</id>
-    <published>2019-07-12T06:01:11.000Z</published>
-    <updated>2019-09-19T01:55:22.147Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="splay" scheme="https://blog.kanari.moe/tags/splay/"/>
     
   </entry>
   
