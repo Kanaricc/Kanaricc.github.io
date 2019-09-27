@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-09-24T15:21:00.991Z</updated>
+  <updated>2019-09-27T05:18:32.537Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Rust学习记录</title>
-    <link href="https://blog.kanari.moe/2019/09/24/learning-rust/"/>
-    <id>https://blog.kanari.moe/2019/09/24/learning-rust/</id>
-    <published>2019-09-24T14:56:47.000Z</published>
-    <updated>2019-09-24T15:21:00.991Z</updated>
+    <title>音乐盒测试</title>
+    <link href="https://blog.kanari.moe/2019/09/27/test-music-player/"/>
+    <id>https://blog.kanari.moe/2019/09/27/test-music-player/</id>
+    <published>2019-09-27T04:56:37.000Z</published>
+    <updated>2019-09-27T05:18:32.537Z</updated>
     
     <summary type="html">
     
@@ -29,10 +29,32 @@
       
         
         
-          &lt;p&gt;基于对Rust的浅薄理解，它一定是未来一门重要的语言。因此，为了进一步了解这哥们，对Rust的学习将逐步展开。&lt;/p&gt;
-&lt;h2 id=&quot;参考资料&quot;&gt;参考资料&lt;/h2&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;&lt;a
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Rust学习记录</title>
+    <link href="https://blog.kanari.moe/2019/09/24/learning-rust/"/>
+    <id>https://blog.kanari.moe/2019/09/24/learning-rust/</id>
+    <published>2019-09-24T14:56:47.000Z</published>
+    <updated>2019-09-26T12:31:38.389Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -51,17 +73,17 @@
     <link href="https://blog.kanari.moe/2019/09/23/problem-choose-a-sequence/"/>
     <id>https://blog.kanari.moe/2019/09/23/problem-choose-a-sequence/</id>
     <published>2019-09-23T15:46:09.000Z</published>
-    <updated>2019-09-26T12:13:04.446Z</updated>
+    <updated>2019-09-26T12:18:56.829Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Petya recently found a game &quot;Choose a Square&quot;. In this game, there are nn points numbered from 11 to nn on an infinite field. The ii-th
-        
-      
+      &lt;p&gt;Petya recently found a game &quot;Choose a Square&quot;. In this game, there are nn points numbered from 11 to nn on an infinite field. The ii-th point has coordinates (xi,yi) and cost ci.&lt;/p&gt;
+&lt;p&gt;You have to choose a square such that its sides are parallel to coordinate axes, the lower left and upper right corners belong to the line y=x, and all corners have integer coordinates.&lt;/p&gt;
+&lt;p&gt;The score you get is the sum of costs of the points covered by the selected square minus the length of the side of the square. Note that the length of the side can be zero.&lt;/p&gt;
+&lt;p&gt;Petya asks you to calculate the maximum possible score in the game that can be achieved by placing exactly one square.&lt;/p&gt;
+&lt;img src=&quot;/2019/09/23/problem-choose-a-sequence/a.png&quot;&gt;
+&lt;h2 id=&quot;分析&quot;&gt;分析&lt;/h2&gt;
+&lt;p&gt;这道题其实和多校的Snowy Smile（题文无关）挺像的。&lt;/p&gt;
     
     </summary>
     
@@ -86,7 +108,7 @@
       
         
         
-          &lt;p&gt;昨天发现notion用学生邮箱可以免费领personal
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -113,8 +135,7 @@
       
         
         
-          &lt;p&gt;Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。&lt;/p&gt;
-&lt;p&gt;原本因为课程原因，研究了一下如何在Mathematica里绘制股票数据。不过现在&lt;strong&gt;停止&lt;/strong&gt;，只完成了一小部分。剩下的……想折腾的话，按照已经有的代
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -204,8 +225,7 @@
       
         
         
-          &lt;p&gt;You are given an array a1,a2,...,an(∀i∈[1,n],1≤ai≤n). Initially, each element of the array is &lt;strong&gt;unique&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Moreover,
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -232,9 +252,7 @@
       
         
         
-          &lt;p&gt;n个有标号的球围成一个圈。每个球有两种颜色可以选择黑或白染色。问有多少种方案使得没有出现连续白球7个或连续黑球7个。&lt;/p&gt;
-&lt;p&gt;对方案数mod 2015，球最多有100000个。&lt;/p&gt;
-&lt;h1
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -278,11 +296,11 @@
   </entry>
   
   <entry>
-    <title>mo-s-algorithm</title>
+    <title>莫队算法</title>
     <link href="https://blog.kanari.moe/2019/08/03/mo-s-algorithm/"/>
     <id>https://blog.kanari.moe/2019/08/03/mo-s-algorithm/</id>
     <published>2019-08-03T05:47:38.000Z</published>
-    <updated>2019-09-19T02:37:44.110Z</updated>
+    <updated>2019-09-26T12:24:12.139Z</updated>
     
     <summary type="html">
     
@@ -312,7 +330,7 @@
       
         
         
-          &lt;p&gt;zz6d likes reading very much, so he bought a lot of books. One day, zz6d brought n books to a classroom in school. The books of zz6d is
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -363,9 +381,7 @@
       
         
         
-          &lt;h2 id=&quot;一些结论&quot;&gt;一些结论&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;span class=&quot;math inline&quot;&gt;\(N!\)&lt;/span&gt;的质因数分解中某质数的指数为$_{r=1}^{} [ n/p^r ]
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -392,8 +408,7 @@
       
         
         
-          &lt;h2 id=&quot;集合挑选&quot;&gt;集合挑选&lt;/h2&gt;
-&lt;p&gt;从给定的N个集合中各挑出一个数并求和，求出前&lt;span class=&quot;math inline&quot;&gt;\(K\)&lt;/span&gt;大的&lt;span class=&quot;math
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -496,7 +511,7 @@ N \leq 1000
       
         
         
-          &lt;p&gt;There is a tree having n nodes, the i-th node of which has a type of color, denoted by an integer &lt;span class=&quot;math
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
     
@@ -531,27 +546,6 @@ N \leq 1000
     
       <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>did-i-write-qsort-right</title>
-    <link href="https://blog.kanari.moe/2019/07/12/did-i-write-qsort-right/"/>
-    <id>https://blog.kanari.moe/2019/07/12/did-i-write-qsort-right/</id>
-    <published>2019-07-12T06:02:33.000Z</published>
-    <updated>2019-09-19T01:48:19.424Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;众所周知，快速排序的时间复杂度是&lt;span class=&quot;math inline&quot;&gt;\(O(n\lg n)\)&lt;/span&gt;的。然而因为我太菜，写出来的快速排序一不小心就成了&lt;span class=&quot;math inline&quot;&gt;\(O(n^2)\)&lt;/span&gt;...&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
-    
-    
-      <category term="排序" scheme="https://blog.kanari.moe/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
