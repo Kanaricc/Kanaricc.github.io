@@ -329,12 +329,12 @@
           <p>我还没搞明白为什么在首页上没法加载，看起来是插件内部有bug。</p>
 <p>就拿东方的同人BGM来做个测试吧。</p>
 
-        <div id="aplayer-XSgUQkRO" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-PjJjbOtH" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-XSgUQkRO"),
+            element: document.getElementById("aplayer-PjJjbOtH"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -349,115 +349,6 @@
           window.aplayers || (window.aplayers = []);
           window.aplayers.push(ap);
         </script>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/09/24/learning-rust/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/24/learning-rust/" class="post-title-link" itemprop="url">Rust学习记录</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-24 22:56:47" itemprop="dateCreated datePublished" datetime="2019-09-24T22:56:47+08:00">2019-09-24</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-26 20:31:38" itemprop="dateModified" datetime="2019-09-26T20:31:38+08:00">2019-09-26</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/study/" itemprop="url" rel="index"><span itemprop="name">study</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>基于对Rust的浅薄理解，它一定是未来一门重要的语言。因此，为了进一步了解这哥们，对Rust的学习将逐步展开。</p>
-<h2 id="参考资料">参考资料</h2>
-<ol type="1">
-<li><a href="https://rustlang-cn.org/users/book-exp/" target="_blank" rel="noopener">Rust The Book学习心得</a></li>
-<li><a href="https://rust-unofficial.github.io/too-many-lists/index.html" target="_blank" rel="noopener">Learn Rust With Entirely Too Many Linked Lists</a></li>
-<li>Rust编程之道（实体书）</li>
-</ol>
-<p>第一个资源来自国内一dalao，偏读书笔记；第二个则有些有趣，它在使用rust完成一系类列表的过程中进行rust的教学。</p>
-<p><em>目前进度：慢速阅读第二项中</em></p>
-<h2 id="内存模型">内存模型</h2>
-<p>梳理一下现存的内存管理模型。大致上分为两种：</p>
-<ol type="1">
-<li>GC，例如Java与C#</li>
-<li>自行管理，例如c++</li>
-</ol>
-<p>这两种技术各有利弊。Rust提供了一种不同于以上两种的内存模型，所属权模型。一个内存有它的归属，对某个变量的读写需要涉及“借出”“还回”，又由此诞生“生命周期”的概念。通过这套系统，Rust实现了<strong>安全且无代价的内存管理办法</strong>。</p>
 
         
       
@@ -1346,6 +1237,116 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
   </article>
 
     
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/07/problem-snowy-smile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/07/problem-snowy-smile/" class="post-title-link" itemprop="url">[HDU6638] Snowy Smile</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-07 20:45:28" itemprop="dateCreated datePublished" datetime="2019-08-07T20:45:28+08:00">2019-08-07</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-19 10:15:13" itemprop="dateModified" datetime="2019-09-19T10:15:13+08:00">2019-09-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>There are n pirate chests buried in Byteland, labeled by 1,2,…,n. The i-th chest's location is (xi,yi), and its value is wi, wi can be negative since the pirate can add some poisonous gases into the chest. When you open the i-th pirate chest, you will get wi value.</p>
+<p>You want to make money from these pirate chests. You can select a rectangle, the sides of which are all paralleled to the axes, and then all the chests inside it or on its border will be opened. Note that you must open all the chests within that range regardless of their values are positive or negative. But you can choose a rectangle with nothing in it to get a zero sum.</p>
+<p>Please write a program to find the best rectangle with maximum total value.</p>
+<p>The first line of the input contains an integer T(1≤T≤100), denoting the number of test cases.</p>
+<p>In each test case, there is one integer n(1≤n≤2000) in the first line, denoting the number of pirate chests.</p>
+<p>For the next n lines, each line contains three integers xi,yi,wi(−109≤xi,yi,wi≤109), denoting each pirate chest.</p>
+<p>It is guaranteed that ∑n≤10000.</p>
+<h2 id="分析">分析</h2>
+<p>首先，我没做出来。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/07/problem-snowy-smile/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
   </div>
 
   
@@ -1398,7 +1399,7 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1424,7 +1425,7 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1521,9 +1522,9 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
       
     
       
-    
-      
         
+      
+    
       
     
       
