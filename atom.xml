@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-09-27T05:18:32.537Z</updated>
+  <updated>2019-09-30T12:32:19.008Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[CF589C] primes and multiplication</title>
+    <link href="https://blog.kanari.moe/2019/09/30/problem-primes-and-multiplication/"/>
+    <id>https://blog.kanari.moe/2019/09/30/problem-primes-and-multiplication/</id>
+    <published>2019-09-30T01:04:52.000Z</published>
+    <updated>2019-09-30T12:32:19.008Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="数论" scheme="https://blog.kanari.moe/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CCPC2019 秦皇岛] Angel Beats</title>
+    <link href="https://blog.kanari.moe/2019/09/29/problem-angel-beats/"/>
+    <id>https://blog.kanari.moe/2019/09/29/problem-angel-beats/</id>
+    <published>2019-09-29T13:02:18.000Z</published>
+    <updated>2019-09-30T12:32:09.091Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="计算几何" scheme="https://blog.kanari.moe/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>音乐盒测试</title>
@@ -493,53 +547,6 @@ N \leq 1000
     
       <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>快速傅里叶变换</title>
-    <link href="https://blog.kanari.moe/2019/07/12/fft/"/>
-    <id>https://blog.kanari.moe/2019/07/12/fft/</id>
-    <published>2019-07-12T06:03:31.000Z</published>
-    <updated>2019-09-19T13:07:38.811Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;写代码是不可能写代码的,今下午是不想写代码的.不想写代码,又不想咸鱼,就只能靠学点新东西来假装自己在工作的样子,心里才能好受些.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;窃格码拉&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;把2年前就听过但是没学的FFT这次看看吧.&lt;/p&gt;
-&lt;p&gt;几乎可以肯定,下面的内容肯定会出锅.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>did-i-write-qsort-right</title>
-    <link href="https://blog.kanari.moe/2019/07/12/did-i-write-qsort-right/"/>
-    <id>https://blog.kanari.moe/2019/07/12/did-i-write-qsort-right/</id>
-    <published>2019-07-12T06:02:33.000Z</published>
-    <updated>2019-09-19T01:48:19.424Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;众所周知，快速排序的时间复杂度是&lt;span class=&quot;math inline&quot;&gt;\(O(n\lg n)\)&lt;/span&gt;的。然而因为我太菜，写出来的快速排序一不小心就成了&lt;span class=&quot;math inline&quot;&gt;\(O(n^2)\)&lt;/span&gt;...&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
-    
-    
-      <category term="排序" scheme="https://blog.kanari.moe/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
