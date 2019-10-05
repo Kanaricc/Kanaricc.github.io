@@ -56,15 +56,19 @@
   };
 </script>
 
-  <meta name="keywords" content="kanari,blog,icpc,coding">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kanari&#39;s blog">
-<meta property="og:url" content="https://blog.kanari.moe/tags/gatsby/index.html">
+  <meta name="description" content="如你所见，后缀自动机。  然而就nm看不懂，先看不懂它的图是啥，又看不懂它的边是啥，现在还是看不懂它的边是咋找出来的。可是咱不想搞不清楚它是干嘛的就直接用啊靠。  后缀自动机首先是自动机。一个字符串S的后缀自动机能接受S的所有后缀。基于它的这个性质，它能够做到：  查询子串是否出现：这显然跑一次，能在自动机上跑完就是出现过。 统计不同子串的数量：自动机上每条不同的路径对应一个不同的子">
+<meta name="keywords" content="后缀自动机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="后缀自动机">
+<meta property="og:url" content="https://blog.kanari.moe/2019/10/04/suffix-automation/index.html">
 <meta property="og:site_name" content="Kanari&#39;s blog">
+<meta property="og:description" content="如你所见，后缀自动机。  然而就nm看不懂，先看不懂它的图是啥，又看不懂它的边是啥，现在还是看不懂它的边是咋找出来的。可是咱不想搞不清楚它是干嘛的就直接用啊靠。  后缀自动机首先是自动机。一个字符串S的后缀自动机能接受S的所有后缀。基于它的这个性质，它能够做到：  查询子串是否出现：这显然跑一次，能在自动机上跑完就是出现过。 统计不同子串的数量：自动机上每条不同的路径对应一个不同的子">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-04T15:53:23.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kanari&#39;s blog">
-  <link rel="canonical" href="https://blog.kanari.moe/tags/gatsby/">
+<meta name="twitter:title" content="后缀自动机">
+<meta name="twitter:description" content="如你所见，后缀自动机。  然而就nm看不懂，先看不懂它的图是啥，又看不懂它的边是啥，现在还是看不懂它的边是咋找出来的。可是咱不想搞不清楚它是干嘛的就直接用啊靠。  后缀自动机首先是自动机。一个字符串S的后缀自动机能接受S的所有后缀。基于它的这个性质，它能够做到：  查询子串是否出现：这显然跑一次，能在自动机上跑完就是出现过。 统计不同子串的数量：自动机上每条不同的路径对应一个不同的子">
+  <link rel="canonical" href="https://blog.kanari.moe/2019/10/04/suffix-automation/">
 
 
 <script id="page-configurations">
@@ -72,13 +76,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: gatsby | Kanari's blog</title>
+  <title>后缀自动机 | Kanari's blog</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2"></script>
   <script>
@@ -266,84 +270,147 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block tag">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">gatsby<small>标签</small>
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/10/04/suffix-automation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">后缀自动机
+
+          
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-04 20:44:05 / 修改时间：23:53:23" itemprop="dateCreated datePublished" datetime="2019-10-04T20:44:05+08:00">2019-10-04</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/study/" itemprop="url" rel="index"><span itemprop="name">study</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <p>如你所见，后缀自动机。</p>
+<blockquote>
+<p>然而就nm看不懂，先看不懂它的图是啥，又看不懂它的边是啥，现在还是看不懂它的边是咋找出来的。可是咱不想搞不清楚它是干嘛的就直接用啊靠。</p>
+</blockquote>
+<p>后缀自动机首先是自动机。一个字符串S的后缀自动机能接受S的所有后缀。基于它的这个性质，它能够做到：</p>
+<ul>
+<li>查询子串是否出现：这显然跑一次，能在自动机上跑完就是出现过。</li>
+<li>统计不同子串的数量：自动机上每条不同的路径对应一个不同的子串。定义<span class="math inline">\(d(x)\)</span>为以x为起点的路径数目，递推即可。</li>
+<li>计算所有不同子串的长度总和：得到上面的<span class="math inline">\(d\)</span>。以x为起点，每条路径都会让子串<strong>总</strong>长度增加<strong>路径个</strong>。依然是递推。</li>
+<li>字典序第k小子串：当你有路径数了，只需要按照字典序对节点排序，然后像编码一样找。</li>
+<li></li>
+</ul>
+<h2 id="建立">建立</h2>
+<p>最暴力的方式是建立一个O(n^2)级别的自动机，不过那个复杂度就没什么意义了。后缀自动机需要满足状态数最少，为线性级别，且转移（边）也为线性级别。</p>
+<p>然后，我们可以开始折腾了。</p>
+<p>定义串S的<span class="math inline">\(endpos(x)\)</span>为一个集合，元素为x在其内出现的所有位置的结尾下标。</p>
+<h2 id="资料">资料</h2>
+<ul>
+<li><a href="https://saisumit.wordpress.com/2016/01/26/suffix-automaton/" target="_blank" rel="noopener">参考资料</a></li>
+<li>2015年国家集训队论文</li>
+</ul>
 
-  
-  
+    </div>
 
-  
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+    
+    
         
-          <a class="post-title-link" href="/2019/09/21/starting-gatsbyjs/" itemprop="url">
-            <span itemprop="name">来康康Gatsby.js</span>
-          </a>
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/后缀自动机/" rel="tag"># 后缀自动机</a>
+            
+          </div>
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-21T21:00:54+08:00"
-              content="2019-09-21">
-          09-21
-        </time>
-      </div>
+        
 
-    </header>
-  </article>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/30/problem-primes-and-multiplication/" rel="next" title="[CF589C] primes and multiplication">
+                  <i class="fa fa-chevron-left"></i> [CF589C] primes and multiplication
+                </a>
+              
+            </div>
 
+            <span class="post-nav-divider"></span>
 
-
-    </div>
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/05/problem-ticket-game/" rel="prev" title="[CF585D] Ticket Game">
+                  [CF585D] Ticket Game <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-
+  </div>
 
 
           </div>
@@ -362,6 +429,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -374,6 +446,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立"><span class="nav-number">1.</span> <span class="nav-text">建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-number">2.</span> <span class="nav-text">资料</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

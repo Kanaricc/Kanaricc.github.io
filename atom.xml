@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-10-02T05:23:53.530Z</updated>
+  <updated>2019-10-05T08:01:34.722Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[CF585D] Ticket Game</title>
+    <link href="https://blog.kanari.moe/2019/10/05/problem-ticket-game/"/>
+    <id>https://blog.kanari.moe/2019/10/05/problem-ticket-game/</id>
+    <published>2019-10-05T07:13:27.000Z</published>
+    <updated>2019-10-05T08:01:34.722Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="博弈" scheme="https://blog.kanari.moe/tags/%E5%8D%9A%E5%BC%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>后缀自动机</title>
+    <link href="https://blog.kanari.moe/2019/10/04/suffix-automation/"/>
+    <id>https://blog.kanari.moe/2019/10/04/suffix-automation/</id>
+    <published>2019-10-04T12:44:05.000Z</published>
+    <updated>2019-10-04T15:53:23.022Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
+    
+    
+      <category term="后缀自动机" scheme="https://blog.kanari.moe/tags/%E5%90%8E%E7%BC%80%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>[CF589C] primes and multiplication</title>
@@ -496,57 +550,6 @@ N \leq 1000
       <category term="数论" scheme="https://blog.kanari.moe/tags/%E6%95%B0%E8%AE%BA/"/>
     
       <category term="动态规划" scheme="https://blog.kanari.moe/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>blog迁移</title>
-    <link href="https://blog.kanari.moe/2019/07/13/blog-upgrade/"/>
-    <id>https://blog.kanari.moe/2019/07/13/blog-upgrade/</id>
-    <published>2019-07-13T13:00:44.000Z</published>
-    <updated>2019-09-19T01:25:36.934Z</updated>
-    
-    <summary type="html">
-    
-      &lt;img src=&quot;/2019/07/13/blog-upgrade/girl.jpg&quot;&gt;
-&lt;p&gt;又回到了静态blog😀.果然这样才是最吼的.&lt;/p&gt;
-&lt;h2 id=&quot;静态blog编译器&quot;&gt;静态blog编译器&lt;/h2&gt;
-&lt;p&gt;现在流行的静态blog编译器大概有这么几种&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Node.js&lt;/code&gt;的&lt;code&gt;Hexo&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Python&lt;/code&gt;的&lt;code&gt;Pelican&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Ruby&lt;/code&gt;的&lt;code&gt;Jekyll&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Golang&lt;/code&gt;的&lt;code&gt;Hugo&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Colorful Tree</title>
-    <link href="https://blog.kanari.moe/2019/07/12/colorful-tree/"/>
-    <id>https://blog.kanari.moe/2019/07/12/colorful-tree/</id>
-    <published>2019-07-12T06:04:36.000Z</published>
-    <updated>2019-09-19T01:27:36.249Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
     
   </entry>
   

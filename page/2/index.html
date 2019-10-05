@@ -274,6 +274,223 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/24/a-wonderful-bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/24/a-wonderful-bug/" class="post-title-link" itemprop="url">记一个bug (HDU 6703)</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-24 22:28:38" itemprop="dateCreated datePublished" datetime="2019-08-24T22:28:38+08:00">2019-08-24</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-19 09:22:01" itemprop="dateModified" datetime="2019-09-19T09:22:01+08:00">2019-09-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>You are given an array a1,a2,...,an(∀i∈[1,n],1≤ai≤n). Initially, each element of the array is <strong>unique</strong>.</p>
+<p>Moreover, there are m instructions.</p>
+<p>Each instruction is in one of the following two formats:</p>
+<ol type="1">
+<li>(1,pos),indicating to change the value of apos to apos+10,000,000;</li>
+<li>(2,r,k),indicating to ask the minimum value which is <strong>not equal</strong> to any ai ( 1≤i≤r ) and <strong>not less </strong> than k.</li>
+</ol>
+<p>Please print all results of the instructions in format 2.</p>
+<h2 id="分析">分析</h2>
+<p>这题强制在线.首先1操作相当于删除了这个数.</p>
+<p>dalao自闭了一会get到了它的正确做法,我就直接拿来用了.</p>
+<p>维护一权值线段树,位置i存其在a中出现的位置.那么当1到r区间内出现位置的最大值超过了r,根据鸽巢原理,至少有一个数未被限制.</p>
+<p>加上不小于k的条件,就是k到r中,找到最小的一个r,使得它满足上面的条件,输出这个r.</p>
+<h2 id="代码">代码</h2>
+<p>一个奇葩的bug...</p>
+<p>当使用了fread这种先读完缓冲区再处理的快速读入而删漏了cin时...会显而易见的遇到bug.</p>
+<p>但是,因为缓冲区的存在,<strong>小范围数据被快乐的读入了缓冲区,cin并不会实际影响什么</strong>.一旦遇到大范围数据,cin提前读入了接下来的数据,导致第一个缓冲区之外的数据全部出错...</p>
+<p>艹.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">400000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> IO</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXSIZE = <span class="number">1</span> &lt;&lt; <span class="number">20</span>;</span><br><span class="line"><span class="keyword">char</span> buf[MAXSIZE], *p1, *p2;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> gc()                                                                 \</span></span><br><span class="line">    (p1 == p2 &amp;&amp; (p2 = (p1 = buf) + fread(buf, <span class="number">1</span>, MAXSIZE, <span class="built_in">stdin</span>), p1 == p2) \</span><br><span class="line">         ? EOF                                                               \</span><br><span class="line">         : *p1++)</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> c = gc();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(c))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">        c = gc();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(c))</span><br><span class="line">        x = x * <span class="number">10</span> + (c ^ <span class="number">48</span>), c = gc();</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">char</span> pbuf[<span class="number">1</span> &lt;&lt; <span class="number">20</span>], *pp = pbuf;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> &amp;c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (pp - pbuf == <span class="number">1</span> &lt;&lt; <span class="number">20</span>)</span><br><span class="line">        fwrite(pbuf, <span class="number">1</span>, <span class="number">1</span> &lt;&lt; <span class="number">20</span>, <span class="built_in">stdout</span>), pp = pbuf;</span><br><span class="line">    *pp++ = c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> sta[<span class="number">35</span>];</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        sta[top++] = x % <span class="number">10</span>, x /= <span class="number">10</span>;</span><br><span class="line">    &#125; <span class="keyword">while</span> (x);</span><br><span class="line">    <span class="keyword">while</span> (top)</span><br><span class="line">        push(sta[--top] + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125; <span class="comment">// namespace IO</span></span><br><span class="line"><span class="comment">///////////////////////////////////////////////////////////////////////////////////////</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dat[MAXN];</span><br><span class="line"><span class="keyword">int</span> a[MAXN];</span><br><span class="line"><span class="keyword">int</span> lc[MAXN], rc[MAXN], idx = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">imax</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a&gt;b)<span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">collect</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dat[n] = max(dat[lc[n]], dat[rc[n]]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> &amp;n, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!n)</span><br><span class="line">        n = ++idx;</span><br><span class="line">    dat[n] = a[l];</span><br><span class="line">    <span class="keyword">if</span> (l == r)</span><br><span class="line">        <span class="keyword">return</span> dat[n];</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> dat[n] = imax(build(lc[n], l, mid), build(rc[n], mid + <span class="number">1</span>, r));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &lt;= L &amp;&amp; R &lt;= r)</span><br><span class="line">    &#123;</span><br><span class="line">        dat[n] = x;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = (L + R) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (l &lt;= mid)</span><br><span class="line">        modify(x, l, r, L, mid, lc[n]);</span><br><span class="line">    <span class="keyword">if</span> (mid &lt; r)</span><br><span class="line">        modify(x, l, r, mid + <span class="number">1</span>, R, rc[n]);</span><br><span class="line"></span><br><span class="line">    collect(n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r,<span class="keyword">int</span> target, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L&gt;r || R&lt;l || dat[n]&lt;=target)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(L==R)<span class="keyword">return</span> L;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> mid = (L + R) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> res=query(l,r,target,L,mid,lc[n]);</span><br><span class="line">    <span class="keyword">return</span> ~res?res:query(l,r,target,mid+<span class="number">1</span>,R,rc[n]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> root;</span><br><span class="line"><span class="keyword">int</span> num[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> kase=IO::rd();</span><br><span class="line">    <span class="keyword">while</span> (kase--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> nlen, qlen;</span><br><span class="line">        nlen=IO::rd();</span><br><span class="line">        qlen=IO::rd();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= nlen; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            num[i] = IO::rd();</span><br><span class="line">            a[num[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        build(root, <span class="number">1</span>, nlen);</span><br><span class="line">        <span class="keyword">int</span> lastans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (qlen--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> opt=IO::rd();</span><br><span class="line">            <span class="keyword">if</span> (opt == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> pos=IO::rd();</span><br><span class="line">                pos ^= lastans;</span><br><span class="line">                <span class="keyword">if</span>(num[pos]==<span class="number">0</span> || num[pos]&gt;nlen)<span class="keyword">continue</span>;</span><br><span class="line">                modify(<span class="number">0x3f3f3f3f</span>, num[pos], num[pos], <span class="number">1</span>, nlen, root);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> t2, t3;</span><br><span class="line">                t2=IO::rd();</span><br><span class="line">                t3=IO::rd();</span><br><span class="line">                <span class="comment">//cin &gt;&gt; t2 &gt;&gt; t3;</span></span><br><span class="line">                <span class="keyword">int</span> r = t2 ^ lastans, k = t3 ^ lastans;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">int</span> t=query(k,nlen,r,<span class="number">1</span>,nlen,root);</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;(lastans=(~t?t:nlen+<span class="number">1</span>))&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/22/sandbox-reef/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/08/22/sandbox-reef/" class="post-title-link" itemprop="url">OJ的后端</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-22 14:43:47" itemprop="dateCreated datePublished" datetime="2019-08-22T14:43:47+08:00">2019-08-22</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-19 10:17:10" itemprop="dateModified" datetime="2019-09-19T10:17:10+08:00">2019-09-19</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/闲扯/" itemprop="url" rel="index"><span itemprop="name">闲扯</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>内容有复制和参考。</p>
+<p>这篇文章主要用于记录在探索评测系统Reef期间我所学的东西,以便之后查阅.</p>
+<p>Reef预计主要支持远程评测</p>
+<p>加一点本地评测.....</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/22/sandbox-reef/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/10/problem-seven/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1136,213 +1353,6 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/07/20/problem-bupt-milk-tea/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/07/20/problem-bupt-milk-tea/" class="post-title-link" itemprop="url">[BUPT WARMUP|CF] 珍珠奶茶</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-20 17:12:34" itemprop="dateCreated datePublished" datetime="2019-07-20T17:12:34+08:00">2019-07-20</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 10:11:49" itemprop="dateModified" datetime="2019-09-19T10:11:49+08:00">2019-09-19</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>给出一个<span class="math inline">\(N \times N\)</span>的非负整数矩阵，要求找到一条从左上角数字到右下角数字的路线，且</p>
-<ul>
-<li>只能向右或者下走。</li>
-<li>将经过数字相乘后得到的结果，使其末尾的“0”最少。</li>
-</ul>
-<p><span class="math display">\[
-N \leq 1000
-\]</span></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/20/problem-bupt-milk-tea/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/07/13/blog-upgrade/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/07/13/blog-upgrade/" class="post-title-link" itemprop="url">blog迁移</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-13 21:00:44" itemprop="dateCreated datePublished" datetime="2019-07-13T21:00:44+08:00">2019-07-13</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 09:25:36" itemprop="dateModified" datetime="2019-09-19T09:25:36+08:00">2019-09-19</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <img src="/2019/07/13/blog-upgrade/girl.jpg">
-<p>又回到了静态blog😀.果然这样才是最吼的.</p>
-<h2 id="静态blog编译器">静态blog编译器</h2>
-<p>现在流行的静态blog编译器大概有这么几种</p>
-<ul>
-<li><code>Node.js</code>的<code>Hexo</code></li>
-<li><code>Python</code>的<code>Pelican</code></li>
-<li><code>Ruby</code>的<code>Jekyll</code></li>
-<li><code>Golang</code>的<code>Hugo</code></li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/13/blog-upgrade/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
@@ -1395,7 +1405,7 @@ N \leq 1000
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1421,7 +1431,7 @@ N \leq 1000
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1520,11 +1530,11 @@ N \leq 1000
       
     
       
+    
+      
+    
+      
         
-      
-    
-      
-    
       
     
       

@@ -56,19 +56,19 @@
   };
 </script>
 
-  <meta name="description" content="n个有标号的球围成一个圈。每个球有两种颜色可以选择黑或白染色。问有多少种方案使得没有出现连续白球7个或连续黑球7个。 对方案数mod 2015，球最多有100000个。 分析 考虑对于非环状球的答案计算，可以设\(sum(i,k)\)表示第i个球为k色时的方案数。其计算非常显然 \[ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)} \] 接下">
-<meta name="keywords" content="计数">
+  <meta name="description" content="Monocarp and Bicarp live in Berland, where every bus ticket consists of n digits (n is an even number). During the evening walk Monocarp and Bicarp found a ticket where some of the digits have been er">
+<meta name="keywords" content="博弈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[FZU 2204]Seven">
-<meta property="og:url" content="https://blog.kanari.moe/2019/08/10/problem-seven/index.html">
+<meta property="og:title" content="[CF585D] Ticket Game">
+<meta property="og:url" content="https://blog.kanari.moe/2019/10/05/problem-ticket-game/index.html">
 <meta property="og:site_name" content="Kanari&#39;s blog">
-<meta property="og:description" content="n个有标号的球围成一个圈。每个球有两种颜色可以选择黑或白染色。问有多少种方案使得没有出现连续白球7个或连续黑球7个。 对方案数mod 2015，球最多有100000个。 分析 考虑对于非环状球的答案计算，可以设\(sum(i,k)\)表示第i个球为k色时的方案数。其计算非常显然 \[ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)} \] 接下">
+<meta property="og:description" content="Monocarp and Bicarp live in Berland, where every bus ticket consists of n digits (n is an even number). During the evening walk Monocarp and Bicarp found a ticket where some of the digits have been er">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-19T02:13:38.991Z">
+<meta property="og:updated_time" content="2019-10-05T08:01:34.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[FZU 2204]Seven">
-<meta name="twitter:description" content="n个有标号的球围成一个圈。每个球有两种颜色可以选择黑或白染色。问有多少种方案使得没有出现连续白球7个或连续黑球7个。 对方案数mod 2015，球最多有100000个。 分析 考虑对于非环状球的答案计算，可以设\(sum(i,k)\)表示第i个球为k色时的方案数。其计算非常显然 \[ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)} \] 接下">
-  <link rel="canonical" href="https://blog.kanari.moe/2019/08/10/problem-seven/">
+<meta name="twitter:title" content="[CF585D] Ticket Game">
+<meta name="twitter:description" content="Monocarp and Bicarp live in Berland, where every bus ticket consists of n digits (n is an even number). During the evening walk Monocarp and Bicarp found a ticket where some of the digits have been er">
+  <link rel="canonical" href="https://blog.kanari.moe/2019/10/05/problem-ticket-game/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>[FZU 2204]Seven | Kanari's blog</title>
+  <title>[CF585D] Ticket Game | Kanari's blog</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2"></script>
   <script>
@@ -279,7 +279,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/10/problem-seven/">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/10/05/problem-ticket-game/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kanari">
@@ -291,7 +291,7 @@
       <meta itemprop="name" content="Kanari's blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">[FZU 2204]Seven
+        <h1 class="post-title" itemprop="name headline">[CF585D] Ticket Game
 
           
         </h1>
@@ -307,19 +307,11 @@
                 
               
 
-              <time title="创建时间：2019-08-10 10:53:29" itemprop="dateCreated datePublished" datetime="2019-08-10T10:53:29+08:00">2019-08-10</time>
+              <time title="创建时间：2019-10-05 15:13:27 / 修改时间：16:01:34" itemprop="dateCreated datePublished" datetime="2019-10-05T15:13:27+08:00">2019-10-05</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 10:13:38" itemprop="dateModified" datetime="2019-09-19T10:13:38+08:00">2019-09-19</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -347,21 +339,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>n个有标号的球围成一个圈。每个球有两种颜色可以选择黑或白染色。问有多少种方案使得没有出现连续白球7个或连续黑球7个。</p>
-<p>对方案数mod 2015，球最多有100000个。</p>
-<h1 id="分析">分析</h1>
-<p>考虑对于非环状球的答案计算，可以设<span class="math inline">\(sum(i,k)\)</span>表示第i个球为k色时的方案数。其计算非常显然</p>
+        <p>Monocarp and Bicarp live in Berland, where every bus ticket consists of n digits (n is an even number). During the evening walk Monocarp and Bicarp found a ticket where some of the digits have been erased. The number of digits that have been erased is even.</p>
+<p>Monocarp and Bicarp have decided to play a game with this ticket. Monocarp hates happy tickets, while Bicarp collects them. A ticket is considered happy if the sum of the first <span class="math inline">\(\frac n2\)</span> digits of this ticket is equal to the sum of the last <span class="math inline">\(\frac n2\)</span> digits.</p>
+<p>Monocarp and Bicarp take turns (and Monocarp performs the first of them). During each turn, the current player must replace any erased digit with any digit from 0 to 9. The game ends when there are no erased digits in the ticket.</p>
+<p>If the ticket is happy after all erased digits are replaced with decimal digits, then Bicarp wins. Otherwise, Monocarp wins. You have to determine who will win if both players play optimally.</p>
+<h2 id="分析">分析</h2>
+<p>在做这道题的时候，我发现了实际上影响答案的只和两边的 已知数的和 以及未知位的数目有关，发现了获胜的根本是前后两部分和的差值大小，发现了先手的目的是<strong>扩大差值</strong>使得后手无法通过某种方式追赶。</p>
+<p>但是到这我就卡住了。淦，为什么我这么菜。</p>
+<p>接下来要考虑的是<strong>优势</strong>，在这道题里优势就是差值。先手的目的是扩大优势，在大的一边增大会加大优势，而在小的一边置0不会扩大优势；后手要<strong>减小优势</strong>，同样的办法就是在小的一侧置数来追赶另一侧，在大的一侧置0不会更好。</p>
+<p>那么，又可以得出先手扩大优势最好的办法是置9（最大）。那么游戏最开始的几步，就是双方在两侧填写9。直到某侧不再有空位。</p>
+<p>此时，如果空位在大的一侧，先手必赢。如果空位在小的一侧，继续讨论如下</p>
 <p><span class="math display">\[
-sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
+x_1+x_2+\cdots+x_n=C
 \]</span></p>
-<p>接下来考虑收尾相接后需要排除的情况，即收尾同色球长度相加超过6的情况，这可以直接枚举。</p>
-<p>首取i个末取j个同色，从答案中删除此时剩下球的方案数，注意剩下的球的首末球颜色<strong>不能</strong>和已经枚举的颜色同色。鉴于这种要求，我们退回到sum的递推公式处，决定sum的边界条件为首个球固定为黑色，这样就能很方便的确定球的颜色，且根据对称性答案可以直接x2得到。</p>
-<p>题就做完了。</p>
-<h1 id="代码">代码</h1>
-<blockquote>
-<p>淦，为什么当时没写。</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">100010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> P=<span class="number">2015</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> sum[MAXN][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> kase;<span class="built_in">cin</span>&gt;&gt;kase;</span><br><span class="line">    sum[<span class="number">0</span>][<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=min(i,<span class="number">6</span>);j++)&#123;</span><br><span class="line">            (sum[i][<span class="number">1</span>]+=sum[i-j][<span class="number">0</span>])%=P;</span><br><span class="line">            (sum[i][<span class="number">0</span>]+=sum[i-j][<span class="number">1</span>])%=P;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sum[<span class="number">0</span>][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(kase--)&#123;</span><br><span class="line">        <span class="keyword">int</span> nlen;<span class="built_in">cin</span>&gt;&gt;nlen;</span><br><span class="line">        <span class="keyword">int</span> ans=(sum[nlen][<span class="number">0</span>]+sum[nlen][<span class="number">1</span>])%P;</span><br><span class="line">        <span class="keyword">if</span>(nlen&gt;=<span class="number">7</span>)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">6</span>;i++)</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">6</span>;j++)</span><br><span class="line">                    <span class="keyword">if</span>(i+j&gt;=<span class="number">7</span> &amp;&amp; nlen-i-j&gt;=<span class="number">0</span>)</span><br><span class="line">                        ans=(ans-sum[nlen-i-j][<span class="number">0</span>])%P;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;++cnt&lt;&lt;<span class="string">": "</span>&lt;&lt;((ans*<span class="number">2</span>)%P+<span class="number">2015</span>)%P&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先<span class="math inline">\(2|n\)</span>显然。</p>
+<p>当C不是9的倍数时，先手总有办法让最终结果偏离。因此该情况只有当<span class="math inline">\(\frac n2 \times 9 = n\)</span>时后手才能获胜。</p>
+<h2 id="代码">代码</h2>
+<p>嫖了队友的…我瞎xx搞的结论WA23了…</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">200005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n/<span class="number">2</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'?'</span>) cnt++;</span><br><span class="line">		<span class="keyword">else</span> sum+=s[i]-<span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n/<span class="number">2</span>+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'?'</span>) cnt--;</span><br><span class="line">		<span class="keyword">else</span> sum-=s[i]-<span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;cnt&lt;&lt;" "&lt;&lt;sum&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">if</span>(sum*<span class="number">2</span>==-cnt*<span class="number">9</span>) <span class="built_in">puts</span>(<span class="string">"Bicarp"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"Monocarp"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -377,7 +372,7 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
           
           <div class="post-tags">
             
-              <a href="/tags/计数/" rel="tag"># 计数</a>
+              <a href="/tags/博弈/" rel="tag"># 博弈</a>
             
           </div>
         
@@ -387,8 +382,8 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/08/07/problem-snowy-smile/" rel="next" title="[HDU6638] Snowy Smile">
-                  <i class="fa fa-chevron-left"></i> [HDU6638] Snowy Smile
+                <a href="/2019/10/04/suffix-automation/" rel="next" title="后缀自动机">
+                  <i class="fa fa-chevron-left"></i> 后缀自动机
                 </a>
               
             </div>
@@ -396,10 +391,6 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/08/22/sandbox-reef/" rel="prev" title="OJ的后端">
-                  OJ的后端 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -448,7 +439,7 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -584,6 +575,56 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   
