@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="Kanari&#39;s blog">
 <meta property="og:description" content="如你所见，后缀自动机。  然而就nm看不懂，先看不懂它的图是啥，又看不懂它的边是啥，现在还是看不懂它的边是咋找出来的。可是咱不想搞不清楚它是干嘛的就直接用啊靠。  后缀自动机首先是自动机。一个字符串S的后缀自动机能接受S的所有后缀。基于它的这个性质，它能够做到：  查询子串是否出现：这显然跑一次，能在自动机上跑完就是出现过。 统计不同子串的数量：自动机上每条不同的路径对应一个不同的子">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-04T15:53:23.022Z">
+<meta property="og:updated_time" content="2019-10-06T03:33:10.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="后缀自动机">
 <meta name="twitter:description" content="如你所见，后缀自动机。  然而就nm看不懂，先看不懂它的图是啥，又看不懂它的边是啥，现在还是看不懂它的边是咋找出来的。可是咱不想搞不清楚它是干嘛的就直接用啊靠。  后缀自动机首先是自动机。一个字符串S的后缀自动机能接受S的所有后缀。基于它的这个性质，它能够做到：  查询子串是否出现：这显然跑一次，能在自动机上跑完就是出现过。 统计不同子串的数量：自动机上每条不同的路径对应一个不同的子">
@@ -307,11 +307,19 @@
                 
               
 
-              <time title="创建时间：2019-10-04 20:44:05 / 修改时间：23:53:23" itemprop="dateCreated datePublished" datetime="2019-10-04T20:44:05+08:00">2019-10-04</time>
+              <time title="创建时间：2019-10-04 20:44:05" itemprop="dateCreated datePublished" datetime="2019-10-04T20:44:05+08:00">2019-10-04</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-06 11:33:10" itemprop="dateModified" datetime="2019-10-06T11:33:10+08:00">2019-10-06</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -349,7 +357,9 @@
 <li>统计不同子串的数量：自动机上每条不同的路径对应一个不同的子串。定义<span class="math inline">\(d(x)\)</span>为以x为起点的路径数目，递推即可。</li>
 <li>计算所有不同子串的长度总和：得到上面的<span class="math inline">\(d\)</span>。以x为起点，每条路径都会让子串<strong>总</strong>长度增加<strong>路径个</strong>。依然是递推。</li>
 <li>字典序第k小子串：当你有路径数了，只需要按照字典序对节点排序，然后像编码一样找。</li>
-<li></li>
+<li>最小循环移位：指将原字符串首尾相接移位，找到字典序最小的一个。将字符串<span class="math inline">\(S\)</span>断环成链<span class="math inline">\(SS\)</span>，然后建立SAM，贪心找最小直到长度达到<span class="math inline">\(|S|\)</span>即可。</li>
+<li>多组子串出现次数：dfs预处理每个节点的终点集合大小。在自动机上查找串<span class="math inline">\(P\)</span>对应的节点,存在则答案为该节点的终点集合大小；不存在答案为<span class="math inline">\(0\)</span>.</li>
+<li>所有出现位置：遍历树，一旦发现终点直接输出。</li>
 </ul>
 <h2 id="建立">建立</h2>
 <p>最暴力的方式是建立一个O(n^2)级别的自动机，不过那个复杂度就没什么意义了。后缀自动机需要满足状态数最少，为线性级别，且转移（边）也为线性级别。</p>
@@ -360,6 +370,24 @@
 <li><a href="https://saisumit.wordpress.com/2016/01/26/suffix-automaton/" target="_blank" rel="noopener">参考资料</a></li>
 <li>2015年国家集训队论文</li>
 </ul>
+<h3 id="子串第一次出现的位置">子串第一次出现的位置</h3>
+<p>对SAM中所有状态预处理firstpos（第一次出现该状态的末端位置，也就是endpos集合的最小元素）。</p>
+<p>扩展源函数为<code>sam_extend()</code>。创建新状态<code>cur</code>时，令</p>
+<p><span class="math display">\[
+firstpos(cur)=len(cur)-1
+\]</span></p>
+<p>当<code>q</code>复制到<code>clone</code>时，令</p>
+<p><span class="math display">\[
+firstpos(clone)=firstpos(q)
+\]</span></p>
+<p>需要的答案就是<span class="math inline">\(firstpos(t)-|P|+1\)</span>，<span class="math inline">\(t\)</span>为字符串<span class="math inline">\(P\)</span>的状态。每次查询需要<span class="math inline">\(O(|P|)\)</span></p>
+<h3 id="最短未出现字符串">最短未出现字符串</h3>
+<p>动态规划。</p>
+<p>让<span class="math inline">\(d_v\)</span>为节点<span class="math inline">\(v\)</span>的答案。如果不存在使用字符集中至少一个字符的转移，那么<span class="math inline">\(d_v=1\)</span>，否则</p>
+<p><span class="math display">\[
+d_v=1+\min_{w:(v,w,c) \in SAM} d_w
+\]</span></p>
+<p>字符串可以由转移推回去。</p>
 
     </div>
 
@@ -446,7 +474,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立"><span class="nav-number">1.</span> <span class="nav-text">建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-number">2.</span> <span class="nav-text">资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立"><span class="nav-number">1.</span> <span class="nav-text">建立</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-number">2.</span> <span class="nav-text">资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子串第一次出现的位置"><span class="nav-number">2.1.</span> <span class="nav-text">子串第一次出现的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最短未出现字符串"><span class="nav-number">2.2.</span> <span class="nav-text">最短未出现字符串</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -464,7 +492,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -490,7 +518,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>

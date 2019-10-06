@@ -276,6 +276,98 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/10/06/problem-coloring-edges/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/06/problem-coloring-edges/" class="post-title-link" itemprop="url">[CF EDU72D] Coloring Edges</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-06 18:49:52 / 修改时间：19:42:09" itemprop="dateCreated datePublished" datetime="2019-10-06T18:49:52+08:00">2019-10-06</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>You are given a directed graph with n vertices and m directed edges without self-loops or multiple edges.</p>
+<p>Let's denote the k-coloring of a digraph as following: you color each edge in one of k colors. The k-coloring is good if and only if there no cycle formed by edges of same color.</p>
+<p>Find a good k-coloring of given digraph with minimum possible k.</p>
+<h2 id="分析">分析</h2>
+<p>对我这个菜鸡来说，去染色返祖边的操作并不怎么显然……算了……</p>
+<p>没能坚持只有2种颜色的猜想。挂城墙。</p>
+<p>没必要挂代码。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/10/05/problem-marbles/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -509,11 +601,19 @@ x_1+x_2+\cdots+x_n=C
                 
               
 
-              <time title="创建时间：2019-10-04 20:44:05 / 修改时间：23:53:23" itemprop="dateCreated datePublished" datetime="2019-10-04T20:44:05+08:00">2019-10-04</time>
+              <time title="创建时间：2019-10-04 20:44:05" itemprop="dateCreated datePublished" datetime="2019-10-04T20:44:05+08:00">2019-10-04</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-06 11:33:10" itemprop="dateModified" datetime="2019-10-06T11:33:10+08:00">2019-10-06</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -551,7 +651,9 @@ x_1+x_2+\cdots+x_n=C
 <li>统计不同子串的数量：自动机上每条不同的路径对应一个不同的子串。定义<span class="math inline">\(d(x)\)</span>为以x为起点的路径数目，递推即可。</li>
 <li>计算所有不同子串的长度总和：得到上面的<span class="math inline">\(d\)</span>。以x为起点，每条路径都会让子串<strong>总</strong>长度增加<strong>路径个</strong>。依然是递推。</li>
 <li>字典序第k小子串：当你有路径数了，只需要按照字典序对节点排序，然后像编码一样找。</li>
-<li></li>
+<li>最小循环移位：指将原字符串首尾相接移位，找到字典序最小的一个。将字符串<span class="math inline">\(S\)</span>断环成链<span class="math inline">\(SS\)</span>，然后建立SAM，贪心找最小直到长度达到<span class="math inline">\(|S|\)</span>即可。</li>
+<li>多组子串出现次数：dfs预处理每个节点的终点集合大小。在自动机上查找串<span class="math inline">\(P\)</span>对应的节点,存在则答案为该节点的终点集合大小；不存在答案为<span class="math inline">\(0\)</span>.</li>
+<li>所有出现位置：遍历树，一旦发现终点直接输出。</li>
 </ul>
 <h2 id="建立">建立</h2>
 <p>最暴力的方式是建立一个O(n^2)级别的自动机，不过那个复杂度就没什么意义了。后缀自动机需要满足状态数最少，为线性级别，且转移（边）也为线性级别。</p>
@@ -562,6 +664,24 @@ x_1+x_2+\cdots+x_n=C
 <li><a href="https://saisumit.wordpress.com/2016/01/26/suffix-automaton/" target="_blank" rel="noopener">参考资料</a></li>
 <li>2015年国家集训队论文</li>
 </ul>
+<h3 id="子串第一次出现的位置">子串第一次出现的位置</h3>
+<p>对SAM中所有状态预处理firstpos（第一次出现该状态的末端位置，也就是endpos集合的最小元素）。</p>
+<p>扩展源函数为<code>sam_extend()</code>。创建新状态<code>cur</code>时，令</p>
+<p><span class="math display">\[
+firstpos(cur)=len(cur)-1
+\]</span></p>
+<p>当<code>q</code>复制到<code>clone</code>时，令</p>
+<p><span class="math display">\[
+firstpos(clone)=firstpos(q)
+\]</span></p>
+<p>需要的答案就是<span class="math inline">\(firstpos(t)-|P|+1\)</span>，<span class="math inline">\(t\)</span>为字符串<span class="math inline">\(P\)</span>的状态。每次查询需要<span class="math inline">\(O(|P|)\)</span></p>
+<h3 id="最短未出现字符串">最短未出现字符串</h3>
+<p>动态规划。</p>
+<p>让<span class="math inline">\(d_v\)</span>为节点<span class="math inline">\(v\)</span>的答案。如果不存在使用字符集中至少一个字符的转移，那么<span class="math inline">\(d_v=1\)</span>，否则</p>
+<p><span class="math display">\[
+d_v=1+\min_{w:(v,w,c) \in SAM} d_w
+\]</span></p>
+<p>字符串可以由转移推回去。</p>
 
         
       
@@ -852,12 +972,12 @@ x_1+x_2+\cdots+x_n=C
           <p>我还没搞明白为什么在首页上没法加载，看起来是插件内部有bug。</p>
 <p>就拿东方的同人BGM来做个测试吧。</p>
 
-        <div id="aplayer-LhdhQjCc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-WErLRNLu" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-LhdhQjCc"),
+            element: document.getElementById("aplayer-WErLRNLu"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -1225,111 +1345,6 @@ x_1+x_2+\cdots+x_n=C
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/09/05/some-sieves/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/05/some-sieves/" class="post-title-link" itemprop="url">一些筛法的题</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-05 20:22:49" itemprop="dateCreated datePublished" datetime="2019-09-05T20:22:49+08:00">2019-09-05</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 09:06:44" itemprop="dateModified" datetime="2019-09-19T09:06:44+08:00">2019-09-19</time>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="技巧">技巧</h2>
-<h3 id="自然溢出">自然溢出</h3>
-<ul>
-<li>自然溢出不会影响低位数据,所以有的时候你不需要取模,而是一个unsigned.</li>
-</ul>
-<h3 id="除法取模">除法取模</h3>
-<p>对于式子</p>
-<p><span class="math display">\[
-\frac {a \times b}{c} \mod p \equiv \frac{a \times b \mod cp}{c}
-\]</span></p>
-<h2 id="细节">细节</h2>
-<ul>
-<li>注意数据类型,例如<code>6*(ll)(1&lt;&lt;30)</code>是要出问题的</li>
-<li>注意函数在<span class="math inline">\(f(1)\)</span>位置的取值,不要忘记初始化</li>
-</ul>
-<h2 id="divisor">Divisor</h2>
-<p>Given <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> (<span class="math inline">\(1 \leq n,m \leq 5 \times 10^4\)</span>), please calculate</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/09/05/some-sieves/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
@@ -1382,7 +1397,7 @@ x_1+x_2+\cdots+x_n=C
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1408,7 +1423,7 @@ x_1+x_2+\cdots+x_n=C
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1503,9 +1518,9 @@ x_1+x_2+\cdots+x_n=C
   
     
       
-        
-      
     
+      
+        
       
     
       
