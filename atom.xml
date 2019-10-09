@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-10-06T11:42:09.922Z</updated>
+  <updated>2019-10-09T08:17:18.757Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[CFEDU74 E] Keyboard Purchase</title>
+    <link href="https://blog.kanari.moe/2019/10/09/problem-keyboard-purchase/"/>
+    <id>https://blog.kanari.moe/2019/10/09/problem-keyboard-purchase/</id>
+    <published>2019-10-09T07:38:43.000Z</published>
+    <updated>2019-10-09T08:17:18.757Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当在使用一指禅键入一个字符串的时候，你需要不停的移动手指。比如说输入“af”，手指需要跨过3个键（包括终点）输入“a”和“f”。&lt;/p&gt;
+&lt;p&gt;针对一个经常输入的字符串，你可以定制一个长条键盘，使得在这个键盘上输入字符串需要移动的距离最短。&lt;/p&gt;
+&lt;p&gt;给出字符串长度&lt;span class=&quot;math inline&quot;&gt;\(n\)&lt;/span&gt;与字典大小&lt;span class=&quot;math inline&quot;&gt;\(k\)&lt;/span&gt;（小写字母的前&lt;span class=&quot;math inline&quot;&gt;\(k\)&lt;/span&gt;个），给出最优情况下手指需要移动的距离。&lt;/p&gt;
+&lt;h2 id=&quot;分析&quot;&gt;分析&lt;/h2&gt;
+&lt;p&gt;这道题和之前那道marbles很像……或者说状压都挺像的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="动态规划" scheme="https://blog.kanari.moe/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>[CF EDU72D] Coloring Edges</title>
@@ -527,31 +552,6 @@
     
     
       <category term="数论" scheme="https://blog.kanari.moe/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>水的合集 1</title>
-    <link href="https://blog.kanari.moe/2019/07/22/waterful-summary-1/"/>
-    <id>https://blog.kanari.moe/2019/07/22/waterful-summary-1/</id>
-    <published>2019-07-22T07:59:12.000Z</published>
-    <updated>2019-09-19T02:18:42.954Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
-    
     
   </entry>
   
