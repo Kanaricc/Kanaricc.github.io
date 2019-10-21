@@ -274,6 +274,363 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/09/24/learning-rust/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/24/learning-rust/" class="post-title-link" itemprop="url">Rust学习记录</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-24 22:56:47" itemprop="dateCreated datePublished" datetime="2019-09-24T22:56:47+08:00">2019-09-24</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-13 16:09:32" itemprop="dateModified" datetime="2019-10-13T16:09:32+08:00">2019-10-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/study/" itemprop="url" rel="index"><span itemprop="name">study</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>基于对Rust的浅薄理解，它一定是未来一门重要的语言。因此，为了进一步了解这哥们，对Rust的学习将逐步展开。</p>
+<h2 id="参考资料">参考资料</h2>
+<ol type="1">
+<li><a href="https://rustlang-cn.org/users/book-exp/" target="_blank" rel="noopener">Rust The Book学习心得</a></li>
+<li><a href="https://rust-unofficial.github.io/too-many-lists/index.html" target="_blank" rel="noopener">Learn Rust With Entirely Too Many Linked Lists</a></li>
+<li>Rust编程之道（实体书）</li>
+</ol>
+<p>第一个资源来自国内一dalao，偏读书笔记；第二个则有些有趣，它在使用rust完成一系类列表的过程中进行rust的教学。</p>
+<p><em>目前进度：慢速阅读第二项中</em></p>
+<h2 id="内存模型">内存模型</h2>
+<p>梳理一下现存的内存管理模型。大致上分为两种：</p>
+<ol type="1">
+<li>GC，例如Java与C#</li>
+<li>自行管理，例如c++</li>
+</ol>
+<p>这两种技术各有利弊。Rust提供了一种不同于以上两种办法的内存模型，所属权模型。一个内存有它的归属，对某个变量的读写需要涉及“借出”“还回”，又由此诞生“生命周期”的概念。通过这套系统，Rust实现了<strong>安全且无代价的内存管理办法</strong>。</p>
+<h3 id="所有权">所有权</h3>
+<ul>
+<li>Rust中变量默认不可变。</li>
+</ul>
+<p>变量在rust中，还有着所有权的概念。</p>
+<ul>
+<li>当变量以传值方式传播，那么原有的所有权将会<strong>移动</strong>给新的变量名，原有变量名作废。</li>
+<li>变量可以创建只读引用，并用于传递。只读引用可以有多个。</li>
+<li>变量可以创建读写引用。只能有一个。</li>
+<li>只读与读写引用不可同时存在。</li>
+</ul>
+<p>这样就从根源上解决了一些问题，例如多线程读写可能出现的各种问题。不过还是不是很清楚这种情况下要如何实现原本的功能。</p>
+<h3 id="生命周期">生命周期</h3>
+<p>想象这样一种情况，“创建一个链表的迭代器”。一个必要的问题是确保使用迭代器时<strong>其所指向的链表没有出现问题</strong>（例如被销毁）。</p>
+<p>在function的层级中，rustc能够自动推导出变量的传递关系与其<em>最小</em>生命周期。而程序上升到结构、架构、API上后，继续推导生命周期就不是很好做到，可能会耗费大量编译时间与资源。此时，让使用者主动标记生命周期会更有效率。尽管此时可能无法达到<em>最小</em>的目标。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/09/23/problem-choose-a-sequence/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/23/problem-choose-a-sequence/" class="post-title-link" itemprop="url">[CF1221F] Choose a Sequence</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-23 23:46:09" itemprop="dateCreated datePublished" datetime="2019-09-23T23:46:09+08:00">2019-09-23</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-26 20:18:56" itemprop="dateModified" datetime="2019-09-26T20:18:56+08:00">2019-09-26</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Petya recently found a game "Choose a Square". In this game, there are nn points numbered from 11 to nn on an infinite field. The ii-th point has coordinates (xi,yi) and cost ci.</p>
+<p>You have to choose a square such that its sides are parallel to coordinate axes, the lower left and upper right corners belong to the line y=x, and all corners have integer coordinates.</p>
+<p>The score you get is the sum of costs of the points covered by the selected square minus the length of the side of the square. Note that the length of the side can be zero.</p>
+<p>Petya asks you to calculate the maximum possible score in the game that can be achieved by placing exactly one square.</p>
+<img src="/2019/09/23/problem-choose-a-sequence/a.png">
+<h2 id="分析">分析</h2>
+<p>这道题其实和多校的Snowy Smile（题文无关）挺像的。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/23/problem-choose-a-sequence/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/09/21/starting-gatsbyjs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/09/21/starting-gatsbyjs/" class="post-title-link" itemprop="url">来康康Gatsby.js</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-21 21:00:54" itemprop="dateCreated datePublished" datetime="2019-09-21T21:00:54+08:00">2019-09-21</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-23 23:58:01" itemprop="dateModified" datetime="2019-09-23T23:58:01+08:00">2019-09-23</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/闲扯/" itemprop="url" rel="index"><span itemprop="name">闲扯</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>昨天发现notion用学生邮箱可以免费领personal plan，所以非常开心的玩了一会。东西确实挺不错的。</p>
+<ul>
+<li>完善的附件管理，包括图片，pdf，excel等</li>
+<li>并不太喜欢的block编辑方式，还是更喜欢markdown</li>
+<li>不错的风格</li>
+<li>强大的database</li>
+<li>不错的内容链接</li>
+<li>各种embed</li>
+<li>垃圾数学公式编辑，为啥编辑框不能换行</li>
+</ul>
+<p>既然排版效果很好……这玩意，能不能做成个人博客。</p>
+<p>去github上搜了一发，居然真的有，名字叫gine-blog。</p>
+<h2 id="已有项目初探">已有项目初探</h2>
+<p>研究了这个小巧的项目之后，有些激动。它使用了目前很新的几个技术（相比Hexo等传统生成器）。</p>
+<ul>
+<li>webpack</li>
+<li>react</li>
+<li>graphql</li>
+</ul>
+<p>实际上，这些主要都来自另一个项目<code>Gatsby.js</code>，意在使用新技术快速构建网站。它能够汇总数据，使用graphql为react提供内容，并将内容固化，产生能够离开后端运行的纯网页。</p>
+<p>非常适合作为个人博客生成使用。</p>
+<p>之后我便忘了最开始的目的。</p>
+<h2 id="好像少了些什么">好像少了些什么</h2>
+<p>生成的方式似乎没有什么问题了，不过好像少了些什么。</p>
+<p>gine-blog项目从notion拉取脏数据经过复杂处理填充到react中……作者实现了一个爬虫去从notion的网页上爬取源码…</p>
+<p>我部署试了一下这个blog，效果还可以，也有些bug。比如bookmark丢失url，作者的文档新旧有些分不清楚。还是继续坚持hexo。</p>
+<p><del>不过，这个<code>gatsby.js</code>有一些意思，可以研究一下。</del></p>
+<h2 id="关于blog">关于blog</h2>
+<p>仔细思考了一下，相比于选择什么主题，选择什么模板，选择什么技术，这些都是次要的事情。最重要的是填充在里面的内容。所以这个事情就先这么放下了，如果要开始的话，有一系列的东西都需要学习，和我现在要干的事情有些冲突。</p>
+<p>听说学长们在搞新的oj，给我的锅实际上很小，不需要负多大责任。那么oj也可以暂时放一放了。</p>
+<p>blog继续维持使用hexo。</p>
+<p>也许未来的哪天，会回来尝试一下使用rust+那时候的前端技术来构造一个不知道是什么的项目。</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1015,332 +1372,11 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/03/mo-s-algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/03/mo-s-algorithm/" class="post-title-link" itemprop="url">莫队算法</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-03 13:47:38" itemprop="dateCreated datePublished" datetime="2019-08-03T13:47:38+08:00">2019-08-03</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-26 20:24:12" itemprop="dateModified" datetime="2019-09-26T20:24:12+08:00">2019-09-26</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/study/" itemprop="url" rel="index"><span itemprop="name">study</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>对于可以离线的区间询问问题，莫队算法提出了一种可以在<span class="math inline">\(O(n\sqrt n)\)</span>(无修改)，<span class="math inline">\(n^{3/5}\)</span>(带修改)内得出答案的方法。</p>
-<p>主要的思路是对询问离线并分块，利用在2个区间间答案的<strong>快速转移</strong>（如果无法找到快速转移的方法，就没法用了）降低复杂度。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/03/mo-s-algorithm/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/01/problem-distribution-of-books/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/01/problem-distribution-of-books/" class="post-title-link" itemprop="url">Distribution of Books</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-01 15:15:52" itemprop="dateCreated datePublished" datetime="2019-08-01T15:15:52+08:00">2019-08-01</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 10:08:41" itemprop="dateModified" datetime="2019-09-19T10:08:41+08:00">2019-09-19</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>zz6d likes reading very much, so he bought a lot of books. One day, zz6d brought n books to a classroom in school. The books of zz6d is so popular that K students in the classroom want to borrow his books to read. Every book of zz6d has a number i (1&lt;=i&lt;=n). Every student in the classroom wants to get a continuous number books. Every book has a pleasure value, which can be 0 or even negative (causing discomfort). Now zz6d needs to distribute these books to K students. The pleasure value of each student is defined as the sum of the pleasure values of all the books he obtains.Zz6d didn't want his classmates to be too happy, so he wanted to minimize the maximum pleasure of the K classmates. zz6d can hide some last numbered books and not distribute them,which means he can just split the first x books into k parts and ignore the rest books, every part is consecutive and no two parts intersect with each other.However,every classmate must get at least one book.Now he wonders how small can the maximum pleasure of the K classmates be.</p>
-<p>1&lt;=T&lt;=10</p>
-<p>1&lt;=n&lt;=2*105</p>
-<p>1&lt;=k&lt;=n</p>
-<p>-109&lt;=ai&lt;=109</p>
-<h1 id="分析">分析</h1>
-<p>最大值最小，考虑二分答案。思考题目是否具有单调性：当最大值极大时，书可以随便分，当最大值极小时，可能会出现无法凑齐的状况，目测满足。</p>
-<p>题目要求分书时必须连续分，可以使用动态规划来做。假设二分的答案为lim</p>
-<p><span class="math display">\[f(i)=\max \{ f(j) | \sum_{k=j+1}^i a_k \leq lim  \}+1\]</span></p>
-<p>将求和改为前缀和，<span class="math inline">\(pre(i)\)</span>。</p>
-<p><span class="math display">\[f(i)=\max \{ f(j) | pre(i)-pre(j-1) \leq lim  \}+1\]</span></p>
-<p>动态规划的复杂度为<span class="math inline">\(O(n^2)\)</span>，太慢，考虑优化。</p>
-<p>每次转移都从先前已经出现的满足要求的f中转移。限制条件转一下，就是</p>
-<p><span class="math display">\[pre(i)-lim \leq pre(?)\]</span></p>
-<ul>
-<li>当有2个f对应的前缀和相同，我们选择更大的那个</li>
-</ul>
-<p>所以可以直接维护已经出现的每种前缀和所对应的最大f。可以离散化后使用权值线段树。复杂度变为<span class="math inline">\(O(n\lg n)\)</span></p>
-<p>总复杂度为<span class="math inline">\(O(n\lg n \lg n)\)</span>。</p>
-<h1 id="代码">代码</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">900010</span>;</span><br><span class="line"></span><br><span class="line">ll dat[MAXN];</span><br><span class="line"><span class="keyword">int</span> lc[MAXN],rc[MAXN];</span><br><span class="line"><span class="keyword">int</span> idx=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> &amp;n,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!n)n=++idx;</span><br><span class="line">    dat[n]=<span class="number">-0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;=r)<span class="keyword">return</span> dat[n];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">    dat[n]=max(build(lc[n],l,mid),build(rc[n],mid+<span class="number">1</span>,r));</span><br><span class="line">    <span class="keyword">return</span> dat[n];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">collectchild</span><span class="params">(<span class="keyword">int</span> node)</span></span>&#123;</span><br><span class="line">    dat[node]=max(dat[lc[node]],dat[rc[node]]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query_n</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> L,<span class="keyword">int</span> R,<span class="keyword">int</span> node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&lt;=L &amp;&amp; R&lt;=r)<span class="keyword">return</span> dat[node];</span><br><span class="line">    <span class="keyword">int</span> mid=(L+R)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">-0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">if</span>(l&lt;=mid)res=max(res,query_n(l,r,L,mid,lc[node]));</span><br><span class="line">    <span class="keyword">if</span>(mid&lt;r)res=max(res,query_n(l,r,mid+<span class="number">1</span>,R,rc[node]));</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,ll x,<span class="keyword">int</span> L,<span class="keyword">int</span> R,<span class="keyword">int</span> node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L&gt;=R)&#123;</span><br><span class="line">        dat[node]=max(dat[node],x);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid=(L+R)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(l&lt;=mid)modify(l,r,x,L,mid,lc[node]);</span><br><span class="line">    <span class="keyword">if</span>(mid&lt;r)modify(l,r,x,mid+<span class="number">1</span>,R,rc[node]);</span><br><span class="line">    collectchild(node);</span><br><span class="line">&#125;</span><br><span class="line">ll prefix[MAXN];</span><br><span class="line">ll bprefix[MAXN];</span><br><span class="line">ll num[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> nlen,sel;</span><br><span class="line"><span class="keyword">int</span> rlen;</span><br><span class="line"><span class="keyword">int</span> root;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">    build(root,<span class="number">0</span>,rlen<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> zero=lower_bound(bprefix,bprefix+rlen,<span class="number">0</span>)-bprefix;</span><br><span class="line">    modify(zero,zero,<span class="number">0</span>,<span class="number">0</span>,rlen<span class="number">-1</span>,root);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=nlen;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> start=lower_bound(bprefix,bprefix+rlen,bprefix[prefix[i]]-x)-bprefix;</span><br><span class="line">        <span class="keyword">int</span> dp=query_n(start,rlen<span class="number">-1</span>,<span class="number">0</span>,rlen<span class="number">-1</span>,root)+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(dp&gt;=sel)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        modify(prefix[i],prefix[i],dp,<span class="number">0</span>,rlen<span class="number">-1</span>,root);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//debug</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    int opt;</span></span><br><span class="line"><span class="comment">    build(root,0,10-1);</span></span><br><span class="line"><span class="comment">    while(cin&gt;&gt;opt)&#123;</span></span><br><span class="line"><span class="comment">        if(opt==1)&#123;</span></span><br><span class="line"><span class="comment">            int pos,x;cin&gt;&gt;pos&gt;&gt;x;</span></span><br><span class="line"><span class="comment">            modify(pos,pos,x,0,10-1,root);</span></span><br><span class="line"><span class="comment">        &#125;else&#123;</span></span><br><span class="line"><span class="comment">            int l,r;cin&gt;&gt;l&gt;&gt;r;</span></span><br><span class="line"><span class="comment">            cout&lt;&lt;query_n(l,r,0,10-1,root)&lt;&lt;endl;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> kase;<span class="built_in">cin</span>&gt;&gt;kase;</span><br><span class="line">    <span class="keyword">while</span>(kase--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;nlen&gt;&gt;sel;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=nlen;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;num[i];</span><br><span class="line">        &#125;</span><br><span class="line">        bprefix[<span class="number">0</span>]=prefix[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=nlen;i++)bprefix[i]=prefix[i]=prefix[i<span class="number">-1</span>]+num[i];</span><br><span class="line">        <span class="comment">//discrete</span></span><br><span class="line">        sort(bprefix,bprefix+nlen+<span class="number">1</span>);</span><br><span class="line">        rlen=unique(bprefix,bprefix+nlen+<span class="number">1</span>)-bprefix;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=nlen;i++)prefix[i]=lower_bound(bprefix,bprefix+rlen,prefix[i])-bprefix;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//binary</span></span><br><span class="line">        ll l=<span class="number">-1e15</span>,r=<span class="number">1e15</span>;</span><br><span class="line">        <span class="keyword">while</span>(l+<span class="number">1</span>&lt;r)&#123;</span><br><span class="line">            ll mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(check(mid))&#123;</span><br><span class="line">                r=mid;</span><br><span class="line">            &#125;<span class="keyword">else</span> l=mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(ll i=l;i&lt;=r;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(check(i))&#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>多组询问没有清理干净数组，WA了好几发。</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/01/Fansblog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/01/Fansblog/" class="post-title-link" itemprop="url">Fansblog</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-01 15:15:13" itemprop="dateCreated datePublished" datetime="2019-08-01T15:15:13+08:00">2019-08-01</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 09:51:42" itemprop="dateModified" datetime="2019-09-19T09:51:42+08:00">2019-09-19</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Farmer John keeps a website called ‘FansBlog’ .Everyday , there are many people visited this blog.One day, he find the visits has reached P , which is a prime number.He thinks it is a interesting fact.And he remembers that the visits had reached another prime number.He try to find out the largest prime number Q ( Q &lt; P ) ,and get the answer of Q! Module P.But he is too busy to find out the answer. So he ask you for help. ( Q! is the product of all positive integers less than or equal to n: n! = n * (n-1) * (n-2) * (n-3) <em>… </em> 3 * 2 * 1 . For example, 4! = 4 * 3 * 2 * 1 = 24 )</p>
-<p>First line contains an number T(1&lt;=T&lt;=10) indicating the number of testcases. Then T line follows, each contains a positive prime number P (1e9≤p≤1e14)</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/01/Fansblog/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1388,7 +1424,7 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1414,7 +1450,7 @@ sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-10-09T08:17:18.757Z</updated>
+  <updated>2019-10-21T07:56:18.745Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>[CCPC 2017] Master of Sequence</title>
+    <link href="https://blog.kanari.moe/2019/10/21/problem-master-of-sequence/"/>
+    <id>https://blog.kanari.moe/2019/10/21/problem-master-of-sequence/</id>
+    <published>2019-10-21T07:37:40.000Z</published>
+    <updated>2019-10-21T07:56:18.745Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>玩一玩网络封包</title>
+    <link href="https://blog.kanari.moe/2019/10/14/do-something-with-network-packets/"/>
+    <id>https://blog.kanari.moe/2019/10/14/do-something-with-network-packets/</id>
+    <published>2019-10-14T09:06:06.000Z</published>
+    <updated>2019-10-14T15:23:35.078Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[CFEDU74 E] Keyboard Purchase</title>
     <link href="https://blog.kanari.moe/2019/10/09/problem-keyboard-purchase/"/>
     <id>https://blog.kanari.moe/2019/10/09/problem-keyboard-purchase/</id>
     <published>2019-10-09T07:38:43.000Z</published>
-    <updated>2019-10-09T08:17:18.757Z</updated>
+    <updated>2019-10-09T15:18:11.670Z</updated>
     
     <summary type="html">
     
@@ -225,6 +275,33 @@
     
       <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Rust学习记录</title>
+    <link href="https://blog.kanari.moe/2019/09/24/learning-rust/"/>
+    <id>https://blog.kanari.moe/2019/09/24/learning-rust/</id>
+    <published>2019-09-24T14:56:47.000Z</published>
+    <updated>2019-10-13T08:09:32.314Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
+    
+    
+      <category term="rust" scheme="https://blog.kanari.moe/tags/rust/"/>
     
   </entry>
   
@@ -474,84 +551,6 @@
     
     
       <category term="莫队" scheme="https://blog.kanari.moe/tags/%E8%8E%AB%E9%98%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Distribution of Books</title>
-    <link href="https://blog.kanari.moe/2019/08/01/problem-distribution-of-books/"/>
-    <id>https://blog.kanari.moe/2019/08/01/problem-distribution-of-books/</id>
-    <published>2019-08-01T07:15:52.000Z</published>
-    <updated>2019-09-19T02:08:41.453Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
-      <category term="离散化" scheme="https://blog.kanari.moe/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Fansblog</title>
-    <link href="https://blog.kanari.moe/2019/08/01/Fansblog/"/>
-    <id>https://blog.kanari.moe/2019/08/01/Fansblog/</id>
-    <published>2019-08-01T07:15:13.000Z</published>
-    <updated>2019-09-19T01:51:42.681Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Farmer John keeps a website called ‘FansBlog’ .Everyday , there are many people visited this blog.One day, he find the visits has reached P , which is a prime number.He thinks it is a interesting fact.And he remembers that the visits had reached another prime number.He try to find out the largest prime number Q ( Q &amp;lt; P ) ,and get the answer of Q! Module P.But he is too busy to find out the answer. So he ask you for help. ( Q! is the product of all positive integers less than or equal to n: n! = n * (n-1) * (n-2) * (n-3) &lt;em&gt;… &lt;/em&gt; 3 * 2 * 1 . For example, 4! = 4 * 3 * 2 * 1 = 24 )&lt;/p&gt;
-&lt;p&gt;First line contains an number T(1&amp;lt;=T&amp;lt;=10) indicating the number of testcases. Then T line follows, each contains a positive prime number P (1e9≤p≤1e14)&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="威尔逊定理" scheme="https://blog.kanari.moe/tags/%E5%A8%81%E5%B0%94%E9%80%8A%E5%AE%9A%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>咸鱼数论</title>
-    <link href="https://blog.kanari.moe/2019/07/22/numeric-water/"/>
-    <id>https://blog.kanari.moe/2019/07/22/numeric-water/</id>
-    <published>2019-07-22T07:59:12.000Z</published>
-    <updated>2019-09-30T01:07:23.594Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
-    
-    
-      <category term="数论" scheme="https://blog.kanari.moe/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   

@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="Kanari&#39;s blog">
 <meta property="og:description" content="当在使用一指禅键入一个字符串的时候，你需要不停的移动手指。比如说输入“af”，手指需要跨过3个键（包括终点）输入“a”和“f”。 针对一个经常输入的字符串，你可以定制一个长条键盘，使得在这个键盘上输入字符串需要移动的距离最短。 给出字符串长度\(n\)与字典大小\(k\)（小写字母的前\(k\)个），给出最优情况下手指需要移动的距离。 分析 这道题和之前那道marbles很像……或者说状压">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-09T08:17:18.757Z">
+<meta property="og:updated_time" content="2019-10-09T15:18:11.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[CFEDU74 E] Keyboard Purchase">
 <meta name="twitter:description" content="当在使用一指禅键入一个字符串的时候，你需要不停的移动手指。比如说输入“af”，手指需要跨过3个键（包括终点）输入“a”和“f”。 针对一个经常输入的字符串，你可以定制一个长条键盘，使得在这个键盘上输入字符串需要移动的距离最短。 给出字符串长度\(n\)与字典大小\(k\)（小写字母的前\(k\)个），给出最优情况下手指需要移动的距离。 分析 这道题和之前那道marbles很像……或者说状压">
@@ -307,7 +307,7 @@
                 
               
 
-              <time title="创建时间：2019-10-09 15:38:43 / 修改时间：16:17:18" itemprop="dateCreated datePublished" datetime="2019-10-09T15:38:43+08:00">2019-10-09</time>
+              <time title="创建时间：2019-10-09 15:38:43 / 修改时间：23:18:11" itemprop="dateCreated datePublished" datetime="2019-10-09T15:38:43+08:00">2019-10-09</time>
             </span>
           
             
@@ -348,7 +348,7 @@
 <p>题目即依次决定键盘的下一个按键装啥，并在原字符串里计算需要移动的次数。设<span class="math inline">\(f(S)\)</span>表示已经考虑了集合<span class="math inline">\(S\)</span>里所有的按键。不过仔细思考一下发现这个代价需要知道先前安装的按键的顺序，而这个顺序显然不能加入到状态里，这是无法接受的。必须要通过别的方式来计算。</p>
 <p>然后我又卡了。</p>
 <p>这是没见过的转移方式……考虑本轮没有排入键A，那么一定就<strong>排入了别的键B</strong>，那么，这次对于事件“排A”的<strong>一次delay</strong>会导致原串里A和相邻<strong>在键盘上已确定位置的</strong>字母间的转移多<strong>一个</strong>代价。</p>
-<p>搞不太清楚这个<span class="math inline">\(f(S)\)</span>现在代表的是什么了…不知可否有人指导。</p>
+<p>有种模糊的感觉。之前那个题目是计算当前元素和已有元素之间的代价；这个是计算已有元素和未有元素之间的累进式代价。搞不太清楚这个<span class="math inline">\(f(S)\)</span>现在代表的是什么了…不知可否有人指导。</p>
 <h2 id="代码">代码</h2>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXK=<span class="number">21</span>;</span><br><span class="line"><span class="keyword">int</span> nlen,klen;</span><br><span class="line"><span class="built_in">string</span> inp;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> cost[MAXK][MAXK];</span><br><span class="line">ll dp[<span class="number">1</span>&lt;&lt;<span class="number">20</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;nlen&gt;&gt;klen;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;inp;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nlen;i++)&#123;</span><br><span class="line">        cost[inp[i<span class="number">-1</span>]-<span class="string">'a'</span>][inp[i]-<span class="string">'a'</span>]++;</span><br><span class="line">        cost[inp[i]-<span class="string">'a'</span>][inp[i<span class="number">-1</span>]-<span class="string">'a'</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0x3f</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;klen);i++)&#123;</span><br><span class="line">        ll scost=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;klen;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!((i&gt;&gt;j)&amp;<span class="number">1</span>))<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;klen;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((i&gt;&gt;k)&amp;<span class="number">1</span>)<span class="keyword">continue</span>;</span><br><span class="line">                scost+=cost[j][k];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;klen;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>((i&gt;&gt;j)&amp;<span class="number">1</span>)<span class="keyword">continue</span>;</span><br><span class="line">            dp[i|(<span class="number">1</span>&lt;&lt;j)]=min(dp[i|(<span class="number">1</span>&lt;&lt;j)],dp[i]+scost);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;dp[(<span class="number">1</span>&lt;&lt;klen)<span class="number">-1</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">    </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -385,6 +385,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/14/do-something-with-network-packets/" rel="prev" title="玩一玩网络封包">
+                  玩一玩网络封包 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -451,7 +455,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -477,7 +481,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
