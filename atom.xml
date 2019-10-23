@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-10-21T07:56:18.745Z</updated>
+  <updated>2019-10-23T11:22:11.952Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[CCPC2017杭州] Heathrock</title>
+    <link href="https://blog.kanari.moe/2019/10/23/problem-hearthrock/"/>
+    <id>https://blog.kanari.moe/2019/10/23/problem-hearthrock/</id>
+    <published>2019-10-23T11:13:24.000Z</published>
+    <updated>2019-10-23T11:22:11.952Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这题意太长了，我懒得复制。&lt;/p&gt;
+&lt;h2 id=&quot;分析&quot;&gt;分析&lt;/h2&gt;
+&lt;p&gt;额……其实就是爆搜模拟。但是状态比较多，需要记双方生命值，3个随从的生命，当前场数，魔力，体力，以及一些玄学优化。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自选目标的牌一定会放在回合的较后出，因为其不会累加魔力。&lt;/li&gt;
+&lt;li&gt;如果剩下的牌全踢脸也踢不死，直接返回。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;之后就能跑得飞快。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="模拟" scheme="https://blog.kanari.moe/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>[CCPC 2017] Master of Sequence</title>
@@ -529,28 +557,6 @@
     
     
       <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>莫队算法</title>
-    <link href="https://blog.kanari.moe/2019/08/03/mo-s-algorithm/"/>
-    <id>https://blog.kanari.moe/2019/08/03/mo-s-algorithm/</id>
-    <published>2019-08-03T05:47:38.000Z</published>
-    <updated>2019-09-26T12:24:12.139Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;对于可以离线的区间询问问题，莫队算法提出了一种可以在&lt;span class=&quot;math inline&quot;&gt;\(O(n\sqrt n)\)&lt;/span&gt;(无修改)，&lt;span class=&quot;math inline&quot;&gt;\(n^{3/5}\)&lt;/span&gt;(带修改)内得出答案的方法。&lt;/p&gt;
-&lt;p&gt;主要的思路是对询问离线并分块，利用在2个区间间答案的&lt;strong&gt;快速转移&lt;/strong&gt;（如果无法找到快速转移的方法，就没法用了）降低复杂度。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
-    
-    
-      <category term="莫队" scheme="https://blog.kanari.moe/tags/%E8%8E%AB%E9%98%9F/"/>
     
   </entry>
   
