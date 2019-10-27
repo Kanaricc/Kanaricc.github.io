@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-10-23T11:22:11.952Z</updated>
+  <updated>2019-10-27T06:23:12.373Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Liaoning Ship’s Voyage</title>
+    <link href="https://blog.kanari.moe/2019/10/27/problem-liaoning-ships-voyage/"/>
+    <id>https://blog.kanari.moe/2019/10/27/problem-liaoning-ships-voyage/</id>
+    <published>2019-10-27T06:13:50.000Z</published>
+    <updated>2019-10-27T06:23:12.373Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="计算几何" scheme="https://blog.kanari.moe/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>[CCPC2017杭州] Heathrock</title>
@@ -528,35 +555,6 @@
     
     
       <category term="计数" scheme="https://blog.kanari.moe/tags/%E8%AE%A1%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[HDU6638] Snowy Smile</title>
-    <link href="https://blog.kanari.moe/2019/08/07/problem-snowy-smile/"/>
-    <id>https://blog.kanari.moe/2019/08/07/problem-snowy-smile/</id>
-    <published>2019-08-07T12:45:28.000Z</published>
-    <updated>2019-09-19T02:15:13.403Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;There are n pirate chests buried in Byteland, labeled by 1,2,…,n. The i-th chest&#39;s location is (xi,yi), and its value is wi, wi can be negative since the pirate can add some poisonous gases into the chest. When you open the i-th pirate chest, you will get wi value.&lt;/p&gt;
-&lt;p&gt;You want to make money from these pirate chests. You can select a rectangle, the sides of which are all paralleled to the axes, and then all the chests inside it or on its border will be opened. Note that you must open all the chests within that range regardless of their values are positive or negative. But you can choose a rectangle with nothing in it to get a zero sum.&lt;/p&gt;
-&lt;p&gt;Please write a program to find the best rectangle with maximum total value.&lt;/p&gt;
-&lt;p&gt;The first line of the input contains an integer T(1≤T≤100), denoting the number of test cases.&lt;/p&gt;
-&lt;p&gt;In each test case, there is one integer n(1≤n≤2000) in the first line, denoting the number of pirate chests.&lt;/p&gt;
-&lt;p&gt;For the next n lines, each line contains three integers xi,yi,wi(−109≤xi,yi,wi≤109), denoting each pirate chest.&lt;/p&gt;
-&lt;p&gt;It is guaranteed that ∑n≤10000.&lt;/p&gt;
-&lt;h2 id=&quot;分析&quot;&gt;分析&lt;/h2&gt;
-&lt;p&gt;首先，我没做出来。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
     
   </entry>
   
