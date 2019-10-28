@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="Kanari&#39;s blog">
 <meta property="og:description" content="Liaoning ship, which named after a province of China, is the first aircraft carrier commissioned into the People&apos;s Liberation Army Navy. It was bought from Ukraine as a stripped hulk and was rebuilt b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-27T06:23:12.373Z">
+<meta property="og:updated_time" content="2019-10-27T06:35:13.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Liaoning Ship’s Voyage">
 <meta name="twitter:description" content="Liaoning ship, which named after a province of China, is the first aircraft carrier commissioned into the People&apos;s Liberation Army Navy. It was bought from Ukraine as a stripped hulk and was rebuilt b">
@@ -307,7 +307,7 @@
                 
               
 
-              <time title="创建时间：2019-10-27 14:13:50 / 修改时间：14:23:12" itemprop="dateCreated datePublished" datetime="2019-10-27T14:13:50+08:00">2019-10-27</time>
+              <time title="创建时间：2019-10-27 14:13:50 / 修改时间：14:35:13" itemprop="dateCreated datePublished" datetime="2019-10-27T14:13:50+08:00">2019-10-27</time>
             </span>
           
             
@@ -343,6 +343,7 @@
 <p>Now Liaoning ship is on a new voyage to the Atlantic Ocean for a maneuver! The vast maneuver region on the ocean can be seen as an n×n grid which has n×n crosspoints. Each crosspoint stands for a check point of the maneuver region. Liaoning starts from the bottom-left check point whose coordinate is (0,0), and its destination is the upper-right checkpoint whose coordinate is (n-1,n-1). The positive side of the x axis points to the right, and the positive side of the y axis points up. All check points’ coordinates are integral. During each move, Liaoning can go from one check point to its adjacent 8 check points along a straight line, and each move takes Liaoning one day. Some check points are not available to go due to the bad weather. And, as you know, on the Atlantic Ocean, there is a Bermuda Triangle in which many ships and planes were missing. Liaoning can’t take risk to go into that triangle. Of course, Liaoning can’t go outside the maneuver region. Please figure out a route for Liaoning to reach its destination as soon as possible.</p>
 <h2 id="分析">分析</h2>
 <p>实际上本体是个Dijkstra，但是两点是否相连需要使用到计算几何的东西。重点就在于如何判断行进过程是否穿过了百慕大三角。</p>
+<a id="more"></a>
 <p>然后就WA了8发。</p>
 <p>实际判断时会有很多问题。例如从边上经过，从外界到边，从边到边，从边到外界，从外界到点，从点到外界，从边穿过点……如果一开始选择的判断方法有锅的话，之后就改不出来了，只能WA……</p>
 <p>最终想出来的解决办法是拿到行进线段与三角形三边的交点，连接交点构造新线段后，判断线段中点是否在三角形内；并同时判断起点终点是否在三角形内。这样就能避免掉复杂的讨论。</p>
@@ -385,6 +386,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/27/have-you-see-rotation/" rel="prev" title="上英语的各位，你们的网页在旋转吗？">
+                  上英语的各位，你们的网页在旋转吗？ <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -451,7 +456,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

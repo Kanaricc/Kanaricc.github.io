@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-10-27T06:23:12.373Z</updated>
+  <updated>2019-10-28T10:58:58.405Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Liaoning Ship’s Voyage</title>
-    <link href="https://blog.kanari.moe/2019/10/27/problem-liaoning-ships-voyage/"/>
-    <id>https://blog.kanari.moe/2019/10/27/problem-liaoning-ships-voyage/</id>
-    <published>2019-10-27T06:13:50.000Z</published>
-    <updated>2019-10-27T06:23:12.373Z</updated>
+    <title>上英语的各位，你们的网页在旋转吗？</title>
+    <link href="https://blog.kanari.moe/2019/10/27/have-you-see-rotation/"/>
+    <id>https://blog.kanari.moe/2019/10/27/have-you-see-rotation/</id>
+    <published>2019-10-27T06:28:17.000Z</published>
+    <updated>2019-10-28T10:58:58.405Z</updated>
     
     <summary type="html">
     
@@ -32,6 +32,28 @@
           &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
         
       
+    
+    </summary>
+    
+    
+      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Liaoning Ship’s Voyage</title>
+    <link href="https://blog.kanari.moe/2019/10/27/problem-liaoning-ships-voyage/"/>
+    <id>https://blog.kanari.moe/2019/10/27/problem-liaoning-ships-voyage/</id>
+    <published>2019-10-27T06:13:50.000Z</published>
+    <updated>2019-10-27T06:35:13.377Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Liaoning ship, which named after a province of China, is the first aircraft carrier commissioned into the People&#39;s Liberation Army Navy. It was bought from Ukraine as a stripped hulk and was rebuilt by China as an important part of China’s blue water Navy plan. Liaoning ship has sailed far into the Pacific Ocean for serval times, which shows the power and resolve of China to defend her integrity of territory.&lt;/p&gt;
+&lt;p&gt;Now Liaoning ship is on a new voyage to the Atlantic Ocean for a maneuver! The vast maneuver region on the ocean can be seen as an n×n grid which has n×n crosspoints. Each crosspoint stands for a check point of the maneuver region. Liaoning starts from the bottom-left check point whose coordinate is (0,0), and its destination is the upper-right checkpoint whose coordinate is (n-1,n-1). The positive side of the x axis points to the right, and the positive side of the y axis points up. All check points’ coordinates are integral. During each move, Liaoning can go from one check point to its adjacent 8 check points along a straight line, and each move takes Liaoning one day. Some check points are not available to go due to the bad weather. And, as you know, on the Atlantic Ocean, there is a Bermuda Triangle in which many ships and planes were missing. Liaoning can’t take risk to go into that triangle. Of course, Liaoning can’t go outside the maneuver region. Please figure out a route for Liaoning to reach its destination as soon as possible.&lt;/p&gt;
+&lt;h2 id=&quot;分析&quot;&gt;分析&lt;/h2&gt;
+&lt;p&gt;实际上本体是个Dijkstra，但是两点是否相连需要使用到计算几何的东西。重点就在于如何判断行进过程是否穿过了百慕大三角。&lt;/p&gt;
     
     </summary>
     
@@ -528,33 +550,6 @@
     
     
       <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[FZU 2204]Seven</title>
-    <link href="https://blog.kanari.moe/2019/08/10/problem-seven/"/>
-    <id>https://blog.kanari.moe/2019/08/10/problem-seven/</id>
-    <published>2019-08-10T02:53:29.000Z</published>
-    <updated>2019-09-19T02:13:38.991Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="计数" scheme="https://blog.kanari.moe/tags/%E8%AE%A1%E6%95%B0/"/>
     
   </entry>
   
