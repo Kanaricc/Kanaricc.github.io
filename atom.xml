@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-10-29T02:51:44.411Z</updated>
+  <updated>2019-10-27T06:35:13.377Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>上英语的各位，你们的网页在旋转吗？</title>
-    <link href="https://blog.kanari.moe/2019/10/27/have-you-see-rotation/"/>
-    <id>https://blog.kanari.moe/2019/10/27/have-you-see-rotation/</id>
-    <published>2019-10-27T06:28:17.000Z</published>
-    <updated>2019-10-29T02:51:44.411Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>Liaoning Ship’s Voyage</title>
@@ -550,6 +525,33 @@
     
     
       <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[FZU 2204]Seven</title>
+    <link href="https://blog.kanari.moe/2019/08/10/problem-seven/"/>
+    <id>https://blog.kanari.moe/2019/08/10/problem-seven/</id>
+    <published>2019-08-10T02:53:29.000Z</published>
+    <updated>2019-09-19T02:13:38.991Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="计数" scheme="https://blog.kanari.moe/tags/%E8%AE%A1%E6%95%B0/"/>
     
   </entry>
   
