@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-11-07T03:02:01.204Z</updated>
+  <updated>2019-11-19T02:50:37.474Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>8年了，春物终于迎来了结局</title>
+    <link href="https://blog.kanari.moe/2019/11/19/i-love-yuki/"/>
+    <id>https://blog.kanari.moe/2019/11/19/i-love-yuki/</id>
+    <published>2019-11-19T02:45:24.000Z</published>
+    <updated>2019-11-19T02:50:37.474Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>数位DP</title>
@@ -524,33 +549,6 @@
       <category term="主席树" scheme="https://blog.kanari.moe/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/"/>
     
       <category term="RMQ" scheme="https://blog.kanari.moe/tags/RMQ/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一个bug (HDU 6703)</title>
-    <link href="https://blog.kanari.moe/2019/08/24/a-wonderful-bug/"/>
-    <id>https://blog.kanari.moe/2019/08/24/a-wonderful-bug/</id>
-    <published>2019-08-24T14:28:38.000Z</published>
-    <updated>2019-09-19T01:22:01.068Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
     
   </entry>
   
