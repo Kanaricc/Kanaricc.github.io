@@ -66,7 +66,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.kanari.moe/2019/12/27/the-new-jwgl/loadkb.png">
 <meta property="og:image" content="https://blog.kanari.moe/2019/12/27/the-new-jwgl/panle.png">
-<meta property="og:updated_time" content="2019-12-27T04:53:53.189Z">
+<meta property="og:updated_time" content="2019-12-27T05:16:54.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新教务解析">
 <meta name="twitter:description" content="学校换教务了?突如其来的惊喜,终于要摆脱选课必炸的问题了吗.结果第一天教务出了个锅. 扒扒代码看看开发这个教务的公司的水平,彻底失望. 感谢学校想要为同学和老师解决问题的心;痛斥这个什么强智公司写出来的垃圾完全毁掉了初衷. 这个教务系统的问题远不止时区,最大的问题是它表面上相比先前的系统...似乎...没啥...长进? 首页 编码方式 首先,来看这教务如何处理登录信息.">
@@ -310,7 +310,7 @@
                 
               
 
-              <time title="创建时间：2019-12-27 09:08:55 / 修改时间：12:53:53" itemprop="dateCreated datePublished" datetime="2019-12-27T09:08:55+08:00">2019-12-27</time>
+              <time title="创建时间：2019-12-27 09:08:55 / 修改时间：13:16:54" itemprop="dateCreated datePublished" datetime="2019-12-27T09:08:55+08:00">2019-12-27</time>
             </span>
           
             
@@ -382,7 +382,7 @@
 <p>整个后台提交数据的方式,全是隐藏表单+js赋值提交.</p>
 <h2 id="响应数据">响应数据</h2>
 <h3 id="时间">时间</h3>
-<p>完美的格林尼治时间,到文章发布时也没改.我不知道改下时间对于该公司运维来说难度有多大.</p>
+<p>其HTTP服务仍然是完美的格林尼治时间,到文章发布时也没改.我不知道改下时间对于该公司运维来说难度有多大.</p>
 <h3 id="cookie">Cookie</h3>
 <p>可以发现Cookie同样是MD5加密了什么玩意东西.</p>
 <blockquote>
@@ -392,7 +392,7 @@
 <p>结论,<strong>这不该是一个现代教务该有的水平</strong>,从头到尾都透漏着不专业的表现,随便抓几个本科生多学点html和jquery和java的水平.连css和英语都不用学,毕竟这css和命名写的都是什么垃圾.</p>
 <p>无法完全接触到后端,因此不知道后端的技术架构如何,不过看前端都写不好,大可猜测后端架构也不会怎样.单凭前端都是无论如何都是说不过去的.首先是硬伤:</p>
 <ul>
-<li><strong>安全意识淡薄</strong>.这是最严重的问题.前端base64,和明文有区别吗?后端md5加密,连盐都不加,等撞库吗?整个安全体系四处漏风,和没有一样.该公司完全不把学校的机密信息当回事.</li>
+<li><strong>安全意识淡薄</strong>.这是最严重的问题.前端base64,和明文有区别吗?后端md5加密,连盐都不加,等撞库吗?整个安全体系四处漏风,和没有一样.</li>
 <li>命名垃圾.开发人员英语都没学好.</li>
 <li>无开发约定.命名拼音英语混合一把梭,前后端交互数据格式胡乱拼接一把梭.</li>
 <li>无移动端适配.手机打开首页,一片狼藉.</li>
@@ -403,6 +403,7 @@
 <li>html拼接,就连已经快"被迫过时"的MVC都没有用,后台完全一把梭.</li>
 <li>无js框架.所有的代码都是毫无规划的写.而且你明明引了jquery,却不好好利用,这啥啊你.</li>
 <li>前后端交互方式使用表单.没错,用了js来动态提交信息,然而却是用的表单,再往前走一小步,用ajax就能让整个网站体验前进一大步.</li>
+<li>硬编码.单说url拼接,都是直接写死的.</li>
 <li>哭笑不得的负载平衡.你这前端在平衡啥呢?后端的东西拿到前端来写,就好像这公司还活在上个世纪.真的害怕它后端到底写了啥.</li>
 <li>对了,它的js是拼接的.你懂吧?</li>
 </ul>
