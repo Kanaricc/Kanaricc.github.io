@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2019-11-19T02:50:37.474Z</updated>
+  <updated>2019-12-27T03:13:38.894Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新教务解析</title>
+    <link href="https://blog.kanari.moe/2019/12/27/the-new-jwgl/"/>
+    <id>https://blog.kanari.moe/2019/12/27/the-new-jwgl/</id>
+    <published>2019-12-27T01:08:55.000Z</published>
+    <updated>2019-12-27T03:13:38.894Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学校换教务了?突如其来的惊喜,终于要摆脱选课必炸的问题了吗.结果第一天教务出了个锅.&lt;/p&gt;
+&lt;p&gt;扒扒代码看看开发这个教务的公司的水平,彻底失望.&lt;/p&gt;
+&lt;p&gt;感谢学校想要为同学和老师解决问题的心;痛斥这个什么强智公司写出来的垃圾完全毁掉了初衷.&lt;/p&gt;
+&lt;p&gt;真的希望学校再次评估一下这个教务,球球了.&lt;/p&gt;
+&lt;h2 id=&quot;首页&quot;&gt;首页&lt;/h2&gt;
+&lt;h3 id=&quot;编码方式&quot;&gt;编码方式&lt;/h3&gt;
+&lt;p&gt;首先,来看这教务如何处理登录信息.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="梦话" scheme="https://blog.kanari.moe/categories/%E6%A2%A6%E8%AF%9D/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Largest Common Submatrix</title>
+    <link href="https://blog.kanari.moe/2019/12/02/problem-largest-common-submatrix/"/>
+    <id>https://blog.kanari.moe/2019/12/02/problem-largest-common-submatrix/</id>
+    <published>2019-12-01T16:08:04.000Z</published>
+    <updated>2019-12-02T02:41:37.004Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>8年了，春物终于迎来了结局</title>
@@ -486,69 +536,6 @@
     
     
       <category term="mathematica" scheme="https://blog.kanari.moe/tags/mathematica/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些筛法的题</title>
-    <link href="https://blog.kanari.moe/2019/09/05/some-sieves/"/>
-    <id>https://blog.kanari.moe/2019/09/05/some-sieves/</id>
-    <published>2019-09-05T12:22:49.000Z</published>
-    <updated>2019-09-19T01:06:44.817Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;技巧&quot;&gt;技巧&lt;/h2&gt;
-&lt;h3 id=&quot;自然溢出&quot;&gt;自然溢出&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;自然溢出不会影响低位数据,所以有的时候你不需要取模,而是一个unsigned.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;除法取模&quot;&gt;除法取模&lt;/h3&gt;
-&lt;p&gt;对于式子&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;\[
-\frac {a \times b}{c} \mod p \equiv \frac{a \times b \mod cp}{c}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;h2 id=&quot;细节&quot;&gt;细节&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;注意数据类型,例如&lt;code&gt;6*(ll)(1&amp;lt;&amp;lt;30)&lt;/code&gt;是要出问题的&lt;/li&gt;
-&lt;li&gt;注意函数在&lt;span class=&quot;math inline&quot;&gt;\(f(1)\)&lt;/span&gt;位置的取值,不要忘记初始化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;divisor&quot;&gt;Divisor&lt;/h2&gt;
-&lt;p&gt;Given &lt;span class=&quot;math inline&quot;&gt;\(n\)&lt;/span&gt; and &lt;span class=&quot;math inline&quot;&gt;\(m\)&lt;/span&gt; (&lt;span class=&quot;math inline&quot;&gt;\(1 \leq n,m \leq 5 \times 10^4\)&lt;/span&gt;), please calculate&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="筛法" scheme="https://blog.kanari.moe/tags/%E7%AD%9B%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[HDU 6704] Kth Occurrence</title>
-    <link href="https://blog.kanari.moe/2019/08/25/problem-kth-occurrence/"/>
-    <id>https://blog.kanari.moe/2019/08/25/problem-kth-occurrence/</id>
-    <published>2019-08-25T07:11:56.000Z</published>
-    <updated>2019-09-19T02:12:11.489Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;You are given a string S consisting of only lowercase english letters and some queries.&lt;/p&gt;
-&lt;p&gt;For each query (l,r,k), please output the starting position of the k-th occurence of the substring SlSl+1...Sr in S.&lt;/p&gt;
-&lt;h2 id=&quot;分析&quot;&gt;分析&lt;/h2&gt;
-&lt;p&gt;第一个问题是快速找出所有出现的子串的位置,可以使用后缀数组.这些字串出现在sa的一个连续的区间中.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="后缀数组" scheme="https://blog.kanari.moe/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="主席树" scheme="https://blog.kanari.moe/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/"/>
-    
-      <category term="RMQ" scheme="https://blog.kanari.moe/tags/RMQ/"/>
     
   </entry>
   

@@ -274,6 +274,196 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/12/27/the-new-jwgl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/12/27/the-new-jwgl/" class="post-title-link" itemprop="url">新教务解析</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-27 09:08:55 / 修改时间：11:13:38" itemprop="dateCreated datePublished" datetime="2019-12-27T09:08:55+08:00">2019-12-27</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/梦话/" itemprop="url" rel="index"><span itemprop="name">梦话</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>学校换教务了?突如其来的惊喜,终于要摆脱选课必炸的问题了吗.结果第一天教务出了个锅.</p>
+<p>扒扒代码看看开发这个教务的公司的水平,彻底失望.</p>
+<p>感谢学校想要为同学和老师解决问题的心;痛斥这个什么强智公司写出来的垃圾完全毁掉了初衷.</p>
+<p>真的希望学校再次评估一下这个教务,球球了.</p>
+<h2 id="首页">首页</h2>
+<h3 id="编码方式">编码方式</h3>
+<p>首先,来看这教务如何处理登录信息.</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/12/27/the-new-jwgl/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/12/02/problem-largest-common-submatrix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/12/02/problem-largest-common-submatrix/" class="post-title-link" itemprop="url">Largest Common Submatrix</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-02 00:08:04 / 修改时间：10:41:37" itemprop="dateCreated datePublished" datetime="2019-12-02T00:08:04+08:00">2019-12-02</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>给出2个<span class="math inline">\(n \times m\)</span>大小的矩阵，求出两矩阵中最大的相同子矩阵。</p>
+<p><span class="math inline">\(n,m \leq 1000\)</span></p>
+<h2 id="分析">分析</h2>
+<p>首先为了方便接下来的计算，将第一个矩阵"正规化"（从上到下，从左到右1-nm），以矩阵1对矩阵2执行映射。这样二者的最大子矩阵可以仅通过矩阵2得到。</p>
+<p>处理每个元素能够往下“拉”的长度。再以每行</p>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/11/19/i-love-yuki/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1060,210 +1250,6 @@
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/10/05/problem-marbles/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/05/problem-marbles/" class="post-title-link" itemprop="url">[CF585E] Marbles</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-05 22:18:52 / 修改时间：22:34:16" itemprop="dateCreated datePublished" datetime="2019-10-05T22:18:52+08:00">2019-10-05</time>
-            </span>
-          
-            
-
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Monocarp has arranged n colored marbles in a row. The color of the i-th marble is ai. Monocarp likes ordered things, so he wants to rearrange marbles in such a way that all marbles of the same color form a contiguos segment (and there is only one such segment for each color).</p>
-<p>In other words, Monocarp wants to rearrange marbles so that, for every color j, if the leftmost marble of color j is l-th in the row, and the rightmost marble of this color has position r in the row, then every marble from l to r has color j.</p>
-<p>To achieve his goal, Monocarp can do the following operation any number of times: choose two neighbouring marbles, and swap them.</p>
-<p>You have to calculate the minimum number of operations Monocarp has to perform to rearrange the marbles. Note that the order of segments of marbles having equal color does not matter, it is only required that, for every color, all the marbles of this color form exactly one contiguous segment.</p>
-<h2 id="分析">分析</h2>
-<p>这道题的翻译就是“重新确定每个颜色的权值，使得逆序对最少”。</p>
-<p>然后我就卡了，现在我也不是特别清楚为啥可以dp，只是知道能dp。</p>
-<p>选择状态<span class="math inline">\(f(S)\)</span>表示集合<span class="math inline">\(S\)</span>已经全部分配权值时产生的最少逆序对。枚举下一个颜色，给予下一个（较小）权值，并计算代价。</p>
-<p><span class="math display">\[
-f(S+\{i\})=min\{f(S)+w\}
-\]</span></p>
-<p>接下来是w的处理。我们需要的是在当前颜色的所有点前的<strong>已经拥有新权值</strong>的点数目，这可以事先预处理。预处理颜色i前颜色j的pair数即可。</p>
-<h2 id="代码">代码</h2>
-<p>不小心把ptr扔到了里层循环里T了发…</p>
-<p>明明第一步完事都很直白了，就是非得被卡一下。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">400010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXC=<span class="number">21</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> nlen;</span><br><span class="line"><span class="keyword">int</span> num[MAXN];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; pos[MAXC];</span><br><span class="line">ll cnt[MAXC][MAXC];</span><br><span class="line"><span class="keyword">int</span> tick=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> newColor[MAXN];</span><br><span class="line"> </span><br><span class="line">ll dp[<span class="number">1</span>&lt;&lt;MAXC];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;nlen;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nlen;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;num[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(newColor,<span class="number">-1</span>,<span class="keyword">sizeof</span>(newColor));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nlen;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(newColor[num[i]]==<span class="number">-1</span>)newColor[num[i]]=tick++;</span><br><span class="line">        pos[newColor[num[i]]].push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tick;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;tick;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i==j)<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> ptr=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;pos[i].size();k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(ptr&lt;<span class="number">0</span>)ptr=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>(ptr&lt;pos[j].size() &amp;&amp; pos[j][ptr]&lt;pos[i][k])ptr++;</span><br><span class="line">                ptr--;</span><br><span class="line">                <span class="keyword">if</span>(ptr&gt;=<span class="number">0</span> &amp;&amp; pos[j][ptr]&lt;pos[i][k])&#123;</span><br><span class="line">                    cnt[i][j]+=ptr+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0x3f</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;tick);i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;tick;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>((i&gt;&gt;j)&amp;<span class="number">1</span>)<span class="keyword">continue</span>;</span><br><span class="line">            ll diff=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;tick;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>((i&gt;&gt;k)&amp;<span class="number">1</span>)diff+=cnt[j][k];</span><br><span class="line">            &#125;</span><br><span class="line">            dp[i|(<span class="number">1</span>&lt;&lt;j)]=min(dp[i|(<span class="number">1</span>&lt;&lt;j)],dp[i]+diff);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;dp[(<span class="number">1</span>&lt;&lt;tick)<span class="number">-1</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/10/05/problem-ticket-game/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/05/problem-ticket-game/" class="post-title-link" itemprop="url">[CF585D] Ticket Game</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-05 15:13:27 / 修改时间：16:01:34" itemprop="dateCreated datePublished" datetime="2019-10-05T15:13:27+08:00">2019-10-05</time>
-            </span>
-          
-            
-
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Monocarp and Bicarp live in Berland, where every bus ticket consists of n digits (n is an even number). During the evening walk Monocarp and Bicarp found a ticket where some of the digits have been erased. The number of digits that have been erased is even.</p>
-<p>Monocarp and Bicarp have decided to play a game with this ticket. Monocarp hates happy tickets, while Bicarp collects them. A ticket is considered happy if the sum of the first <span class="math inline">\(\frac n2\)</span> digits of this ticket is equal to the sum of the last <span class="math inline">\(\frac n2\)</span> digits.</p>
-<p>Monocarp and Bicarp take turns (and Monocarp performs the first of them). During each turn, the current player must replace any erased digit with any digit from 0 to 9. The game ends when there are no erased digits in the ticket.</p>
-<p>If the ticket is happy after all erased digits are replaced with decimal digits, then Bicarp wins. Otherwise, Monocarp wins. You have to determine who will win if both players play optimally.</p>
-<h2 id="分析">分析</h2>
-<p>在做这道题的时候，我发现了实际上影响答案的只和两边的 已知数的和 以及未知位的数目有关，发现了获胜的根本是前后两部分和的差值大小，发现了先手的目的是<strong>扩大差值</strong>使得后手无法通过某种方式追赶。</p>
-<p>但是到这我就卡住了。淦，为什么我这么菜。</p>
-<p>接下来要考虑的是<strong>优势</strong>，在这道题里优势就是差值。先手的目的是扩大优势，在大的一边增大会加大优势，而在小的一边置0不会扩大优势；后手要<strong>减小优势</strong>，同样的办法就是在小的一侧置数来追赶另一侧，在大的一侧置0不会更好。</p>
-<p>那么，又可以得出先手扩大优势最好的办法是置9（最大）。那么游戏最开始的几步，就是双方在两侧填写9。直到某侧不再有空位。</p>
-<p>此时，如果空位在大的一侧，先手必赢。如果空位在小的一侧，继续讨论如下</p>
-<p><span class="math display">\[
-x_1+x_2+\cdots+x_n=C
-\]</span></p>
-<p>首先<span class="math inline">\(2|n\)</span>显然。</p>
-<p>当C不是9的倍数时，先手总有办法让最终结果偏离。因此该情况只有当<span class="math inline">\(\frac n2 \times 9 = n\)</span>时后手才能获胜。</p>
-<h2 id="代码">代码</h2>
-<p>嫖了队友的…我瞎xx搞的结论WA23了…</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">200005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n/<span class="number">2</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'?'</span>) cnt++;</span><br><span class="line">		<span class="keyword">else</span> sum+=s[i]-<span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n/<span class="number">2</span>+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'?'</span>) cnt--;</span><br><span class="line">		<span class="keyword">else</span> sum-=s[i]-<span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;cnt&lt;&lt;" "&lt;&lt;sum&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">if</span>(sum*<span class="number">2</span>==-cnt*<span class="number">9</span>) <span class="built_in">puts</span>(<span class="string">"Bicarp"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"Monocarp"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
@@ -1316,7 +1302,7 @@ x_1+x_2+\cdots+x_n=C
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1439,11 +1425,11 @@ x_1+x_2+\cdots+x_n=C
       
     
       
+    
+      
+    
+      
         
-      
-    
-      
-    
       
     
       
