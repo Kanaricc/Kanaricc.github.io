@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2020-01-08T03:08:38.021Z</updated>
+  <updated>2020-01-13T13:25:40.961Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>I Realized Something</title>
+    <link href="https://blog.kanari.moe/2020/01/13/i-see-something/"/>
+    <id>https://blog.kanari.moe/2020/01/13/i-see-something/</id>
+    <published>2020-01-13T11:47:27.000Z</published>
+    <updated>2020-01-13T13:25:40.961Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="梦话" scheme="https://blog.kanari.moe/categories/%E6%A2%A6%E8%AF%9D/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CF1285D Dr.Evil Underscores</title>
+    <link href="https://blog.kanari.moe/2020/01/13/problem-dr-evil-underscores/"/>
+    <id>https://blog.kanari.moe/2020/01/13/problem-dr-evil-underscores/</id>
+    <published>2020-01-13T09:27:20.000Z</published>
+    <updated>2020-01-13T13:33:09.360Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Today, as a friendship gift, Bakry gave Badawy n integers a1,a2,…,an and challenged him to choose an integer X such that the value max1≤i≤n(ai⊕X) is minimum possible, where ⊕ denotes the bitwise XOR operation.&lt;/p&gt;
+&lt;p&gt;As always, Badawy is too lazy, so you decided to help him and find the minimum possible value of max1≤i≤n(ai⊕X).&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OS in Rust Day 1</title>
+    <link href="https://blog.kanari.moe/2020/01/12/os-in-rust-1/"/>
+    <id>https://blog.kanari.moe/2020/01/12/os-in-rust-1/</id>
+    <published>2020-01-12T08:41:32.000Z</published>
+    <updated>2020-01-13T13:26:39.356Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;rust是一门很有意思的语言,它的内存模型和0代价抽象等都很吸引人.几天速成想折腾写点好玩的东西.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rust的0代价抽象有些过分.一堆高阶函数,await和async也能做到0代价,和写汇编性能差不了多少,是有些服气.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;严格来说这篇是读书笔记.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
+    
+    
+      <category term="Rust" scheme="https://blog.kanari.moe/tags/Rust/"/>
+    
+  </entry>
   
   <entry>
     <title>新教务解析</title>
@@ -454,87 +524,6 @@
     
     
       <category term="rust" scheme="https://blog.kanari.moe/tags/rust/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[CF1221F] Choose a Sequence</title>
-    <link href="https://blog.kanari.moe/2019/09/23/problem-choose-a-sequence/"/>
-    <id>https://blog.kanari.moe/2019/09/23/problem-choose-a-sequence/</id>
-    <published>2019-09-23T15:46:09.000Z</published>
-    <updated>2019-09-26T12:18:56.829Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Petya recently found a game &quot;Choose a Square&quot;. In this game, there are nn points numbered from 11 to nn on an infinite field. The ii-th point has coordinates (xi,yi) and cost ci.&lt;/p&gt;
-&lt;p&gt;You have to choose a square such that its sides are parallel to coordinate axes, the lower left and upper right corners belong to the line y=x, and all corners have integer coordinates.&lt;/p&gt;
-&lt;p&gt;The score you get is the sum of costs of the points covered by the selected square minus the length of the side of the square. Note that the length of the side can be zero.&lt;/p&gt;
-&lt;p&gt;Petya asks you to calculate the maximum possible score in the game that can be achieved by placing exactly one square.&lt;/p&gt;
-&lt;img src=&quot;/2019/09/23/problem-choose-a-sequence/a.png&quot;&gt;
-&lt;h2 id=&quot;分析&quot;&gt;分析&lt;/h2&gt;
-&lt;p&gt;这道题其实和多校的Snowy Smile（题文无关）挺像的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来康康Gatsby.js</title>
-    <link href="https://blog.kanari.moe/2019/09/21/starting-gatsbyjs/"/>
-    <id>https://blog.kanari.moe/2019/09/21/starting-gatsbyjs/</id>
-    <published>2019-09-21T13:00:54.000Z</published>
-    <updated>2019-09-23T15:58:01.193Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
-    
-    
-      <category term="gatsby" scheme="https://blog.kanari.moe/tags/gatsby/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Mathematica绘制股票相关曲线</title>
-    <link href="https://blog.kanari.moe/2019/09/20/stock-with-mathematica/"/>
-    <id>https://blog.kanari.moe/2019/09/20/stock-with-mathematica/</id>
-    <published>2019-09-20T01:33:23.000Z</published>
-    <updated>2019-09-20T02:46:26.443Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
-    
-    
-      <category term="mathematica" scheme="https://blog.kanari.moe/tags/mathematica/"/>
     
   </entry>
   
