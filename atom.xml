@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2020-01-14T06:24:46.922Z</updated>
+  <updated>2020-01-16T09:09:14.807Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CF1285E Delete a Segment</title>
+    <link href="https://blog.kanari.moe/2020/01/16/problem-delete-a-segment/"/>
+    <id>https://blog.kanari.moe/2020/01/16/problem-delete-a-segment/</id>
+    <published>2020-01-16T08:56:59.000Z</published>
+    <updated>2020-01-16T09:09:14.807Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;There are n segments on a Ox axis [l1,r1], [l2,r2], ..., [ln,rn]. Segment [l,r] covers all points from l to r inclusive, so all x such that l≤x≤r.&lt;/p&gt;
+&lt;p&gt;Segments can be placed arbitrarily — be inside each other, coincide and so on. Segments can degenerate into points, that is li=ri is possible.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="线段树" scheme="https://blog.kanari.moe/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Codeforces Round #612 (Div. 2)</title>
@@ -497,31 +519,6 @@
     
     
       <category term="计算几何" scheme="https://blog.kanari.moe/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>音乐盒测试</title>
-    <link href="https://blog.kanari.moe/2019/09/27/test-music-player/"/>
-    <id>https://blog.kanari.moe/2019/09/27/test-music-player/</id>
-    <published>2019-09-27T04:56:37.000Z</published>
-    <updated>2019-09-27T05:18:32.537Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
-    
     
   </entry>
   
