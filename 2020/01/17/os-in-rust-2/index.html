@@ -56,15 +56,19 @@
   };
 </script>
 
-  <meta name="keywords" content="kanari,blog,icpc,coding">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kanari&#39;s blog">
-<meta property="og:url" content="https://blog.kanari.moe/categories/projects/index.html">
+  <meta name="description" content="这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.">
+<meta name="keywords" content="Rust">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rust and OS Day 2">
+<meta property="og:url" content="https://blog.kanari.moe/2020/01/17/os-in-rust-2/index.html">
 <meta property="og:site_name" content="Kanari&#39;s blog">
+<meta property="og:description" content="这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-17T12:00:16.875Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kanari&#39;s blog">
-  <link rel="canonical" href="https://blog.kanari.moe/categories/projects/">
+<meta name="twitter:title" content="Rust and OS Day 2">
+<meta name="twitter:description" content="这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.">
+  <link rel="canonical" href="https://blog.kanari.moe/2020/01/17/os-in-rust-2/">
 
 
 <script id="page-configurations">
@@ -72,13 +76,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类: projects | Kanari's blog</title>
+  <title>Rust and OS Day 2 | Kanari's blog</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2"></script>
   <script>
@@ -266,84 +270,152 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block category">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">projects<small>分类</small>
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2020/01/17/os-in-rust-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Rust and OS Day 2
+
+          
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-17 18:54:25 / 修改时间：20:00:16" itemprop="dateCreated datePublished" datetime="2020-01-17T18:54:25+08:00">2020-01-17</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/闲扯/" itemprop="url" rel="index"><span itemprop="name">闲扯</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <p>这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.</p>
+<a id="more"></a>
+<p>不过这之前,先说rust的包管理.</p>
+<p>rust发展太快了,各种文章各说各话.这里主要是一个<code>crate</code>(一个包)内的结构.</p>
+<p>rust使用<code>mod</code>来明确的标注一个模块.关键字默认为私有,使用<code>pub</code>来标注一个对外公开的关键字.在2018标准,文件也会作为一个模块,文件名作为模块名,文件内关键字同样默认私有.使用<code>use</code>关键字来显式的引入某个模块.</p>
+<p>对于第三方模块,2018不再需要显式标注引入<code>crate</code>.(但是仍然需要<code>use</code>)</p>
+<h2 id="cpu异常">CPU异常</h2>
+<p>CPU异常很常见,比如</p>
+<ul>
+<li>除0错误."把0个饼干分给0个朋友,每个朋友有多少个饼干,这种问题很没有意思,既没有饼干也没有朋友." --某人工智障助手S<code>DELETE</code>i</li>
+<li>内存页错误.访问了非法内存.</li>
+<li>非法操作符.程序执行了一个cpu不认识的机器码.</li>
+<li>一般保护性错误.</li>
+<li>二次错误.指第一次错误的恢复过程中又发生的错误</li>
+<li>三次错误.指第二次错误的恢复过程中又发生的错误</li>
+<li><del>四次错误</del>没有套娃了.三次错误将会直接引起CPU重启.</li>
+</ul>
+<p>一个需要强调的点是这些错误类型都是<strong>事先约定</strong>的,当异常发生时,CPU保证会从内存的指定位置读取中断表,将与错误相关的信息压入栈内,将程序运行转到中断表的处理函数代码位置,从此处开始执行.在这个过程中涉及的约定有</p>
+<ul>
+<li>中断表格式</li>
+<li>中断处理函数格式</li>
+<li>CPU调用该函数的方式</li>
+</ul>
+<p>中断处理函数和一般函数不一样.</p>
+<h2 id="寄存器与栈">寄存器与栈</h2>
+<p>寄存器有由调用者保存和被调用者保存两种,作为函数参数传递数据的寄存器也有固定的使用(rdi,rsi,rdx,rcx...),返回值默认用rax保存等等.实际上这种行为是完全语言层面的,进一步的,CSAPP中介绍的规范是C语言采用的.更详细的信息需要参见<code>System V ABI</code>(ABI: Application Binary Interface).</p>
+<p>不知道是不是我书看得太草,感觉书里没说?现在如果有一门语言不遵守这种规范,那么一旦两门语言要链接在一起相互调用,就会产生不可预测的结果.这也是在C++中使用<code>extern "C"</code>的原因,这个标识会告知编译器使用C的规范生成结果.不巧的是,CPU中断的处理函数不遵守C规范(.</p>
+<p>顺便,Rust目前没有属于自己的规范.另外,其实C++也没有,但是其编译器的实现有.</p>
+<p>栈结构也是这样.不同编译器可能会给出有些不一样的使用策略.</p>
+<p>为了生成符合中断处理函数规范的结果,需要注明<code>extern "x86-interrupt"</code>,它实现了这个规范,不过同时也掩盖了很多细节.需要强调,不通过它,仅靠徒手也是可以完成的.</p>
 
-  
-  
+    </div>
 
-  
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+    
+    
         
-          <a class="post-title-link" href="/2019/07/20/arknights-tools/" itemprop="url">
-            <span itemprop="name">明日方舟工具</span>
-          </a>
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Rust/" rel="tag"># Rust</a>
+            
+          </div>
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-07-20T17:28:33+08:00"
-              content="2019-07-20">
-          07-20
-        </time>
-      </div>
+        
 
-    </header>
-  </article>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2020/01/17/i-see-another-thing/" rel="next" title="Seen Another Something">
+                  <i class="fa fa-chevron-left"></i> Seen Another Something
+                </a>
+              
+            </div>
 
+            <span class="post-nav-divider"></span>
 
-
-    </div>
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-
+  </div>
 
 
           </div>
@@ -362,6 +434,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -374,6 +451,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cpu异常"><span class="nav-number">1.</span> <span class="nav-text">CPU异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器与栈"><span class="nav-number">2.</span> <span class="nav-text">寄存器与栈</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
