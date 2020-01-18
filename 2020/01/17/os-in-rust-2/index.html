@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.">
+  <meta name="description" content="rust是一门很有意思的语言,它的内存模型和0代价抽象等都很吸引人.几天速成想折腾写点好玩的东西.  rust的0代价抽象有些过分.一堆高阶函数,await和async也能做到0代价,和写汇编性能差不了多少,是有些服气.  严格来说这篇是读书笔记.">
 <meta name="keywords" content="Rust">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rust and OS Day 2">
+<meta property="og:title" content="Rust and OS">
 <meta property="og:url" content="https://blog.kanari.moe/2020/01/17/os-in-rust-2/index.html">
 <meta property="og:site_name" content="Kanari&#39;s blog">
-<meta property="og:description" content="这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.">
+<meta property="og:description" content="rust是一门很有意思的语言,它的内存模型和0代价抽象等都很吸引人.几天速成想折腾写点好玩的东西.  rust的0代价抽象有些过分.一堆高阶函数,await和async也能做到0代价,和写汇编性能差不了多少,是有些服气.  严格来说这篇是读书笔记.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-17T12:00:16.875Z">
+<meta property="og:updated_time" content="2020-01-18T12:37:40.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rust and OS Day 2">
-<meta name="twitter:description" content="这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.">
+<meta name="twitter:title" content="Rust and OS">
+<meta name="twitter:description" content="rust是一门很有意思的语言,它的内存模型和0代价抽象等都很吸引人.几天速成想折腾写点好玩的东西.  rust的0代价抽象有些过分.一堆高阶函数,await和async也能做到0代价,和写汇编性能差不了多少,是有些服气.  严格来说这篇是读书笔记.">
   <link rel="canonical" href="https://blog.kanari.moe/2020/01/17/os-in-rust-2/">
 
 
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>Rust and OS Day 2 | Kanari's blog</title>
+  <title>Rust and OS | Kanari's blog</title>
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2"></script>
   <script>
@@ -291,7 +291,7 @@
       <meta itemprop="name" content="Kanari's blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Rust and OS Day 2
+        <h1 class="post-title" itemprop="name headline">Rust and OS
 
           
         </h1>
@@ -307,11 +307,19 @@
                 
               
 
-              <time title="创建时间：2020-01-17 18:54:25 / 修改时间：20:00:16" itemprop="dateCreated datePublished" datetime="2020-01-17T18:54:25+08:00">2020-01-17</time>
+              <time title="创建时间：2020-01-17 18:54:25" itemprop="dateCreated datePublished" datetime="2020-01-17T18:54:25+08:00">2020-01-17</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-18 20:37:40" itemprop="dateModified" datetime="2020-01-18T20:37:40+08:00">2020-01-18</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -339,12 +347,97 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.</p>
+        <p>rust是一门很有意思的语言,它的内存模型和0代价抽象等都很吸引人.几天速成想折腾写点好玩的东西.</p>
+<blockquote>
+<p>rust的0代价抽象有些过分.一堆高阶函数,await和async也能做到0代价,和写汇编性能差不了多少,是有些服气.</p>
+</blockquote>
+<p>严格来说这篇是读书笔记.</p>
 <a id="more"></a>
-<p>不过这之前,先说rust的包管理.</p>
+<h2 id="一点小插曲-如何在windows上的rust使用gnu工具链">一点小插曲: 如何在windows上的rust使用gnu工具链</h2>
+<p>众所周知windows对编程的体验不如*nix和osx,rust甚至在Windows上的配置都麻烦一点.比如说,为了装个rust,可能需要另外准备vs2019.这两个东西的空间占用差了不止一点半点.</p>
+<p>折腾了一天.如果能仔细阅读官方的rustup文档的话,说不定就不用这么头秃了.</p>
+<p>主要的选项在于选好host和version.在rustup执行安装时,修改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x86_64-pc-windows-gnu</span><br><span class="line">stable-gnu</span><br></pre></td></tr></table></figure>
+<p>这样安装的版本才会使用gnu工具链.但是如此做的后果,我还不太清楚.</p>
+<h2 id="以c对撞rust">以C对撞Rust</h2>
+<p>自己主要还是C系语言用户,所以实际学习时,总是会相比较着进行.</p>
+<h3 id="变量声明">变量声明</h3>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x:<span class="built_in">i32</span>=<span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>首先,rust也使用分号.每个变量的声明开头使用let,并且将变量类型跟随名称后面.</p>
+<p>随着时间发展,现代语言几乎都抛弃了变量类型在左侧的声明方式.这大概是一个实践上的经验.左侧的类型声明会在复杂状况下造成极大的理解障碍.比如</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (*signal(<span class="keyword">int</span>, <span class="keyword">void</span> (*fp)(<span class="keyword">int</span>)))(<span class="keyword">int</span>);</span><br></pre></td></tr></table></figure>
+<p>阅读此类东西,总会是让人头疼.你会发现,为了理解它在干嘛,这种声明方式使得阅读顺序必须是顺时针的螺旋式,显得很不自然和明确.一旦调整类型到右侧时,这个问题似乎就不存在了.</p>
+<p>所以不但变量的声明类型位于名称左侧,包括函数参数类型 返回值也都是位于右侧.</p>
+<p>另外.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type</th>
+<th style="text-align: center;">Refer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">i8,i32,i64,i128</td>
+<td style="text-align: center;">short,int,long long</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">u8,u32,u64,u128</td>
+<td style="text-align: center;">unsigned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">f32,f64</td>
+<td style="text-align: center;">float,double</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bool</td>
+<td style="text-align: center;">bool</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">char</td>
+<td style="text-align: center;">char</td>
+</tr>
+</tbody>
+</table>
+<p>当然,rust也缺不了元组.</p>
+<p>另外值得注意的是rust的char与str是utf8的,而不是ascii.所以在遍历时也不能按照c中的方式处理.</p>
+<p>rust中的变量<strong>默认为不可更改</strong>.必须添加<code>mut</code>关键字才作为一般意义上的变量考虑.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">mut</span> x=<span class="number">9</span>;</span><br><span class="line">x=<span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> y=<span class="number">9</span>;</span><br><span class="line">y=<span class="number">8</span>; <span class="comment">// this is not allowed.</span></span><br></pre></td></tr></table></figure>
+<h3 id="控制流">控制流</h3>
+<p>rust里的if一类,没有小括号.(是不是有些像Go)</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;expr&gt; &#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> &lt;expr&gt;&#123;</span><br><span class="line">    <span class="comment">//do what</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//yeah?</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>循环也有些不一样</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">loop</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> &lt;expr&gt;&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..<span class="number">9</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个是右闭区间</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..=<span class="number">9</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最主要的是,多出了一个<code>loop</code>死循环,for循环以迭代方式完成.不过,其实还有一个重要的信息,它们都是表达式,能够返回值.</p>
+<p>得益于rust的零代价抽象,迭代的使用相比直接的<code>for(int i=1;i&lt;=9;i++)</code>几乎没有区别.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flag=<span class="keyword">if</span> a&gt;<span class="number">0</span>&#123;</span><br><span class="line">    <span class="number">1</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    -<span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>最后一行不带引号,则作为返回值返回.这样用if是允许的.(所以我们也没有三元运算符可用了)</p>
+<h3 id="函数声明">函数声明</h3>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">func</span></span>(a:<span class="built_in">i32</span>,b:<span class="built_in">i32</span>) -&gt; <span class="built_in">i32</span>&#123;</span><br><span class="line">    a+b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>rust内的所有关键字都省略到了极简,也算是一种风格.</p>
+<h2 id="包管理">包管理</h2>
 <p>rust发展太快了,各种文章各说各话.这里主要是一个<code>crate</code>(一个包)内的结构.</p>
 <p>rust使用<code>mod</code>来明确的标注一个模块.关键字默认为私有,使用<code>pub</code>来标注一个对外公开的关键字.在2018标准,文件也会作为一个模块,文件名作为模块名,文件内关键字同样默认私有.使用<code>use</code>关键字来显式的引入某个模块.</p>
 <p>对于第三方模块,2018不再需要显式标注引入<code>crate</code>.(但是仍然需要<code>use</code>)</p>
+<h2 id="一个独立的rust">一个独立的rust</h2>
+<p>进行系统编程不同于应用级编程.一般情况我们并不会在意编程中的语言特性和系统特性的明确界限,但是这里,必须将它们剥离开,去掉系统特性.毕竟我们要编写OS.</p>
+<ul>
+<li>取消标准库</li>
+</ul>
+<p>整个程序的启动流程大概实际上:由系统装载C运行时启动,C运行时调起rust运行时.rust运行时执行完成有关栈溢出保护 异常处理机制等操作后将控制权交给<code>fn main</code>.所以一旦取消了标准库,我们就要自行解决这些问题.</p>
+<p>当取消了标准库时,我们就要被迫处理以下的东西.</p>
+<ul>
+<li>自定异常处理函数</li>
+<li>取消异常退栈操作</li>
+<li>自定程序入口</li>
+<li>取消C运行时依赖</li>
+</ul>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#![no_std]</span> <span class="comment">//不使用rust标准库</span></span><br><span class="line"><span class="meta">#![no_main]</span> <span class="comment">//取消rust层上的入口</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> core::panic::PanicInfo;</span><br><span class="line"></span><br><span class="line"><span class="meta">#[no_mangle]</span> <span class="comment">//不让rust编译器重整入口函数的名称.这将会在之后被使用到</span></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">extern</span> <span class="string">"C"</span> <span class="function"><span class="keyword">fn</span> <span class="title">_start</span></span>() -&gt; ! &#123;</span><br><span class="line">    <span class="comment">//程序将会从此开始</span></span><br><span class="line">    <span class="keyword">loop</span> &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当程序发生异常时,就会调用该函数处理.</span></span><br><span class="line"><span class="comment">//正常情况下该函数由标准库实现,标准库打印异常信息后,将会在程序退出前退栈返还程序占用的内存.</span></span><br><span class="line"><span class="meta">#[panic_handler]</span></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">panic</span></span>(_info: &amp;PanicInfo) -&gt; ! &#123;</span><br><span class="line">    <span class="keyword">loop</span> &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除了代码中多了许多一般接触不到的细节,在cargo的配置中也有一些东西.</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[package]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">"kaos"</span></span><br><span class="line"><span class="attr">version</span> = <span class="string">"0.1.0"</span></span><br><span class="line"><span class="attr">authors</span> = [<span class="string">"Author Name &lt;author@example.com&gt;"</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="section">[profile.dev]</span></span><br><span class="line"><span class="attr">panic</span> = <span class="string">"abort"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[profile.release]</span></span><br><span class="line"><span class="attr">panic</span> = <span class="string">"abort"</span></span><br></pre></td></tr></table></figure>
+<p>代码将panic置为了abort主要是因为退栈的操作.在普通编程中,abort将会让程序直接崩溃退出,内存交由系统释放;panic则是由程序完成内存释放.退栈是一个系统相关的机制,无法在OS层上完成,此处使用不带退栈的abort.</p>
+<p>编译指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cargo build --target thumbv7em-none-eabihf</span><br></pre></td></tr></table></figure>
 <h2 id="cpu异常">CPU异常</h2>
 <p>CPU异常很常见,比如</p>
 <ul>
@@ -404,6 +497,10 @@
 
             <div class="post-nav-prev post-nav-item">
               
+                <a href="/2020/01/18/http-server-in-rust/" rel="prev" title="HTTP服务器与Rust">
+                  HTTP服务器与Rust <i class="fa fa-chevron-right"></i>
+                </a>
+              
             </div>
           </div>
         
@@ -451,7 +548,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cpu异常"><span class="nav-number">1.</span> <span class="nav-text">CPU异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器与栈"><span class="nav-number">2.</span> <span class="nav-text">寄存器与栈</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一点小插曲-如何在windows上的rust使用gnu工具链"><span class="nav-number">1.</span> <span class="nav-text">一点小插曲: 如何在windows上的rust使用gnu工具链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以c对撞rust"><span class="nav-number">2.</span> <span class="nav-text">以C对撞Rust</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明"><span class="nav-number">2.1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制流"><span class="nav-number">2.2.</span> <span class="nav-text">控制流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数声明"><span class="nav-number">2.3.</span> <span class="nav-text">函数声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包管理"><span class="nav-number">3.</span> <span class="nav-text">包管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个独立的rust"><span class="nav-number">4.</span> <span class="nav-text">一个独立的rust</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cpu异常"><span class="nav-number">5.</span> <span class="nav-text">CPU异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器与栈"><span class="nav-number">6.</span> <span class="nav-text">寄存器与栈</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2020-01-17T12:00:16.875Z</updated>
+  <updated>2020-01-18T14:31:01.122Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -17,15 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Rust and OS Day 2</title>
-    <link href="https://blog.kanari.moe/2020/01/17/os-in-rust-2/"/>
-    <id>https://blog.kanari.moe/2020/01/17/os-in-rust-2/</id>
-    <published>2020-01-17T10:54:25.000Z</published>
-    <updated>2020-01-17T12:00:16.875Z</updated>
+    <title>HTTP服务器与Rust</title>
+    <link href="https://blog.kanari.moe/2020/01/18/http-server-in-rust/"/>
+    <id>https://blog.kanari.moe/2020/01/18/http-server-in-rust/</id>
+    <published>2020-01-18T12:39:12.000Z</published>
+    <updated>2020-01-18T14:31:01.122Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;这次主要是关于CPU异常.学了CSAPP,就能知道关于这部分的知识.&lt;/p&gt;
+      &lt;p&gt;以一个http服务器入手,记点东西.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
+    
+    
+      <category term="rust" scheme="https://blog.kanari.moe/tags/rust/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rust and OS</title>
+    <link href="https://blog.kanari.moe/2020/01/17/os-in-rust-2/"/>
+    <id>https://blog.kanari.moe/2020/01/17/os-in-rust-2/</id>
+    <published>2020-01-17T10:54:25.000Z</published>
+    <updated>2020-01-18T12:37:40.177Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;rust是一门很有意思的语言,它的内存模型和0代价抽象等都很吸引人.几天速成想折腾写点好玩的东西.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rust的0代价抽象有些过分.一堆高阶函数,await和async也能做到0代价,和写汇编性能差不了多少,是有些服气.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;严格来说这篇是读书笔记.&lt;/p&gt;
     
     </summary>
     
@@ -129,31 +154,6 @@
     
       <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Rust and OS Day 1</title>
-    <link href="https://blog.kanari.moe/2020/01/12/os-in-rust-1/"/>
-    <id>https://blog.kanari.moe/2020/01/12/os-in-rust-1/</id>
-    <published>2020-01-12T08:41:32.000Z</published>
-    <updated>2020-01-17T11:53:38.567Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;rust是一门很有意思的语言,它的内存模型和0代价抽象等都很吸引人.几天速成想折腾写点好玩的东西.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;rust的0代价抽象有些过分.一堆高阶函数,await和async也能做到0代价,和写汇编性能差不了多少,是有些服气.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;严格来说这篇是读书笔记.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="闲扯" scheme="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/"/>
-    
-    
-      <category term="Rust" scheme="https://blog.kanari.moe/tags/Rust/"/>
     
   </entry>
   
