@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2020-01-19T03:01:55.271Z</updated>
+  <updated>2020-01-21T08:19:23.765Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[CF 1156F]Card Bag</title>
+    <link href="https://blog.kanari.moe/2020/01/21/problem-card-bag/"/>
+    <id>https://blog.kanari.moe/2020/01/21/problem-card-bag/</id>
+    <published>2020-01-21T07:11:50.000Z</published>
+    <updated>2020-01-21T08:19:23.765Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;You have a bag which contains n cards. There is a number written on each card; the number on i-th card is ai.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="递推" scheme="https://blog.kanari.moe/tags/%E9%80%92%E6%8E%A8/"/>
+    
+      <category term="概率" scheme="https://blog.kanari.moe/tags/%E6%A6%82%E7%8E%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF 1165F2]Microtransactions</title>
+    <link href="https://blog.kanari.moe/2020/01/21/problem-microtransactions/"/>
+    <id>https://blog.kanari.moe/2020/01/21/problem-microtransactions/</id>
+    <published>2020-01-21T07:11:35.000Z</published>
+    <updated>2020-01-21T07:41:14.489Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Ivan plays a computer game that contains some microtransactions to make characters look cooler. Since Ivan wants his character to be really cool, he wants to use some of these microtransactions — and he won&#39;t start playing until he gets all of them.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="二分答案" scheme="https://blog.kanari.moe/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF 1156D] 0-1 Tree</title>
+    <link href="https://blog.kanari.moe/2020/01/21/problem-01-tree/"/>
+    <id>https://blog.kanari.moe/2020/01/21/problem-01-tree/</id>
+    <published>2020-01-21T07:10:39.000Z</published>
+    <updated>2020-01-21T07:49:35.992Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;You are given a tree
+    
+    </summary>
+    
+    
+      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
+    
+    
+      <category term="递推" scheme="https://blog.kanari.moe/tags/%E9%80%92%E6%8E%A8/"/>
+    
+      <category term="树" scheme="https://blog.kanari.moe/tags/%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>与Rust玩耍</title>
@@ -437,87 +504,6 @@
     
     
       <category term="博弈" scheme="https://blog.kanari.moe/tags/%E5%8D%9A%E5%BC%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>后缀自动机</title>
-    <link href="https://blog.kanari.moe/2019/10/04/suffix-automation/"/>
-    <id>https://blog.kanari.moe/2019/10/04/suffix-automation/</id>
-    <published>2019-10-04T12:44:05.000Z</published>
-    <updated>2019-10-06T03:33:10.027Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
-    
-    
-      <category term="后缀自动机" scheme="https://blog.kanari.moe/tags/%E5%90%8E%E7%BC%80%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[CF589C] primes and multiplication</title>
-    <link href="https://blog.kanari.moe/2019/09/30/problem-primes-and-multiplication/"/>
-    <id>https://blog.kanari.moe/2019/09/30/problem-primes-and-multiplication/</id>
-    <published>2019-09-30T01:04:52.000Z</published>
-    <updated>2019-10-02T05:23:53.530Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="数论" scheme="https://blog.kanari.moe/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[CCPC2019 秦皇岛] Angel Beats</title>
-    <link href="https://blog.kanari.moe/2019/09/29/problem-angel-beats/"/>
-    <id>https://blog.kanari.moe/2019/09/29/problem-angel-beats/</id>
-    <published>2019-09-29T13:02:18.000Z</published>
-    <updated>2019-10-02T05:23:37.658Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="计算几何" scheme="https://blog.kanari.moe/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
     
   </entry>
   
