@@ -276,6 +276,109 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/10/05/problem-ticket-game/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kanari">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kanari's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/10/05/problem-ticket-game/" class="post-title-link" itemprop="url">[CF585D] Ticket Game</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-05 15:13:27 / 修改时间：16:01:34" itemprop="dateCreated datePublished" datetime="2019-10-05T15:13:27+08:00">2019-10-05</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Monocarp and Bicarp live in Berland, where every bus ticket consists of n digits (n is an even number). During the evening walk Monocarp and Bicarp found a ticket where some of the digits have been erased. The number of digits that have been erased is even.</p>
+<p>Monocarp and Bicarp have decided to play a game with this ticket. Monocarp hates happy tickets, while Bicarp collects them. A ticket is considered happy if the sum of the first <span class="math inline">\(\frac n2\)</span> digits of this ticket is equal to the sum of the last <span class="math inline">\(\frac n2\)</span> digits.</p>
+<p>Monocarp and Bicarp take turns (and Monocarp performs the first of them). During each turn, the current player must replace any erased digit with any digit from 0 to 9. The game ends when there are no erased digits in the ticket.</p>
+<p>If the ticket is happy after all erased digits are replaced with decimal digits, then Bicarp wins. Otherwise, Monocarp wins. You have to determine who will win if both players play optimally.</p>
+<h2 id="分析">分析</h2>
+<p>在做这道题的时候，我发现了实际上影响答案的只和两边的 已知数的和 以及未知位的数目有关，发现了获胜的根本是前后两部分和的差值大小，发现了先手的目的是<strong>扩大差值</strong>使得后手无法通过某种方式追赶。</p>
+<p>但是到这我就卡住了。淦，为什么我这么菜。</p>
+<p>接下来要考虑的是<strong>优势</strong>，在这道题里优势就是差值。先手的目的是扩大优势，在大的一边增大会加大优势，而在小的一边置0不会扩大优势；后手要<strong>减小优势</strong>，同样的办法就是在小的一侧置数来追赶另一侧，在大的一侧置0不会更好。</p>
+<p>那么，又可以得出先手扩大优势最好的办法是置9（最大）。那么游戏最开始的几步，就是双方在两侧填写9。直到某侧不再有空位。</p>
+<p>此时，如果空位在大的一侧，先手必赢。如果空位在小的一侧，继续讨论如下</p>
+<p><span class="math display">\[
+x_1+x_2+\cdots+x_n=C
+\]</span></p>
+<p>首先<span class="math inline">\(2|n\)</span>显然。</p>
+<p>当C不是9的倍数时，先手总有办法让最终结果偏离。因此该情况只有当<span class="math inline">\(\frac n2 \times 9 = n\)</span>时后手才能获胜。</p>
+<h2 id="代码">代码</h2>
+<p>嫖了队友的…我瞎xx搞的结论WA23了…</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">200005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n/<span class="number">2</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'?'</span>) cnt++;</span><br><span class="line">		<span class="keyword">else</span> sum+=s[i]-<span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n/<span class="number">2</span>+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(s[i]==<span class="string">'?'</span>) cnt--;</span><br><span class="line">		<span class="keyword">else</span> sum-=s[i]-<span class="string">'0'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//cout&lt;&lt;cnt&lt;&lt;" "&lt;&lt;sum&lt;&lt;endl;</span></span><br><span class="line">	<span class="keyword">if</span>(sum*<span class="number">2</span>==-cnt*<span class="number">9</span>) <span class="built_in">puts</span>(<span class="string">"Bicarp"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"Monocarp"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/10/04/suffix-automation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -676,12 +779,12 @@ d_v=1+\min_{w:(v,w,c) \in SAM} d_w
           <p>我还没搞明白为什么在首页上没法加载，看起来是插件内部有bug。</p>
 <p>就拿东方的同人BGM来做个测试吧。</p>
 
-        <div id="aplayer-rPPPkvEW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-XwRdthRI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-rPPPkvEW"),
+            element: document.getElementById("aplayer-XwRdthRI"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -1278,111 +1381,6 @@ d_v=1+\min_{w:(v,w,c) \in SAM} d_w
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://blog.kanari.moe/2019/08/25/problem-kth-occurrence/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kanari">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kanari's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/25/problem-kth-occurrence/" class="post-title-link" itemprop="url">[HDU 6704] Kth Occurrence</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-25 15:11:56" itemprop="dateCreated datePublished" datetime="2019-08-25T15:11:56+08:00">2019-08-25</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-19 10:12:11" itemprop="dateModified" datetime="2019-09-19T10:12:11+08:00">2019-09-19</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>You are given a string S consisting of only lowercase english letters and some queries.</p>
-<p>For each query (l,r,k), please output the starting position of the k-th occurence of the substring SlSl+1...Sr in S.</p>
-<h2 id="分析">分析</h2>
-<p>第一个问题是快速找出所有出现的子串的位置,可以使用后缀数组.这些字串出现在sa的一个连续的区间中.</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/25/problem-kth-occurrence/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
@@ -1435,7 +1433,7 @@ d_v=1+\min_{w:(v,w,c) \in SAM} d_w
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1461,7 +1459,7 @@ d_v=1+\min_{w:(v,w,c) \in SAM} d_w
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -1555,9 +1553,9 @@ d_v=1+\min_{w:(v,w,c) \in SAM} d_w
   
     
       
-    
-      
         
+      
+    
       
     
       

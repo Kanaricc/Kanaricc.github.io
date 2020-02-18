@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.kanari.moe/"/>
-  <updated>2020-01-21T08:19:23.765Z</updated>
+  <updated>2020-02-18T08:32:01.248Z</updated>
   <id>https://blog.kanari.moe/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>树链剖分</title>
+    <link href="https://blog.kanari.moe/2020/02/18/heavy-light-decomposition/"/>
+    <id>https://blog.kanari.moe/2020/02/18/heavy-light-decomposition/</id>
+    <published>2020-02-18T08:11:26.000Z</published>
+    <updated>2020-02-18T08:32:01.248Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;树链剖分可以用来维护树上路径的信息。把树上的节点拆成不超过&lt;span class=&quot;math inline&quot;&gt;\(O(\log n)\)&lt;/span&gt;段连续的路径（链），以映射到线段树或者什么的构来维护数据。&lt;/p&gt;
+&lt;p&gt;依照子树的大小，将最大子树作为重边，其他子树作为轻边，从而在树上拆分出多条链。为同一条链上的节点连续编号，完成剖分。至于剩下的，依照编号一条链可以连续的映射到数据结构的某个取间内，用类似于倍增LCA的方法在树上得到每一个询问所覆盖的链的起始与结尾然后继续其他操作就可以了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="study" scheme="https://blog.kanari.moe/categories/study/"/>
+    
+    
+      <category term="树链剖分" scheme="https://blog.kanari.moe/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/"/>
+    
+  </entry>
   
   <entry>
     <title>[CF 1156F]Card Bag</title>
@@ -477,33 +499,6 @@
     
     
       <category term="动态规划" scheme="https://blog.kanari.moe/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[CF585D] Ticket Game</title>
-    <link href="https://blog.kanari.moe/2019/10/05/problem-ticket-game/"/>
-    <id>https://blog.kanari.moe/2019/10/05/problem-ticket-game/</id>
-    <published>2019-10-05T07:13:27.000Z</published>
-    <updated>2019-10-05T08:01:34.722Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="coding" scheme="https://blog.kanari.moe/categories/coding/"/>
-    
-    
-      <category term="博弈" scheme="https://blog.kanari.moe/tags/%E5%8D%9A%E5%BC%88/"/>
     
   </entry>
   
