@@ -1,451 +1,1361 @@
 <!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.66.0" /><meta name="theme-color" content="#fff" />
+        <script>
+            const userPrefers = localStorage.getItem('theme');
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const lightModeMediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+            if (userPrefers === 'dark') {
+                changeModeMeta('dark');
+            } else if (userPrefers === 'light') {
+                changeModeMeta('light');
+            } else if (darkModeMediaQuery.matches) {
+                changeModeMeta('dark');
+            } else if (lightModeMediaQuery.matches) {
+                changeModeMeta('light');
+            }
+            function changeModeMeta(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                if (theme === 'dark') {
+                    changeThemeColor('#16171d');
+                } else {
+                    changeThemeColor('#fff');
+                }
+            }
+            function changeThemeColor(themeColor) {
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
+            }
+        </script>
+
+    
+        
+        
+        <script>
+            if (window.location.host == "blog.kanari.moe" && window.location.protocol != "https:") {
+                window.location.protocol = "https";
+            }
+        </script>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>categories | Kanari&#39;s Blog</title>
+
+    <link rel="stylesheet" href="/css/meme.min.c92b6480164aa945964264773cdc3d63888605d2a641076f1598dfee50ee189b.css" integrity="sha256-yStkgBZKqUWWQmR3PNw9Y4iGBdKmQQdvFZjf7lDuGJs=" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="Kanari" />
+    <meta name="description" content="Kanari&#39;s blog." />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Kanari&#39;s Blog" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Kanari&#39;s Blog" />
+    <meta name="msapplication-starturl" content="../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://blog.kanari.moe/categories/" />
 
 
 
-
-
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
-  <link rel="alternate" href="/atom.xml" title="Kanari's blog" type="application/atom+xml">
-
-<link rel="stylesheet" href="/css/main.css?v=7.4.0">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.4.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: true,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.json',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
-
-  <meta name="keywords" content="kanari,blog,icpc,coding">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://blog.kanari.moe/categories/index.html">
-<meta property="og:site_name" content="Kanari&#39;s blog">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-18T15:17:28.136Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-  <link rel="canonical" href="https://blog.kanari.moe/categories/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: false,
-    isPage: true,
-    isArchive: false
-  };
-</script>
-
-  <title>categories | Kanari's blog</title>
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2"></script>
-  <script>
-    var host = window.location.hostname;
-    if (host !== "localhost" || !true) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-104395871-2');
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "datePublished": "2019-07-12T11:26:08+08:00",
+        "dateModified": "2019-07-12T11:26:08+08:00",
+        "url": "https://blog.kanari.moe/categories/",
+        "name": "categories",
+        "description": "Kanari's blog.",
+        "image": "https://blog.kanari.moe/icons/apple-touch-icon.png",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Kanari's Blog",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://blog.kanari.moe/icons/apple-touch-icon.png"
+            },
+            "url": "https://blog.kanari.moe/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://blog.kanari.moe/"
+        }
     }
-  </script>
+</script>
+
+    
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+    
 
 
 
 
 
+<meta property="og:title" content="categories" />
+<meta property="og:description" content="Kanari&#39;s blog." />
+<meta property="og:url" content="https://blog.kanari.moe/categories/" />
+<meta property="og:site_name" content="Kanari&#39;s Blog" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://blog.kanari.moe/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+
+        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+
+        
+
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-104395871-2');
+    </script>
 
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Kanari's blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <body>
+        <div class="container">
+            
+    <header class="header" data-scroll-header>
+        
+            <div class="header-wrapper">
+                <div class="header-inner">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">Kanari&#39;s Blog</a>
+        
     </div>
-  </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-
-<nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
+                    <nav class="nav">
+    <ul class="menu" id="menu">
         
-        <li class="menu-item menu-item-home">
-      
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon "><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">文章</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item active"><a href="/categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon "><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon "><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon "><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    <li class="menu-item">
+                        
+    
+        
+            
+        
+        <div id="theme-switcher">🌞</div>
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
-  </li>
-      
-      
-      
+                    </li>
+                
+            
         
-        <li class="menu-item menu-item-about">
-      
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-
-  </li>
-      
-      
-      
+            
+                
+            
         
-        <li class="menu-item menu-item-tags">
-      
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-categories">
-      
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-archives">
-      
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-projects">
-      
-    
-
-    <a href="/projects/" rel="section"><i class="menu-item-icon fa fa-fw fa-bullseye"></i> <br>项目</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-      </li>
-    
-  </ul>
-
+    </ul>
 </nav>
-  <div class="site-search">
-    <div class="popup search-popup">
-    <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="搜索..." spellcheck="false"
-           type="text" id="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result"></div>
 
-</div>
-<div class="search-pop-overlay"></div>
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
 
-  </div>
-</div>
+
+        
     </header>
 
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
+
             
-
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
-          <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
-    
-    
-    
-    <div class="post-block page">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">categories
-
-</h1>
-
-<div class="post-meta">
-  
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-        
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 5 个分类
+    <main class="main list" id="main">
+    <div class="main-inner">
+        <div class="content categories">
+            
+                <h1 class="list-title">Categories</h1>
+            
+            <div class="tree">
+                
+                
+                
+                    
+                    
+                        
+                        <p style="padding-left: 2.4em">
+                            <a href="/code/" class="category-item">Code</a>
+                            
+                                
+                                
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                
+                                <span class="category-count">(34)</span>
+                            
+                        </p>
+                        
+                            
+                            
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                            
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/hdu-6363-bookshelf/" class="category-post">[HDU 6363] bookshelf</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/spring-training-3/" class="category-post">Spring Training 3</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/builds-sequences/" class="category-post">[???] Builds Sequences</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf-1322c-instant-noodles/" class="category-post">[CF 1322C] Instant Noodles</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf-1320c-world-of-darkraft-battle-for-azathoth/" class="category-post">[CF 1320C] World of Darkraft: Battle for Azathoth</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf-1321c-remove-adjacent/" class="category-post">[CF 1321C] Remove Adjacent 拓展</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf-1295e-permutation-separation/" class="category-post">[CF 1295E] Permutation Separation</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/python-in-data-processing/" class="category-post">使用Python分析数据</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf-1165f2microtransactions/" class="category-post">[CF 1165F2]Microtransactions</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf-1156fcard-bag/" class="category-post">[CF 1156F]Card Bag</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf-1156d-0-1-tree/" class="category-post">[CF 1156D] 0-1 Tree</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/codeforces-round-612-div-2/" class="category-post">Codeforces Round #612 (Div. 2)</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf1285d-dr-evil-underscores/" class="category-post">CF1285D Dr.Evil Underscores</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/liaoning-ships-voyage/" class="category-post">Liaoning Ship’s Voyage</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/ccpc2017hangzhou-heathrock/" class="category-post">[CCPC2017杭州] Heathrock</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/ccpc-2017-master-of-sequence/" class="category-post">[CCPC 2017] Master of Sequence</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cfedu74-e-keyboard-purchase/" class="category-post">[CFEDU74 E] Keyboard Purchase</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf-edu72d-coloring-edges/" class="category-post">[CF EDU72D] Coloring Edges</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf585e-marbles/" class="category-post">[CF585E] Marbles</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf585d-ticket-game/" class="category-post">[CF585D] Ticket Game</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf589c-primes-and-multiplication/" class="category-post">[CF589C] primes and multiplication</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/ccpc2019-qinhuangdao-angel-beats/" class="category-post">[CCPC2019 秦皇岛] Angel Beats</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/cf1221f-choose-a-sequence/" class="category-post">[CF1221F] Choose a Sequence</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/mathematica-in-stocks/" class="category-post">使用Mathematica绘制股票相关曲线</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/hdu-6704-kth-occurrence/" class="category-post">[HDU 6704] Kth Occurrence</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/backend-of-oj/" class="category-post">OJ的后端</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/fzu-2204seven/" class="category-post">[FZU 2204]Seven</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/hdu6638-snowy-smile/" class="category-post">[HDU6638] Snowy Smile</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/distribution-of-books/" class="category-post">Distribution of Books</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/fansblog/" class="category-post">Fansblog</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/salt-fish-playing-number/" class="category-post">咸鱼数论</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/water-series/" class="category-post">水的合集 1</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/bupt-warmupcf-milktea/" class="category-post">[BUPT WARMUP|CF] 珍珠奶茶</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/code/colorful-tree/" class="category-post">Colorful Tree</a>
+                                </p>
+                            
+                        
+                    
+                
+                    
+                    
+                        
+                        <p style="padding-left: 2.4em">
+                            <a href="/gossip/" class="category-item">Gossip</a>
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                
+                                <span class="category-count">(6)</span>
+                            
+                        </p>
+                        
+                            
+                            
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                            
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/gossip/a-little-2d-fft/" class="category-post">一点点二维傅立叶变换</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/gossip/change-theme/" class="category-post">换个主题</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/gossip/look-new-jw/" class="category-post">康康新教务</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/gossip/eight-years-for-chunwu/" class="category-post">8年了，春物终于迎来了结局</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/gossip/a-wonderful-bug/" class="category-post">记一个bug (HDU 6703)</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/gossip/do-i-write-qsort-right/" class="category-post">我把快排写错了?</a>
+                                </p>
+                            
+                        
+                    
+                
+                    
+                    
+                        
+                        <p style="padding-left: 2.4em">
+                            <a href="/study/" class="category-item">Study</a>
+                            
+                                
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                        
+                                    
+                                
+                                    
+                                
+                                
+                                <span class="category-count">(11)</span>
+                            
+                        </p>
+                        
+                            
+                            
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                            
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/a-littile-tree-divide/" class="category-post">一点点点分治</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/juece-dandiao/" class="category-post">一点点决策单调性</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/lagrange-polynomial/" class="category-post">一点点拉格朗日插值</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/new-standard-of-cpp/" class="category-post">C&#43;&#43;新标准特性初探</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/heavy-light-decomposition/" class="category-post">树链剖分</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/have-fun-with-rust/" class="category-post">与Rust玩耍</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/digital-dp/" class="category-post">数位DP</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/sam/" class="category-post">后缀自动机</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/some-sieve/" class="category-post">一些筛法的题</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/mo-s-algorithm/" class="category-post">莫队算法</a>
+                                </p>
+                            
+                                <p style="padding-left: 4.8em">
+                                    <a href="/study/fast-fourier-transform/" class="category-post">快速傅里叶变换</a>
+                                </p>
+                            
+                        
+                    
+                
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/coding/">coding</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/projects/">projects</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/study/">study</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/梦话/">梦话</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲扯/">闲扯</a><span class="category-list-count">8</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
+        </div>
     </div>
-    
+</main>
 
-    
-    
-    
-  </div>
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
 
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner"><div class="site-info">©&nbsp;2019–2020&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Kanari</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"></div>
 
-          </div>
-          
+            
+        </div>
+    </footer>
+
 
         </div>
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-        
-        
-        
-        
-      
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/uploads/avatar.png"
-      alt="Kanari">
-  <p class="site-author-name" itemprop="name">Kanari</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-  <nav class="site-state motion-element">
-      <div class="site-state-item site-state-posts">
-        
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">47</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-categories">
-        
-          
-            <a href="/categories/">
-          
-        
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-tags">
-        
-          
-            <a href="/tags/">
-          
-        
-        <span class="site-state-item-count">32</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
-      </div>
-    
-  </nav>
-  <div class="feed-link motion-element">
-    <a href="/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
+        <script src="/js/meme.min.84fa340e2d192a3be8152b342da726958f7c57028a4742563b9970b809f7f33f.js" integrity="sha256-hPo0Di0ZKjvoFSs0LacmlY98VwKKR0JWO5lwuAn38z8="></script>
 
 
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Kanari</span>
-</div>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
-
-        
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speedAsDuration: true,
+        header: '[data-scroll-header]'
+    });
+</script>
 
 
 
@@ -458,34 +1368,18 @@
 
 
 
-        
-      </div>
-    </footer>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
 
-  
-
-
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
-<script src="/js/schemes/pisces.js?v=7.4.0"></script>
-<script src="/js/next-boot.js?v=7.4.0"></script>
-
-
-
-  
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
 
 
 
 
-
-
-
-
-  <script src="/js/local-search.js?v=7.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
 
 
 
@@ -496,17 +1390,5 @@
 
 
 
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-</body>
+    </body>
 </html>
