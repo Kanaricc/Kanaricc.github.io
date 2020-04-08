@@ -21,7 +21,7 @@
             <webMaster>secret@a.b (Kanari)</webMaster>
         
         
-        <lastBuildDate>Wed, 08 Apr 2020 09:27:22 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 08 Apr 2020 10:11:01 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://blog.kanari.moe/rss.xml" />
         
@@ -83,24 +83,24 @@
                 
                 
                     <description><![CDATA[<p>目前，针对图片，视频，我们有通过在频域上乱搞的方式为其添加不可见水印。这种技术主要依靠的就是二维傅立叶变换。</p>
-<p>$$
+<div>$$
 \hat g(f)=\int{g(t)e^{-2\pi i ft}dt}
-$$</p>
+$$</div>
 <p>这个是一维的傅立叶变换。那么，如果现在有一个二维信号$g(t_1,t_2)$，是不是可以简单的把上式改为</p>
-<p>$$
+<div>$$
 \hat g(f_1,f_2)=\int\int{g(t_1,t_2)e^{-2\pi i (f_1t_1+f_2t_2)}dt_1dt_2}
-$$</p>
+$$</div>
 <p>事实上是的。而逆变换为</p>
-<p>$$
+<div>$$
 g(t_1,t_2)=\frac{1}{4 \pi^2}\int\int\hat g(f_1,f_2)e^{2\pi i (t_1f_1+t_2f_2)}df_1df_2
-$$</p>
+$$</div>
 <p>如果写成离散形式，也是一种套路。</p>
-<p>$$
+<div>$$
 \hat g(f_1,f_2)=\sum\sum{g(t_1,t_2)e^{-2\pi i (f_1t_1+f_2t_2)}}
-$$</p>
-<p>$$
+$$</div>
+<div>$$
 g(t_1,t_2)=\frac{1}{4 \pi^2}\sum\sum\hat g(f_1,f_2)e^{2\pi i (t_1f_1+t_2f_2)}
-$$</p>
+$$</div>
 <p>二维的傅立叶变换仍然是将信号分解为多个成分，只不过这里成了平面意义上的波，而且多了一个方向。这里的方向我们直接把$f_1,f_2$绘制到中心点为$(0,0)$的坐标系上，从而能够形成一张附带全部信息的频域图。</p>
 <p>对于二维傅立叶变换的结果，也和一维的结果又类似含义。一个一元函数的高频低频意味着其变化快与慢的成分，一个声音的高频低频意味着其高音和低音部分，而一个二维变换的结果高频低频也意味着该数据变化快与慢的部分。</p>
 <p>既然能够从音频频域上摘掉对声音有意义的频率（例如删掉与人声相关的频率），那就也可以在图片频域中叠加对人有意义的频率。所谓图片与视频的隐写术就是将对人眼有意义的频率叠加到频域中再进行逆变换的结果。包括音频也可以这么干，利用短时距傅立叶变换在频域上画一点有意义的图像再逆变换回去，就能当作更高级一点的音频水印。不过实际测试起来，在音频频域上搞得太过头的话听感影响挺大的。</p>
@@ -390,9 +390,9 @@ $$</p>
 <p>点分治能够解决路径问题，这种连通性问题也可以解决。也是枚举一个点后，统计包括这个点的连通块的答案。</p>
 <p>选中该点后，进行DP。然后是他们说的非常套路的利用dfs序将树映射到序列上的做法。以$f(i,j)$表示在$i$点处值为$j$的方案数。</p>
 <p>选中$i$：</p>
-<p>$$f(i,ja)+=f(i+1,a)$$</p>
+<div>$$f(i,ja)+=f(i+1,a)$$</div>
 <p>不选$i$，那么同时要跳过i的整个子树：</p>
-<p>$$f(i,j)+=f(i+\text{sz}(i),j)$$</p>
+<div>$$f(i,j)+=f(i+\text{sz}(i),j)$$</div>
 <p>另外是这道题的$j$范围太大。看到一个很骚的写法是存成$j$和$M/j$，然后每个都只有$\sqrt M$这么大…我寻思你再给我一遍这个题我也yy不出来这种存法。</p>
 <p>总之有两个东西可以注意一下：</p>
 <ul>
@@ -693,15 +693,15 @@ $$</p>
                     <description><![CDATA[<p>艹了天天都被不知道的知识点教育，知道的又做不出来。 :lei:</p>
 <p>在动态规划中，决策单调性指对于$j &lt; j'$，$f(j')$的最佳转移$f(i')$位置$i'$一定不小于$f(j)$的$i$。</p>
 <p>假设</p>
-<p>$$f(r)=\min{f(k-1)+w(k,r)}$$</p>
+<div>$$f(r)=\min{f(k-1)+w(k,r)}$$</div>
 <p>为了证明这一点，首先假设</p>
-<p>$$f(r)=f(k-1)+w(k,r)$$</p>
+<div>$$f(r)=f(k-1)+w(k,r)$$</div>
 <p>此时我们有$\forall i &lt; k$，</p>
-<p>$$f(k-1)+w(k,r) &lt; f(i-1)+w(i,r)$$</p>
+<div>$$f(k-1)+w(k,r) < f(i-1)+w(i,r)$$</div>
 <p>此后，将r后挪1。我们必须要证明$\forall i &lt; k$，</p>
-<p>$$f(k-1)+w(k,r+1) &lt; f(i-1)+w(i,r+1)$$</p>
+<div>$$f(k-1)+w(k,r+1) < f(i-1)+w(i,r+1)$$</div>
 <p>也就是证明对于两边的两个增量$\Delta$有</p>
-<p>$$w(k,r+1) - w(k,r) &lt; w(i,r+1) - w(i,r)$$</p>
+<div>$$w(k,r+1) - w(k,r) < w(i,r+1) - w(i,r)$$</div>
 <h2 id="使用分治">使用分治</h2>
 <p>一旦有决策单调性了，我们就可以通过优于$n^2$的总复杂度完成规划。</p>
 <p>例如使用分治。当我们找到区间$[ l, r ]$的中点$m$的决策点$p$时，那么$[l, m-1]$区间只能从不晚于$p$转移，$[m+1, r]$只能从不早于$p$转移。</p>
@@ -965,11 +965,11 @@ $$</p>
 <li>$\gcd(\text{fib}(a),\text{fib}(b))=\text{fib}(\gcd(a),\gcd(b))$</li>
 </ul>
 <p>然后原题的score就变成</p>
-<p>$$2^{\text{fib}(\gcd(a_1,a_2,\cdots))}-1$$</p>
+<div>$$2^{\text{fib}(\gcd(a_1,a_2,\cdots))}-1$$</div>
 <p>接下来才有机会瞎搞。枚举gcd，$d|n$，$a$的分配方式有$C^{n/d+k-1}<em>{k-1}$种。这种分配包括了d'是d的倍数的所有情况的可能。令$F(d)=C^{n/d+k-1}</em>{k-1}$，$f(d)$为真正的数目，于是有</p>
-<p>$$F(d)=\sum_{d|d'}f(d')$$</p>
+<div>$$F(d)=\sum_{d|d'}f(d')$$</div>
 <p>依照莫比乌斯反演，有</p>
-<p>$$f(d)=\sum_{d|d'}\mu(\frac{d'}{d})F(d')$$</p>
+<div>$$f(d)=\sum_{d|d'}\mu(\frac{d'}{d})F(d')$$</div>
 <p>于是原题得以解决。</p>
 ]]></description>
                 
@@ -1015,7 +1015,7 @@ $$</p>
 <p><del>拉格朗</del>提出了这么一种方法。</p>
 <h2 id="构造">构造</h2>
 <p>设函数</p>
-<p>$$\ell_j(x)=\prod_{k \neq j} \frac{x-x_k}{x_j-x_k}$$</p>
+<div>$$\ell_j(x)=\prod_{k \neq j} \frac{x-x_k}{x_j-x_k}$$</div>
 <p>注意其特性</p>
 <ul>
 <li>$x_j$被带入时，其为$1$</li>
@@ -1023,9 +1023,9 @@ $$</p>
 </ul>
 <p>因此这个东西就可以为任何一个点对创建在多项式中的单元$y_j \ell_j(x_j)$。剩下的问题是如何快速求解。</p>
 <p>当我们只求单点（率先带入点），且整数x连续取值时，观察到分母和分子都变为阶乘形式，且分式的构成元素在前后两项之间具有递推的关系。</p>
-<p>$$
+<div>$$
 \ell_j(x)=\frac{(x-1)(x-2)\cdots (x-(j-1))(x-(j+1))\cdots (x-n)}{(j-1)(j-2) \cdots (j-(j-1))(j-(j+1)) \cdots (j-n))}
-$$</p>
+$$</div>
 <p>可以看到，分子和分母项都能够拆分为左右两个部分。分别维护前缀后缀与阶乘逆元即可。</p>
 <p><em>阶乘并不需要全部的</em>，仅仅是左侧和右侧的一小部分。</p>
 <h2 id="板子">板子</h2>
@@ -1518,9 +1518,9 @@ Your task is to compute the number of matchings with exactly k edges after each 
 <h3 id="分析-3">分析</h3>
 <p>数据范围能够状压。</p>
 <p>用$f(i,state)$表示此次操作完后，已经选择的点有state所能构成的方案数。对于加边uv，就有如下转移。表示在未选择uv的已匹配状态里再选上uv构成新state。</p>
-<p>$$f(i,s)=\sum f(i-1,s-{u,v})$$</p>
+<div>$$f(i,s)=\sum f(i-1,s-\{u,v\})$$</div>
 <p>表示在删除uv时，从方案中再次扣去这些状态。</p>
-<p>$$f(i,s)-=f(i,s-{u,v})$$</p>
+<div>$$f(i,s)-=f(i,s-\{u,v\})$$</div>
 <p>把第一维滚动掉，这两个公式对转移顺序没有要求，每次更新都不会更新被用来转移的状态，瞎掰写。</p>
 ]]></description>
                 
@@ -1559,14 +1559,14 @@ Your task is to compute the number of matchings with exactly k edges after each 
                     <description><![CDATA[<p>Alice 想要得到一个长度为 n 的序列，序列中的数都是不超过 m 的正整数，而且这 n 个数的和是 p 的倍数。</p>
 <p>Alice 还希望，这 n 个数中，至少有一个数是质数。</p>
 <p>Alice 想知道，有多少个序列满足她的要求。</p>
-<p>$$1 \leq n \leq 10 ^ 9, 1 \leq m \leq 2 \times 10 ^ 7, 1 \leq p \leq 100$$</p>
+<div>$$1 \leq n \leq 10 ^ 9, 1 \leq m \leq 2 \times 10 ^ 7, 1 \leq p \leq 100$$</div>
 <h2 id="分析">分析</h2>
 <p>这题做得很爽…</p>
 <p>首先是一个套路，维护倍数可以转为维护当前和的模。因此如果递推的话，只需要100个状态，看起来是可做的。但是这个n的范围实在是有点，先列一下再说。</p>
 <p>把2e7个数字全部模完，它们对答案的贡献只和剩余类有关。这样我们就能知道在和的模为a时有多少种方案能够凑到b了。得出递推方程</p>
-<p>$$
-f(i,j)=\sum_{0 \leq k &lt; p} f(i-1,(j-k) \mod 3)c(k)
-$$</p>
+<div>$$
+f(i,j)=\sum_{0 \leq k < p} f(i-1,(j-k) \mod 3)c(k)
+$$</div>
 <p>其中$c(k)$是模为k的数有多少个。</p>
 <p>至少有一个质数的条件转为无质数，从所有的c中扣去质数后再算一遍方案数，二者相减。</p>
 <p>最后，关于n，这个公式能够用快速幂加速。</p>
@@ -2463,7 +2463,7 @@ Your task is to find the maximum possible number of characters you can remove if
 </div>
 </div><h2 id="extra">Extra</h2>
 <p>这场比赛的B题挺好玩的…要求选出的数字满足</p>
-<p>$$c_i-c_{i+1}=p_{c_i}-p_{c_{i+1}}$$</p>
+<div>$$c_i-c_{i+1}=p_{c_i}-p_{c_{i+1}}$$</div>
 <p>…一上来傻了不知道咋做，其实只要把公式左右交换一下就完事了。</p>
 ]]></description>
                 
@@ -4209,15 +4209,15 @@ If there are no cards left in the bag, you lose. Cards are not returned into the
 <li>由上条，第$i$次抽出$j$的概率也可知，因为前面抽卡没有抽过$j$。</li>
 </ul>
 <p>记牌总数$n$，牌面为$i$的牌有$c(i)$张，有转移</p>
-<p>$$
+<div>$$
 \begin{aligned}
 f(i,j)=\frac{c(j)}{n-i+1}\sum_{0 \leq k \leq j-1}f(i-1,k)
 \end{aligned}
-$$</p>
+$$</div>
 <p>有答案</p>
-<p>$$
+<div>$$
 \text{ans}=\sum_{1 \leq i,j \leq n} f(i,j)\frac{c(j)-1}{n-i+1}
-$$</p>
+$$</div>
 <h2 id="代码">代码</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -5198,12 +5198,12 @@ stable-gnu
                 
                     <description><![CDATA[<h2 id="c">C</h2>
 <p>无脑DP.设状态$f(i,j,0/1)$表示已经设置了$i$位,用了$j$个偶数,第$i$位是偶数/奇数.然后</p>
-<p>$$
+<div>$$
 \begin{aligned}
-f(i,j,0)&amp;=\min{f(i-1,j-1,0),f(i-1,j-1,1)+1} \<br>
-f(i,j,1)&amp;=\min{f(i-1,j,0)+1,f(i-1,j,1)}
+f(i,j,0)&=\min\{f(i-1,j-1,0),f(i-1,j-1,1)+1\} \\
+f(i,j,1)&=\min\{f(i-1,j,0)+1,f(i-1,j,1)\}
 \end{aligned}
-$$</p>
+$$</div>
 <p>以$i=1$作为开始,因为第1位不能算代价.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -6623,13 +6623,13 @@ otherwise the second cow wins.</p>
 <p>这样就可以正确的判断某个数是不是满足条件。接下来是平方和。</p>
 <p>当以数位来考虑平方和时，问题就稍微变得复杂了。假设我们已经知道了下一个状态的平方和为$x_n$，如何得到当前位$x$的平方和。</p>
 <p>假设当前位$ptr$填了$i$。其数位所表达的意义是$10^{p}i$，那么以该位与下一状态的平方和，需要下一状态的<strong>和</strong>，定为$s_n$。可以得到</p>
-<p>$$
+<div>$$
 (10^p i+s_n)^2=10^{2p}i^2+2 \cdot 10^pis_n+s_n^2
-$$</p>
+$$</div>
 <p>另外，当前位的出现次数在实际计算时需要考虑进去。那么，还需要维护下一状态的<strong>个数</strong>，记$cnt$。那么，上式需要修改</p>
-<p>$$
+<div>$$
 10^{2p}i^2 \cdot cnt_n+2 \cdot 10^pis_n+s_n^2
-$$</p>
+$$</div>
 <p>后两项不乘以$cnt$是因为它们本身就已经是包括了下一状态的所有计数。这样，我们就得到了以数位为角度的平方和维护办法。</p>
 <h3 id="代码-6">代码</h3>
 <div class="highlight"><div class="chroma">
@@ -7941,15 +7941,15 @@ $$</p>
 <p>操作数不多于100000，操作3不多于1000；数列长度不多于10000，<strong>a的值域不大于1000</strong>。</p>
 <h2 id="分析">分析</h2>
 <p>将$\lfloor \frac {t-b_i}{a_i} \rfloor$拆开，观察前后可能出现的差。</p>
-<p>$$
+<div>$$
 \lfloor \frac {t}{a_i} \rfloor - \lfloor \frac {b_i}{a_i} \rfloor
-$$</p>
+$$</div>
 <p>设$t=k_1a_i+c_1,b_i=k_2a_i+c_2$，代入观察。</p>
-<p>$$
+<div>$$
 \begin{aligned}
-\lfloor \frac {t-b_i}{a_i} \rfloor&amp;=\lfloor \frac {(k_1-k_2)a_i+c_1-c_2}{a_i} \rfloor \<br>
+\lfloor \frac {t-b_i}{a_i} \rfloor&=\lfloor \frac {(k_1-k_2)a_i+c_1-c_2}{a_i} \rfloor \\
 \end{aligned}
-$$</p>
+$$</div>
 <p>可以发现，当把式子拆开时，有2种情况。</p>
 <ul>
 <li>$c_1 &gt; c_2$，啥事没有。</li>
@@ -8416,9 +8416,9 @@ $$</p>
 <p>这道题的翻译就是“重新确定每个颜色的权值，使得逆序对最少”。</p>
 <p>然后我就卡了，现在我也不是特别清楚为啥可以dp，只是知道能dp。</p>
 <p>选择状态$f(S)$表示集合$S$已经全部分配权值时产生的最少逆序对。枚举下一个颜色，给予下一个（较小）权值，并计算代价。</p>
-<p>$$
-f(S+{i})=min{f(S)+w}
-$$</p>
+<div>$$
+f(S+\{i\})=min\{f(S)+w\}
+$$</div>
 <p>接下来是w的处理。我们需要的是在当前颜色的所有点前的<strong>已经拥有新权值</strong>的点数目，这可以事先预处理。预处理颜色i前颜色j的pair数即可。</p>
 <h2 id="代码">代码</h2>
 <p>不小心把ptr扔到了里层循环里T了发…</p>
@@ -8611,9 +8611,9 @@ $$</p>
 <p>接下来要考虑的是<strong>优势</strong>，在这道题里优势就是差值。先手的目的是扩大优势，在大的一边增大会加大优势，而在小的一边置0不会扩大优势；后手要<strong>减小优势</strong>，同样的办法就是在小的一侧置数来追赶另一侧，在大的一侧置0不会更好。</p>
 <p>那么，又可以得出先手扩大优势最好的办法是置9（最大）。那么游戏最开始的几步，就是双方在两侧填写9。直到某侧不再有空位。</p>
 <p>此时，如果空位在大的一侧，先手必赢。如果空位在小的一侧，继续讨论如下</p>
-<p>$$
+<div>$$
 x_1+x_2+\cdots+x_n=C
-$$</p>
+$$</div>
 <p>首先$2|n$显然。</p>
 <p>当C不是9的倍数时，先手总有办法让最终结果偏离。因此该情况只有当$\frac n2 \times 9 = n$时后手才能获胜。</p>
 <h2 id="代码">代码</h2>
@@ -8732,20 +8732,20 @@ $$</p>
 <h3 id="子串第一次出现的位置">子串第一次出现的位置</h3>
 <p>对SAM中所有状态预处理firstpos（第一次出现该状态的末端位置，也就是endpos集合的最小元素）。</p>
 <p>扩展源函数为<code>sam_extend()</code>。创建新状态<code>cur</code>时，令</p>
-<p>$$
+<div>$$
 firstpos(cur)=len(cur)-1
-$$</p>
+$$</div>
 <p>当<code>q</code>复制到<code>clone</code>时，令</p>
-<p>$$
+<div>$$
 firstpos(clone)=firstpos(q)
-$$</p>
+$$</div>
 <p>需要的答案就是$firstpos(t)-|P|+1$，$t$为字符串$P$的状态。每次查询需要$O(|P|)$</p>
 <h3 id="最短未出现字符串">最短未出现字符串</h3>
 <p>动态规划。</p>
 <p>让$d_v$为节点$v$的答案。如果不存在使用字符集中至少一个字符的转移，那么$d_v=1$，否则</p>
-<p>$$
+<div>$$
 d_v=1+\min_{w:(v,w,c) \in SAM} d_w
-$$</p>
+$$</div>
 <p>字符串可以由转移推回去。</p>
 ]]></description>
                 
@@ -9177,10 +9177,10 @@ $$</p>
 <h2 id="分析">分析</h2>
 <p>这道题其实和多校的Snowy Smile（题文无关）挺像的。</p>
 <p>需要转化条件。正方形全部位于坐标系第一象限的平分线上，可以表示为$(l,r)$这种形式。一个在正方形内的点$(x,y)$(假设$x &lt; y$,由于这个题目的特性，不满足时可以直接调换)满足的条件为</p>
-<p>$$l \leq x \leq y \leq r$$</p>
+<div>$$l \leq x \leq y \leq r$$</div>
 <p>由此，这道题就变成了二维偏序。本来的本来，上个长得像树状数组一类的东西就解决了。</p>
 <p>将点按照第一维排序，从大到小枚举，在数据结构中维护结尾到r的前缀和最大值，并查询，更新全局答案。不过这个题目还要求权值要减去正方形边长w。</p>
-<p>$$f(r)-(r-l)=l+[f(r)-r]$$</p>
+<div>$$f(r)-(r-l)=l+[f(r)-r]$$</div>
 <p>维护最大值，y分开，只在pushup时合在一起。</p>
 <p>然后还要离散化……</p>
 <h2 id="代码">代码</h2>
@@ -9740,9 +9740,9 @@ $$</p>
 </ul>
 <h3 id="除法取模">除法取模</h3>
 <p>对于式子</p>
-<p>$$
+<div>$$
 \frac {a \times b}{c} \mod p \equiv \frac{a \times b \mod cp}{c}
-$$</p>
+$$</div>
 <h2 id="细节">细节</h2>
 <ul>
 <li>注意数据类型,例如<code>6*(ll)(1&lt;&lt;30)</code>是要出问题的</li>
@@ -9781,23 +9781,23 @@ $$</p>
 <p>Given $n$ and $m$ ($1 \leq n,m \leq 5 \times 10^4$),  please calculate</p>
 <h3 id="分析">分析</h3>
 <p>下面所有的除法都是舍去小数的整除.</p>
-<p>$$
+<div>$$
 \begin{aligned}
-\sum_{i=1}^n\sum_{j=1}^m \sigma_0(ij) &amp;= \sum_{i=1}^n\sum_{j=1}^m \sum_{p|i}\sum_{q|j}[p \perp q] \<br>
-&amp;=\sum_{i=1}^n\sum_{j=1}^m \sum_{p|i}\sum_{q|j}\sum_{d|(p,q)}\mu(d) \<br>
-&amp;=\sum_{i=1}^n\sum_{j=1}^m \sum_{p|i}\sum_{q|j}\sum_{d}\mu(d)[d|p][d|q] \<br>
-&amp;=\sum_d \mu(d)\sum_{i=1}^n\sum_{j=1}^m \sum_{pd} \sum_{qd}[pd|i][qd|j] \<br>
-&amp;=\sum_d \mu(d) \sum_{pd} \sum_{qd}\sum_{i=1}^{n/pd}\sum_{j=1}^{m/qd} \<br>
-&amp;=\sum_d \mu(d) \sum_{pd} \sum_{qd} \frac n {pd}\frac m {qd} \<br>
-&amp;=\sum_d \mu(d) \sum_p^{n/d} \frac n {pd} \sum_q^{m/d} \frac m {qd} \<br>
+\sum_{i=1}^n\sum_{j=1}^m \sigma_0(ij) &= \sum_{i=1}^n\sum_{j=1}^m \sum_{p|i}\sum_{q|j}[p \perp q] \\
+&=\sum_{i=1}^n\sum_{j=1}^m \sum_{p|i}\sum_{q|j}\sum_{d|(p,q)}\mu(d) \\
+&=\sum_{i=1}^n\sum_{j=1}^m \sum_{p|i}\sum_{q|j}\sum_{d}\mu(d)[d|p][d|q] \\
+&=\sum_d \mu(d)\sum_{i=1}^n\sum_{j=1}^m \sum_{pd} \sum_{qd}[pd|i][qd|j] \\
+&=\sum_d \mu(d) \sum_{pd} \sum_{qd}\sum_{i=1}^{n/pd}\sum_{j=1}^{m/qd} \\
+&=\sum_d \mu(d) \sum_{pd} \sum_{qd} \frac n {pd}\frac m {qd} \\
+&=\sum_d \mu(d) \sum_p^{n/d} \frac n {pd} \sum_q^{m/d} \frac m {qd} \\
 \end{aligned}
-$$</p>
+$$</div>
 <p>设$S(n)=\sum_{1\leq i \leq n} \frac n i$</p>
-<p>$$
+<div>$$
 \begin{aligned}
-\sum_{i=1}^n\sum_{j=1}^m \sigma_0(ij) &amp;=\sum_d \mu(d)S(n/d)S(m/d)
+\sum_{i=1}^n\sum_{j=1}^m \sigma_0(ij) &=\sum_d \mu(d)S(n/d)S(m/d)
 \end{aligned}
-$$</p>
+$$</div>
 <p>$n/d$的取值在一个区间中是相同的,因此可以把这个求和公式分块计算.(在分块后,需要获知该段区域内$\mu$的和,所以需要求前缀和)由于$n/d$的取值为$O(\sqrt n)$的级别,因此在知道$S$的值的情况下,每个询问可以这个复杂度中计算出来.</p>
 <p>对于$\mu$,使用筛法,并求出其前缀和.</p>
 <p>对于$S$,直接暴力计算.</p>
@@ -9938,33 +9938,33 @@ $$</p>
 </div>
 </div><h2 id="table">table</h2>
 <p>给出多组$n,m,a$,求</p>
-<p>$$
+<div>$$
 \sum_{i=1}^n \sum_{j=1}^m \sigma_1((i,j))[\sigma_1((i,j)) \geq a]
-$$</p>
+$$</div>
 <h3 id="分析-1">分析</h3>
 <blockquote>
 <p>这道题让谁都能看出来重点是如何处理条件</p>
-<p>$$[\sigma_1((i,j)) \geq a]$$</p>
+<div>$$[\sigma_1((i,j)) \geq a]$$</div>
 </blockquote>
 <p>可是这我显然不知道该怎么做.</p>
 <p>对询问作以$a$从小到大离线处理,询问前先处理新增$a$的影响.</p>
 <p>在已经满足条件的前提下对公式作化简.</p>
-<p>$$
+<div>$$
 \begin{aligned}
-\sum_{i=1}^n \sum_{j=1}^m \sigma_1((i,j)) &amp;= \sum_d \sum_{i=1}^n \sum_{j=1}^m \sigma_1(d)[(i,j)=d] \<br>
-&amp;=\sum_d \sum_{i\leq \frac nd}\sum_{j\leq \frac md}\sigma_1(d)[(i,j)=1] \<br>
-&amp;=\sum_d \sum_{i\leq \frac n{td}}\sum_{j\leq \frac m{td}}\sigma_1(d) \sum_t \mu(t) \<br>
-&amp;=\sum_d \sum_t \mu(t) \sigma_1(d)  \sum_{i\leq \frac n{td}}\sum_{j\leq \frac m{td}} 1 \<br>
-&amp;=\sum_T \lfloor \frac nT \rfloor \lfloor \frac mT \rfloor \sum_{d|T}\mu(t)\sigma_1(\frac Td)
+\sum_{i=1}^n \sum_{j=1}^m \sigma_1((i,j)) &= \sum_d \sum_{i=1}^n \sum_{j=1}^m \sigma_1(d)[(i,j)=d] \\
+&=\sum_d \sum_{i\leq \frac nd}\sum_{j\leq \frac md}\sigma_1(d)[(i,j)=1] \\
+&=\sum_d \sum_{i\leq \frac n{td}}\sum_{j\leq \frac m{td}}\sigma_1(d) \sum_t \mu(t) \\
+&=\sum_d \sum_t \mu(t) \sigma_1(d)  \sum_{i\leq \frac n{td}}\sum_{j\leq \frac m{td}} 1 \\
+&=\sum_T \lfloor \frac nT \rfloor \lfloor \frac mT \rfloor \sum_{d|T}\mu(t)\sigma_1(\frac Td)
 \end{aligned}
-$$</p>
+$$</div>
 <p>可以看到还是套路,引入d,引入$\mu$,之后胡乱化简.</p>
 <p>按照这个式子,需要计算的就是$g(x)=\sum_{d|T}\mu(t)\sigma_1(\frac Td)$的前缀和.</p>
 <p>接下来是如何处理条件...</p>
 <p>当$a$每扩大一点,就有一部分$\mu(t)\sigma_1(\frac Td)$被加入到函数$g$的各个部分.使用一种数据结构来维护$g$的前缀和,例如树状数组.$a$最大到,每次受到影响的就是$d$的倍数,以此可以计算出总的时间复杂度为</p>
-<p>$$
+<div>$$
 WTF
-$$</p>
+$$</div>
 <p>至此,问题就解决了.</p>
 <h3 id="代码-1">代码</h3>
 <p>又丑又长.</p>
@@ -10271,36 +10271,36 @@ $$</p>
 </div><h2 id="product">product</h2>
 <p>定义斐波纳妾(?)(linux这输入法够魔性)函数$f(x)$</p>
 <p>求</p>
-<p>$$
+<div>$$
 \prod_{i=1}^n \prod_{j=1}^m f((i,j))
-$$</p>
+$$</div>
 <h3 id="分析-2">分析</h3>
 <p>首先,先引个$d$是没错了.</p>
 <p>但是</p>
 <p>这道题,我又不会.我不知道该怎么处理$\prod$...蔡就完事了.</p>
 <p>现在来看,当引入一个$d$后,在该求积公式里出现了相同项相乘.将该部分的计算调整为幂,剩下的就又都一样了.</p>
-<p>$$
+<div>$$
 \begin{aligned}
-\prod_{i=1}^n \prod_{j=1}^m f((i,j)) &amp;= \prod_d f(d)^{\sum_{i\leq n} \sum_{j \leq m} [(i,j)=d]} \<br>
-&amp;=\prod_d f(d)^{\sum_{i\leq \frac nd} \sum_{j \leq \frac md} [(i,j)=1]} \<br>
-&amp;=\prod_d f(d)^{\sum_t \mu(t) \sum_{i\leq \frac n{td}} \sum_{j \leq \frac m{td}} 1 } \<br>
-&amp;=\prod_d \prod_t f(d)^{\mu(t) \sum_{i\leq \frac n{td}} \sum_{j \leq \frac m{td}} 1 } \<br>
-&amp;=\prod_T (\prod_{d|T}  f(d)^{\mu(\frac Tt)})^{\lfloor \frac nT \rfloor \lfloor \frac mT \rfloor }
+\prod_{i=1}^n \prod_{j=1}^m f((i,j)) &= \prod_d f(d)^{\sum_{i\leq n} \sum_{j \leq m} [(i,j)=d]} \\
+&=\prod_d f(d)^{\sum_{i\leq \frac nd} \sum_{j \leq \frac md} [(i,j)=1]} \\
+&=\prod_d f(d)^{\sum_t \mu(t) \sum_{i\leq \frac n{td}} \sum_{j \leq \frac m{td}} 1 } \\
+&=\prod_d \prod_t f(d)^{\mu(t) \sum_{i\leq \frac n{td}} \sum_{j \leq \frac m{td}} 1 } \\
+&=\prod_T (\prod_{d|T}  f(d)^{\mu(\frac Tt)})^{\lfloor \frac nT \rfloor \lfloor \frac mT \rfloor }
 \end{aligned}
-$$</p>
+$$</div>
 <p>设$g(x)=\prod_{d|T}  f(d)^{\mu(\frac Tt)}$,求前缀和就完事了.</p>
 <blockquote>
 <p>这道题需要使用<strong>欧拉定理</strong>来优化求幂的速度.</p>
 </blockquote>
 <h3 id="欧拉定理">欧拉定理</h3>
 <p>当$(a,p)=1$,有以下式子</p>
-<p>$$
+<div>$$
 a^b \equiv a^{b \mod \phi(p)} \pmod p
-$$</p>
+$$</div>
 <p>当$(a,p)\neq 1$,有扩展欧拉定理</p>
-<p>$$
+<div>$$
 a^b \equiv a^{b \mod \phi(p)+ \phi(p)} \pmod p
-$$</p>
+$$</div>
 <p>根据这2个式子,可以在快速降幂,来加快运算.</p>
 <h3 id="代码-2">代码</h3>
 <div class="highlight"><div class="chroma">
@@ -10517,25 +10517,25 @@ $$</p>
 </div>
 </div><h2 id="phi3">phi3</h2>
 <p>给出$n$,求</p>
-<p>$$
+<div>$$
 (\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^n \frac {\phi(i)\phi(j^2)\phi(k^3)}{\phi(i)\phi(j)\phi(k)} \phi((i,j,k))) \mod 2^{30}
-$$</p>
+$$</div>
 <h3 id="分析-3">分析</h3>
 <p>这道题重点在于</p>
-<p>$$\frac {\phi(i)\phi(j^2)\phi(k^3)}{\phi(i)\phi(j)\phi(k)}$$</p>
+<div>$$\frac {\phi(i)\phi(j^2)\phi(k^3)}{\phi(i)\phi(j)\phi(k)}$$</div>
 <p>这堆东西的化简.很显然,我又不会.</p>
 <p>观察$\phi(n)$的公式</p>
-<p>$$
+<div>$$
 \phi(n)=n\prod_i(1-\frac 1{\phi(i)})
-$$</p>
+$$</div>
 <p>可以得出上面那一堆等于$jk^2$.剩下的就又都一样了.</p>
-<p>$$
+<div>$$
 \begin{aligned}
-\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^n jk^2 \phi((i,j,k)) &amp;=\sum_d\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^n jk^2 \phi(d)[(i,j,k)=d] \<br>
-&amp;=\sum_d \sum_{t} \phi(d) \mu(t) t^3d^3 \sum_{i\leq \frac n{td}}\sum_{j \leq \frac n{td}}\sum_{k \leq \frac n{td}} jk^2 \<br>
-&amp;=\sum_T \sum_{i\leq \frac nT}\sum_{j \leq \frac nT} j\sum_{k \leq \frac nT}k^2 (T^3 \sum_{d|T} \phi(d) \mu(\frac Td))
-\end{aligned}
-$$</p>
+\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^n jk^2 \phi((i,j,k)) &=\sum_d\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^n jk^2 \phi(d)[(i,j,k)=d] \\
+&=\sum_d \sum_{t} \phi(d) \mu(t) t^3d^3 \sum_{i\leq \frac n{td}}\sum_{j \leq \frac n{td}}\sum_{k \leq \frac n{td}} jk^2 \\
+&=\sum_T \sum_{i\leq \frac nT}\sum_{j \leq \frac nT} j\sum_{k \leq \frac nT}k^2 (T^3 \sum_{d|T} \phi(d) \mu(\frac Td))
+\end{aligned} 
+$$</div>
 <p>设$g(n)=\sum_{d|T} \phi(d) \mu(\frac Td)$,直接筛.最后计算前缀和的时候再乘上$n^3$就可以了.</p>
 <blockquote>
 <p>这道题的取模还有这种处理方法: 直接取数组为<code>unsigned</code>并自然溢出.<strong>二进制后30位</strong>不会受到影响.</p>
@@ -12205,9 +12205,9 @@ $$</p>
 <p>对方案数mod 2015，球最多有100000个。</p>
 <h1 id="分析">分析</h1>
 <p>考虑对于非环状球的答案计算，可以设$sum(i,k)$表示第i个球为k色时的方案数。其计算非常显然</p>
-<p>$$
+<div>$$
 sum(i,k)=\sum_{1\leq j \leq 6}{sum(i-j,1-k)}
-$$</p>
+$$</div>
 <p>接下来考虑收尾相接后需要排除的情况，即收尾同色球长度相加超过6的情况，这可以直接枚举。</p>
 <p>首取i个末取j个同色，从答案中删除此时剩下球的方案数，注意剩下的球的首末球颜色<strong>不能</strong>和已经枚举的颜色同色。鉴于这种要求，我们退回到sum的递推公式处，决定sum的边界条件为首个球固定为黑色，这样就能很方便的确定球的颜色，且根据对称性答案可以直接x2得到。</p>
 <p>题就做完了。</p>
@@ -13101,12 +13101,12 @@ $$</p>
 <h1 id="分析">分析</h1>
 <p>最大值最小，考虑二分答案。思考题目是否具有单调性：当最大值极大时，书可以随便分，当最大值极小时，可能会出现无法凑齐的状况，目测满足。</p>
 <p>题目要求分书时必须连续分，可以使用动态规划来做。假设二分的答案为lim</p>
-<p>$$f(i)=\max { f(j) | \sum_{k=j+1}^i a_k \leq lim  }+1$$</p>
+<div>$$f(i)=\max \{ f(j) | \sum_{k=j+1}^i a_k \leq lim  \}+1$$</div>
 <p>将求和改为前缀和，$pre(i)$。</p>
-<p>$$f(i)=\max { f(j) | pre(i)-pre(j-1) \leq lim  }+1$$</p>
+<div>$$f(i)=\max \{ f(j) | pre(i)-pre(j-1) \leq lim  \}+1$$</div>
 <p>动态规划的复杂度为$O(n^2)$，太慢，考虑优化。</p>
 <p>每次转移都从先前已经出现的满足要求的f中转移。限制条件转一下，就是</p>
-<p>$$pre(i)-lim \leq pre(?)$$</p>
+<div>$$pre(i)-lim \leq pre(?)$$</div>
 <ul>
 <li>当有2个f对应的前缀和相同，我们选择更大的那个</li>
 </ul>
@@ -13550,10 +13550,10 @@ Then T line follows, each contains a positive prime number P (1e9≤p≤1e14)</p
 <li>费马小定理要求p是质数</li>
 </ul>
 <h2 id="欧拉函数">欧拉函数</h2>
-<p>小于x且与其互质的数的个数
-$$
+<p>小于x且与其互质的数的个数</p>
+<div>$$
 \phi(x)=x\prod_{k=1}^n(1-\frac{1}{p_k})
-$$</p>
+$$</div>
 <ul>
 <li>$phi(1)=1$</li>
 <li>$phi(p)=p-1$,当p为质数</li>
@@ -13669,7 +13669,7 @@ $$</p>
 <p>从给定的N个集合中各挑出一个数并求和，求出前$K$大的$K$个和。</p>
 <p>考虑如何从2个集合$A$,$B$中选出前$K$大。降序排序后$a_1$和$b_1$显然是最大，第二大则是$(a_1,b_2)$或者$(a_2,b_1)$。不妨以$(a_1,b_2)$来讲，那么第三大竞争者除$(a_2,b_1)$还有$(a_1,b_3)$，$(a_2,b_3)$……每对组合都能找到直接小于它的2个组合，而这种后继关系显然取遍了所有组合。仅需要前K大的我们按需扩展这一棵树即可。2个集合的前K大可与第3个集合执行相同的操作，从而得到最终答案。实际编写时，按照一定顺序限制扩展方向来保证每个方案仅访问一次，使用优先队列维护，复杂度为$O(\sum^N{K\log n_k}) \leq O(KN)$</p>
 <h2 id="lis优化">LIS优化</h2>
-<p>$$f(i)=max{f(j)| j &lt; i, a(j) &lt; a(i) }+1$$</p>
+<div>$$f(i)=max\{f(j)| j < i, a(j) < a(i) \}+1$$</div>
 <p>可以发现，一旦有$a(k) &lt; a(j), f(k) \geq f(j)$，j这个位置就没有用了。按照该规律维护一个单调栈记录，以长度单调（则数字a结尾的LIS自然单调）。此后转移</p>
 ]]></description>
                 
@@ -13710,9 +13710,9 @@ $$</p>
 <li>只能向右或者下走。</li>
 <li>将经过数字相乘后得到的结果，使其末尾的“0”最少。</li>
 </ul>
-<p>$$
+<div>$$
 N \leq 1000
-$$</p>
+$$</div>
 <h2 id="分析">分析</h2>
 <p>大概是因为末尾的0长得像珍珠。</p>
 <p>思考0是怎么出现的，可以发现结果中因数10的指数越小越好，即，使得经过的路上凑出的因数10最少即可。10的质因数分解为$2 \times 5$，以矩阵中每个数所含因数2和5的数目分别DP一遍求路径，再在两次DP的结果中取小。</p>
@@ -14158,158 +14158,95 @@ $$</p>
                 
                     <description><![CDATA[<blockquote>
 <p>写代码是不可能写代码的,今下午是不想写代码的.不想写代码,又不想咸鱼,就只能靠学点新东西来假装自己在工作的样子,心里才能好受些.</p>
-
 <blockquote>
 <p>窃格码拉</p>
 </blockquote>
 </blockquote>
-
 <p>几乎可以肯定,下面的内容肯定会出锅.</p>
-
 <h2 id="傅里叶变换的实际意义">傅里叶变换的实际意义</h2>
-
 <h3 id="从电压说起">从电压说起</h3>
-
 <p>被模电折磨的同学都知道,有种东西叫做傅里叶级数,可以将成周期性变化的电压分解为数个三角函数波的叠加.</p>
-
 <p>在这里,我们提出另一个问题,如果不知道周期,该如何将这些叠加在一起的信号拆分为单纯的三角波?</p>
-
 <blockquote>
 <p>三角波叠加图象周期并不那么显然,也许你可以试一试.</p>
 </blockquote>
-
 <h3 id="一种缠绕机">一种缠绕机</h3>
-
 <p>有一种奇特的方法,我们将一段<code>时域图象</code>在笛卡尔坐标系上以原点为圆心<strong>绕</strong>起来,一圈一圈缠起来,然后调整源图象缠绕的速率(几秒一圈),观察整个图形的<strong>质心</strong>变化.</p>
-
 <p>这个质心会随着图象缠绕的频率而发生位移.取质心的x坐标为y轴,以缠绕的频率为横轴,作出图象<code>B</code>.在这个图象上,会观测到一个现象:(假设我们已知原图像的分解三角波频率)当缠绕频率接近某个源三角波的频率时,缠绕图象出现<strong>重合</strong>,质心相对原点出现较大位移,图象出现一个<strong>峰值</strong>.</p>
-
 <p>继续调整缠绕频率,峰值消失,图象回归到小范围波动.</p>
-
 <p>通过观察图象<code>B</code>,可以认为,出现峰值的频率对应着一个频率的源三角波.如此,就将叠加图象还原了回去.</p>
-
 <h2 id="傅里叶变换的数学实现">傅里叶变换的数学实现</h2>
-
 <p>现在,考虑如何通过的数学的方法来实现这个缠绕.</p>
-
 <h3 id="如何缠绕">如何缠绕</h3>
-
 <p>将$g(t)$的图象缠绕到圆上听起来挺奇怪的,有这样的数学方法吗.</p>
-
 <p>有一个东西,叫做$y=e^{ix}$.当其图象画在复平面时,就出现了有趣的事情:一个圆.对这个公式做一些加工.</p>
-
-<p><span  class="math">\[
+<div>$$
 y=g(t)e^{-2\pi i ft}
-\]</span></p>
-
+$$</div>
 <p>如此,就能够将$g(t)$以$f$频率缠绕.</p>
-
 <h3 id="关于质心">关于质心</h3>
-
 <p>上文我们取质心的x坐标作图,现在需要稍微修改一下.</p>
-
 <p>实际上,我们关心的是质心相对于原点的偏移<strong>距离</strong>.同样,以复平面的方式来表示质心位置就能够同时保留x和y坐标信息.</p>
-
 <p>关于如何求取质心,其实也很直观.选取缠绕图象上的数个点,取平均,就是质心的大约位置.当点的数目达到极限,求和公式化为积分,所求即为质心.</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(f)=\frac{1}{t_2-t_1} \int_{t_1}^{t_2}{g(t)e^{-2\pi i ft}}
-\]</span></p>
-
-<h3 id="section-">?</h3>
-
+$$</div>
+<h3 id="heading">?</h3>
 <p>目前为止,这几乎已经是傅里叶变换了.在数学应用时,傅里叶变换会去掉取均值,即</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(f)=\int_{t_1}^{t_2}{g(t)e^{-2\pi i ft}}
-\]</span></p>
-
+$$</div>
 <p>也就是说,取样的时域信号越长,该质心的偏移倾向越大,这和我们想要的效果一致.</p>
-
 <p>这就是傅里叶变换,实现了<code>时域信号</code>到<code>频域信号</code>的转换.</p>
-
 <p>此外,还有方法将频域信号再次逆变换为时域信号的方法.</p>
-
 <h2 id="应用">应用</h2>
-
 <p>傅里叶变换在很多领域都有重要作用.只要问题能转换为时域频域之间的变化,就有傅里叶变换的用武之处.</p>
-
 <p>比如,在音频处理软件中,常常有一个功能叫做<code>消除人声</code>.基于傅里叶变换我们可以设计一个(至少理论上有用)的算法.</p>
-
 <p>首先,任何声音都是相应频率的波对气压变化引起的,也就是不同<strong>频率</strong>的波在<strong>时间</strong>上叠加在一起,产生了声音.将源波使用傅里叶变换拆分到多个三角波上去.<strong>删除人声所在的频域</strong>,再将频域信号逆变换为时域信号.人声便消失了.</p>
-
 <h2 id="离散傅里叶变换">离散傅里叶变换</h2>
-
 <p>连续意义下的傅里叶变换先到此为止.在计算机中所处理的数据一般都是离散的.我们需要的是离散傅里叶变换.</p>
-
 <p>离散意义下的时域信号和频域信号就都变成了点集.当从连续向离散过渡时,可以这样思考:</p>
-
 <blockquote>
 <p>在连续的图象上以一定间隔<strong>取样</strong>得到离散点集.使用该点集进行傅里叶变换.</p>
 </blockquote>
-
 <p>这也是我们一开始采取的质心求解方法,只不过,这次我们从缠绕时就取样.(质点依然是真正的质点)
 对于点集$g(0\leq n &lt; N)$,它的傅里叶变化就是</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(k)=\sum_{n=0}^{N-1}g(n)e^{-i\frac {2\pi}{N}nk}
-\]</span></p>
-
+$$</div>
 <p>简单粗暴.</p>
-
 <h2 id="快速傅里叶变换">快速傅里叶变换</h2>
-
 <p>在了解了关于傅里叶变换的一系列背景与一个应用后,我们再回来解决一些重要的问题.</p>
-
 <p>根据傅里叶变换的公式定义</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(k)=\sum_{n=0}^{N-1}g(n)e^{-i\frac {2\pi}{N}nk}
-\]</span></p>
-
+$$</div>
 <p>其朴素算法的时间复杂度为$O(N^2)$ 这个复杂度还不够优秀.一种快速傅里叶变换算法利用$e^{ix}$的性质,将复杂度降低到了$O(N\lg N)$.</p>
-
 <h3 id="单位根">单位根</h3>
-
 <p>给$e^{ix}$个名字.</p>
-
 <p>在数学上, $n$次<strong>单位根</strong>是 $n$次幂为1的复数.它们位于复平面的单位圆上,构成正n边形的顶点,其中一个顶点是1.</p>
-
 <p>记</p>
-
-<p><span  class="math">\[
+<div>$$
 \omega_{n,k}=-e^{i\frac{2\pi}{n}k}
-\]</span></p>
-
+$$</div>
 <p>其几何意义为单位圆上的n等分点的顺时针第k个.</p>
-
 <blockquote>
 <p>一般来说,单位根取逆时针,不过这里为了方便,取顺时针.</p>
 </blockquote>
-
 <p>如同三角函数一样,单位根存在一些显然的定理.</p>
-
-<p><strong>折半:</strong>$\omega_{2n,2k}=\omega_{n,k}$</p>
-
-<p><strong>化简:</strong>$\omega_{n,k+\frac 2n}=-\omega_{n,k}$</p>
-
+<p>**折半:**$\omega_{2n,2k}=\omega_{n,k}$</p>
+<p>**化简:**$\omega_{n,k+\frac 2n}=-\omega_{n,k}$</p>
 <h4 id="修改公式">修改公式</h4>
-
 <p>来看原本的离散傅里叶变换公式</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(k)=\sum_{n=0}^{N-1}g(n)e^{-i\frac {2\pi}{N}nk}
-\]</span></p>
-
+$$</div>
 <p>使用单位根来替换一下</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(k)=\sum_{n=0}^{N-1}\omega_{N,nk} g(n)
-\]</span></p>
-
+$$</div>
 <p>按照<del>神</del>化简公式的指引,将求和公式按照单位根奇偶拆分为2部分.</p>
-
-<p><span  class="math">\[
+<div>$$
 \begin{aligned}
 \hat g(k) &= \sum_{n=0}^{N-1}\omega_{N,nk} g(n) \\
 &= \sum_{0 \leq n < N}\omega_{N,nk} g(n) \\
@@ -14318,165 +14255,108 @@ y=g(t)e^{-2\pi i ft}
 &=\sum_{0 \leq 2n < N}\omega_{\frac N2,nk} g(2n) + \omega_{N,k}\sum_{0 \leq 2n+1 < N}\omega_{\frac N2,nk} g(2n+1) \\\\
 &=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k)
 \end{aligned}
-\]</span></p>
-
+$$</div>
 <p>注意到不管是$\hat g_{even}(k)$还是$\hat g_{even}(k)$,它们都以$N/2$为周期.接下来,应用化简定理</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(k+\frac N2)=\hat g_{even}(k)-\omega_{N,k} \hat g_{odd}(k)
-\]</span></p>
-
+$$</div>
 <p>将这2个式子放在一起</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(k)=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k) \\
 \hat g(k+\frac N2)=\hat g_{even}(k)-\omega_{N,k} \hat g_{odd}(k)
-\]</span></p>
-
+$$</div>
 <p>当k取遍原问题规模的一半时,可以直接由第二个式子得到另一半.问题的规模减半.递归求解,最终的复杂度就降到了$O(N \lg N)$.</p>
-
 <p>这就是<code>Cooley-Turkey</code>快速傅里叶变换算法.</p>
-
 <h2 id="快速乘法">快速乘法</h2>
-
 <p>定义多项式$A(x)=\sum_k a_kx^{k+1}$,$B(x)$同理,求解$C(x)=A(x)B(x)$.</p>
-
 <p>很容易看出,朴素算法的复杂度为$O(N^2)$.</p>
-
 <p>现在,来看如何使用FFT快速计算.</p>
-
 <h3 id="点值表示">点值表示</h3>
-
 <blockquote>
 <p>对于一个次数为$n-1$的多项式,其图象上互不相同的$n$个点可以唯一确定该多项式.
 ...
 如同确定混合在一起的几个波一样.</p>
 </blockquote>
-
 <p>至于为什么是对的,大可在Google上搜索一番.</p>
-
 <p>取$x$为数个单位根,在$A(x)$和$B(x)$上利用单位根的性质得到$A$和$B$的点值表示,将点值相乘得到$C$的点值表示.之后,将$C$的点值表示再转换为系数表示.</p>
-
 <p>嗯?FFT在哪?</p>
-
 <p>其实在这里,</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(\omega)=A(\omega)=\sum_{n}\omega A[x^{n+1}]
-\]</span></p>
-
+$$</div>
 <h3 id="离散卷积">离散卷积</h3>
-
 <p>有一种<strong>数学运算</strong>,叫做<strong>卷积</strong>.现在只讨论它的离散情况.</p>
-
-<p><span  class="math">\[
+<div>$$
 (f * g)(n)=\sum_{\tau=-\inf}^{inf}f(\tau)g(n-\tau)
-\]</span></p>
-
+$$</div>
 <p>这玩意的意义...实在是不怎么明显.不过好在我们只是想算个多项式乘法,也就是把多项式的<strong>系数</strong>算来算去:</p>
-
 <p>$C[x^n]$ 表示多项式$C$中$x^n$项的系数.</p>
-
-<p><span  class="math">\[
+<div>$$
 C[x^{n}]=\sum_{\tau=0}^{n}A[x^\tau]B[x^{n-\tau}]
-\]</span></p>
-
+$$</div>
 <p>嗯?</p>
-
 <p>如果我们设多项式中不存在的项的系数为0的话.</p>
-
-<p><span  class="math">\[
+<div>$$
 C[x^{n}]=\sum_{\tau=-\inf}^{\inf}A[x^\tau]B[x^{n-\tau}]
-\]</span></p>
-
+$$</div>
 <p>哈,</p>
-
-<p><span  class="math">\[
+<div>$$
 C[x^n]=(A*B)[x^n]
-\]</span></p>
-
-<h3 id="卷积定理">卷积定理</h3>
-
-<p>卷积定理指出:</p>
-
+$$</div>
+### 卷积定理
+卷积定理指出:
 <blockquote>
 <p>一个域中的卷积对应于另一个域中的乘积.</p>
 </blockquote>
-
 <p>这意味着,上面这个计算(卷积)对应着另一个域里的乘积.也就是</p>
-
-<p><span  class="math">\[
+<div>$$
 F(C[x^n])=F(A[x^n]) \cdot F(B[x^n])
-\]</span></p>
-
+$$</div>
 <p>这便是深层原理.对A和B的取样(频域)称为A和B的点值表示,最终以乘积的方式得到了C的点值表示(频域).用FFT来计算乘法的说法是对的.</p>
-
 <h2 id="傅里叶逆变换">傅里叶逆变换</h2>
-
 <p>如何从一个频域信号再得到时域信号?</p>
-
-<p><span  class="math">\[
+<div>$$
 g(n)=\frac 1N\sum_{k=0}^{N-1}e^{i\frac{2\pi}{N}nk} \hat g(k)
-\]</span></p>
-
+$$</div>
 <blockquote>
 <p>注意:此处的1/N与上面的变换是相匹配的.</p>
 </blockquote>
-
 <p>这个式子可以理解成对变换后的式子再变换,意味着它同样可以用变换时的思想来加速.</p>
-
 <h2 id="fft的c实现">FFT的C++实现</h2>
-
 <p>一个值得注意的问题就是,对于单位根的运算涉及到了精度的问题.但目前还不需要讨论.</p>
-
 <h3 id="翻转操作">翻转操作</h3>
-
 <p>可以观察到,按照上面的算法实现,我们需要在每次递归按照奇和偶将取样分组.且每次递归都会分组.每次分组都会涉及到数组的复制,常数较大.</p>
-
 <p>观察分组操作中下标的变化.</p>
 <pre><code>(表示下标)
 0 1 2 3 4 5 6 7
 0 2 4 6 | 1 3 5 7
-0 4 | 2 6 | 1 5 | 3 7</code></pre>
-<p>将其转换为二进制</p>
+0 4 | 2 6 | 1 5 | 3 7
+</code></pre><p>将其转换为二进制</p>
 <pre><code>000 001 010 011 100 101 110 111
-000 100 010 110 001 101 011 111</code></pre>
-<p>可以发现,最终的分组结果就是将原下标二进制翻转.所以可以直接一次完成分组.</p>
-
+000 100 010 110 001 101 011 111
+</code></pre><p>可以发现,最终的分组结果就是将原下标二进制翻转.所以可以直接一次完成分组.</p>
 <p>注意,<strong>这要求取样为2的幂次</strong>.</p>
-
 <h3 id="蝴蝶操作">🦋蝴蝶操作</h3>
-
 <p>解决了递归中由顶至底的分组后,接下来优化子问题合并时的数组复制.</p>
-
 <p>观察原来的合并式子</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(k)=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k) \\
 \hat g(k+\frac N2)=\hat g_{even}(k)-\omega_{N,k} \hat g_{odd}(k)
-\]</span></p>
-
+$$</div>
 <p>按照算法中的实现方法,其为</p>
-
-<p><span  class="math">\[
+<div>$$
 \hat g(k)=\hat g(k)+\omega_{N,k} \hat g(k+\frac N2) \\
 \hat g(k+\frac N2)=\hat g(k)-\omega_{N,k} \hat g(k+\frac N2)
-\]</span></p>
-
+$$</div>
 <p>想要省略数组复制,进行原地合并,问题出在新数值太早地替换掉了我们需要的数值.</p>
-
 <p>取辅助变量,修改原式</p>
-
-<p><span  class="math">\[
+<div>$$
 t=\omega_{N,k} \hat g(k+\frac N2)\\
 \hat g(k+\frac N2)=\hat g(k)-t\\
 \hat g(k)=\hat g(k)+t
-\]</span></p>
-
+$$</div>
 <p>这个操作被称为&quot;蝴蝶操作&quot;,名字很有意思.</p>
-
 <h3 id="代码">代码</h3>
-
 <p>在这段代码中同时去掉了递归.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -14570,13 +14450,9 @@ t=\omega_{N,k} \hat g(k+\frac N2)\\
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<p>如果想要实现快速乘法,只要将2个多项式的系数函数传入进行变换,变换结果相乘并逆变换即可.</p>
-
+</div><p>如果想要实现快速乘法,只要将2个多项式的系数函数传入进行变换,变换结果相乘并逆变换即可.</p>
 <h2 id="应用-1">应用</h2>
-
 <h3 id="快速乘法-1">快速乘法</h3>
-
 <p>指快速大数乘法。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
