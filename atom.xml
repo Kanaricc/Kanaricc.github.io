@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Kanari&#39;s Blog</title>
     <subtitle type="html">Kanari's blog.</subtitle>
-    <updated>2020-04-07T23:17:25+08:00</updated>
+    <updated>2020-04-08T09:27:22+08:00</updated>
     <id>https://blog.kanari.moe/</id>
     <link rel="alternate" type="text/html" href="https://blog.kanari.moe/" />
     <link rel="self" type="application/atom+xml" href="https://blog.kanari.moe/atom.xml" />
@@ -134,7 +134,7 @@ $$</p>
             <title type="text">一点点点分治</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/a-littile-tree-divide/" />
             <id>https://blog.kanari.moe/study/a-littile-tree-divide/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2020-03-26T18:40:09+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -689,7 +689,7 @@ $$</p>
             <title type="text">一点点决策单调性</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/juece-dandiao/" />
             <id>https://blog.kanari.moe/study/juece-dandiao/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2020-03-23T18:19:48+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -1014,7 +1014,7 @@ $$</p>
             <title type="text">一点点拉格朗日插值</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/lagrange-polynomial/" />
             <id>https://blog.kanari.moe/study/lagrange-polynomial/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2020-03-19T18:18:21+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -2800,7 +2800,7 @@ Your task is to find the maximum possible number of characters you can remove if
             <title type="text">C&#43;&#43;新标准特性初探</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/new-standard-of-cpp/" />
             <id>https://blog.kanari.moe/study/new-standard-of-cpp/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2020-02-23T21:24:40+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -3347,7 +3347,7 @@ Your task is to find the maximum possible number of characters you can remove if
             <title type="text">树链剖分</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/heavy-light-decomposition/" />
             <id>https://blog.kanari.moe/study/heavy-light-decomposition/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2020-02-18T16:11:56+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -4754,7 +4754,7 @@ $$</p>
             <title type="text">与Rust玩耍</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/have-fun-with-rust/" />
             <id>https://blog.kanari.moe/study/have-fun-with-rust/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2020-01-18T20:39:20+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -5973,7 +5973,7 @@ $$</p>
             <title type="text">数位DP</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/digital-dp/" />
             <id>https://blog.kanari.moe/study/digital-dp/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2019-11-06T19:46:23+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -8874,7 +8874,7 @@ $$</p>
             <title type="text">后缀自动机</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/sam/" />
             <id>https://blog.kanari.moe/study/sam/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2019-10-04T20:44:30+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -9932,7 +9932,7 @@ $$</p>
             <title type="text">一些筛法的题</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/some-sieve/" />
             <id>https://blog.kanari.moe/study/some-sieve/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2019-09-05T20:22:11+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -12865,7 +12865,7 @@ $$</p>
             <title type="text">莫队算法</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/mo-s-algorithm/" />
             <id>https://blog.kanari.moe/study/mo-s-algorithm/</id>
-            <updated>2020-04-07T20:55:05+08:00</updated>
+            <updated>2020-04-08T09:10:29+08:00</updated>
             <published>2019-08-03T13:47:41+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -14489,7 +14489,7 @@ $$</p>
             <title type="text">快速傅里叶变换</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/fast-fourier-transform/" />
             <id>https://blog.kanari.moe/study/fast-fourier-transform/</id>
-            <updated>2020-04-07T20:48:06+08:00</updated>
+            <updated>2020-04-08T09:27:17+08:00</updated>
             <published>2019-07-12T14:03:22+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -14500,214 +14500,335 @@ $$</p>
     
     <summary type="html"><![CDATA[<blockquote>
 <p>写代码是不可能写代码的,今下午是不想写代码的.不想写代码,又不想咸鱼,就只能靠学点新东西来假装自己在工作的样子,心里才能好受些.</p>
+
 <blockquote>
 <p>窃格码拉</p>
 </blockquote>
 </blockquote>
+
 <p>几乎可以肯定,下面的内容肯定会出锅.</p>……]]></summary>
             
                 <content type="html"><![CDATA[<blockquote>
 <p>写代码是不可能写代码的,今下午是不想写代码的.不想写代码,又不想咸鱼,就只能靠学点新东西来假装自己在工作的样子,心里才能好受些.</p>
+
 <blockquote>
 <p>窃格码拉</p>
 </blockquote>
 </blockquote>
+
 <p>几乎可以肯定,下面的内容肯定会出锅.</p>
+
 <h2 id="傅里叶变换的实际意义">傅里叶变换的实际意义</h2>
+
 <h3 id="从电压说起">从电压说起</h3>
+
 <p>被模电折磨的同学都知道,有种东西叫做傅里叶级数,可以将成周期性变化的电压分解为数个三角函数波的叠加.</p>
+
 <p>在这里,我们提出另一个问题,如果不知道周期,该如何将这些叠加在一起的信号拆分为单纯的三角波?</p>
+
 <blockquote>
 <p>三角波叠加图象周期并不那么显然,也许你可以试一试.</p>
 </blockquote>
+
 <h3 id="一种缠绕机">一种缠绕机</h3>
+
 <p>有一种奇特的方法,我们将一段<code>时域图象</code>在笛卡尔坐标系上以原点为圆心<strong>绕</strong>起来,一圈一圈缠起来,然后调整源图象缠绕的速率(几秒一圈),观察整个图形的<strong>质心</strong>变化.</p>
+
 <p>这个质心会随着图象缠绕的频率而发生位移.取质心的x坐标为y轴,以缠绕的频率为横轴,作出图象<code>B</code>.在这个图象上,会观测到一个现象:(假设我们已知原图像的分解三角波频率)当缠绕频率接近某个源三角波的频率时,缠绕图象出现<strong>重合</strong>,质心相对原点出现较大位移,图象出现一个<strong>峰值</strong>.</p>
+
 <p>继续调整缠绕频率,峰值消失,图象回归到小范围波动.</p>
+
 <p>通过观察图象<code>B</code>,可以认为,出现峰值的频率对应着一个频率的源三角波.如此,就将叠加图象还原了回去.</p>
+
 <h2 id="傅里叶变换的数学实现">傅里叶变换的数学实现</h2>
+
 <p>现在,考虑如何通过的数学的方法来实现这个缠绕.</p>
+
 <h3 id="如何缠绕">如何缠绕</h3>
+
 <p>将$g(t)$的图象缠绕到圆上听起来挺奇怪的,有这样的数学方法吗.</p>
+
 <p>有一个东西,叫做$y=e^{ix}$.当其图象画在复平面时,就出现了有趣的事情:一个圆.对这个公式做一些加工.</p>
-<p>$$
+
+<p><span  class="math">\[
 y=g(t)e^{-2\pi i ft}
-$$</p>
+\]</span></p>
+
 <p>如此,就能够将$g(t)$以$f$频率缠绕.</p>
+
 <h3 id="关于质心">关于质心</h3>
+
 <p>上文我们取质心的x坐标作图,现在需要稍微修改一下.</p>
+
 <p>实际上,我们关心的是质心相对于原点的偏移<strong>距离</strong>.同样,以复平面的方式来表示质心位置就能够同时保留x和y坐标信息.</p>
+
 <p>关于如何求取质心,其实也很直观.选取缠绕图象上的数个点,取平均,就是质心的大约位置.当点的数目达到极限,求和公式化为积分,所求即为质心.</p>
-<p>$$
+
+<p><span  class="math">\[
 \hat g(f)=\frac{1}{t_2-t_1} \int_{t_1}^{t_2}{g(t)e^{-2\pi i ft}}
-$$</p>
-<h3 id="heading">?</h3>
+\]</span></p>
+
+<h3 id="section-">?</h3>
+
 <p>目前为止,这几乎已经是傅里叶变换了.在数学应用时,傅里叶变换会去掉取均值,即</p>
-<p>$$
+
+<p><span  class="math">\[
 \hat g(f)=\int_{t_1}^{t_2}{g(t)e^{-2\pi i ft}}
-$$</p>
+\]</span></p>
+
 <p>也就是说,取样的时域信号越长,该质心的偏移倾向越大,这和我们想要的效果一致.</p>
+
 <p>这就是傅里叶变换,实现了<code>时域信号</code>到<code>频域信号</code>的转换.</p>
+
 <p>此外,还有方法将频域信号再次逆变换为时域信号的方法.</p>
+
 <h2 id="应用">应用</h2>
+
 <p>傅里叶变换在很多领域都有重要作用.只要问题能转换为时域频域之间的变化,就有傅里叶变换的用武之处.</p>
+
 <p>比如,在音频处理软件中,常常有一个功能叫做<code>消除人声</code>.基于傅里叶变换我们可以设计一个(至少理论上有用)的算法.</p>
+
 <p>首先,任何声音都是相应频率的波对气压变化引起的,也就是不同<strong>频率</strong>的波在<strong>时间</strong>上叠加在一起,产生了声音.将源波使用傅里叶变换拆分到多个三角波上去.<strong>删除人声所在的频域</strong>,再将频域信号逆变换为时域信号.人声便消失了.</p>
+
 <h2 id="离散傅里叶变换">离散傅里叶变换</h2>
+
 <p>连续意义下的傅里叶变换先到此为止.在计算机中所处理的数据一般都是离散的.我们需要的是离散傅里叶变换.</p>
+
 <p>离散意义下的时域信号和频域信号就都变成了点集.当从连续向离散过渡时,可以这样思考:</p>
+
 <blockquote>
 <p>在连续的图象上以一定间隔<strong>取样</strong>得到离散点集.使用该点集进行傅里叶变换.</p>
 </blockquote>
+
 <p>这也是我们一开始采取的质心求解方法,只不过,这次我们从缠绕时就取样.(质点依然是真正的质点)
 对于点集$g(0\leq n &lt; N)$,它的傅里叶变化就是</p>
-<p>$$
+
+<p><span  class="math">\[
 \hat g(k)=\sum_{n=0}^{N-1}g(n)e^{-i\frac {2\pi}{N}nk}
-$$</p>
+\]</span></p>
+
 <p>简单粗暴.</p>
+
 <h2 id="快速傅里叶变换">快速傅里叶变换</h2>
+
 <p>在了解了关于傅里叶变换的一系列背景与一个应用后,我们再回来解决一些重要的问题.</p>
+
 <p>根据傅里叶变换的公式定义</p>
-<p>$$
+
+<p><span  class="math">\[
 \hat g(k)=\sum_{n=0}^{N-1}g(n)e^{-i\frac {2\pi}{N}nk}
-$$</p>
+\]</span></p>
+
 <p>其朴素算法的时间复杂度为$O(N^2)$ 这个复杂度还不够优秀.一种快速傅里叶变换算法利用$e^{ix}$的性质,将复杂度降低到了$O(N\lg N)$.</p>
+
 <h3 id="单位根">单位根</h3>
+
 <p>给$e^{ix}$个名字.</p>
+
 <p>在数学上, $n$次<strong>单位根</strong>是 $n$次幂为1的复数.它们位于复平面的单位圆上,构成正n边形的顶点,其中一个顶点是1.</p>
+
 <p>记</p>
-<p>$$
+
+<p><span  class="math">\[
 \omega_{n,k}=-e^{i\frac{2\pi}{n}k}
-$$</p>
+\]</span></p>
+
 <p>其几何意义为单位圆上的n等分点的顺时针第k个.</p>
+
 <blockquote>
 <p>一般来说,单位根取逆时针,不过这里为了方便,取顺时针.</p>
 </blockquote>
+
 <p>如同三角函数一样,单位根存在一些显然的定理.</p>
-<p>**折半:**$\omega_{2n,2k}=\omega_{n,k}$</p>
-<p>**化简:**$\omega_{n,k+\frac 2n}=-\omega_{n,k}$</p>
+
+<p><strong>折半:</strong>$\omega_{2n,2k}=\omega_{n,k}$</p>
+
+<p><strong>化简:</strong>$\omega_{n,k+\frac 2n}=-\omega_{n,k}$</p>
+
 <h4 id="修改公式">修改公式</h4>
+
 <p>来看原本的离散傅里叶变换公式</p>
-<p>$$
+
+<p><span  class="math">\[
 \hat g(k)=\sum_{n=0}^{N-1}g(n)e^{-i\frac {2\pi}{N}nk}
-$$</p>
+\]</span></p>
+
 <p>使用单位根来替换一下</p>
-<p>$$
+
+<p><span  class="math">\[
 \hat g(k)=\sum_{n=0}^{N-1}\omega_{N,nk} g(n)
-$$</p>
+\]</span></p>
+
 <p>按照<del>神</del>化简公式的指引,将求和公式按照单位根奇偶拆分为2部分.</p>
-<p>​                                                                                                           <br>
-$$
+
+<p><span  class="math">\[
 \begin{aligned}
-\hat g(k) &amp;= \sum_{n=0}^{N-1}\omega_{N,nk} g(n) \<br>
-&amp;= \sum_{0 \leq n &lt; N}\omega_{N,nk} g(n) \<br>
-&amp;= \sum_{0 \leq 2n &lt; N}\omega_{N,2nk} g(2n) + \sum_{0 \leq 2n+1 &lt; N}\omega_{N,(2n+1)k} g(2n+1) \<br>
-&amp;=\sum_{0 \leq 2n &lt; N}\omega_{N,2nk} g(2n) + \sum_{0 \leq 2n+1 &lt; N}\omega_{N,2nk+k} g(2n+1) \<br>
-&amp;=\sum_{0 \leq 2n &lt; N}\omega_{\frac N2,nk} g(2n) + \omega_{N,k}\sum_{0 \leq 2n+1 &lt; N}\omega_{\frac N2,nk} g(2n+1) \<br>
-&amp;=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k)
+\hat g(k) &= \sum_{n=0}^{N-1}\omega_{N,nk} g(n) \\
+&= \sum_{0 \leq n < N}\omega_{N,nk} g(n) \\
+&= \sum_{0 \leq 2n < N}\omega_{N,2nk} g(2n) + \sum_{0 \leq 2n+1 < N}\omega_{N,(2n+1)k} g(2n+1) \\
+&=\sum_{0 \leq 2n < N}\omega_{N,2nk} g(2n) + \sum_{0 \leq 2n+1 < N}\omega_{N,2nk+k} g(2n+1) \\
+&=\sum_{0 \leq 2n < N}\omega_{\frac N2,nk} g(2n) + \omega_{N,k}\sum_{0 \leq 2n+1 < N}\omega_{\frac N2,nk} g(2n+1) \\\\
+&=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k)
 \end{aligned}
-$$</p>
+\]</span></p>
+
 <p>注意到不管是$\hat g_{even}(k)$还是$\hat g_{even}(k)$,它们都以$N/2$为周期.接下来,应用化简定理</p>
-<p>$$
+
+<p><span  class="math">\[
 \hat g(k+\frac N2)=\hat g_{even}(k)-\omega_{N,k} \hat g_{odd}(k)
-$$</p>
+\]</span></p>
+
 <p>将这2个式子放在一起</p>
-<p>$$
-\hat g(k)=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k) \<br>
+
+<p><span  class="math">\[
+\hat g(k)=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k) \\
 \hat g(k+\frac N2)=\hat g_{even}(k)-\omega_{N,k} \hat g_{odd}(k)
-$$</p>
+\]</span></p>
+
 <p>当k取遍原问题规模的一半时,可以直接由第二个式子得到另一半.问题的规模减半.递归求解,最终的复杂度就降到了$O(N \lg N)$.</p>
+
 <p>这就是<code>Cooley-Turkey</code>快速傅里叶变换算法.</p>
+
 <h2 id="快速乘法">快速乘法</h2>
+
 <p>定义多项式$A(x)=\sum_k a_kx^{k+1}$,$B(x)$同理,求解$C(x)=A(x)B(x)$.</p>
+
 <p>很容易看出,朴素算法的复杂度为$O(N^2)$.</p>
+
 <p>现在,来看如何使用FFT快速计算.</p>
+
 <h3 id="点值表示">点值表示</h3>
+
 <blockquote>
 <p>对于一个次数为$n-1$的多项式,其图象上互不相同的$n$个点可以唯一确定该多项式.
 ...
 如同确定混合在一起的几个波一样.</p>
 </blockquote>
+
 <p>至于为什么是对的,大可在Google上搜索一番.</p>
+
 <p>取$x$为数个单位根,在$A(x)$和$B(x)$上利用单位根的性质得到$A$和$B$的点值表示,将点值相乘得到$C$的点值表示.之后,将$C$的点值表示再转换为系数表示.</p>
+
 <p>嗯?FFT在哪?</p>
+
 <p>其实在这里,</p>
-<p>$$
+
+<p><span  class="math">\[
 \hat g(\omega)=A(\omega)=\sum_{n}\omega A[x^{n+1}]
-$$</p>
+\]</span></p>
+
 <h3 id="离散卷积">离散卷积</h3>
+
 <p>有一种<strong>数学运算</strong>,叫做<strong>卷积</strong>.现在只讨论它的离散情况.</p>
-<p>$$
+
+<p><span  class="math">\[
 (f * g)(n)=\sum_{\tau=-\inf}^{inf}f(\tau)g(n-\tau)
-$$</p>
+\]</span></p>
+
 <p>这玩意的意义...实在是不怎么明显.不过好在我们只是想算个多项式乘法,也就是把多项式的<strong>系数</strong>算来算去:</p>
+
 <p>$C[x^n]$ 表示多项式$C$中$x^n$项的系数.</p>
-<p>$$
+
+<p><span  class="math">\[
 C[x^{n}]=\sum_{\tau=0}^{n}A[x^\tau]B[x^{n-\tau}]
-$$</p>
+\]</span></p>
+
 <p>嗯?</p>
+
 <p>如果我们设多项式中不存在的项的系数为0的话.</p>
-<p>$$
+
+<p><span  class="math">\[
 C[x^{n}]=\sum_{\tau=-\inf}^{\inf}A[x^\tau]B[x^{n-\tau}]
-$$</p>
+\]</span></p>
+
 <p>哈,</p>
-<p>$$
+
+<p><span  class="math">\[
 C[x^n]=(A*B)[x^n]
-$$</p>
+\]</span></p>
+
 <h3 id="卷积定理">卷积定理</h3>
+
 <p>卷积定理指出:</p>
+
 <blockquote>
 <p>一个域中的卷积对应于另一个域中的乘积.</p>
 </blockquote>
+
 <p>这意味着,上面这个计算(卷积)对应着另一个域里的乘积.也就是</p>
-<p>$$
+
+<p><span  class="math">\[
 F(C[x^n])=F(A[x^n]) \cdot F(B[x^n])
-$$</p>
+\]</span></p>
+
 <p>这便是深层原理.对A和B的取样(频域)称为A和B的点值表示,最终以乘积的方式得到了C的点值表示(频域).用FFT来计算乘法的说法是对的.</p>
+
 <h2 id="傅里叶逆变换">傅里叶逆变换</h2>
+
 <p>如何从一个频域信号再得到时域信号?</p>
-<p>$$
+
+<p><span  class="math">\[
 g(n)=\frac 1N\sum_{k=0}^{N-1}e^{i\frac{2\pi}{N}nk} \hat g(k)
-$$</p>
+\]</span></p>
+
 <blockquote>
 <p>注意:此处的1/N与上面的变换是相匹配的.</p>
 </blockquote>
+
 <p>这个式子可以理解成对变换后的式子再变换,意味着它同样可以用变换时的思想来加速.</p>
+
 <h2 id="fft的c实现">FFT的C++实现</h2>
+
 <p>一个值得注意的问题就是,对于单位根的运算涉及到了精度的问题.但目前还不需要讨论.</p>
+
 <h3 id="翻转操作">翻转操作</h3>
+
 <p>可以观察到,按照上面的算法实现,我们需要在每次递归按照奇和偶将取样分组.且每次递归都会分组.每次分组都会涉及到数组的复制,常数较大.</p>
+
 <p>观察分组操作中下标的变化.</p>
 <pre><code>(表示下标)
 0 1 2 3 4 5 6 7
 0 2 4 6 | 1 3 5 7
-0 4 | 2 6 | 1 5 | 3 7
-</code></pre><p>将其转换为二进制</p>
+0 4 | 2 6 | 1 5 | 3 7</code></pre>
+<p>将其转换为二进制</p>
 <pre><code>000 001 010 011 100 101 110 111
-000 100 010 110 001 101 011 111
-</code></pre><p>可以发现,最终的分组结果就是将原下标二进制翻转.所以可以直接一次完成分组.</p>
+000 100 010 110 001 101 011 111</code></pre>
+<p>可以发现,最终的分组结果就是将原下标二进制翻转.所以可以直接一次完成分组.</p>
+
 <p>注意,<strong>这要求取样为2的幂次</strong>.</p>
+
 <h3 id="蝴蝶操作">🦋蝴蝶操作</h3>
+
 <p>解决了递归中由顶至底的分组后,接下来优化子问题合并时的数组复制.</p>
+
 <p>观察原来的合并式子</p>
-<p>$$
-\hat g(k)=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k) \<br>
+
+<p><span  class="math">\[
+\hat g(k)=\hat g_{even}(k)+\omega_{N,k} \hat g_{odd}(k) \\
 \hat g(k+\frac N2)=\hat g_{even}(k)-\omega_{N,k} \hat g_{odd}(k)
-$$</p>
+\]</span></p>
+
 <p>按照算法中的实现方法,其为</p>
-<p>$$
-\hat g(k)=\hat g(k)+\omega_{N,k} \hat g(k+\frac N2) \<br>
+
+<p><span  class="math">\[
+\hat g(k)=\hat g(k)+\omega_{N,k} \hat g(k+\frac N2) \\
 \hat g(k+\frac N2)=\hat g(k)-\omega_{N,k} \hat g(k+\frac N2)
-$$</p>
+\]</span></p>
+
 <p>想要省略数组复制,进行原地合并,问题出在新数值太早地替换掉了我们需要的数值.</p>
+
 <p>取辅助变量,修改原式</p>
-<p>$$
-t=\omega_{N,k} \hat g(k+\frac N2)\<br>
-\hat g(k+\frac N2)=\hat g(k)-t\<br>
+
+<p><span  class="math">\[
+t=\omega_{N,k} \hat g(k+\frac N2)\\
+\hat g(k+\frac N2)=\hat g(k)-t\\
 \hat g(k)=\hat g(k)+t
-$$</p>
+\]</span></p>
+
 <p>这个操作被称为&quot;蝴蝶操作&quot;,名字很有意思.</p>
+
 <h3 id="代码">代码</h3>
+
 <p>在这段代码中同时去掉了递归.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -14801,9 +14922,13 @@ $$</p>
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>如果想要实现快速乘法,只要将2个多项式的系数函数传入进行变换,变换结果相乘并逆变换即可.</p>
+</div>
+<p>如果想要实现快速乘法,只要将2个多项式的系数函数传入进行变换,变换结果相乘并逆变换即可.</p>
+
 <h2 id="应用-1">应用</h2>
+
 <h3 id="快速乘法-1">快速乘法</h3>
+
 <p>指快速大数乘法。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -14902,11 +15027,11 @@ $$</p>
 </span><span class="lnt">93
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;complex&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;complex&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="k">const</span> <span class="kt">int</span> <span class="n">MAXN</span><span class="o">=</span><span class="mi">300000</span><span class="p">;</span>
@@ -14963,7 +15088,7 @@ $$</p>
 
     <span class="kt">int</span> <span class="n">nlen</span><span class="p">;</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">nlen</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-    <span class="c1">//根据原理，n必须取大于2nlen的数，才能满足取样要求和反转操作要求
+    <span class="c1">//根据原理，n必须取大于2nlen的数，才能满足取样要求和反转操作要求
 </span><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">*</span><span class="n">nlen</span><span class="p">)</span><span class="n">n</span><span class="o">*=</span><span class="mi">2</span><span class="p">;</span>
     <span class="n">fft</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
 
