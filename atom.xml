@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Kanari&#39;s Blog</title>
     <subtitle type="html">Kanari's blog.</subtitle>
-    <updated>2020-04-09T17:00:39+08:00</updated>
+    <updated>2020-04-09T21:33:56+08:00</updated>
     <id>https://blog.kanari.moe/</id>
     <link rel="alternate" type="text/html" href="https://blog.kanari.moe/" />
     <link rel="self" type="application/atom+xml" href="https://blog.kanari.moe/atom.xml" />
@@ -13140,7 +13140,7 @@ $$</div>
             <title type="text">莫队算法</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/mo-s-algorithm/" />
             <id>https://blog.kanari.moe/study/mo-s-algorithm/</id>
-            <updated>2020-04-08T10:09:42+08:00</updated>
+            <updated>2020-04-09T21:33:36+08:00</updated>
             <published>2019-08-03T13:47:41+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -13149,10 +13149,10 @@ $$</div>
                     </author>
             
     
-    <summary type="html"><![CDATA[<p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{3/5}$(带修改)内得出答案的方法。</p>
+    <summary type="html"><![CDATA[<p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{5/3}$(带修改)内得出答案的方法。</p>
 <p>主要的思路是对询问离线并分块，利用在2个区间间答案的<strong>快速转移</strong>（如果无法找到快速转移的方法，就没法用了）降低复杂度。</p>……]]></summary>
             
-                <content type="html"><![CDATA[<p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{3/5}$(带修改)内得出答案的方法。</p>
+                <content type="html"><![CDATA[<p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{5/3}$(带修改)内得出答案的方法。</p>
 <p>主要的思路是对询问离线并分块，利用在2个区间间答案的<strong>快速转移</strong>（如果无法找到快速转移的方法，就没法用了）降低复杂度。</p>
 <h2 id="无修改莫队">无修改莫队</h2>
 <p>以$B=\sqrt{n}$，按照$(l/B,r)$对询问排序。</p>

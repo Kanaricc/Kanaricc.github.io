@@ -21,7 +21,7 @@
             <webMaster>secret@a.b (Kanari)</webMaster>
         
         
-        <lastBuildDate>Thu, 09 Apr 2020 17:00:39 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 09 Apr 2020 21:33:56 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://blog.kanari.moe/rss.xml" />
         
@@ -12847,7 +12847,7 @@ $$</div>
                 
                 
                 
-                    <description><![CDATA[<p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{3/5}$(带修改)内得出答案的方法。</p>
+                    <description><![CDATA[<p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{5/3}$(带修改)内得出答案的方法。</p>
 <p>主要的思路是对询问离线并分块，利用在2个区间间答案的<strong>快速转移</strong>（如果无法找到快速转移的方法，就没法用了）降低复杂度。</p>
 <h2 id="无修改莫队">无修改莫队</h2>
 <p>以$B=\sqrt{n}$，按照$(l/B,r)$对询问排序。</p>
