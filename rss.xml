@@ -21,10 +21,256 @@
             <webMaster>secret@a.b (Kanari)</webMaster>
         
         
-        <lastBuildDate>Wed, 08 Apr 2020 10:11:01 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 09 Apr 2020 09:26:45 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://blog.kanari.moe/rss.xml" />
         
+        
+            <item>
+                <title>Prolonged Password</title>
+                <link>https://blog.kanari.moe/code/kattis-prolonged-password/</link>
+                <guid isPermaLink="true">https://blog.kanari.moe/code/kattis-prolonged-password/</guid>
+                <pubDate>Wed, 08 Apr 2020 20:20:43 +0800</pubDate>
+                
+                    <author>secret@a.b (Kanari)</author>
+                
+                
+                
+                    <description><![CDATA[<p>给一个字符串，现有这么一种操作，将字符串内每一个字母替换成一给定字符串。例如$T_a=abc,T_b=ee$，那么$ab$就会被替换成$abcee$。</p>
+<p>给出初始的字符串$S$，和26个字母所对应的字符串$T_i$，应用操作$K$次，询问第$i$个位置的字符。</p>
+<p>$$|S| \leq 1000000$$</p>
+<p>$$2 \leq |T_i| \leq 50,K \leq 10^{15}$$</p>
+<h2 id="分析">分析</h2>
+<p>头秃。开始以为关键是在于数出一个字符串经过K次操作后达到的长度，然后然后用类似于二分的方法去递归地分层找到需要的位置。于是就统计每个字母的数目，用矩阵快速幂拿到长度……</p>
+<p>现在看着过于智障。这1e15的指数和1e15的下标，你怎么敢快速幂。</p>
+<p>由替换字符串的长度可以得到，这种操作顶多执行50次（$2^{50}$）。因此字符串的长度部分计算实际上不占大头，用个倍增就能处理出来。</p>
+<p>现在剩下的问题是操作次数$K$过大。方法仍然是基于50次。一个字符扩展50次，就足够把所有的询问包含在内。因此要计算出第一个字符替换的循环节，将操作次数降到接近50。此后通过倍增法去一层层定位询问下标所处的位置。</p>
+<p>最开始方向错了是一码事…感觉K的范围也挺无聊的…代码等到之后再补上。</p>
+<h2 id="代码">代码</h2>
+<p>实际实现时，降K可能浮动26左右，所以多处理这么一点。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;stack&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">ll</span><span class="o">=</span><span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MAXN</span><span class="o">=</span><span class="mi">30</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="n">inp</span><span class="p">;</span>
+<span class="n">ll</span> <span class="n">K</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">rep</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">f</span><span class="p">[</span><span class="mi">26</span><span class="p">][</span><span class="mi">81</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">upd</span><span class="p">(</span><span class="n">ll</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="n">ll</span> <span class="n">b</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span><span class="k">return</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">==-</span><span class="mi">1</span><span class="p">){</span>
+        <span class="n">a</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">a</span><span class="o">+=</span><span class="n">b</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="mf">1e15</span><span class="p">)</span><span class="n">a</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="nf">reduceK</span><span class="p">(){</span>
+    <span class="c1">//找到循环节
+</span><span class="c1"></span>    <span class="kt">char</span> <span class="n">chr</span><span class="o">=</span><span class="n">inp</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kt">bool</span> <span class="n">vis</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">vis</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">vis</span><span class="p">));</span>
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">chr</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">]){</span>
+        <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">chr</span><span class="p">);</span>
+        <span class="n">vis</span><span class="p">[</span><span class="n">chr</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="n">chr</span><span class="o">=</span><span class="n">rep</span><span class="p">[</span><span class="n">chr</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">cycle</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="n">chr</span><span class="p">){</span>
+        <span class="n">cycle</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+    <span class="kt">int</span> <span class="n">pre</span><span class="o">=</span><span class="n">st</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+
+    <span class="c1">//将K削到54-80
+</span><span class="c1"></span>    <span class="k">if</span><span class="p">(</span><span class="n">K</span><span class="o">&lt;=</span><span class="mi">54</span><span class="p">)</span><span class="k">return</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">K</span><span class="o">-</span><span class="n">pre</span><span class="o">&lt;=</span><span class="mi">54</span><span class="p">)</span><span class="k">return</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+    <span class="n">K</span><span class="o">-=</span><span class="n">pre</span><span class="p">;</span>
+    <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="o">-</span><span class="p">(</span><span class="n">K</span><span class="o">-</span><span class="mi">54</span><span class="p">)</span><span class="o">/</span><span class="n">cycle</span><span class="o">*</span><span class="n">cycle</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">chr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="nf">solve</span><span class="p">(</span><span class="n">ll</span> <span class="n">idx</span><span class="p">,</span><span class="n">string</span> <span class="n">str</span><span class="p">,</span><span class="kt">int</span> <span class="n">p</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+        <span class="k">return</span> <span class="n">str</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">][</span><span class="n">p</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">f</span><span class="p">[</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">][</span><span class="n">p</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">idx</span><span class="p">)</span><span class="k">return</span> <span class="n">solve</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">rep</span><span class="p">[</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">],</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">idx</span><span class="o">-=</span><span class="n">f</span><span class="p">[</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;a&#39;</span><span class="p">][</span><span class="n">p</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="c1">//不该出现这种情况
+</span><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">inp</span><span class="p">;</span><span class="c1">//
+</span><span class="c1"></span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">rep</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">rep</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">K</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">p</span><span class="o">&lt;=</span><span class="mi">80</span><span class="p">;</span><span class="n">p</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">26</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;</span><span class="n">rep</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="n">k</span><span class="o">++</span><span class="p">){</span>
+                <span class="n">upd</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">p</span><span class="p">],</span><span class="n">f</span><span class="p">[</span><span class="n">rep</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">][</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kt">char</span> <span class="n">start</span><span class="o">=</span><span class="n">reduceK</span><span class="p">();</span>
+
+    <span class="kt">int</span> <span class="n">qlen</span><span class="p">;</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">qlen</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">qlen</span><span class="o">--</span><span class="p">){</span>
+        <span class="n">ll</span> <span class="n">idx</span><span class="p">;</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">idx</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">start</span><span class="o">==</span><span class="sc">&#39;\0&#39;</span><span class="p">)</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">solve</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="n">inp</span><span class="p">,</span><span class="n">K</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">else</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">solve</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="n">rep</span><span class="p">[</span><span class="n">start</span><span class="o">-</span><span class="sc">&#39;a&#39;</span><span class="p">],</span><span class="n">K</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="c1">//-1
+</span><span class="c1"></span>    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://blog.kanari.moe/code/">code</category>
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.kanari.moe/tags/%E5%80%8D%E5%A2%9E/">倍增</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>由Tiddywiki说起</title>
@@ -1836,6 +2082,14 @@ $$</div>
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.kanari.moe/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/">快速幂</category>
+                                
+                            
                         
                     
                 
@@ -7918,6 +8172,14 @@ $$</div>
                 
                     
                         
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.kanari.moe/tags/%E6%90%9C%E7%B4%A2/">搜索</category>
+                                
+                            
+                        
                     
                 
             </item>
@@ -9154,6 +9416,14 @@ $$</div>
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.kanari.moe/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">计算几何</category>
+                                
+                            
                         
                     
                 
@@ -13949,6 +14219,14 @@ $$</div>
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.kanari.moe/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</category>
+                                
+                            
                         
                     
                 
