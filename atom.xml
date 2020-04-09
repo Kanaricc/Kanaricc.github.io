@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Kanari&#39;s Blog</title>
     <subtitle type="html">Kanari's blog.</subtitle>
-    <updated>2020-04-09T09:26:45+08:00</updated>
+    <updated>2020-04-09T17:00:39+08:00</updated>
     <id>https://blog.kanari.moe/</id>
     <link rel="alternate" type="text/html" href="https://blog.kanari.moe/" />
     <link rel="self" type="application/atom+xml" href="https://blog.kanari.moe/atom.xml" />
