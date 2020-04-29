@@ -21,7 +21,7 @@
             <webMaster>secret@a.b (Kanari)</webMaster>
         
         
-        <lastBuildDate>Mon, 13 Apr 2020 09:55:05 +0800</lastBuildDate>
+        <lastBuildDate>Wed, 29 Apr 2020 22:33:25 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://blog.kanari.moe/rss.xml" />
         
@@ -70,6 +70,9 @@ $$</div>
 <li>不能转移到不存在n+1状态，这意味着填写的字母不存在。</li>
 <li>n状态无字符，0。</li>
 </ul>
+<h2 id="e-eulerian-flight-tour">E. Eulerian Flight Tour</h2>
+<p>……</p>
+<p>看起来是把边选/不选对度造成的影响抽象成方程组来解。复杂度看起来没问题，估计解完还要再处理一堆东西…回头再说。</p>
 <h2 id="k-sixth-sense">K. Sixth Sense</h2>
 <p>算最大得分可以贪心。对方和自己的牌升序排序后，拿正好能对抗的牌去和对方牌一一打。</p>
 <p>剩下的是怎么求字典序最大的答案。能够发现，当当前这张牌打得太大时，就可能导致后续某一轮牌输掉，让总比分减少。这看起来可以二分。不过写着写着把样例3给wa了。</p>
@@ -15242,7 +15245,7 @@ $$</div>
 <div>$$
 \hat g(k)=\sum_{n=0}^{N-1}\omega_{N,nk} g(n)
 $$</div>
-<p>按照<del>神</del>化简公式的指引,将求和公式按照单位根奇偶拆分为2部分.</p>
+<p>按照化简公式的指引,将求和公式按照单位根奇偶拆分为2部分.</p>
 <div>$$
 \begin{aligned}
 \hat g(k) &= \sum_{n=0}^{N-1}\omega_{N,nk} g(n) \\
@@ -15643,7 +15646,16 @@ $$</div>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div>]]></description>
+</div><h3 id="实际意义">实际意义</h3>
+<p>但是更加值得关心的是其广义上的物理意义。N个采样点拿到的N个值到底对应着什么。</p>
+<p>设采样率为$F$，采样间隔为$T=\frac{1}{F}$。设采样次数$N$。那么显然不管是数据下标还是结果下标，都不是其原有意义。</p>
+<p>有如下对应关系</p>
+<ul>
+<li>采样时长为$TN$或者$N/F$（采样区间长度）</li>
+<li>数据下标很显然</li>
+</ul>
+<p>结果略有一点点绕。对于「在$N$个点中出现了$k$个周期」的基信号，一个周期$N/k$个点，一个周期时长$\frac{N}{kF}$。如果不想把你的频域图像画爆那就倒过来取周期频率$\frac{F}{N}k$。</p>
+<p>即结果的点下标$x$对应着频率为$\frac{F}{N}x$的基信号。</p>]]></description>
                 
                 
                 
