@@ -21,10 +21,104 @@
             <webMaster>secret@a.b (Kanari)</webMaster>
         
         
-        <lastBuildDate>Wed, 29 Apr 2020 22:33:25 +0800</lastBuildDate>
+        <lastBuildDate>Sun, 03 May 2020 22:18:08 +0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://blog.kanari.moe/rss.xml" />
         
+        
+            <item>
+                <title>如何把W接上岛</title>
+                <link>https://blog.kanari.moe/gossip/pulling-w/</link>
+                <guid isPermaLink="true">https://blog.kanari.moe/gossip/pulling-w/</guid>
+                <pubDate>Thu, 30 Apr 2020 20:54:09 +0800</pubDate>
+                
+                    <author>secret@a.b (Kanari)</author>
+                
+                
+                
+                    <description><![CDATA[<blockquote>
+<p>被打上「石乐志」标签的文章是彻底属于“闲扯”的存在</p>
+</blockquote>
+<p>感觉时间过去足够长了，把之前糊概率作业的小玩意拿出来。实际上东西不多，但是众所周知，作业能糊多长和干货量没有多大关系，和作业成绩关系就更不大了。</p>
+<p>在W的池子开前算一波概率。</p>
+<p>设$A_n$表示第$n$次抽到6星，$B_n$表示前$n-1$次都没有六星。得$P(A_n|B_n)$。</p>
+<div>$$P(A_n|B_n)=\begin{cases}
+0.02,\quad 0\leq n \leq 50 \\
+0.02+0.02(n-50),\quad 50 < n \leq 99
+\end{cases}
+$$</div>
+同时
+<div>$$
+\begin{aligned}
+P(\overline {A_n}|B_n)&=1-P(A_n|B_n) \\
+\end{aligned}
+$$</div>
+省略一些没必要凑字数的套娃操作之后能得到递推式
+<div>$$
+P(B_n)=P(B_{n-1})-P(A_{n-1}B_{n-1})
+$$</div>
+同时有初始$P(B_1)=1$。
+<p>那么，X抽恰好抽到6星的概率为</p>
+<div>$$
+P\{X=k\}=P(A_kB_k)=P(A_k|B_k)P(B_k)
+$$</div>
+已有公式构成递推
+<div>$$
+\begin{aligned}
+P\{X=k\}&=P(A_kB_k)=P(A_k|B_k)P(B_k) \\
+P(B_n)&=P(B_{n-1})-P\{X=k-1\}
+\end{aligned}
+$$</div>
+当出现6星时，抽到W的概率为$35\%$。设抽到W的概率为$P_s$能够得到递推式
+<div>$$
+\begin{aligned}
+P_s(n)&=\sum_{1\leq k\leq n}P\{X=k\}(0.35+(1-0.35)P_s(n-k))\\
+P_s(0)&=0
+\end{aligned}
+$$</div>
+直接套上CAS系统算。
+<p><img src="pss.png" alt="把W接上岛的概率" title="把W接上岛的概率"></p>
+<p>这个图…说实话我觉得沉底了完全有可能…⚠️危⚠️</p>
+<hr>
+<p>噫，好，我出了，这游戏又可以继续玩了。</p>
+<p>说真的，单在手游的范围内讨论，mrfz的质量可以说是佼佼者了。不过何时能脱离单一的手游模式，做点别的呢。</p>
+]]></description>
+                
+                
+                
+                    
+                    
+                    
+                        
+                        
+                        
+                            
+                                <category domain="https://blog.kanari.moe/gossip/">gossip</category>
+                            
+                        
+                    
+                        
+                        
+                        
+                            
+                        
+                    
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.kanari.moe/tags/%E7%9F%B3%E4%B9%90%E5%BF%97/">石乐志</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>ICPC2018 Yokohama</title>
@@ -1093,6 +1187,14 @@ $$</div>
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.kanari.moe/tags/fft/">FFT</category>
+                                
+                            
                         
                     
                 
@@ -15674,6 +15776,14 @@ $$</div>
                 
                 
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.kanari.moe/tags/fft/">FFT</category>
+                                
+                            
                         
                     
                 

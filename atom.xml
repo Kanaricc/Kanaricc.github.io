@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Kanari&#39;s Blog</title>
     <subtitle type="html">Kanari's blog.</subtitle>
-    <updated>2020-04-29T22:33:25+08:00</updated>
+    <updated>2020-05-03T22:18:08+08:00</updated>
     <id>https://blog.kanari.moe/</id>
     <link rel="alternate" type="text/html" href="https://blog.kanari.moe/" />
     <link rel="self" type="application/atom+xml" href="https://blog.kanari.moe/atom.xml" />
@@ -16,6 +16,105 @@
             </author>
     
     <generator uri="https://gohugo.io/" version="0.66.0">Hugo</generator>
+        <entry>
+            <title type="text">如何把W接上岛</title>
+            <link rel="alternate" type="text/html" href="https://blog.kanari.moe/gossip/pulling-w/" />
+            <id>https://blog.kanari.moe/gossip/pulling-w/</id>
+            <updated>2020-05-03T22:17:44+08:00</updated>
+            <published>2020-04-30T20:54:09+08:00</published>
+            <author>
+                    <name>Kanari</name>
+                    <uri>https://blog.kanari.moe/</uri>
+                    <email>secret@a.b</email>
+                    </author>
+            
+    
+    <summary type="html"><![CDATA[被打上「石乐志」标签的文章是彻底属于“闲扯”的存在 感觉时间过去足够长了，把之前糊概率……]]></summary>
+            
+                <content type="html"><![CDATA[<blockquote>
+<p>被打上「石乐志」标签的文章是彻底属于“闲扯”的存在</p>
+</blockquote>
+<p>感觉时间过去足够长了，把之前糊概率作业的小玩意拿出来。实际上东西不多，但是众所周知，作业能糊多长和干货量没有多大关系，和作业成绩关系就更不大了。</p>
+<p>在W的池子开前算一波概率。</p>
+<p>设$A_n$表示第$n$次抽到6星，$B_n$表示前$n-1$次都没有六星。得$P(A_n|B_n)$。</p>
+<div>$$P(A_n|B_n)=\begin{cases}
+0.02,\quad 0\leq n \leq 50 \\
+0.02+0.02(n-50),\quad 50 < n \leq 99
+\end{cases}
+$$</div>
+同时
+<div>$$
+\begin{aligned}
+P(\overline {A_n}|B_n)&=1-P(A_n|B_n) \\
+\end{aligned}
+$$</div>
+省略一些没必要凑字数的套娃操作之后能得到递推式
+<div>$$
+P(B_n)=P(B_{n-1})-P(A_{n-1}B_{n-1})
+$$</div>
+同时有初始$P(B_1)=1$。
+<p>那么，X抽恰好抽到6星的概率为</p>
+<div>$$
+P\{X=k\}=P(A_kB_k)=P(A_k|B_k)P(B_k)
+$$</div>
+已有公式构成递推
+<div>$$
+\begin{aligned}
+P\{X=k\}&=P(A_kB_k)=P(A_k|B_k)P(B_k) \\
+P(B_n)&=P(B_{n-1})-P\{X=k-1\}
+\end{aligned}
+$$</div>
+当出现6星时，抽到W的概率为$35\%$。设抽到W的概率为$P_s$能够得到递推式
+<div>$$
+\begin{aligned}
+P_s(n)&=\sum_{1\leq k\leq n}P\{X=k\}(0.35+(1-0.35)P_s(n-k))\\
+P_s(0)&=0
+\end{aligned}
+$$</div>
+直接套上CAS系统算。
+<p><img src="pss.png" alt="把W接上岛的概率" title="把W接上岛的概率"></p>
+<p>这个图…说实话我觉得沉底了完全有可能…⚠️危⚠️</p>
+<hr>
+<p>噫，好，我出了，这游戏又可以继续玩了。</p>
+<p>说真的，单在手游的范围内讨论，mrfz的质量可以说是佼佼者了。不过何时能脱离单一的手游模式，做点别的呢。</p>
+]]></content>
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://blog.kanari.moe/gossip/" term="gossip" label="gossip" />
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                    
+                
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.kanari.moe/tags/%E7%9F%B3%E4%B9%90%E5%BF%97/" term="石乐志" label="石乐志" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">ICPC2018 Yokohama</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/code/icpc2018-yokohama/" />
@@ -1054,7 +1153,7 @@ Since only the little bears know the definition of array beauty, all you are to 
             <title type="text">一点点二维傅立叶变换</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/gossip/a-little-2d-fft/" />
             <id>https://blog.kanari.moe/gossip/a-little-2d-fft/</id>
-            <updated>2020-04-08T10:09:42+08:00</updated>
+            <updated>2020-04-30T08:57:31+08:00</updated>
             <published>2020-03-27T21:49:59+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -1108,6 +1207,14 @@ $$</div>
             
             
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.kanari.moe/tags/fft/" term="FFT" label="FFT" />
+                            
+                        
                     
                 
             
@@ -15504,7 +15611,7 @@ $$</div>
             <title type="text">快速傅里叶变换</title>
             <link rel="alternate" type="text/html" href="https://blog.kanari.moe/study/fast-fourier-transform/" />
             <id>https://blog.kanari.moe/study/fast-fourier-transform/</id>
-            <updated>2020-04-29T22:30:26+08:00</updated>
+            <updated>2020-04-30T08:59:43+08:00</updated>
             <published>2019-07-12T14:03:22+08:00</published>
             <author>
                     <name>Kanari</name>
@@ -16039,6 +16146,14 @@ $$</div>
             
             
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.kanari.moe/tags/fft/" term="FFT" label="FFT" />
+                            
+                        
                     
                 
             
