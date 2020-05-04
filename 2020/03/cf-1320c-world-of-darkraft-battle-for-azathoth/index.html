@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[CF 1320C] World of Darkraft: Battle for Azathoth - Kanari&#39;s blog</title>
+        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="[CF 1320C] World of Darkraft: Battle for Azathoth" />
+<meta property="og:description" content="Roma is playing a new expansion for his favorite game World of Darkraft. He made a new character and is going for his first grind. Roma has a choice to buy exactly one of 𝑛 different weapons and exactly one of 𝑚 different armor sets. Weapon 𝑖 has attack modifier 𝑎𝑖 and is worth 𝑐𝑎𝑖 coins, and armor set 𝑗 has defense modifier 𝑏𝑗 and is" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020/03/cf-1320c-world-of-darkraft-battle-for-azathoth/" />
+<meta property="article:published_time" content="2020-03-08T12:58:45+08:00" />
+<meta property="article:modified_time" content="2020-03-08T12:58:45+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[CF 1320C] World of Darkraft: Battle for Azathoth"/>
+<meta name="twitter:description" content="Roma is playing a new expansion for his favorite game World of Darkraft. He made a new character and is going for his first grind. Roma has a choice to buy exactly one of 𝑛 different weapons and exactly one of 𝑚 different armor sets. Weapon 𝑖 has attack modifier 𝑎𝑖 and is worth 𝑐𝑎𝑖 coins, and armor set 𝑗 has defense modifier 𝑏𝑗 and is"/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020/03/cf-1320c-world-of-darkraft-battle-for-azathoth/" /><link rel="prev" href="http://example.org/2020/03/cf-1321c-remove-adjacent/" /><link rel="next" href="http://example.org/2020/03/cf-1322c-instant-noodles/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[CF 1320C] World of Darkraft: Battle for Azathoth",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020\/03\/cf-1320c-world-of-darkraft-battle-for-azathoth\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","wordcount":  1029 ,
+        "url": "http:\/\/example.org\/2020\/03\/cf-1320c-world-of-darkraft-battle-for-azathoth\/","datePublished": "2020-03-08T12:58:45+08:00","dateModified": "2020-03-08T12:58:45+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">[CF 1320C] World of Darkraft: Battle for Azathoth</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/code/">
+                                <i class="far fa-folder fa-fw"></i>code
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-08>2020-03-08</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1029 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;</div>
+        </div><div class="content" id="content"><p>Roma is playing a new expansion for his favorite game World of Darkraft. He made a new character and is going for his first grind.</p>
+<p>Roma has a choice to buy exactly one of 𝑛 different weapons and exactly one of 𝑚 different armor sets. Weapon 𝑖 has attack modifier 𝑎𝑖 and is worth 𝑐𝑎𝑖 coins, and armor set 𝑗 has defense modifier 𝑏𝑗 and is worth 𝑐𝑏𝑗 coins.</p>
+<p>After choosing his equipment Roma can proceed to defeat some monsters. There are 𝑝 monsters he can try to defeat. Monster 𝑘 has defense 𝑥𝑘, attack 𝑦𝑘 and possesses 𝑧𝑘 coins. Roma can defeat a monster if his weapon&rsquo;s attack modifier is larger than the monster&rsquo;s defense, and his armor set&rsquo;s defense modifier is larger than the monster&rsquo;s attack. That is, a monster 𝑘 can be defeated with a weapon 𝑖 and an armor set 𝑗 if 𝑎𝑖&gt;𝑥𝑘 and 𝑏𝑗&gt;𝑦𝑘. After defeating the monster, Roma takes all the coins from them. During the grind, Roma can defeat as many monsters as he likes. Monsters do not respawn, thus each monster can be defeated at most one.</p>
+<p>Thanks to Roma&rsquo;s excessive donations, we can assume that he has an infinite amount of in-game currency and can afford any of the weapons and armor sets. Still, he wants to maximize the profit of the grind. The profit is defined as the total coins obtained from all defeated monsters minus the cost of his equipment. Note that Roma must purchase a weapon and an armor set even if he can not cover their cost with obtained coins.</p>
+<p>Help Roma find the maximum profit of the grind.</p>
+<h2 id="分析">分析</h2>
+<p>这题代表了一类基本的思路。枚举其中一维，用数据结构维护另一维。</p>
+<p>假设我们枚举武器攻击力，首先能够挑出所有被击杀的怪物。当我们的防具为k时，所有攻击力小于k的都可以计算收益。反过来说，对于攻击力为k的怪物，只要我们的防具大于k，就可以计算收益。</p>
+<p>所以每枚举一个主角攻击力，我们把怪物按照其攻击力为下标作收益前缀和，就可以获取到当主角防具为k时所能得到的收益。为了计算入防具的花费，预处理每个防具等级k所需要的最少的钱，预先在相应下标扣除。此时还需要一个结构来求去所有前缀和中最大。这些操作都可以用线段树完成。</p>
+<h2 id="代码">代码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">ll</span><span class="o">=</span><span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MAXN</span><span class="o">=</span><span class="mi">1000100</span><span class="o">*</span><span class="mi">4</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">idx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">lc</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span><span class="n">rc</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">award</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">cost</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">flag</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">root</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">wlen</span><span class="p">,</span><span class="n">alen</span><span class="p">,</span><span class="n">mlen</span><span class="p">;</span>
+<span class="k">struct</span> <span class="nc">Weapon</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">rnk</span><span class="p">,</span> <span class="n">cost</span><span class="p">;</span>
+
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Weapon</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="c1">//if (rnk == b.rnk)return cost &lt; b.cost;实际没用
+</span><span class="c1"></span>        <span class="k">return</span> <span class="n">rnk</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">rnk</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="n">weapons</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="k">struct</span> <span class="nc">Armor</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">rnk</span><span class="p">,</span> <span class="n">cost</span><span class="p">;</span>
+
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Armor</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">rnk</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">rnk</span><span class="p">)</span><span class="k">return</span> <span class="n">cost</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">cost</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">rnk</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">rnk</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="n">armors</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">collect</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+    <span class="n">award</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">award</span><span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="n">n</span><span class="p">]],</span><span class="n">award</span><span class="p">[</span><span class="n">rc</span><span class="p">[</span><span class="n">n</span><span class="p">]]);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">pushdown</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">n</span><span class="p">]){</span>
+        <span class="n">flag</span><span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="n">n</span><span class="p">]]</span><span class="o">+=</span><span class="n">flag</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+        <span class="n">flag</span><span class="p">[</span><span class="n">rc</span><span class="p">[</span><span class="n">n</span><span class="p">]]</span><span class="o">+=</span><span class="n">flag</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+        <span class="n">award</span><span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="n">n</span><span class="p">]]</span><span class="o">+=</span><span class="n">flag</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+        <span class="n">award</span><span class="p">[</span><span class="n">rc</span><span class="p">[</span><span class="n">n</span><span class="p">]]</span><span class="o">+=</span><span class="n">flag</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+        <span class="n">flag</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//枚举武器，维护防具
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">build</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">init</span><span class="o">=-</span><span class="mh">0x3f3f3f3f</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">n</span><span class="p">)</span><span class="n">n</span> <span class="o">=</span> <span class="o">++</span><span class="n">idx</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">award</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=-</span><span class="n">cost</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">build</span><span class="p">(</span><span class="n">lc</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span><span class="n">init</span><span class="p">);</span>
+    <span class="n">build</span><span class="p">(</span><span class="n">rc</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span><span class="n">init</span><span class="p">);</span>
+    <span class="n">collect</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">,</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">L</span><span class="p">,</span><span class="kt">int</span> <span class="n">R</span><span class="p">,</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">R</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">flag</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">award</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">pushdown</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="n">R</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="p">)</span><span class="n">modify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">lc</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">mid</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span><span class="n">modify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">rc</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+
+    <span class="n">collect</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">ll</span> <span class="nf">query</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="n">award</span><span class="p">[</span><span class="n">root</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="n">ll</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">L</span><span class="p">,</span><span class="kt">int</span> <span class="n">R</span><span class="p">,</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">&lt;=</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">R</span><span class="o">&lt;=</span><span class="n">r</span><span class="p">){</span>
+        <span class="k">return</span> <span class="n">award</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">pushdown</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+
+    <span class="n">ll</span> <span class="n">res</span><span class="o">=-</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">mid</span><span class="o">=</span><span class="p">(</span><span class="n">L</span><span class="o">+</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">&lt;=</span><span class="n">mid</span><span class="p">)</span><span class="n">res</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">query</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">mid</span><span class="p">,</span><span class="n">lc</span><span class="p">[</span><span class="n">n</span><span class="p">]));</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">mid</span><span class="o">&lt;</span><span class="n">r</span><span class="p">)</span><span class="n">res</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">query</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">rc</span><span class="p">[</span><span class="n">n</span><span class="p">]));</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">struct</span> <span class="nc">Monster</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">att</span><span class="p">,</span><span class="n">de</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">cost</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">monsters</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">debug</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">query</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">root</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="s">&#34; &#34;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">wlen</span> <span class="o">&gt;&gt;</span> <span class="n">alen</span> <span class="o">&gt;&gt;</span> <span class="n">mlen</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">vallim</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">wlen</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">weapons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rnk</span> <span class="o">&gt;&gt;</span> <span class="n">weapons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cost</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">alen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">armors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rnk</span><span class="o">&gt;&gt;</span><span class="n">armors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cost</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">mlen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">monsters</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">de</span><span class="o">&gt;&gt;</span><span class="n">monsters</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">att</span><span class="o">&gt;&gt;</span><span class="n">monsters</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cost</span><span class="p">;</span>
+
+    <span class="n">sort</span><span class="p">(</span><span class="n">weapons</span><span class="p">,</span><span class="n">weapons</span><span class="o">+</span><span class="n">wlen</span><span class="p">);</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">monsters</span><span class="p">,</span><span class="n">monsters</span><span class="o">+</span><span class="n">mlen</span><span class="p">,[](</span><span class="k">auto</span> <span class="n">a</span><span class="p">,</span><span class="k">auto</span> <span class="n">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">de</span><span class="o">&lt;</span><span class="n">b</span><span class="p">.</span><span class="n">de</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="n">fill</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="n">cost</span><span class="o">+</span><span class="n">MAXN</span><span class="p">,</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">());</span>
+    <span class="kt">int</span> <span class="n">maxarm</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">alen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cost</span><span class="p">[</span><span class="n">armors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rnk</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="n">armors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rnk</span><span class="p">],</span><span class="n">armors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cost</span><span class="p">);</span>
+        <span class="n">maxarm</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">maxarm</span><span class="p">,</span><span class="n">armors</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rnk</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">maxarm</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">){</span>
+        <span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="n">build</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">maxarm</span><span class="p">);</span>
+    <span class="c1">//debug(maxarm);
+</span><span class="c1"></span>
+    <span class="n">ll</span> <span class="n">ans</span><span class="o">=-</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">ptr</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">wlen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">ptr</span><span class="o">&lt;</span><span class="n">mlen</span> <span class="o">&amp;&amp;</span> <span class="n">monsters</span><span class="p">[</span><span class="n">ptr</span><span class="p">].</span><span class="n">de</span><span class="o">&lt;</span><span class="n">weapons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">rnk</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">monsters</span><span class="p">[</span><span class="n">ptr</span><span class="p">].</span><span class="n">att</span><span class="o">&lt;</span><span class="n">maxarm</span><span class="p">){</span>
+                <span class="n">modify</span><span class="p">(</span><span class="n">monsters</span><span class="p">[</span><span class="n">ptr</span><span class="p">].</span><span class="n">cost</span><span class="p">,</span><span class="n">monsters</span><span class="p">[</span><span class="n">ptr</span><span class="p">].</span><span class="n">att</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">maxarm</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">maxarm</span><span class="p">,</span><span class="n">root</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">ptr</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">ans</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">query</span><span class="p">()</span><span class="o">-</span><span class="n">weapons</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cost</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-03-08 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020/03/cf-1320c-world-of-darkraft-battle-for-azathoth/" data-title="[CF 1320C] World of Darkraft: Battle for Azathoth"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020/03/cf-1320c-world-of-darkraft-battle-for-azathoth/" data-title="[CF 1320C] World of Darkraft: Battle for Azathoth"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/03/cf-1321c-remove-adjacent/" class="prev" rel="prev" title="[CF 1321C] Remove Adjacent 拓展"><i class="fas fa-angle-left fa-fw"></i>[CF 1321C] Remove Adjacent 拓展</a>
+            <a href="/2020/03/cf-1322c-instant-noodles/" class="next" rel="next" title="[CF 1322C] Instant Noodles">[CF 1322C] Instant Noodles<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
+        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+</html>

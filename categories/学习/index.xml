@@ -6,77 +6,77 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
             <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Fri, 27 Mar 2020 21:49:59 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
     <title>一点点二维傅立叶变换</title>
-    <link>http://example.org/a-little-2d-fft/</link>
+    <link>http://example.org/2020/03/a-little-2d-fft/</link>
     <pubDate>Fri, 27 Mar 2020 21:49:59 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/a-little-2d-fft/</guid>
+    <guid>http://example.org/2020/03/a-little-2d-fft/</guid>
     <description><![CDATA[目前，针对图片，视频，我们有通过在频域上乱搞的方式为其添加不可见水印。这种技术主要依靠的就是二维傅立叶变换。 $$ \hat g(f)=\int{g(t)e^{-2\pi i ft}dt} $$ 这个是一维的傅立叶变]]></description>
 </item><item>
     <title>一点点点分治</title>
-    <link>http://example.org/a-littile-tree-divide/</link>
+    <link>http://example.org/2020/03/a-littile-tree-divide/</link>
     <pubDate>Thu, 26 Mar 2020 18:40:09 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/a-littile-tree-divide/</guid>
+    <guid>http://example.org/2020/03/a-littile-tree-divide/</guid>
     <description><![CDATA[今天仍然是被吊起来打的一天。 点分治是一种用于解决树上路径问题的思路。它的关键就是选中一点，统计经过该点的答案后删除点，再递归到两个子树中进行]]></description>
 </item><item>
     <title>一点点决策单调性</title>
-    <link>http://example.org/juece-dandiao/</link>
+    <link>http://example.org/2020/03/juece-dandiao/</link>
     <pubDate>Mon, 23 Mar 2020 18:19:48 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/juece-dandiao/</guid>
+    <guid>http://example.org/2020/03/juece-dandiao/</guid>
     <description><![CDATA[艹了天天都被不知道的知识点教育，知道的又做不出来。 :lei: 在动态规划中，决策单调性指对于$j &lt; j'$，$f(j&rsquo;)$的最佳转移$f(i]]></description>
 </item><item>
     <title>一点点拉格朗日插值</title>
-    <link>http://example.org/lagrange-polynomial/</link>
+    <link>http://example.org/2020/03/lagrange-polynomial/</link>
     <pubDate>Thu, 19 Mar 2020 18:18:21 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/lagrange-polynomial/</guid>
+    <guid>http://example.org/2020/03/lagrange-polynomial/</guid>
     <description><![CDATA[抄起我的混凝土数学，复习了会上升下降积分，看了看斯特林数和伯努利数。结果误把伯努利数的递推式看成了$O(n)$的，改了半天一到3次方以上就翻]]></description>
 </item><item>
     <title>C&#43;&#43;新标准特性初探</title>
-    <link>http://example.org/new-standard-of-cpp/</link>
+    <link>http://example.org/2020/02/new-standard-of-cpp/</link>
     <pubDate>Sun, 23 Feb 2020 21:24:40 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/new-standard-of-cpp/</guid>
+    <guid>http://example.org/2020/02/new-standard-of-cpp/</guid>
     <description><![CDATA[说实话,这一套东西东拼西凑到处取经,不过有些还挺香的. 目前对于14,17的特性,GCC和Clang都完成了很好的适配.在C++20上,下面提]]></description>
 </item><item>
     <title>树链剖分</title>
-    <link>http://example.org/heavy-light-decomposition/</link>
+    <link>http://example.org/2020/02/heavy-light-decomposition/</link>
     <pubDate>Tue, 18 Feb 2020 16:11:56 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/heavy-light-decomposition/</guid>
+    <guid>http://example.org/2020/02/heavy-light-decomposition/</guid>
     <description><![CDATA[树链剖分可以用来维护树上路径的信息。把树上的节点拆成不超过$O(\log n)$段连续的路径（链），以映射到线段树或者什么的构来维护数据。 依照]]></description>
 </item><item>
     <title>与Rust玩耍</title>
-    <link>http://example.org/have-fun-with-rust/</link>
+    <link>http://example.org/2020/01/have-fun-with-rust/</link>
     <pubDate>Sat, 18 Jan 2020 20:39:20 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/have-fun-with-rust/</guid>
+    <guid>http://example.org/2020/01/have-fun-with-rust/</guid>
     <description><![CDATA[<p>
 把先前信息低的两篇blog给拆了,这样好点.</p>]]></description>
 </item><item>
     <title>数位DP</title>
-    <link>http://example.org/digital-dp/</link>
+    <link>http://example.org/2019/11/digital-dp/</link>
     <pubDate>Wed, 06 Nov 2019 19:46:23 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/digital-dp/</guid>
+    <guid>http://example.org/2019/11/digital-dp/</guid>
     <description><![CDATA[<h2 id="例题-4-hdu2089-不要62">例题-4 HDU2089 不要62</h2>
 <p>统计数位中没有出现4和62的数字个数。</p>
 <h3 id="分析">分析</h3>
 <p>不要4，可以在4时直接不转移。对于62，可以维护一个上一个数字填了啥，就可以像4一样判断了。</p>]]></description>
 </item><item>
     <title>后缀自动机</title>
-    <link>http://example.org/sam/</link>
+    <link>http://example.org/2019/10/sam/</link>
     <pubDate>Fri, 04 Oct 2019 20:44:30 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/sam/</guid>
+    <guid>http://example.org/2019/10/sam/</guid>
     <description><![CDATA[如你所见，后缀自动机。 然而就nm看不懂，先看不懂它的图是啥，又看不懂它的边是啥，现在还是看不懂它的边是咋找出来的。可是咱不想搞不清楚它是干嘛]]></description>
 </item><item>
     <title>一些筛法的题</title>
-    <link>http://example.org/some-sieve/</link>
+    <link>http://example.org/2019/09/some-sieve/</link>
     <pubDate>Thu, 05 Sep 2019 20:22:11 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/some-sieve/</guid>
+    <guid>http://example.org/2019/09/some-sieve/</guid>
     <description><![CDATA[<h2 id="技巧">技巧</h2>
 <h3 id="自然溢出">自然溢出</h3>
 <ul>

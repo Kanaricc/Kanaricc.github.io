@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
             <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Fri, 10 Apr 2020 14:08:41 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" rel="self" type="application/rss+xml" /><item>
     <title>[CF703D] Mishka and Interesting Sum</title>
-    <link>http://example.org/cf703d-mishka-and-interesting-sum/</link>
+    <link>http://example.org/2020/04/cf703d-mishka-and-interesting-sum/</link>
     <pubDate>Fri, 10 Apr 2020 14:08:41 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/cf703d-mishka-and-interesting-sum/</guid>
+    <guid>http://example.org/2020/04/cf703d-mishka-and-interesting-sum/</guid>
     <description><![CDATA[Little Mishka enjoys programming. Since her birthday has just passed, her friends decided to present her with array of non-negative integers a1, a2, &hellip;, an of n elements! Mishka loved the array and she instantly decided to determine its beauty value, but she is too little and can&rsquo;t process large arrays. Right because of that she invited you to visit her and asked you to process m queries. Each query]]></description>
 </item></channel>
 </rss>

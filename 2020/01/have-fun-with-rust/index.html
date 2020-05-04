@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>与Rust玩耍 - Kanari&#39;s blog</title>
+        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="与Rust玩耍" />
+<meta property="og:description" content="
+把先前信息低的两篇blog给拆了,这样好点." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020/01/have-fun-with-rust/" />
+<meta property="article:published_time" content="2020-01-18T20:39:20+08:00" />
+<meta property="article:modified_time" content="2020-01-18T20:39:20+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="与Rust玩耍"/>
+<meta name="twitter:description" content="
+把先前信息低的两篇blog给拆了,这样好点."/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020/01/have-fun-with-rust/" /><link rel="prev" href="http://example.org/2020/01/codeforces-round-612-div-2/" /><link rel="next" href="http://example.org/2020/01/cf-1156d-0-1-tree/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "与Rust玩耍",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020\/01\/have-fun-with-rust\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","wordcount":  3202 ,
+        "url": "http:\/\/example.org\/2020\/01\/have-fun-with-rust\/","datePublished": "2020-01-18T20:39:20+08:00","dateModified": "2020-01-18T20:39:20+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">与Rust玩耍</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/%E5%AD%A6%E4%B9%A0/">
+                                <i class="far fa-folder fa-fw"></i>学习
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-01-18>2020-01-18</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 3202 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 7 分钟&nbsp;</div>
+        </div><div class="content" id="content"><p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="https://blog.kanari.moe/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg"
+        data-srcset="https://blog.kanari.moe/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg, https://blog.kanari.moe/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg 1.5x, https://blog.kanari.moe/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg 2x"
+        data-sizes="auto"
+        alt="https://blog.kanari.moe/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg"
+        title="https://blog.kanari.moe/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg" />
+把先前信息低的两篇blog给拆了,这样好点.</p>
+<h2 id="一点小插曲-如何在windows上的rust使用gnu工具链">一点小插曲: 如何在windows上的rust使用gnu工具链</h2>
+<p>众所周知windows对编程的体验不如*nix和osx,rust甚至在Windows上的配置都麻烦一点.比如说,为了装个rust,可能需要另外准备vs2019.这两个东西的空间占用差了不止一点半点.</p>
+<p>折腾了一天.如果能仔细阅读官方的rustup文档的话,说不定就不用这么头秃了.</p>
+<p>主要的选项在于选好host和version.在rustup执行安装时,修改为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">x86_64-pc-windows-gnu
+stable-gnu
+</code></pre></td></tr></table>
+</div>
+</div><p>这样安装的版本才会使用gnu工具链.但是如此做的后果,我还不太清楚.</p>
+<h2 id="以c对撞rust">以C对撞Rust</h2>
+<p>自己主要还是C系语言用户,所以实际学习时,总是会相比较着进行.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rust" data-lang="rust"><span class="kd">let</span><span class="w"> </span><span class="n">x</span>:<span class="kt">i32</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>首先,rust也使用分号.每个变量的声明开头使用let,并且将变量类型跟随名称后面.</p>
+<p>随着时间发展,现代语言几乎都抛弃了变量类型在左侧的声明方式.这大概是一个实践上的经验.左侧的类型声明会在复杂状况下造成极大的理解障碍.比如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">signal</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">fp</span><span class="p">)(</span><span class="kt">int</span><span class="p">)))(</span><span class="kt">int</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>阅读此类东西,总会是让人头疼.你会发现,为了理解它在干嘛,这种声明方式使得阅读顺序必须是顺时针的螺旋式,显得很不自然和明确.一旦调整类型到右侧时,这个问题似乎就不存在了.</p>
+<p>所以不但变量的声明类型位于名称左侧,包括函数参数类型和返回值也都是位于右侧.</p>
+<p>剩下的..</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rust" data-lang="rust"><span class="c1">//rust中的变量**默认为不可更改**.必须添加`mut`关键字才作为一般意义上的变量考虑.
+</span><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">9</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">x</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">9</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">y</span><span class="o">=</span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="c1">// this is not allowed.
+</span><span class="c1"></span><span class="w">
+</span><span class="w"></span><span class="k">if</span><span class="w"> </span><span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="c1">//do something
+</span><span class="c1"></span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="c1">//do what
+</span><span class="c1"></span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="c1">//yeah?
+</span><span class="c1"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1">//特殊的死循环
+</span><span class="c1"></span><span class="k">loop</span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">while</span><span class="w"> </span><span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1">//由于Rust的零代价抽象,迭代器的使用没有性能折扣.
+</span><span class="c1"></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="p">..</span><span class="mi">9</span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w"></span><span class="c1">//这个是右闭区间
+</span><span class="c1"></span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="p">..</span><span class="o">=</span><span class="mi">9</span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1">//所有控制流都是表达式,能够返回值;所以我们也没有三元运算符了.
+</span><span class="c1">//对于循环,可以使用break.
+</span><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="n">flag</span><span class="o">=</span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="c1">//最后一行不写引号,代表返回该值.没记错的话应该是从别的语言那借鉴的.
+</span><span class="c1"></span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="o">-</span><span class="mi">1</span><span class="w">
+</span><span class="w"></span><span class="p">};</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">fn</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span>:<span class="kt">i32</span><span class="p">,</span><span class="n">b</span>:<span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="包管理">包管理</h2>
+<p>rust发展太快了,各种文章各说各话.这里主要是一个<code>crate</code>(一个包)内的结构.</p>
+<p>rust使用<code>mod</code>来明确的标注一个模块.关键字默认为私有,使用<code>pub</code>来标注一个对外公开的关键字.在2018标准,目录也会作为一个模块路径,文件名作为模块名,文件内关键字同样默认私有.在这种情况,使用<code>mod</code>关键字来显式的引入某个模块.对于第三方模块,2018不再需要显式标注引入<code>extern crate</code>.(但是仍然需要<code>use</code>)</p>
+<p>在一个包里,允许有多个crate.如果硬要说,类似于vs studio里的解决方案和项目之间的关系.但是,rust还有一些不那么显然的限制</p>
+<ul>
+<li>最多有一个lib crate</li>
+<li>可以有多个binary crate</li>
+</ul>
+<h2 id="一个最小的http服务器">一个最小(?)的HTTP服务器</h2>
+<p>实现这个服务器的过程中,会遭遇到很多Rust内的问题.假设我们已经对比C++掌握其基本语法了.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">thread</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">sync</span>::<span class="n">mpsc</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">sync</span>::<span class="n">Arc</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">sync</span>::<span class="n">Mutex</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">ThreadPool</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="n">workers</span>:<span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Worker</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">sender</span>: <span class="nc">mpsc</span>::<span class="n">Sender</span><span class="o">&lt;</span><span class="n">Message</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">type</span> <span class="nc">Job</span><span class="o">=</span><span class="nb">Box</span><span class="o">&lt;</span><span class="n">dyn</span><span class="w"> </span><span class="nb">FnOnce</span><span class="p">()</span><span class="o">+</span><span class="nb">Send</span><span class="o">+</span><span class="nb">&#39;static</span><span class="o">&gt;</span><span class="p">;</span><span class="c1">//?
+</span><span class="c1"></span><span class="w">
+</span><span class="w"></span><span class="k">enum</span> <span class="nc">Message</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="n">NewJob</span><span class="p">(</span><span class="n">Job</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">Terminate</span><span class="p">,</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">ThreadPool</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="sd">/// Create thread pool
+</span><span class="sd"></span><span class="w">    </span><span class="sd">/// 
+</span><span class="sd"></span><span class="w">    </span><span class="sd">/// The number of threads in pool
+</span><span class="sd"></span><span class="w">    </span><span class="sd">/// 
+</span><span class="sd"></span><span class="w">    </span><span class="sd">/// # Paincs
+</span><span class="sd"></span><span class="w">    </span><span class="sd">/// 
+</span><span class="sd"></span><span class="w">    </span><span class="sd">/// `new` will panic when size is not great than 0.
+</span><span class="sd"></span><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">size</span>:<span class="kt">usize</span><span class="p">)</span>-&gt;<span class="nc">ThreadPool</span><span class="p">{</span><span class="w">
+</span><span class="w">        </span><span class="n">assert</span><span class="o">!</span><span class="p">(</span><span class="n">size</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">sender</span><span class="p">,</span><span class="n">receiver</span><span class="p">)</span><span class="o">=</span><span class="n">mpsc</span>::<span class="n">channel</span><span class="p">();</span><span class="w">
+</span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">receiver</span><span class="o">=</span><span class="n">Arc</span>::<span class="n">new</span><span class="p">(</span><span class="n">Mutex</span>::<span class="n">new</span><span class="p">(</span><span class="n">receiver</span><span class="p">));</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">workers</span><span class="o">=</span><span class="nb">Vec</span>::<span class="n">with_capacity</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w">
+</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="p">..</span><span class="n">size</span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="n">workers</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">Worker</span>::<span class="n">new</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">receiver</span><span class="p">.</span><span class="n">clone</span><span class="p">()));</span><span class="w">
+</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="n">ThreadPool</span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="n">workers</span><span class="p">,</span><span class="w">
+</span><span class="w">            </span><span class="n">sender</span><span class="w">
+</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">execute</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="n">f</span>:<span class="nc">F</span><span class="p">)</span><span class="w">
+</span><span class="w">        </span><span class="k">where</span><span class="w"> </span><span class="n">F</span>:<span class="nb">FnOnce</span><span class="p">()</span><span class="o">+</span><span class="nb">Send</span><span class="o">+</span><span class="nb">&#39;static</span><span class="w">
+</span><span class="w">    </span><span class="p">{</span><span class="w">
+</span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">job</span><span class="o">=</span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="n">f</span><span class="p">);</span><span class="w">
+</span><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">sender</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">Message</span>::<span class="n">NewJob</span><span class="p">(</span><span class="n">job</span><span class="p">)).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="nb">Drop</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">ThreadPool</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="k">fn</span> <span class="nf">drop</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">){</span><span class="w">
+</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">workers</span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">sender</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">Message</span>::<span class="n">Terminate</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">worker</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">workers</span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;shutting down worker {}&#34;</span><span class="p">,</span><span class="n">worker</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span><span class="o">=</span><span class="n">worker</span><span class="p">.</span><span class="n">thread</span><span class="p">.</span><span class="n">take</span><span class="p">(){</span><span class="w">
+</span><span class="w">                </span><span class="n">thread</span><span class="p">.</span><span class="n">join</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">            </span><span class="p">}</span><span class="w">
+</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">struct</span> <span class="nc">Worker</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="n">id</span>: <span class="kt">usize</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">thread</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="n">thread</span>::<span class="n">JoinHandle</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">Worker</span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">id</span>:<span class="kt">usize</span><span class="p">,</span><span class="n">receiver</span>: <span class="nc">Arc</span><span class="o">&lt;</span><span class="n">Mutex</span><span class="o">&lt;</span><span class="n">mpsc</span>::<span class="n">Receiver</span><span class="o">&lt;</span><span class="n">Message</span><span class="o">&gt;&gt;&gt;</span><span class="p">)</span>-&gt;<span class="nc">Worker</span><span class="p">{</span><span class="w">
+</span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">thread</span><span class="o">=</span><span class="n">thread</span>::<span class="n">spawn</span><span class="p">(</span><span class="k">move</span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="k">loop</span><span class="p">{</span><span class="w">
+</span><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="n">message</span><span class="o">=</span><span class="n">receiver</span><span class="p">.</span><span class="n">lock</span><span class="p">().</span><span class="n">unwrap</span><span class="p">().</span><span class="n">recv</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">
+</span><span class="w">                </span><span class="k">match</span><span class="w"> </span><span class="n">message</span><span class="p">{</span><span class="w">
+</span><span class="w">                    </span><span class="n">Message</span>::<span class="n">NewJob</span><span class="p">(</span><span class="n">job</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="w">
+</span><span class="w">                        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Worker {} got job.&#34;</span><span class="p">,</span><span class="n">id</span><span class="w"> </span><span class="p">);</span><span class="w">
+</span><span class="w">                        </span><span class="n">job</span><span class="p">();</span><span class="w">
+</span><span class="w">                    </span><span class="p">},</span><span class="w">
+</span><span class="w">                    </span><span class="n">Message</span>::<span class="n">Terminate</span><span class="o">=&gt;</span><span class="p">{</span><span class="w">
+</span><span class="w">                        </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Worker {} is terminating.&#34;</span><span class="p">,</span><span class="n">id</span><span class="p">);</span><span class="w">
+</span><span class="w">                        </span><span class="k">break</span><span class="p">;</span><span class="w">
+</span><span class="w">                    </span><span class="p">}</span><span class="w">
+</span><span class="w">                </span><span class="p">}</span><span class="w">
+</span><span class="w">                
+</span><span class="w">            </span><span class="p">}</span><span class="w">
+</span><span class="w">        </span><span class="p">});</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="n">Worker</span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="n">id</span><span class="p">,</span><span class="w">
+</span><span class="w">            </span><span class="n">thread</span>: <span class="nb">Some</span><span class="p">(</span><span class="n">thread</span><span class="p">),</span><span class="w">
+</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span>::<span class="n">prelude</span>::<span class="o">*</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">net</span>::<span class="p">{</span><span class="n">TcpListener</span><span class="p">,</span><span class="n">TcpStream</span><span class="p">};</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fs</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">time</span>::<span class="n">Duration</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">thread</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">automan</span>::<span class="n">ThreadPool</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">listener</span><span class="o">=</span><span class="n">TcpListener</span>::<span class="n">bind</span><span class="p">(</span><span class="s">&#34;127.0.0.1:7878&#34;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ThreadPool</span>::<span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">listener</span><span class="p">.</span><span class="n">incoming</span><span class="p">(){</span><span class="w">
+</span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="n">pool</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="n">handler</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span><span class="w">
+</span><span class="w">        </span><span class="p">});</span><span class="w">
+</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">fn</span> <span class="nf">handler</span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">stream</span>: <span class="nc">TcpStream</span><span class="p">){</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="mi">512</span><span class="p">];</span><span class="w">
+</span><span class="w">    </span><span class="n">stream</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">buffer</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">b&#34;GET / HTTP/1.1</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">b&#34;GET /sleep HTTP/1.1</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">status_line</span><span class="p">,</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">buffer</span><span class="p">.</span><span class="n">starts_with</span><span class="p">(</span><span class="n">get</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">        </span><span class="p">(</span><span class="s">&#34;HTTP/1.1 200 OK\r\n\r\n&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;hello.html&#34;</span><span class="p">)</span><span class="w">
+</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">buffer</span><span class="p">.</span><span class="n">starts_with</span><span class="p">(</span><span class="n">sleep</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">        </span><span class="n">thread</span>::<span class="n">sleep</span><span class="p">(</span><span class="n">Duration</span>::<span class="n">from_secs</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span><span class="w">
+</span><span class="w">        </span><span class="p">(</span><span class="s">&#34;HTTP/1.1 200 OK\r\n\r\n&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;hello.html&#34;</span><span class="p">)</span><span class="w">
+</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">        </span><span class="p">(</span><span class="s">&#34;HTTP/1.1 404 NOT FOUND\r\n\r\n&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;404.html&#34;</span><span class="p">)</span><span class="w">
+</span><span class="w">    </span><span class="p">};</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">contents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fs</span>::<span class="n">read_to_string</span><span class="p">(</span><span class="n">filename</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">format</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;{}{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">status_line</span><span class="p">,</span><span class="w"> </span><span class="n">contents</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="n">stream</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">as_bytes</span><span class="p">()).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w">    </span><span class="n">stream</span><span class="p">.</span><span class="n">flush</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="fnonce">FnOnce</h2>
+<p>在C++里,我们能够用Lambda表达式创建闭包,当需要保存一个闭包时,标准库提供了叫<code>function</code>的东西.在Rust里,我们也有闭包,而描述一个闭包类型的玩意,就是<code>Fn***</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">type</span> <span class="nc">Job</span><span class="o">=</span><span class="nb">Box</span><span class="o">&lt;</span><span class="n">dyn</span><span class="w"> </span><span class="nb">FnOnce</span><span class="p">()</span><span class="o">+</span><span class="nb">Send</span><span class="o">+&amp;</span><span class="err">#</span><span class="mi">039</span><span class="p">;</span><span class="k">static</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>得益于rust的内存模型,诞生出这个奇葩玩意.反正还是和变量的所有权有关系.<code>FnOnce</code>的闭包会获取其捕获变量的所有权.另外<code>FnMut</code>的闭包获得其捕获变量的可变借用,<code>Fn</code>获得不可变借用.勉强可以对比C++里的<code>[],[&amp;]</code>.</p>
+<p>至于到底什么闭包会实现哪一个,是由编译器根据实际情况判断的.想要强制将变量挪进闭包时,可以前缀<code>move</code>,就像<code>Worker</code>的<code>run</code>里的代码一样.因为当<code>run</code>执行完,receiver将会被丢弃,从而影响到闭包里的引用.</p>
+<p>其他的几个<code>+</code>号和<code>Send</code>,<code>'static</code>什么的.<code>+</code>就是<code>+</code>,要求该类型必须同时实现这三种<code>trait</code>.Send是个<code>trait</code>(Types that can be transferred across thread boundaries).<code>'static</code>等时间周期实际上也是<code>trait</code>.</p>
+<h2 id="box和dyn">Box和dyn</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">type</span> <span class="nc">Job</span><span class="o">=</span><span class="nb">Box</span><span class="o">&lt;</span><span class="n">dyn</span><span class="w"> </span><span class="nb">FnOnce</span><span class="p">()</span><span class="o">+</span><span class="nb">Send</span><span class="o">+&amp;</span><span class="err">#</span><span class="mi">039</span><span class="p">;</span><span class="k">static</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>&hellip;&hellip;没完..前面那个<code>dyn</code>玩意也是挺奇怪,需要和<code>impl</code>关键字对比理解.</p>
+<p>Rust的一大特点就是零代价抽象.例如对于泛型,一种实现0抽象的方法就是在编译阶段单例化.C++也是如此处理.</p>
+<p>不过有一种情况目测C++无法实现零抽象:在C++中,如果存在父类<code>A</code>有虚方法<code>f</code>,而子类<code>B</code>重写了<code>f</code>,又有一个函数<code>g(A a)</code>会调用<code>f</code>.当把<code>B</code>作为参数传给<code>g</code>时,C++通过一种叫<code>虚函数表</code>的方式实现调用<code>B</code>写的<code>f</code>.这种行为是发生在运行时的.</p>
+<p>对于Rust来讲,虽然没有类与继承,这种操作实际等价于<code>trait</code>.上面的情况对等于存在<code>trait A</code>,它定义了一个<code>f</code>,<code>B</code>实现了<code>A</code>,<code>g</code>同上.Rust<strong>能够在编译阶段</strong>就确定传给<code>g</code>的是谁,并且优化掉它.不过这种优化也是有限度的.如果把一堆实现<code>A</code>的结构的指针存到数组或者其他内存结构里,那Rust也是无能为力的,只能在运行时动态分发.</p>
+<p>再回来看<code>impl</code>和<code>dyn</code>.它们分别对应了能够优化(静态分发)和动态分发的情景.</p>
+<p>另外,采用动态分发的结构也不能在编译时确定大小,所以必须外包<code>Box</code>.这一点还是有点特殊的,C++似乎并不会抱怨这个问题.</p>
+<h2 id="arc和mutex">Arc和Mutex</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">id</span>:<span class="kt">usize</span><span class="p">,</span><span class="n">receiver</span>: <span class="nc">Arc</span><span class="o">&lt;</span><span class="n">Mutex</span><span class="o">&lt;</span><span class="n">mpsc</span>::<span class="n">Receiver</span><span class="o">&lt;</span><span class="n">Message</span><span class="o">&gt;&gt;&gt;</span><span class="p">)</span>-&gt;<span class="nc">Worker</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>说真的,看到<code>Worker</code>的这个函数签名,当时就像吐.Rust这玩意,动不动就会嵌套上好几层的<code>&lt;&gt;</code>.</p>
+<p>首先关于<code>Arc</code>&hellip;先<code>Rc</code>.一般情况下,一个变量的所有权是可以在编译阶段就确定下来的.但是总会有不如意的时候,当有多个结构同时享有某个变量的所有权(例如一棵树),就不太好确定其实际的销毁时机,而且Rust也不会给你机会共享所有权.<code>Rc</code>是一个引用计数指针,变量所有权由它保管,而它能够提供多份只读借用.</p>
+<p>然而<code>Rc</code>线程不安全,<code>Arc</code>线程安全.不过<code>Arc</code>性能弱于<code>Rc</code>.</p>
+<p>其次是<code>Mutex</code>&hellip;就是个锁&hellip;</p>
+<p>至于为啥用锁,先看<code>mpsc</code>,Multi-producer, single-consumer FIFO queue communication primitives.</p>
+<p>一头雾水的缩写&hellip;简而言之,这个东西的设定类似于go里<code>channel</code>,同时是多生产者,<strong>单消费者</strong>模式.本身使用没什么绕的地方.绕的地方在于多线程共享和单消费者模式的冲突,所以引入了锁,保证同时只有一个线程能够消费消息.</p>
+<p>顺便吐槽一句这代码写的&hellip;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rust" data-lang="rust"><span class="kd">let</span><span class="w"> </span><span class="n">message</span><span class="o">=</span><span class="n">receiver</span><span class="p">.</span><span class="n">lock</span><span class="p">().</span><span class="n">unwrap</span><span class="p">().</span><span class="n">recv</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>其实涉及到<code>Rc</code>时,还有另外一个外部可变,内部可变的麻烦事.这里没有提到.</p>
+<h2 id="还有">还有</h2>
+<p><code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>,<code>unwrap</code>&hellip;</p>
+<p>当然它们本来会被替代成更复杂的错误处理.</p>
+<h2 id="小结">小结</h2>
+<p>用Rust写的程序,和自己脑袋斗智斗勇几回合,再和编译器斗智斗勇(单方面挨揍)几百回合,最后是真的难以出现bug,毕竟一切都被管的死死的.我还看到Rust里一个很有意思的玩意叫错误驱动,说是先把代码大概模样瞎糊上,然后让编译器check一遍,再一步步改掉编译器的报错<del>顺便写代码</del>,最后就能在编译器的吐槽下完美实现程序,再加点测试就齐全了&hellip;</p>
+<p>虽然整个语法看起来复杂啰嗦,不过无法否认这些语句对于工程来讲实际上都是必要的.所以这玩意的气质决定它不太适合作为打比赛时用的语言.翻了翻CF好几场比赛,零星有几个Rust的代码也都没有涉及任何数据结构,本来还想瞻仰一下他们会怎么处理生命周期一类的问题.</p>
+<p>如果有机会,拿Rust写课设应该可以玩一玩(大概会被强行用C系语言).至于原本想拿Rust写个本地评测器,还是算了,有空再说吧.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-01-18 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020/01/have-fun-with-rust/" data-title="与Rust玩耍"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020/01/have-fun-with-rust/" data-title="与Rust玩耍"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/01/codeforces-round-612-div-2/" class="prev" rel="prev" title="Codeforces Round #612 (Div. 2)"><i class="fas fa-angle-left fa-fw"></i>Codeforces Round #612 (Div. 2)</a>
+            <a href="/2020/01/cf-1156d-0-1-tree/" class="next" rel="next" title="[CF 1156D] 0-1 Tree">[CF 1156D] 0-1 Tree<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
+        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+</html>

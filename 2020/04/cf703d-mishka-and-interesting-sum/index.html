@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[CF703D] Mishka and Interesting Sum - Kanari&#39;s blog</title>
+        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="[CF703D] Mishka and Interesting Sum" />
+<meta property="og:description" content="Little Mishka enjoys programming. Since her birthday has just passed, her friends decided to present her with array of non-negative integers a1, a2, &hellip;, an of n elements! Mishka loved the array and she instantly decided to determine its beauty value, but she is too little and can&rsquo;t process large arrays. Right because of that she invited you to visit her and asked you to process m queries. Each query" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020/04/cf703d-mishka-and-interesting-sum/" />
+<meta property="article:published_time" content="2020-04-10T14:08:41+08:00" />
+<meta property="article:modified_time" content="2020-04-10T14:08:41+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[CF703D] Mishka and Interesting Sum"/>
+<meta name="twitter:description" content="Little Mishka enjoys programming. Since her birthday has just passed, her friends decided to present her with array of non-negative integers a1, a2, &hellip;, an of n elements! Mishka loved the array and she instantly decided to determine its beauty value, but she is too little and can&rsquo;t process large arrays. Right because of that she invited you to visit her and asked you to process m queries. Each query"/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020/04/cf703d-mishka-and-interesting-sum/" /><link rel="prev" href="http://example.org/2020/04/kattis-prolonged-password/" /><link rel="next" href="http://example.org/2020/04/icpc2018-yokohama/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[CF703D] Mishka and Interesting Sum",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020\/04\/cf703d-mishka-and-interesting-sum\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "树状数组","wordcount":  791 ,
+        "url": "http:\/\/example.org\/2020\/04\/cf703d-mishka-and-interesting-sum\/","datePublished": "2020-04-10T14:08:41+08:00","dateModified": "2020-04-10T14:08:41+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">[CF703D] Mishka and Interesting Sum</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/code/">
+                                <i class="far fa-folder fa-fw"></i>code
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-10>2020-04-10</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 791 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
+        </div><div class="content" id="content"><p>Little Mishka enjoys programming. Since her birthday has just passed, her friends decided to present her with array of non-negative integers a1, a2, &hellip;, an of n elements!</p>
+<p>Mishka loved the array and she instantly decided to determine its beauty value, but she is too little and can&rsquo;t process large arrays. Right because of that she invited you to visit her and asked you to process m queries.</p>
+<p>Each query is processed in the following way:</p>
+<p>Two integers l and r (1 ≤ l ≤ r ≤ n) are specified — bounds of query segment.
+Integers, presented in array segment [l,  r] (in sequence of integers al, al + 1, &hellip;, ar) even number of times, are written down.
+XOR-sum of written down integers is calculated, and this value is the answer for a query. Formally, if integers written down in point 2 are x1, x2, &hellip;, xk, then Mishka wants to know the value , where  — operator of exclusive bitwise OR.
+Since only the little bears know the definition of array beauty, all you are to do is to answer each of queries presented.</p>
+<h2 id="分析">分析</h2>
+<blockquote>
+<p>被大哥们秒切了…都没来得及想💔</p>
+</blockquote>
+<p>利用了异或的性质。</p>
+<p>想找到一个区间内出现奇数次的数的异或和非常简单，只要维护一个前缀和就可以了。那么知道了奇数次的数字，就能从所有数字的异或中求到补——出现偶数次的数的异或。</p>
+<p>值得一写的是求某区间内<strong>不同元素</strong>相关信息的一个思路。之前有好几道题都是这么干的（一个钥匙的题，一个书的题）。即维护元素的下一次出现位置，将左区间排序后，使用数据结构查询右端点。当左端点越过了某数后，就将其下一次出现的位置加入到结构中。整体为$O(n\lg n)$。</p>
+<p>如果题目的范围小一点，可以莫队。</p>
+<h2 id="代码">代码</h2>
+<p>没上快读T了发。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;stack&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">XN</span><span class="o">=</span><span class="mi">1000010</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">FTXN</span><span class="o">=</span><span class="mi">4000010</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="n">IO</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">IN</span><span class="o">=</span><span class="mf">1e6</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">in</span><span class="p">[</span><span class="n">IN</span><span class="p">],</span><span class="o">*</span><span class="n">ip</span><span class="o">=</span><span class="n">in</span><span class="p">,</span><span class="o">*</span><span class="n">ie</span><span class="o">=</span><span class="n">in</span><span class="p">;</span>
+<span class="cp">#define getchar() (ip==ie &amp;&amp; (ie=(ip=in)+fread(in,1,IN,stdin),ip==ie)?EOF:*ip++)
+</span><span class="cp"></span>    <span class="k">struct</span> <span class="nc">Istream</span> <span class="p">{</span>
+        <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+        <span class="n">Istream</span> <span class="o">&amp;</span><span class="k">operator</span> <span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">T</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">static</span> <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span><span class="k">static</span> <span class="kt">bool</span> <span class="n">neg</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="n">ch</span><span class="o">=</span><span class="n">neg</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">ch</span><span class="o">&lt;</span><span class="sc">&#39;0&#39;</span> <span class="o">||</span> <span class="sc">&#39;9&#39;</span><span class="o">&lt;</span><span class="n">ch</span><span class="p">;</span><span class="n">neg</span><span class="o">|=</span><span class="n">ch</span><span class="o">==</span><span class="sc">&#39;-&#39;</span><span class="p">,</span><span class="n">ch</span><span class="o">=</span><span class="n">getchar</span><span class="p">());</span>
+            <span class="k">for</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="sc">&#39;0&#39;</span><span class="o">&lt;=</span><span class="n">ch</span> <span class="o">&amp;&amp;</span> <span class="n">ch</span><span class="o">&lt;=</span><span class="sc">&#39;9&#39;</span><span class="p">;(</span><span class="n">x</span><span class="o">*=</span><span class="mi">10</span><span class="p">)</span><span class="o">+=</span><span class="n">ch</span><span class="o">-</span><span class="sc">&#39;0&#39;</span><span class="p">,</span><span class="n">ch</span><span class="o">=</span><span class="n">getchar</span><span class="p">());</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">neg</span><span class="o">?-</span><span class="nl">x</span><span class="p">:</span><span class="n">x</span><span class="p">;</span>
+            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="n">fin</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">OUT</span><span class="o">=</span><span class="mf">1e6</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">out</span><span class="p">[</span><span class="n">OUT</span><span class="p">],</span><span class="o">*</span><span class="n">op</span><span class="o">=</span><span class="n">out</span><span class="p">,</span><span class="o">*</span><span class="n">oe</span><span class="o">=</span><span class="n">out</span><span class="o">+</span><span class="n">OUT</span><span class="p">;</span>
+<span class="cp">#define flush() fwrite(out,1,op-out,stdout)
+</span><span class="cp">#define putchar(x) ((op==oe?(flush(),op=out,*op++):*op++)=(x))
+</span><span class="cp"></span>    <span class="k">struct</span> <span class="nc">Ostream</span> <span class="p">{</span>
+        <span class="o">~</span><span class="n">Ostream</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">flush</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+        <span class="n">Ostream</span> <span class="o">&amp;</span><span class="k">operator</span> <span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">T</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">putchar</span><span class="p">(</span><span class="sc">&#39;-&#39;</span><span class="p">),</span><span class="n">x</span><span class="o">=-</span><span class="n">x</span><span class="p">);</span>
+            <span class="k">static</span> <span class="kt">char</span> <span class="n">stack</span><span class="p">[</span><span class="mi">233</span><span class="p">];</span><span class="k">static</span> <span class="kt">int</span> <span class="n">top</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">x</span><span class="p">;</span><span class="n">stack</span><span class="p">[</span><span class="o">++</span><span class="n">top</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="o">%</span><span class="mi">10</span><span class="o">+</span><span class="sc">&#39;0&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">/=</span><span class="mi">10</span><span class="p">);</span>
+            <span class="k">for</span><span class="p">(</span><span class="n">top</span><span class="o">==</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">stack</span><span class="p">[</span><span class="n">top</span><span class="o">=</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;0&#39;</span><span class="p">);</span><span class="n">top</span><span class="p">;</span><span class="n">putchar</span><span class="p">(</span><span class="n">stack</span><span class="p">[</span><span class="n">top</span><span class="o">--</span><span class="p">]));</span>
+            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">Ostream</span> <span class="o">&amp;</span><span class="k">operator</span> <span class="o">&lt;&lt;</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">putchar</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span>
+            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="n">fout</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">using</span> <span class="n">IO</span><span class="o">::</span><span class="n">fin</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">IO</span><span class="o">::</span><span class="n">fout</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">ft</span><span class="p">[</span><span class="n">FTXN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">lowbit</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">&amp;-</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">ftadd</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">,</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(;</span><span class="n">pos</span><span class="o">&lt;</span><span class="n">FTXN</span><span class="p">;</span><span class="n">pos</span><span class="o">+=</span><span class="n">lowbit</span><span class="p">(</span><span class="n">pos</span><span class="p">)){</span>
+        <span class="n">ft</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span><span class="o">^=</span><span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">ftget</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">res</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(;</span><span class="n">pos</span><span class="p">;</span><span class="n">pos</span><span class="o">-=</span><span class="n">lowbit</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span><span class="n">res</span><span class="o">^=</span><span class="n">ft</span><span class="p">[</span><span class="n">pos</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">xo</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="k">struct</span> <span class="nc">Q</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">qs</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">ans</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">curpos</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">nxt</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span><span class="n">fin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+    <span class="c1">//cout&lt;&lt;&#34;st&#34;&lt;&lt;endl;
+</span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">fin</span><span class="o">&gt;&gt;</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">xo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">xo</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="c1">//cout&lt;&lt;&#34;done&#34;&lt;&lt;endl;
+</span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">){</span>
+        <span class="n">nxt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">curpos</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
+        <span class="n">curpos</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="c1">//    for(int i=1;i&lt;=n;i++){
+</span><span class="c1">//        cout&lt;&lt;nxt[i]&lt;&lt;&#34; &#34;;
+</span><span class="c1">//    }
+</span><span class="c1">//    cout&lt;&lt;endl;
+</span><span class="c1"></span>
+    <span class="kt">int</span> <span class="n">qlen</span><span class="p">;</span><span class="n">fin</span><span class="o">&gt;&gt;</span><span class="n">qlen</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">qlen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">fin</span><span class="o">&gt;&gt;</span><span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">l</span><span class="o">&gt;&gt;</span><span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span><span class="p">;</span>
+        <span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">pos</span><span class="p">]</span><span class="o">:</span><span class="n">curpos</span><span class="p">){</span>
+        <span class="n">ftadd</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">sort</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span><span class="n">qs</span><span class="o">+</span><span class="n">qlen</span><span class="p">,[](</span><span class="k">const</span> <span class="n">Q</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="k">const</span> <span class="n">Q</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">l</span><span class="o">&lt;</span><span class="n">b</span><span class="p">.</span><span class="n">l</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="kt">int</span> <span class="n">la</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">//cout&lt;&lt;&#34;done&#34;&lt;&lt;endl;
+</span><span class="c1"></span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">qlen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">Q</span> <span class="o">&amp;</span><span class="n">q</span><span class="o">=</span><span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">l</span><span class="o">&gt;</span><span class="n">la</span><span class="p">){</span>
+            <span class="n">ftadd</span><span class="p">(</span><span class="n">la</span><span class="p">,</span><span class="n">num</span><span class="p">[</span><span class="n">la</span><span class="p">]);</span>
+            <span class="c1">//cout&lt;&lt;&#34;remove &#34;&lt;&lt;la&lt;&lt;endl;
+</span><span class="c1"></span>            <span class="k">if</span><span class="p">(</span><span class="n">nxt</span><span class="p">[</span><span class="n">la</span><span class="p">]){</span>
+                <span class="n">ftadd</span><span class="p">(</span><span class="n">nxt</span><span class="p">[</span><span class="n">la</span><span class="p">],</span><span class="n">num</span><span class="p">[</span><span class="n">la</span><span class="p">]);</span>
+                <span class="c1">//cout&lt;&lt;&#34;add &#34;&lt;&lt;nxt[la]&lt;&lt;endl;
+</span><span class="c1"></span>            <span class="p">}</span>
+            <span class="n">la</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">ans</span><span class="p">[</span><span class="n">q</span><span class="p">.</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">ftget</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">r</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">xo</span><span class="p">[</span><span class="n">q</span><span class="p">.</span><span class="n">r</span><span class="p">]</span><span class="o">^</span><span class="n">xo</span><span class="p">[</span><span class="n">q</span><span class="p">.</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">qlen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">fout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-04-10 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020/04/cf703d-mishka-and-interesting-sum/" data-title="[CF703D] Mishka and Interesting Sum"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020/04/cf703d-mishka-and-interesting-sum/" data-title="[CF703D] Mishka and Interesting Sum"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">树状数组</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/04/kattis-prolonged-password/" class="prev" rel="prev" title="Prolonged Password"><i class="fas fa-angle-left fa-fw"></i>Prolonged Password</a>
+            <a href="/2020/04/icpc2018-yokohama/" class="next" rel="next" title="ICPC2018 Yokohama">ICPC2018 Yokohama<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
+        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+</html>

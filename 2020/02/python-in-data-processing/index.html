@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>使用Python分析数据 - Kanari&#39;s blog</title>
+        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="使用Python分析数据" />
+<meta property="og:description" content="本来这不是我现在该想的东西，被迫因为建模比赛看了一点。所学东西太过杂乱。 为什么不用Matlab、Mathematica 因为Mathemati" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020/02/python-in-data-processing/" />
+<meta property="article:published_time" content="2020-02-22T11:45:06+08:00" />
+<meta property="article:modified_time" content="2020-02-22T11:45:06+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Python分析数据"/>
+<meta name="twitter:description" content="本来这不是我现在该想的东西，被迫因为建模比赛看了一点。所学东西太过杂乱。 为什么不用Matlab、Mathematica 因为Mathemati"/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020/02/python-in-data-processing/" /><link rel="prev" href="http://example.org/2020/02/change-theme/" /><link rel="next" href="http://example.org/2020/02/new-standard-of-cpp/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用Python分析数据",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020\/02\/python-in-data-processing\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","wordcount":  1775 ,
+        "url": "http:\/\/example.org\/2020\/02\/python-in-data-processing\/","datePublished": "2020-02-22T11:45:06+08:00","dateModified": "2020-02-22T11:45:06+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">使用Python分析数据</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/%E9%97%B2%E6%89%AF/">
+                                <i class="far fa-folder fa-fw"></i>闲扯
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-02-22>2020-02-22</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1775 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;</div>
+        </div><div class="content" id="content"><p>本来这不是我现在该想的东西，被迫因为建模比赛看了一点。所学东西太过杂乱。</p>
+<h2 id="为什么不用matlabmathematica">为什么不用Matlab、Mathematica</h2>
+<p>因为Mathematica被我卸了，Matlab没学过，也不喜欢。这只是一个排除法，我不知道该怎么从优势上比较。</p>
+<p>R语言没学过，Julia也没有，所以回归工具齐全的Python。</p>
+<h2 id="python-数据分析套装">Python 数据分析套装</h2>
+<p>建议目标就是分析数据的人直接安装<code>anaconda</code>，使用jupyter lab，不折腾。</p>
+<ul>
+<li>对于数据读入和清洗：<code>Pandas</code></li>
+<li>对于矩阵等向量运算：<code>numpy</code></li>
+<li>对于计算机代数计算：<code>sympy</code></li>
+</ul>
+<h3 id="绘图">绘图</h3>
+<p>绘图的库就很多了。Matplotlib，Plotly，Seaborn，Altair这几个还不错。第一个比较底层，是直接参照Matlab的API设计的，Seaborn是在其基础上设计的更高层的绘图包,所以使用、配色、排版什么的都不错。Plotly和Altair都是具有一定交互能力的绘图包，在lab里是需要前端js配合绘图的（所以一旦图片数据太多，会卡得浏览器痛不欲生）。</p>
+<p>我就胡乱选了个Plotly。不过现在看来大概是个错误的决定。</p>
+<h3 id="plotly在国内配置的坑">Plotly在国内配置的坑</h3>
+<p>看着npm和yarn这两个字眼就害怕现在。js那一堆乱七八糟的工具链，支持度各不相同的标准，这里可以import，那里又会ce必须用require，又let又var，到现在也整不清楚的this和that，有的包要求传正确的lambda表达式，有的又必须用function，还有一堆坑……看着就想躲着走，然而这plotly的构建是需要npm和yarn的。</p>
+<p>……为什么这破语言能用到现在。</p>
+<p>在安装Plotly向Jupyter lab的支持库时，切勿在<code>npm</code>和<code>yarn</code>中使用镜像。镜像和源之间有一定的更新延迟并且存在同步错误而跳过某些包的问题。我就正好卡在了被跳过的包上，因为这个问题死活编译不过去浪费了很长时间。</p>
+<p>其次，使用Plotly输出<code>.pdf</code>等格式的图片文件时，需要安装<code>ocra</code>，在服务器上配置时还需要安装<code>xvfb</code>，这些都在其文档中有写，不过视系统不同仍然需要自己补齐很多支持库。从这个角度上来说，似乎还是选择Seaborn+Matplotlab比较好，除非你有工具人，否则不要把时间浪费在莫名其妙的地方。</p>
+<h2 id="基本操作">基本操作</h2>
+<p>numpy和pandas都有快速入门教程，花20分钟读一读，然后剩下的随用随查就好了。</p>
+<p>这里记几个常用但是不太好找的东西。</p>
+<h3 id="如何遍历数据帧的所有行">如何遍历数据帧的所有行</h3>
+<p>标准操作是<code>apply</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="o">&amp;</span><span class="c1">#039;pass&amp;#039;]=df.apply(lambda a:a[&amp;#039;grade&amp;#039;]&gt;=60,axis=1)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但是，这玩意的坑在于传给它的函数内部是只能get不能set的。即使set也没有作用。不过一般修改单列数据也没有问题，可以像上面一行一样。</p>
+<p>另外时刻记住，筛选的数据帧结果<strong>也是不能set的</strong>。虽然不知道为什么，但是我在踩这个坑的时候，有些时候不但不会修改而且连错误也不会报。</p>
+<p>不过如果是修改多行数据呢，上面的命令是不能简单推广的。当然可以用一些很丑陋的做法，比如<code>for i in range(df.shape[0])</code>（可能有稍微好看一点的写法）然后<code>iloc</code>一个个的改掉。不过实际上，仍然有使用<code>apply</code>的余地。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="o">&amp;</span><span class="c1">#039;计算机导♂论&amp;#039;])*10,math.sqrt(row[&amp;#039;高等♂数学&amp;#039;])*10</span>
+
+<span class="n">df</span><span class="p">[</span><span class="o">&amp;</span><span class="c1">#039;计算机导♂论&amp;#039;],df[&amp;#039;高等♂数学&amp;#039;]=zip(*df.apply(fn,axis=1))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>开方乘十，标准的捞人方法要不要了解一下。</p>
+<p>这种方案可读性较差，不过实测是快于手动遍历的。听说python不想让人管复杂度，事实却不大行啊。</p>
+<h3 id="plotly的整体设计">Plotly的整体设计</h3>
+<p>Plotly的官方文档写得很好，看完概览后费点功夫就能找到自己想要的图的画法。再想自定义就去翻API。</p>
+<p>总体来看，<code>graph_object</code>（好像是这么拼？）是最基础的绘图对象，设置好图例后加入到<code>Figure</code>里，就可以作为最终结果输出。<code>express</code>是一个更高层的工厂，能够满足一般情况常用的图的快速绘制。所以，先去<code>express</code>，满足不了再往下找。</p>
+<p>如果看完概览了之后还能发现一个很重要的信息。设置图例属性时可能会遇到嵌套多层对象的那种参数，这时候可以直接使用<code>_</code>连接参数名，不需要一层层构造。</p>
+<p>知道这些之后随便画就是了。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-02-22 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020/02/python-in-data-processing/" data-title="使用Python分析数据"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020/02/python-in-data-processing/" data-title="使用Python分析数据"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/02/change-theme/" class="prev" rel="prev" title="换个主题"><i class="fas fa-angle-left fa-fw"></i>换个主题</a>
+            <a href="/2020/02/new-standard-of-cpp/" class="next" rel="next" title="C&#43;&#43;新标准特性初探">C&#43;&#43;新标准特性初探<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
+        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+</html>
