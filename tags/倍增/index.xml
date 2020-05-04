@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>倍增 - 标签 - Kanari&#39;s blog</title>
+        <link>http://example.org/tags/%E5%80%8D%E5%A2%9E/</link>
+        <description>倍增 - 标签 - Kanari&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Wed, 08 Apr 2020 20:20:43 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E5%80%8D%E5%A2%9E/" rel="self" type="application/rss+xml" /><item>
+    <title>Prolonged Password</title>
+    <link>http://example.org/kattis-prolonged-password/</link>
+    <pubDate>Wed, 08 Apr 2020 20:20:43 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/kattis-prolonged-password/</guid>
+    <description><![CDATA[给一个字符串，现有这么一种操作，将字符串内每一个字母替换成一给定字符串。例如$T_a=abc,T_b=ee$，那么$ab$就会被替换成$ab]]></description>
+</item></channel>
+</rss>

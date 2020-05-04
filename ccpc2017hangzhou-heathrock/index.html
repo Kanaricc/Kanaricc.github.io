@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[CCPC2017杭州] Heathrock - Kanari&#39;s blog</title>
+        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="[CCPC2017杭州] Heathrock" />
+<meta property="og:description" content="这题意太长了，我懒得复制。
+分析
+额……其实就是爆搜模拟。但是状态比较多，需要记双方生命值，3个随从的生命，当前场数，魔力，体力，以及一些玄学优化。
+
+自选目标的牌一定会放在回合的较后出，因为其不会累加魔力。
+如果剩下的牌全踢脸也踢不死，直接返回。
+
+之后就能跑得飞快。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/ccpc2017hangzhou-heathrock/" />
+<meta property="article:published_time" content="2019-10-23T19:13:47+08:00" />
+<meta property="article:modified_time" content="2019-10-23T19:13:47+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[CCPC2017杭州] Heathrock"/>
+<meta name="twitter:description" content="这题意太长了，我懒得复制。
+分析
+额……其实就是爆搜模拟。但是状态比较多，需要记双方生命值，3个随从的生命，当前场数，魔力，体力，以及一些玄学优化。
+
+自选目标的牌一定会放在回合的较后出，因为其不会累加魔力。
+如果剩下的牌全踢脸也踢不死，直接返回。
+
+之后就能跑得飞快。"/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/ccpc2017hangzhou-heathrock/" /><link rel="prev" href="http://example.org/ccpc-2017-master-of-sequence/" /><link rel="next" href="http://example.org/liaoning-ships-voyage/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[CCPC2017杭州] Heathrock",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/ccpc2017hangzhou-heathrock\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "搜索","wordcount":  623 ,
+        "url": "http:\/\/example.org\/ccpc2017hangzhou-heathrock\/","datePublished": "2019-10-23T19:13:47+08:00","dateModified": "2019-10-23T19:13:47+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">[CCPC2017杭州] Heathrock</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/code/">
+                                <i class="far fa-folder fa-fw"></i>code
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-10-23>2019-10-23</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 623 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
+        </div><div class="content" id="content"><p>这题意太长了，我懒得复制。</p>
+<h2 id="分析">分析</h2>
+<p>额……其实就是爆搜模拟。但是状态比较多，需要记双方生命值，3个随从的生命，当前场数，魔力，体力，以及一些玄学优化。</p>
+<ul>
+<li>自选目标的牌一定会放在回合的较后出，因为其不会累加魔力。</li>
+<li>如果剩下的牌全踢脸也踢不死，直接返回。</li>
+</ul>
+<p>之后就能跑得飞快。</p>
+<p>{% asset_img &ldquo;1.png&rdquo; %}</p>
+<h2 id="代码">代码</h2>
+<p>一开始输出了&quot;YES&rdquo;，淦。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;stack&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;queue&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MAXN</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+<span class="k">struct</span> <span class="nc">Card</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">type</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">damage</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">cost</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">power</span><span class="p">;</span>
+
+    <span class="n">Card</span><span class="p">(){}</span>
+    <span class="n">Card</span><span class="p">(</span><span class="kt">int</span> <span class="n">type</span><span class="p">,</span><span class="kt">int</span> <span class="n">damage</span><span class="p">,</span><span class="kt">int</span> <span class="n">cost</span><span class="p">,</span><span class="kt">int</span> <span class="n">power</span><span class="p">)</span><span class="o">:</span><span class="n">type</span><span class="p">(</span><span class="n">type</span><span class="p">),</span><span class="n">damage</span><span class="p">(</span><span class="n">damage</span><span class="p">),</span><span class="n">cost</span><span class="p">(</span><span class="n">cost</span><span class="p">),</span><span class="n">power</span><span class="p">(</span><span class="n">power</span><span class="p">){}</span>
+<span class="p">}</span> <span class="n">cards</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="kt">bool</span> <span class="n">used</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">nlen</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">md1</span><span class="p">,</span><span class="n">md2</span><span class="p">,</span><span class="n">md3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">mx1</span><span class="p">,</span><span class="n">mx2</span><span class="p">,</span><span class="n">mx3</span><span class="p">;</span>
+
+<span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans_cards</span><span class="p">,</span><span class="n">ans_target</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">stone</span><span class="p">,</span><span class="kt">int</span> <span class="n">power</span><span class="p">,</span><span class="kt">int</span> <span class="n">bl_me</span><span class="p">,</span><span class="kt">int</span> <span class="n">bl_en</span><span class="p">,</span><span class="kt">int</span> <span class="n">m1</span><span class="p">,</span><span class="kt">int</span> <span class="n">m2</span><span class="p">,</span><span class="kt">int</span> <span class="n">m3</span><span class="p">,</span><span class="kt">int</span> <span class="n">depth</span><span class="p">,</span><span class="kt">bool</span> <span class="n">nearend</span><span class="o">=</span><span class="nb">false</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">stone</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">depth</span><span class="o">&gt;=</span><span class="mi">3</span><span class="p">)</span><span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">bl_en</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">depth</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">stone</span><span class="o">==</span><span class="mi">10</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">m1</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="n">bl_me</span><span class="o">-=</span><span class="n">md1</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">m2</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="n">bl_me</span><span class="o">-=</span><span class="n">md2</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">m3</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="n">bl_me</span><span class="o">-=</span><span class="n">md3</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">m1</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span><span class="n">m1</span><span class="o">=</span><span class="n">mx1</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">m2</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span><span class="n">m2</span><span class="o">=</span><span class="n">mx2</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">m3</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span><span class="n">m3</span><span class="o">=</span><span class="n">mx3</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">bl_me</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span><span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+    <span class="c1">//full attacking to owner cannot kill it.
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">fullattack</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">fakepower</span><span class="o">=</span><span class="n">power</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">unusd_lian</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nlen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="k">continue</span><span class="p">;</span>
+        <span class="n">fakepower</span><span class="o">+=</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">power</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">type</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+        <span class="n">unusd_lian</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">fullattack</span><span class="o">+=</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">damage</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">fullattack</span><span class="o">+</span><span class="n">fakepower</span><span class="o">*</span><span class="p">(</span><span class="n">unusd_lian</span><span class="p">)</span><span class="o">&lt;</span><span class="n">bl_en</span><span class="p">)</span><span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nlen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="k">continue</span><span class="p">;</span>
+        <span class="k">const</span> <span class="n">Card</span> <span class="o">&amp;</span><span class="n">card</span><span class="o">=</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">reald</span><span class="o">=</span><span class="n">card</span><span class="p">.</span><span class="n">damage</span><span class="o">+</span><span class="n">power</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="o">&gt;</span><span class="n">stone</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+
+        <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">nearend</span> <span class="o">&amp;&amp;</span> <span class="n">card</span><span class="p">.</span><span class="n">type</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="p">,</span><span class="n">power</span><span class="o">+</span><span class="n">card</span><span class="p">.</span><span class="n">power</span><span class="p">,</span><span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="p">,</span><span class="n">m1</span><span class="o">-</span><span class="n">reald</span><span class="p">,</span><span class="n">m2</span><span class="o">-</span><span class="n">reald</span><span class="p">,</span><span class="n">m3</span><span class="o">-</span><span class="n">reald</span><span class="p">,</span><span class="n">depth</span><span class="p">)){</span>
+                <span class="n">ans_cards</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">ans_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">nearend</span> <span class="o">&amp;&amp;</span> <span class="n">card</span><span class="p">.</span><span class="n">type</span><span class="o">==</span><span class="mi">2</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="p">,</span><span class="n">power</span><span class="o">+</span><span class="n">card</span><span class="p">.</span><span class="n">power</span><span class="p">,</span><span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="o">-</span><span class="n">reald</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">m3</span><span class="p">,</span><span class="n">depth</span><span class="p">)){</span>
+                <span class="n">ans_cards</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">ans_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">card</span><span class="p">.</span><span class="n">type</span><span class="o">==</span><span class="mi">3</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="p">,</span><span class="n">power</span><span class="o">+</span><span class="n">card</span><span class="p">.</span><span class="n">power</span><span class="p">,</span><span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="o">-</span><span class="n">reald</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">m3</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span><span class="mi">1</span><span class="p">)){</span>
+                <span class="n">ans_cards</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">ans_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">m1</span><span class="o">&gt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="p">,</span><span class="n">power</span><span class="o">+</span><span class="n">card</span><span class="p">.</span><span class="n">power</span><span class="p">,</span><span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="p">,</span><span class="n">m1</span><span class="o">-</span><span class="n">reald</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">m3</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span><span class="mi">1</span><span class="p">)){</span>
+                <span class="n">ans_cards</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">ans_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">m2</span><span class="o">&gt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="p">,</span><span class="n">power</span><span class="o">+</span><span class="n">card</span><span class="p">.</span><span class="n">power</span><span class="p">,</span><span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="o">-</span><span class="n">reald</span><span class="p">,</span><span class="n">m3</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span><span class="mi">1</span><span class="p">)){</span>
+                <span class="n">ans_cards</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">ans_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">m3</span><span class="o">&gt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">stone</span><span class="o">-</span><span class="n">card</span><span class="p">.</span><span class="n">cost</span><span class="p">,</span><span class="n">power</span><span class="o">+</span><span class="n">card</span><span class="p">.</span><span class="n">power</span><span class="p">,</span><span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">m3</span><span class="o">-</span><span class="n">reald</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span><span class="mi">1</span><span class="p">)){</span>
+                <span class="n">ans_cards</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">ans_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">dfs</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="p">,</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">m3</span><span class="p">,</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">)){</span>
+        <span class="n">ans_cards</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">ans_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">mc1</span><span class="p">,</span><span class="n">mc2</span><span class="p">,</span><span class="n">mc3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+    <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="n">cout</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">kase</span><span class="p">;</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">kase</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">kase</span><span class="o">--</span><span class="p">){</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">used</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">used</span><span class="p">));</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">ans_cards</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="n">ans_cards</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">ans_target</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="n">ans_target</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">nlen</span><span class="p">;</span>
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">bl_me</span><span class="o">&gt;&gt;</span><span class="n">bl_en</span><span class="p">;</span>
+
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">md1</span><span class="o">&gt;&gt;</span><span class="n">mc1</span><span class="o">&gt;&gt;</span><span class="n">mx1</span><span class="p">;</span>
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">md2</span><span class="o">&gt;&gt;</span><span class="n">mc2</span><span class="o">&gt;&gt;</span><span class="n">mx2</span><span class="p">;</span>
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">md3</span><span class="o">&gt;&gt;</span><span class="n">mc3</span><span class="o">&gt;&gt;</span><span class="n">mx3</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nlen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cost</span><span class="o">=</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">damage</span><span class="o">=</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">power</span><span class="o">=</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">type</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">type</span><span class="p">;</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">type</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">type</span><span class="o">==</span><span class="mi">1</span> <span class="o">||</span> <span class="n">type</span><span class="o">==</span><span class="mi">2</span><span class="p">){</span>
+                <span class="kt">int</span> <span class="n">cost</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
+                <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">cost</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="o">&gt;&gt;</span><span class="n">y</span><span class="p">;</span>
+                <span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">type</span><span class="o">=</span><span class="n">type</span><span class="p">;</span>
+                <span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cost</span><span class="o">=</span><span class="n">cost</span><span class="p">;</span>
+                <span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">damage</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+                <span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">power</span><span class="o">=</span><span class="n">y</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="kt">int</span> <span class="n">cost</span><span class="p">,</span><span class="n">x</span><span class="p">;</span>
+                <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">cost</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="p">;</span>
+                <span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">type</span><span class="o">=</span><span class="n">type</span><span class="p">;</span>
+                <span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">cost</span><span class="o">=</span><span class="n">cost</span><span class="p">;</span>
+                <span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">damage</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">ans_cards</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">ans_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">dfs</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">bl_me</span><span class="p">,</span><span class="n">bl_en</span><span class="p">,</span><span class="n">mc1</span><span class="p">,</span><span class="n">mc2</span><span class="p">,</span><span class="n">mc3</span><span class="p">,</span><span class="mi">0</span><span class="p">)){</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;Yes</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;No</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="kt">int</span> <span class="n">block</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">ans_cards</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+            <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pack_ans</span><span class="p">,</span><span class="n">pack_target</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">ans_cards</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">ans_cards</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+                <span class="n">pack_ans</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">ans_cards</span><span class="p">.</span><span class="n">top</span><span class="p">());</span>
+                <span class="n">ans_cards</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+                <span class="n">pack_target</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">ans_target</span><span class="p">.</span><span class="n">top</span><span class="p">());</span>
+                <span class="n">ans_target</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">ans_cards</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+                <span class="n">ans_cards</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+                <span class="n">ans_target</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">pack_ans</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="k">continue</span><span class="p">;</span>
+
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">pack_ans</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">pack_ans</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+                <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">pack_ans</span><span class="p">.</span><span class="n">front</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="s">&#34; &#34;</span><span class="p">;</span>
+                <span class="n">pack_ans</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">pack_target</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+                <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">pack_target</span><span class="p">.</span><span class="n">front</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="s">&#34; &#34;</span><span class="p">;</span>
+                <span class="n">pack_target</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+            <span class="n">block</span><span class="o">++</span><span class="p">;</span>            
+        <span class="p">}</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">block</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">){</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;0</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+            <span class="n">block</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2019-10-23 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/ccpc2017hangzhou-heathrock/" data-title="[CCPC2017杭州] Heathrock"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/ccpc2017hangzhou-heathrock/" data-title="[CCPC2017杭州] Heathrock"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%90%9C%E7%B4%A2/">搜索</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/ccpc-2017-master-of-sequence/" class="prev" rel="prev" title="[CCPC 2017] Master of Sequence"><i class="fas fa-angle-left fa-fw"></i>[CCPC 2017] Master of Sequence</a>
+            <a href="/liaoning-ships-voyage/" class="next" rel="next" title="Liaoning Ship’s Voyage">Liaoning Ship’s Voyage<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
+        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>一点点二维傅立叶变换 - Kanari&#39;s blog</title>
+        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="一点点二维傅立叶变换" />
+<meta property="og:description" content="目前，针对图片，视频，我们有通过在频域上乱搞的方式为其添加不可见水印。这种技术主要依靠的就是二维傅立叶变换。 $$ \hat g(f)=\int{g(t)e^{-2\pi i ft}dt} $$ 这个是一维的傅立叶变" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/a-little-2d-fft/" />
+<meta property="article:published_time" content="2020-03-27T21:49:59+08:00" />
+<meta property="article:modified_time" content="2020-03-27T21:49:59+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一点点二维傅立叶变换"/>
+<meta name="twitter:description" content="目前，针对图片，视频，我们有通过在频域上乱搞的方式为其添加不可见水印。这种技术主要依靠的就是二维傅立叶变换。 $$ \hat g(f)=\int{g(t)e^{-2\pi i ft}dt} $$ 这个是一维的傅立叶变"/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/a-little-2d-fft/" /><link rel="prev" href="http://example.org/a-littile-tree-divide/" /><link rel="next" href="http://example.org/info-dependence/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一点点二维傅立叶变换",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/a-little-2d-fft\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "FFT","wordcount":  695 ,
+        "url": "http:\/\/example.org\/a-little-2d-fft\/","datePublished": "2020-03-27T21:49:59+08:00","dateModified": "2020-03-27T21:49:59+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">一点点二维傅立叶变换</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/%E5%AD%A6%E4%B9%A0/">
+                                <i class="far fa-folder fa-fw"></i>学习
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-27>2020-03-27</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 695 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
+        </div><div class="content" id="content"><p>目前，针对图片，视频，我们有通过在频域上乱搞的方式为其添加不可见水印。这种技术主要依靠的就是二维傅立叶变换。</p>
+<div>$$
+\hat g(f)=\int{g(t)e^{-2\pi i ft}dt}
+$$</div>
+<p>这个是一维的傅立叶变换。那么，如果现在有一个二维信号$g(t_1,t_2)$，是不是可以简单的把上式改为</p>
+<div>$$
+\hat g(f_1,f_2)=\int\int{g(t_1,t_2)e^{-2\pi i (f_1t_1+f_2t_2)}dt_1dt_2}
+$$</div>
+<p>事实上是的。而逆变换为</p>
+<div>$$
+g(t_1,t_2)=\frac{1}{4 \pi^2}\int\int\hat g(f_1,f_2)e^{2\pi i (t_1f_1+t_2f_2)}df_1df_2
+$$</div>
+<p>如果写成离散形式，也是一种套路。</p>
+<div>$$
+\hat g(f_1,f_2)=\sum\sum{g(t_1,t_2)e^{-2\pi i (f_1t_1+f_2t_2)}}
+$$</div>
+<div>$$
+g(t_1,t_2)=\frac{1}{4 \pi^2}\sum\sum\hat g(f_1,f_2)e^{2\pi i (t_1f_1+t_2f_2)}
+$$</div>
+<p>二维的傅立叶变换仍然是将信号分解为多个成分，只不过这里成了平面意义上的波，而且多了一个方向。这里的方向我们直接把$f_1,f_2$绘制到中心点为$(0,0)$的坐标系上，从而能够形成一张附带全部信息的频域图。</p>
+<p>对于二维傅立叶变换的结果，也和一维的结果又类似含义。一个一元函数的高频低频意味着其变化快与慢的成分，一个声音的高频低频意味着其高音和低音部分，而一个二维变换的结果高频低频也意味着该数据变化快与慢的部分。</p>
+<p>既然能够从音频频域上摘掉对声音有意义的频率（例如删掉与人声相关的频率），那就也可以在图片频域中叠加对人有意义的频率。所谓图片与视频的隐写术就是将对人眼有意义的频率叠加到频域中再进行逆变换的结果。包括音频也可以这么干，利用短时距傅立叶变换在频域上画一点有意义的图像再逆变换回去，就能当作更高级一点的音频水印。不过实际测试起来，在音频频域上搞得太过头的话听感影响挺大的。</p>
+<p>这种技术相比直接打水印有很多好处，利用频率的特性意味着它可以对抗很多一般的攻击方式。不过一旦攻击能够影响频率，例如再次拍摄/录音这种，至少朴素的隐写就基本上gg了。</p>
+<p>所以看到有人拿这个玩意去水大创就有点好奇，问了问能否识别我现拍的照片，得到的答复是不行……还以为会有干货，稍微有些失望。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-03-27 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/a-little-2d-fft/" data-title="一点点二维傅立叶变换"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/a-little-2d-fft/" data-title="一点点二维傅立叶变换"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/fft/">FFT</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/a-littile-tree-divide/" class="prev" rel="prev" title="一点点点分治"><i class="fas fa-angle-left fa-fw"></i>一点点点分治</a>
+            <a href="/info-dependence/" class="next" rel="next" title="由Tiddywiki说起">由Tiddywiki说起<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
+        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+</html>

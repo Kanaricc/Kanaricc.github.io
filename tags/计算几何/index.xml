@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>计算几何 - 标签 - Kanari&#39;s blog</title>
+        <link>http://example.org/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/</link>
+        <description>计算几何 - 标签 - Kanari&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Sun, 29 Sep 2019 21:02:19 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/" rel="self" type="application/rss+xml" /><item>
+    <title>[CCPC2019 秦皇岛] Angel Beats</title>
+    <link>http://example.org/ccpc2019-qinhuangdao-angel-beats/</link>
+    <pubDate>Sun, 29 Sep 2019 21:02:19 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/ccpc2019-qinhuangdao-angel-beats/</guid>
+    <description><![CDATA[给出一些点，询问对于点$(x,y)$，求其能和已知点形成多少个直角三角形。 分析 首先，对于询问的点，直接加入集合离线操作就可以。这道题就变成了]]></description>
+</item></channel>
+</rss>

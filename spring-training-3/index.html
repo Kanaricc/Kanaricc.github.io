@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Spring Training 3 - Kanari&#39;s blog</title>
+        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="Spring Training 3" />
+<meta property="og:description" content="HDU6319 Ascending Rating Before the start of contest, there are n ICPC contestants waiting in a long queue. They are labeled by 1 to n from left to right. It can be easily found that the i-th contestant&rsquo;s QodeForces rating is ai. Little Q, the coach of Quailty Normal University, is bored to just watch them waiting in the queue. He starts to compare the rating of the contestants. He" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/spring-training-3/" />
+<meta property="article:published_time" content="2020-03-19T09:38:52+08:00" />
+<meta property="article:modified_time" content="2020-03-19T09:38:52+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring Training 3"/>
+<meta name="twitter:description" content="HDU6319 Ascending Rating Before the start of contest, there are n ICPC contestants waiting in a long queue. They are labeled by 1 to n from left to right. It can be easily found that the i-th contestant&rsquo;s QodeForces rating is ai. Little Q, the coach of Quailty Normal University, is bored to just watch them waiting in the queue. He starts to compare the rating of the contestants. He"/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/spring-training-3/" /><link rel="prev" href="http://example.org/builds-sequences/" /><link rel="next" href="http://example.org/lagrange-polynomial/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Spring Training 3",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/spring-training-3\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","wordcount":  1141 ,
+        "url": "http:\/\/example.org\/spring-training-3\/","datePublished": "2020-03-19T09:38:52+08:00","dateModified": "2020-03-19T09:38:52+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Spring Training 3</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/code/">
+                                <i class="far fa-folder fa-fw"></i>code
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-19>2020-03-19</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1141 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;</div>
+        </div><div class="content" id="content"><h2 id="hdu6319-ascending-rating">HDU6319 Ascending Rating</h2>
+<p>Before the start of contest, there are n ICPC contestants waiting in a long queue. They are labeled by 1 to n from left to right. It can be easily found that the i-th contestant&rsquo;s QodeForces rating is ai.
+Little Q, the coach of Quailty Normal University, is bored to just watch them waiting in the queue. He starts to compare the rating of the contestants. He will pick a continous interval with length m, say [l,l+m−1], and then inspect each contestant from left to right. Initially, he will write down two numbers maxrating=−1 and count=0. Everytime he meets a contestant k with strictly higher rating than maxrating, he will change maxrating to ak and count to count+1.
+Little T is also a coach waiting for the contest. He knows Little Q is not good at counting, so he is wondering what are the correct final value of maxrating and count. Please write a program to figure out the answer.</p>
+<h3 id="分析">分析</h3>
+<p>一开始想着从左到右滑动窗口维护一个单调队列，结果发现没法统计count。</p>
+<p>反向滑动就好了，我还没太反应过来为啥。唯一捉住的一点想法是“数据无用”的时刻。在正向维护时，后想加入但是未被加入的元素可能因为前者pop掉而漏掉，但是反向维护时只会弹出已经使用的无用元素，任何时候新元素都会被加入。</p>
+<h2 id="hdu6331-walking-plan">HDU6331 Walking Plan</h2>
+<p>There are n intersections in Bytetown, connected with m one way streets. Little Q likes sport walking very much, he plans to walk for q days. On the i-th day, Little Q plans to start walking at the si-th intersection, walk through at least ki streets and finally return to the ti-th intersection.
+Little Q&rsquo;s smart phone will record his walking route. Compared to stay healthy, Little Q cares the statistics more. So he wants to minimize the total walking length of each day. Please write a program to help him find the best route.</p>
+<h3 id="分析-1">分析</h3>
+<p>……果然还是菜，别人过得像飞一样。先是读错了题，把ki streets理解成了路径权的限制，就翻了车。后发现是k条之后，猜了发是不是倍增，又争执了很久到底最短路能不能蹦。最后结论是大概可以蹦。（既然过了那就也是了）</p>
+<p>结果发现倍增的话答案没法统计。大哥们说分块，才终于看到了一点希望。wa了数发才过。</p>
+<h2 id="hdu6325-interstellar-travel">HDU6325 Interstellar Travel</h2>
+<p>After trying hard for many years, Little Q has finally received an astronaut license. To celebrate the fact, he intends to buy himself a spaceship and make an interstellar travel.
+Little Q knows the position of n planets in space, labeled by 1 to n. To his surprise, these planets are all coplanar. So to simplify, Little Q put these n planets on a plane coordinate system, and calculated the coordinate of each planet (xi,yi).
+Little Q plans to start his journey at the 1-th planet, and end at the n-th planet. When he is at the i-th planet, he can next fly to the j-th planet only if xi&lt;xj, which will cost his spaceship xi×yj−xj×yi units of energy. Note that this cost can be negative, it means the flight will supply his spaceship.
+Please write a program to help Little Q find the best route with minimum total cost.</p>
+<h3 id="分析-2">分析</h3>
+<p>这题如果你在a和b两点之间找第三点，然后计算代价差，就会发现最终的代价里出现了a到b的直线方程。代价变成了该直线上第三点的值和真实值的差， <del>可是见鬼了这是怎么发现的。</del></p>
+<p>结论是一个点在直线之上，就要进行中转。所以最终答案大方向是求一个凸包。</p>
+<h2 id="hdu6321-dynamic-graph-matching">HDU6321 Dynamic Graph Matching</h2>
+<p>In the mathematical discipline of graph theory, a matching in a graph is a set of edges without common vertices.
+You are given an undirected graph with n vertices, labeled by 1,2,&hellip;,n. Initially the graph has no edges.
+There are 2 kinds of operations :</p>
+<ul>
+<li>u v, add an edge (u,v) into the graph, multiple edges between same pair of vertices are allowed.</li>
+</ul>
+<ul>
+<li>u v, remove an edge (u,v), it is guaranteed that there are at least one such edge in the graph.
+Your task is to compute the number of matchings with exactly k edges after each operation for k=1,2,3,&hellip;,n2. Note that multiple edges between same pair of vertices are considered different.</li>
+</ul>
+<h3 id="分析-3">分析</h3>
+<p>数据范围能够状压。</p>
+<p>用$f(i,state)$表示此次操作完后，已经选择的点有state所能构成的方案数。对于加边uv，就有如下转移。表示在未选择uv的已匹配状态里再选上uv构成新state。</p>
+<div>$$f(i,s)=\sum f(i-1,s-\{u,v\})$$</div>
+<p>表示在删除uv时，从方案中再次扣去这些状态。</p>
+<div>$$f(i,s)-=f(i,s-\{u,v\})$$</div>
+<p>把第一维滚动掉，这两个公式对转移顺序没有要求，每次更新都不会更新被用来转移的状态，瞎掰写。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-03-19 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/spring-training-3/" data-title="Spring Training 3"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/spring-training-3/" data-title="Spring Training 3"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/builds-sequences/" class="prev" rel="prev" title="[???] Builds Sequences"><i class="fas fa-angle-left fa-fw"></i>[???] Builds Sequences</a>
+            <a href="/lagrange-polynomial/" class="next" rel="next" title="一点点拉格朗日插值">一点点拉格朗日插值<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
+        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+</html>

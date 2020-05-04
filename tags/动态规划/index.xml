@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>动态规划 - 标签 - Kanari&#39;s blog</title>
+        <link>http://example.org/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+        <description>动态规划 - 标签 - Kanari&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Sun, 12 Apr 2020 10:54:57 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="self" type="application/rss+xml" /><item>
+    <title>ICPC2018 Yokohama</title>
+    <link>http://example.org/icpc2018-yokohama/</link>
+    <pubDate>Sun, 12 Apr 2020 10:54:57 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/icpc2018-yokohama/</guid>
+    <description><![CDATA[C. Emergency Evacuation 当没有人碰在一起时，耗时就是离门最远的人需要的耗时。当有人碰在一起时，才会发生其他情况。 人碰在一起的条件是他们距离门的距离一样，可以让]]></description>
+</item><item>
+    <title>[BUPT WARMUP|CF] 珍珠奶茶</title>
+    <link>http://example.org/bupt-warmupcf-milktea/</link>
+    <pubDate>Sat, 20 Jul 2019 17:12:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/bupt-warmupcf-milktea/</guid>
+    <description><![CDATA[<p>给出一个$N \times N$的非负整数矩阵，要求找到一条从左上角数字到右下角数字的路线，且</p>
+<ul>
+<li>只能向右或者下走。</li>
+<li>将经过数字相乘后得到的结果，使其末尾的“0”最少。</li>
+</ul>
+<div>$$
+N \leq 1000
+$$</div>]]></description>
+</item></channel>
+</rss>

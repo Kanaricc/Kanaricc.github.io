@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>搜索 - 标签 - Kanari&#39;s blog</title>
+        <link>http://example.org/tags/%E6%90%9C%E7%B4%A2/</link>
+        <description>搜索 - 标签 - Kanari&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Wed, 23 Oct 2019 19:13:47 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E6%90%9C%E7%B4%A2/" rel="self" type="application/rss+xml" /><item>
+    <title>[CCPC2017杭州] Heathrock</title>
+    <link>http://example.org/ccpc2017hangzhou-heathrock/</link>
+    <pubDate>Wed, 23 Oct 2019 19:13:47 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/ccpc2017hangzhou-heathrock/</guid>
+    <description><![CDATA[<p>这题意太长了，我懒得复制。</p>
+<h2 id="分析">分析</h2>
+<p>额……其实就是爆搜模拟。但是状态比较多，需要记双方生命值，3个随从的生命，当前场数，魔力，体力，以及一些玄学优化。</p>
+<ul>
+<li>自选目标的牌一定会放在回合的较后出，因为其不会累加魔力。</li>
+<li>如果剩下的牌全踢脸也踢不死，直接返回。</li>
+</ul>
+<p>之后就能跑得飞快。</p>]]></description>
+</item></channel>
+</rss>
