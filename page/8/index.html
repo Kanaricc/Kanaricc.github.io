@@ -93,6 +93,61 @@
 </div>
 <main class="main">
                 <div class="container"><div class="page home"><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/2019/09/some-sieve/">一些筛法的题</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
+            发布于&nbsp;<time datetime=2019-09-05>2019-09-05</time>
+        </span>&nbsp;
+            <span class="post-category">收录于<a href="/categories/%E5%AD%A6%E4%B9%A0/">
+                        <i class="far fa-folder fa-fw"></i>学习
+                    </a></span></div><div class="content"><h2 id="技巧">技巧</h2>
+<h3 id="自然溢出">自然溢出</h3>
+<ul>
+<li>自然溢出不会影响低位数据,所以有的时候你不需要取模,而是一个unsigned.</li>
+</ul>
+<h3 id="除法取模">除法取模</h3>
+<p>对于式子</p>
+<div>$$
+\frac {a \times b}{c} \mod p \equiv \frac{a \times b \mod cp}{c}
+$$</div>
+<h2 id="细节">细节</h2>
+<ul>
+<li>注意数据类型,例如<code>6*(ll)(1&lt;&lt;30)</code>是要出问题的</li>
+<li>注意函数在$f(1)$位置的取值,不要忘记初始化</li>
+</ul>
+<h2 id="单点phi的求解">单点$\phi$的求解</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ll</span> <span class="nf">euler_phi</span><span class="p">(</span><span class="n">ll</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ll</span> <span class="n">m</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">);</span>
+    <span class="n">ll</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">ll</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">/</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">n</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="divisor">Divisor</h2>
+<p>Given $n$ and $m$ ($1 \leq n,m \leq 5 \times 10^4$),  please calculate</p></div><div class="post-footer">
+        <a href="/2019/09/some-sieve/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/2019/08/hdu-6704-kth-occurrence/">[HDU 6704] Kth Occurrence</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
             发布于&nbsp;<time datetime=2019-08-25>2019-08-25</time>
@@ -156,17 +211,6 @@
 <p>首先，我没做出来。</p></div><div class="post-footer">
         <a href="/2019/08/hdu6638-snowy-smile/">阅读全文</a></div>
 </article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/2019/08/mo-s-algorithm/">莫队算法</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
-            发布于&nbsp;<time datetime=2019-08-03>2019-08-03</time>
-        </span>&nbsp;
-            <span class="post-category">收录于<a href="/categories/%E5%AD%A6%E4%B9%A0/">
-                        <i class="far fa-folder fa-fw"></i>学习
-                    </a></span></div><div class="content"><p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{5/3}$(带修改)内得出答案的方法。</p>
-<p>主要的思路是对询问离线并分块，利用在2个区间间答案的<strong>快速转移</strong>（如果无法找到快速转移的方法，就没法用了）降低复杂度。</p></div><div class="post-footer">
-        <a href="/2019/08/mo-s-algorithm/">阅读全文</a></div>
-</article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -195,7 +239,7 @@
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span></div>
         </div>
     </footer></div>
 

@@ -4,7 +4,14 @@
         <link>http://example.org/categories/%E9%97%B2%E6%89%AF/</link>
         <description>闲扯 - 分类 - Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Tue, 07 Apr 2020 21:50:59 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E9%97%B2%E6%89%AF/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Mon, 04 May 2020 20:43:15 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E9%97%B2%E6%89%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>由内存分页看CPU系统界面</title>
+    <link>http://example.org/2020/05/paging-introduction/</link>
+    <pubDate>Mon, 04 May 2020 20:43:15 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020/05/paging-introduction/</guid>
+    <description><![CDATA[这个东西很复杂，似乎也不好找到「恰好足够」的资料，要么讲得太浅，要么就只能去翻硬件文档。但是仅仅为了一个要求模糊而且并不好玩的作业做到那种地]]></description>
+</item><item>
     <title>由Tiddywiki说起</title>
     <link>http://example.org/2020/04/info-dependence/</link>
     <pubDate>Tue, 07 Apr 2020 21:50:59 &#43;0800</pubDate>
