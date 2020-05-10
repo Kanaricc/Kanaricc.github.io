@@ -18,7 +18,7 @@
 <meta name="application-name" content="Kanari&#39;s blog">
 <meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020/05/paging-introduction/" /><link rel="prev" href="http://example.org/2020/04/pulling-w/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020/05/paging-introduction/" /><link rel="prev" href="http://example.org/2020/04/pulling-w/" /><link rel="next" href="http://example.org/2020/05/document-penguin-logistics/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -32,7 +32,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","wordcount":  2220 ,
+            },"genre": "posts","wordcount":  2048 ,
         "url": "http:\/\/example.org\/2020\/05\/paging-introduction\/","datePublished": "2020-05-04T20:43:15+08:00","dateModified": "2020-05-04T20:43:15+08:00","publisher": {
                 "@type": "Organization",
                 "name": "Kanari",
@@ -117,7 +117,7 @@
                                 <i class="far fa-folder fa-fw"></i>闲扯
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-04>2020-05-04</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 2220 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 2048 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 5 分钟&nbsp;<span id="/2020/05/paging-introduction/" class="leancloud_visitors" data-flag-title="由内存分页看CPU系统界面">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -144,8 +144,7 @@
 <li>第三，你要熟悉tool chain的配置。如果你熟悉代码的真实加载流程了，就知道实际上一个个可执行文件的格式是系统相关的。你必须让linker创建直接机器相关的代码。</li>
 <li>第四，你要直接接手和其他硬件的交互。想在屏幕上输出一行「hello, world」也会很麻烦。</li>
 </ul>
-<p>这样就完了吗？没啊，我们提到的底层代码是指bootloader，为了运行编译的程序，还得实现一个最简单的bootloader。撇开UEFI，最坏的情况下，要学习BIOS的标准流程，了解一些完全没有在上面提到的技术细节（如果你的CPU是自己实现的，那你可以通过在CPU设计层面上偷懒来避开这些东西），然后在对一切流程心有成竹后抄起<em>汇编</em>写出你的bootloader，最终让bootloader调起你的编译的程序。</p>
-<p>终于完事了？可能还没有吧…口嗨没嗨完尚且写这么多字，真要落实到代码上我也不知道会发生什么。</p>
+<p>我不是很清楚整个流程，也许理想情况下事情就到此为止了，只要你肯自己实现CPU而且合理的偷懒…不过口嗨尚且写这么多字，真要落实到代码上我也不知道会发生什么。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -169,7 +168,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2020/04/pulling-w/" class="prev" rel="prev" title="如何把W接上岛"><i class="fas fa-angle-left fa-fw"></i>如何把W接上岛</a></div>
+    <div class="post-nav"><a href="/2020/04/pulling-w/" class="prev" rel="prev" title="如何把W接上岛"><i class="fas fa-angle-left fa-fw"></i>如何把W接上岛</a>
+            <a href="/2020/05/document-penguin-logistics/" class="next" rel="next" title="Penguin Logistics路线规划器文档">Penguin Logistics路线规划器文档<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Penguin Logistics路线规划器文档 - Kanari&#39;s blog</title>
+        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="Penguin Logistics路线规划器文档" />
+<meta property="og:description" content="注意 从此开始，请勿将以下内容与现实联系，所有内容均为假想。 使用手册 Penguin Logistics™是泰拉大陆上的专业物流服务公司，现提供专业的旅行规划" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/2020/05/document-penguin-logistics/" />
+<meta property="article:published_time" content="2020-05-08T13:13:51+08:00" />
+<meta property="article:modified_time" content="2020-05-08T13:13:51+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Penguin Logistics路线规划器文档"/>
+<meta name="twitter:description" content="注意 从此开始，请勿将以下内容与现实联系，所有内容均为假想。 使用手册 Penguin Logistics™是泰拉大陆上的专业物流服务公司，现提供专业的旅行规划"/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/2020/05/document-penguin-logistics/" /><link rel="prev" href="http://example.org/2020/05/paging-introduction/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Penguin Logistics路线规划器文档",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/2020\/05\/document-penguin-logistics\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","wordcount":  4986 ,
+        "url": "http:\/\/example.org\/2020\/05\/document-penguin-logistics\/","datePublished": "2020-05-08T13:13:51+08:00","dateModified": "2020-05-08T13:13:51+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/example.org\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Penguin Logistics路线规划器文档</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-08>2020-05-08</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 4986 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 10 分钟&nbsp;<span id="/2020/05/document-penguin-logistics/" class="leancloud_visitors" data-flag-title="Penguin Logistics路线规划器文档">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用手册">使用手册</a>
+      <ul>
+        <li><a href="#快速上手">快速上手</a></li>
+        <li><a href="#问题排除">问题排除</a>
+          <ul>
+            <li><a href="#规划器无法打开">规划器无法打开</a></li>
+            <li><a href="#规划器自检卡住失败">规划器自检卡住/失败</a></li>
+          </ul>
+        </li>
+        <li><a href="#地图">地图</a></li>
+        <li><a href="#路线">路线</a>
+          <ul>
+            <li><a href="#火车">火车</a></li>
+            <li><a href="#飞机">飞机</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#任务描述">任务描述</a></li>
+    <li><a href="#需求分析">需求分析</a></li>
+    <li><a href="#模块设计">模块设计</a>
+      <ul>
+        <li><a href="#核心模块路线规划算法">核心模块—路线规划算法</a></li>
+        <li><a href="#地图管理">地图管理</a></li>
+        <li><a href="#人员管理">人员管理</a></li>
+        <li><a href="#日志模块">日志模块</a></li>
+        <li><a href="#界面模块">界面模块</a></li>
+      </ul>
+    </li>
+    <li><a href="#整体规划">整体规划</a></li>
+    <li><a href="#编程环境">编程环境</a>
+      <ul>
+        <li><a href="#后端">后端</a></li>
+        <li><a href="#前端">前端</a></li>
+        <li><a href="#环境配置">环境配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据结构说明">数据结构说明</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">从此开始，请勿将以下内容与现实联系，所有内容均为假想。</div>
+        </div>
+    </div>
+<h2 id="使用手册">使用手册</h2>
+<p>Penguin Logistics™是泰拉大陆上的专业物流服务公司，现提供专业的旅行规划咨询，为您在高风险传染病下的安全旅行规划风险最低/用时最少的路线。</p>
+<p>规划器支持</p>
+<ul>
+<li>基于动态规划的<strong>最优</strong>路线规划，并非近似最优解。</li>
+<li>美观的<strong>用户界面</strong></li>
+<li>同时<strong>计算交通工具风险</strong>的路线规划</li>
+<li><strong>多人员</strong>路线规划</li>
+</ul>
+<blockquote>
+<p>对于开发者</p>
+<ul>
+<li>前后端分离设计模式，解耦界面和规划服务，能够实现单对多式的服务部署。</li>
+<li>基于<code>MVVM</code>的界面模型，能够优雅高效对数据作出反应。</li>
+</ul>
+</blockquote>
+<h3 id="快速上手">快速上手</h3>
+<ol>
+<li>双击启动Penguin Logistics™规划器。</li>
+<li>等待系统自检完成后，点击任意处进入地图界面。自检失败时，请阅读「问题排除」部分寻找可能的解决方案。</li>
+<li>点击新旅程，跳转到人员列表。添加新人员，指定行动时间、出发地和目的地、人员名称并保存。<strong>请不要出现重名人员</strong>。</li>
+<li>规划路线将即刻生成，你可以点击人员列表左侧的下三角展开某一人员的详细旅程。</li>
+<li>返回地图界面，点击右侧播放按钮，开始路线模拟。</li>
+<li>在任意时刻你可以添加新人员，<strong>但是只有在你主动暂停模拟时，时间才会暂停</strong>。</li>
+<li>点击停止按钮回归初始状态。</li>
+</ol>
+<h3 id="问题排除">问题排除</h3>
+<p>请依照步骤逐步排查，直到正常运行为止。</p>
+<h4 id="规划器无法打开">规划器无法打开</h4>
+<p>因为我所使用的操作系统是MAC，所以规划器在设计、「实现」和「编译」上就已经使用了尽可能跨平台的方案，消除了不同系统之间的运行差异，手段包括但不限于「后端仅依赖标准库和系统低层支持库」、
+「前端使用html构建平台无关的用户界面」、「同时在MAC和Windows虚拟机下对代码进行编译和运行测试」。一般情况下软件的通用性良好，不会出现此类错误。</p>
+<ol>
+<li>请检查规划器目录下是否存在文件<code>start.exe</code>和<code>backend.exe</code>文件。请双击<code>start.exe</code>启动规划器。</li>
+<li>请检查操作系统是否为64位。由于实际开发时受到实际情况限制，因此只提供64位可执行文件。如果你的系统为32位，请考虑更换为64位以适应时代发展。</li>
+<li>请检查是否缺少C++运行时。一个解决方法是安装<code>g++</code>编译器。</li>
+<li>如仍未解决，请联系作者。</li>
+</ol>
+<p><strong>操作系统差异导致的错误不属于代码错误，请悉知</strong>。但我也在实际情况的允许下尽所有可能在最初设计时就考虑了这一问题。如果你的确遇到了由于操作系统平台不同而导致的错误，烦请垂询作者，或者尝试从源码编译运行。</p>
+<h4 id="规划器自检卡住失败">规划器自检卡住/失败</h4>
+<p>此类问题的原因多样，我无法在此列出所有情况。但总体来说，可能有如下核心原因</p>
+<ul>
+<li>通信问题：后端侦听失败，前端fetch失败，数据通信中出现其他软件干预</li>
+<li>运行时标准过低：你的系统过旧导致代码无法按预定逻辑运行。这一般不会发生，因为我已经减少了不必要的动态依赖。</li>
+<li>机器性能过差。这一般不会发生。</li>
+</ul>
+<p>如果你对可能的原因有所察觉，请排除。</p>
+<p>下面是可能的解决方案。</p>
+<ol>
+<li>请检查杀毒软件设置是否禁止了规划器运行。如果你的杀毒软件或系统弹出阻止框，请选择允许。</li>
+<li>请检查目录下是否有<code>backend.exe</code>文件。</li>
+<li>请双击运行<code>backend.exe</code>后，观察是否有命令提示框出现，若无，请联系作者。若有，请在保持提示框打开的情况下再次运行<code>start.exe</code>。</li>
+<li>请使用浏览器打开<a href="http://127.0.0.1:19730/ping" target="_blank" rel="noopener noreffer">http://127.0.0.1:19730/ping</a>，观察页面是否有<code>pong</code>字样。若无，请检查系统中是否有程序占用了该端口号，请检查系统是否缺失必要支持库。若你无法自行解决，请联系作者。</li>
+<li>当以上部分均无问题时，自检理应通过。如仍有问题，请联系作者。</li>
+</ol>
+<h3 id="地图">地图</h3>
+<table>
+<thead>
+<tr>
+<th>城市</th>
+<th>疫情程度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chernobog</td>
+<td>高</td>
+</tr>
+<tr>
+<td>LungMen</td>
+<td>中</td>
+</tr>
+<tr>
+<td>Victoria</td>
+<td>高</td>
+</tr>
+<tr>
+<td>Colombia</td>
+<td>高</td>
+</tr>
+<tr>
+<td>Usas</td>
+<td>低</td>
+</tr>
+<tr>
+<td>Yan</td>
+<td>低</td>
+</tr>
+<tr>
+<td>Dong</td>
+<td>中</td>
+</tr>
+<tr>
+<td>Laterano</td>
+<td>高</td>
+</tr>
+<tr>
+<td>Shelag</td>
+<td>低</td>
+</tr>
+<tr>
+<td>Rimbillton</td>
+<td>中</td>
+</tr>
+<tr>
+<td>Syracuse</td>
+<td>高</td>
+</tr>
+</tbody>
+</table>
+<p>为兼容低标准下<code>C++</code>的<code>ASCII</code>编码，在该规划器内的地图/路线名称均为英文。</p>
+<h3 id="路线">路线</h3>
+<p>首先，存在任意城市间可达的汽车。</p>
+<h4 id="火车">火车</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>起点</th>
+<th>终点</th>
+<th>出发</th>
+<th>用时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Broken Road</td>
+<td>Chernobog</td>
+<td>Usas</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Broken Road</td>
+<td>Usas</td>
+<td>Chernobog</td>
+<td>15</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Ring</td>
+<td>Shelag</td>
+<td>Yan</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Ring</td>
+<td>Yan</td>
+<td>Shelag</td>
+<td>10</td>
+<td>4</td>
+</tr>
+<tr>
+<td>The Core</td>
+<td>Chernobog</td>
+<td>LungMen</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>The Core</td>
+<td>LungMen</td>
+<td>Chernobog</td>
+<td>12</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Crossing Wave</td>
+<td>Yan</td>
+<td>LungMen</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Crossing Wave</td>
+<td>LungMen</td>
+<td>Yan</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fast</td>
+<td>Syracuse</td>
+<td>Victoria</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fast</td>
+<td>Victoria</td>
+<td>Syracuse</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Lake</td>
+<td>Usas</td>
+<td>Victoria</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Lake</td>
+<td>Victoria</td>
+<td>Usas</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="飞机">飞机</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>起点</th>
+<th>终点</th>
+<th>出发</th>
+<th>用时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Penguin Airline</td>
+<td>LungMen</td>
+<td>Yan</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Penguin Airline</td>
+<td>Yan</td>
+<td>LungMen</td>
+<td>7</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Rabbit</td>
+<td>LungMen</td>
+<td>Rimbillton</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Rabbit</td>
+<td>Rimbillton</td>
+<td>LungMen</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>RabbitC</td>
+<td>Colombia</td>
+<td>Rimbillton</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>RabbitC</td>
+<td>Rimbillton</td>
+<td>Colombia</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Sun</td>
+<td>Dong</td>
+<td>Yan</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Sun</td>
+<td>Yan</td>
+<td>Dong</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Angle Airline</td>
+<td>LungMen</td>
+<td>Laterano</td>
+<td>9</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Angle Airline</td>
+<td>Laterano</td>
+<td>LungMen</td>
+<td>9</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p>由此开始，进入开发者文档</p>
+</blockquote>
+<h2 id="任务描述">任务描述</h2>
+<p>在数个具有疫情威胁的城市间，为用户的旅行提供安全的路线规划。</p>
+<ul>
+<li>城市存在不同的疫情危险（疫情系数），分为高、中、低三档，数值化为0.2，0.5，0.9。逗留城市将在每单位时间贡献一次疫情系数。</li>
+<li>城市间存在不同交通工具，分别为汽车、火车、飞机。交通工具由起点直达终点，期间不中转。用户在不同交通工具上需要承受正相关与出发地点疫情系数和交通工具危险系数的风险。危险系数分别为2，5，9。风险的计算方法为<code>出发地疫情系数*交通工具危险系数*交通工具乘坐时间</code>。</li>
+<li>不同交通工具存在时刻表，城市内交通工具换乘不计时间。</li>
+<li>用户将指定出发地和目的地，系统应规划一条旅行路径，并<code>最小化风险</code>，或者<code>在限定旅行时间下最小化风险</code>，或者在无法到达目的地时给予提示。</li>
+<li>在实际运行时。城市数目不得少于10个，飞机航次不得多于10，火车车次不得多于30，汽车无限制。</li>
+<li>在实际运行时，需支持以小时为精度的用户状态模拟和查询。</li>
+<li>完善的日志系统。</li>
+<li>不限制编程语言。</li>
+</ul>
+<h2 id="需求分析">需求分析</h2>
+<p>该任务属图论模型。设有向图$G_T=(V,E)$表示在$T$时刻所有城市和可乘坐交通工具组成的图。集合V为所有城市，集合E为所有交通路线组成的有向边，$w(x)$为元素$x$的单位风险，$t(e)$为边$e$的耗时。</p>
+<p>可以看出，两种规划目标<code>最小化风险</code>、<code>在限定旅行时间下最小化风险</code>中，前者实际属于后者，因为前者显然也存在时间限制，但该限制不由用户给出，我们将在算法中处理该时间。</p>
+<p>那么，核心需求即为，在时间连续的$G_T$上寻找一条路径$u \to v$，在$T$不超过给定限制的前提下，最小化路径上所有节点和边的风险贡献。</p>
+<p>围绕此核心功能，我想要准备共有</p>
+<ul>
+<li>路线规划模块</li>
+<li>地图管理模块</li>
+<li>人员管理模块</li>
+<li>日志模块</li>
+<li>界面绘制模块</li>
+</ul>
+<h2 id="模块设计">模块设计</h2>
+<h3 id="核心模块路线规划算法">核心模块—路线规划算法</h3>
+<div class="mermaid" id="id-0672a8"></div>
+<p>规划器采用了动态规划方式计算最优化方案。</p>
+<p>设$f(t,u)$为时间$t$到达城市$u$的最小风险。显然该状态满足最优子结构。接下来，有刷表法转移方程</p>
+<p>$$
+\begin{aligned}
+f(t+T(e),v(e))&amp;=\min(f(t,u)+w(u,e)) \cr
+f(t+1,u)&amp;=\min(f(t,u)+w(u))  \cr
+\end{aligned}
+$$</p>
+<p>其中</p>
+<ul>
+<li>$e$为一出发地为$u$目的地为$v$的线路。</li>
+<li>$T(e)$为路线$e$的耗时。</li>
+<li>$w(u,e)$为从$u$出发路线$e$的风险。</li>
+<li>$w(u)$为逗留城市$u$的单位风险。</li>
+</ul>
+<p>接下来，分析该算法的时空复杂度。</p>
+<p>空间复杂度。有状态数$O(tu)$。</p>
+<p>时间复杂度。设城市规模$n$个。考虑更加一般的交通工具描述方法（将在下文详细介绍），将同一线路按照时间表拆分为多条边。假设交通线路达到满边，即原图为完全图，即$O(n^2)$级别。时间表达到每单位时间一次，即边为$O(n^2t)$倍规模，每个点有边$O(nt)$。设最长旅行时间为$t$，方程有转移复杂度$O(n^2t^2)$。</p>
+<p>考虑本题数据规模，有$n \geq 10$，在1秒内规划答案。令城市数目20，有旅行时间最长为500，500小时约20天，远超过一般意义上的旅行耗时，满足现实旅行需要。且实际复杂度低于该估计。</p>
+<blockquote>
+<p>讨论更加一般的现实情况。此时，虽然我们可能有必要增大城市数目，但是也需要更加深入的讨论更强的限制。</p>
+<p>首先，本规划器所要完成的任务是「规划从起点到终点」的旅行路线，即用户想要得到的是在可观时间内由A到B的路线，过长时间的旅行是难以接受的，而七天（168小时）是一个足够宽松的上界。</p>
+<p>另外，应认为旅行路线的设计具有局部性，用户难以接受一个跨越半个地球的中转，即使它理论上可以。</p>
+<p>以中国为例，中国现有城市约657个，有</p>
+</blockquote>
+<p>通过记录整个状态转移过程中的<code>转移方向</code>，我们将能够确定一条最优的路线。该路线将会以两种形式输出。</p>
+<ol>
+<li>简略模式，包含旅程中在每一站乘坐的交通工具和时间点，以及已经承受的风险总和。该输出主要满足用户的查询需要。</li>
+<li>详细模式。输出从出发直到到达目的地的所有时间内，每个小时下用户所处的位置（城市、交通工具）、风险总和。该输出主要满足日志记录和旅行模拟需要。</li>
+</ol>
+<h3 id="地图管理">地图管理</h3>
+<p>可以看出，所谓的汽车、火车、飞机实际的区别只有时刻表、耗时和污染系数。因此，仅定义一种结构来包含这些数据，通过工厂模式来创建指定的交通工具。</p>
+<p>可以看出，不同危险等级的城市与交通工具类似，仅需要一污染程度来定义，因此定义一种结构来包含这些数据，仍然使用工厂模式来创建指定污染度的城市。</p>
+<p>因此，系统将使用如下结构描述城市和路线。其中，城市信息包括城市名、疫情系数；路线包括路线名、交通类型、出发地、目的地、危险系数、出发时刻、耗时。</p>
+<p>另外，对于路线时刻表的描述，将直接把同一个交通工具拆分成数条出发时刻不同的边。</p>
+<div class="mermaid" id="id-a56ad2"></div>
+<h3 id="人员管理">人员管理</h3>
+<p>人员信息如下，包括姓名、出发地、目的地、规划目标时间</p>
+<div class="mermaid" id="id-762aa4"></div>
+<h3 id="日志模块">日志模块</h3>
+<p>日志模块的主要代码将嵌入到其他模块中。</p>
+<h3 id="界面模块">界面模块</h3>
+<p>界面模块将包括</p>
+<ul>
+<li>地图绘制</li>
+<li>人员和旅程列表（添加、编辑、删除）</li>
+<li>旅程模拟和查询</li>
+<li>帮助</li>
+<li>关于</li>
+</ul>
+<p>界面绘制并非本次任务的关键部分，因此经过全面考虑，界面将使用HTML+Javascript+CSS。</p>
+<h2 id="整体规划">整体规划</h2>
+<p>相应模块的预设计如上。本系统将完美解决必做部分所有任务，同时完成选做1和2。</p>
+<p>在整体的大方面上，系统将</p>
+<ul>
+<li>采用<strong>前后端分离设计</strong>。能完成所有功能能外，必要时还可快速修改为高效的<strong>单对多式</strong>规划服务。</li>
+<li>应课程最初的要求，后端仍将使用<code>C++</code>完成数据结构、规划算法的全部内容。</li>
+<li>前端使用<code>HTML+Javascript+CSS</code>构建基于<code>MVVM</code>模型的现代用户界面。为用户提供<strong>地图显示</strong>和<strong>旅程模拟</strong>、<strong>多人员</strong>位置查询等功能。</li>
+<li>基于动态规划算法，在<strong>考虑交通工具风险</strong>的情况下，给出路线规划最优解。</li>
+</ul>
+<div class="mermaid" id="id-a66a06"></div>
+<h2 id="编程环境">编程环境</h2>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><strong>请务必注意本系统代码所使用的语言标准和构建系统</strong>。您必须使用达标的环境才能成功编译代码。</p>
+<p>请继续阅读下方内容以寻找编译环境的简略配置方法。如果您对部分内容存在疑问，可以<strong>随时垂询作者</strong>或尝试上网寻找资料。</p>
+<p>但是，由于您系统的环境配置有误而带来的编译错误并非本系统的责任。</p>
+</div>
+        </div>
+    </div>
+<h3 id="后端">后端</h3>
+<p>后端代码将使用<code>C++14</code>完成，前后端通信使用<code>http</code>协议，基于<code>CMake</code>构建。</p>
+<ul>
+<li>将使用<code>stl</code>库。</li>
+</ul>
+<h3 id="前端">前端</h3>
+<p>前端代码将使用<code>Typescript+HTTP+CSS3</code>完成，基于<code>npm</code>构建。</p>
+<ul>
+<li>将使用<code>Typescript</code>语言。该语言为Javascript的超集，需编译环境。</li>
+<li>将使用<code>fetch</code>等现代HTML提供的API</li>
+<li>将使用<code>CSS3</code>标准。</li>
+<li>将使用<code>vue</code>构建<code>MVVM</code>模型的界面。</li>
+<li>将使用<code>d3.js</code>构建数据可视化部分（地图绘制）。</li>
+</ul>
+<h3 id="环境配置">环境配置</h3>
+<p>一般情况下，随代码已经附带可执行文件。</p>
+<p>本部分将<strong>简单介绍</strong>准备编译环境的基本步骤。您有可能在准备的过程中遇到无法预料的问题，例如<code>网络环境</code>所导致的下载失败等。届时请联系作者或上网搜索解决方案。</p>
+<p>你需要配置下列环境</p>
+<ul>
+<li>G++</li>
+<li>make</li>
+<li>cmake</li>
+<li>Nodejs</li>
+</ul>
+<p>假设您的电脑系统为Windows。我们强烈建议你使用<a href="https://scoop.sh/" target="_blank" rel="noopener noreffer">scoop</a>来配置本系统所需要的安装环境。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 使用scoop的配置方法，在CMD下分别运行</span>
+scoop install g++
+scoop install make
+scoop install cmake
+scoop install nodejs
+</code></pre></td></tr></table>
+</div>
+</div><p>此后，您将完成几乎所有的环境配置。如果您不希望使用<code>scoop</code>，请确定您的系统满足</p>
+<ul>
+<li>存在能够编译<code>C++14</code>代码的编译器</li>
+<li>存在<code>make</code>和<code>cmake</code></li>
+<li>存在<code>nodejs</code></li>
+</ul>
+<p>相关安装指南均在网上存在资料。</p>
+<div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>忠告（点击展开）<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>对于Windows用户，使用<code>scoop</code>或者<code>msys2</code>几乎是完成环境配置的<strong>最迅速方法</strong>，而<code>scoop</code>则是二者中更快的一种。</li>
+<li>对于Linux用户，您大可根据自己的经验使用包管理器快速完成配置，该代码并没有使用到罕见的环境。</li>
+<li>对于Mac用户，您可以使用<code>homebrew</code>用类似于Linux的方法完成配置。</li>
+</ul>
+<p>最后的最后，如果您仍然没有成功完成安装。另一个方案是<code>安装CLion和WebStorm</code>，这两个IDE将协助您完成环境配置。</div>
+        </div>
+    </div>
+<h2 id="数据结构说明">数据结构说明</h2>
+<p>本内容并非多余，而是更加详细的数据结构说明，是在设计向代码落实过程中需要补充的<strong>额外</strong>数据结构。<strong>这意味着您不能忽略前文中的结构</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//额外的数据结构
+</span></code></pre></td></tr></table>
+</div>
+</div><p>同时，前后端通信将主要使用<code>csv</code>格式。</p>
+<p>关于不使用数据库的原因：</p>
+<ul>
+<li>数据量少，使用数据库没有实践意义。</li>
+<li>不存在复杂的查询需求，使用数据库没有实践意义。</li>
+<li>无自定义地图需求，使用数据库没有实践意义。</li>
+</ul>
+<p>因此不采用数据库，仅使用<code>csv</code>格式文本传递数据。</p>
+<p>但该处仍然给出数据结构的表定义。</p>
+<p>可以看出，该表定义也非常简单，而查询也非常简单<code>select * from cities;</code>，<code>select * from traffics where u='出发地';</code>，没有解释的必要。</p>
+<blockquote>
+<p>淦死你们这群内卷的傻逼。</p>
+<p>不到100的数据量而且毛线用都没有徒增无脑代码量只用用来装逼你用个屁的数据库，你他妈不如滚回去改一改算法。</p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-05-08 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/2020/05/document-penguin-logistics/" data-title="Penguin Logistics路线规划器文档"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/2020/05/document-penguin-logistics/" data-title="Penguin Logistics路线规划器文档"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/05/paging-introduction/" class="prev" rel="prev" title="由内存分页看CPU系统界面"><i class="fas fa-angle-left fa-fw"></i>由内存分页看CPU系统界面</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"8nBBk4hz3GnYEEbGmLHafecq-gzGzoHsz","appKey":"LnYrhY3glo9zNm02k21R0XHb","avatar":"mp","el":"#valine","enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"data":{"id-0672a8":"stateDiagram\n    [*] --\u003e A\n    A --\u003e [*]\n\n    A --\u003e B\n    B --\u003e [*]","id-762aa4":"classDiagram\n    class People\n    People: +string name\n    People: +string from,to\n    People: +int time_limit","id-a56ad2":"classDiagram\n    class City\n    class Edge\n    City: +string name\n    City: +double pollution\n    Edge: +string name\n    Edge: +string type\n    Edge: +string u,v\n    Edge: +int factor\n    Edge: +int tl,time_waste","id-a66a06":"classDiagram\n    GUI ..\u003e Log\n    GUI ..\u003e PeopleManager\n    GUI ..\u003e MapManager\n    GUI ..\u003e PathDesign\n    PathDesign ..\u003e Log\n    PathDesign ..\u003e PeopleManager\n    PathDesign ..\u003e MapManager\n    PeopleManager ..\u003e Log\n    MapManager ..\u003e Log"},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
+        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+</html>
