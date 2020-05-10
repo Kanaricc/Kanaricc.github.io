@@ -5,13 +5,6 @@
         <description>Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
             <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Sun, 03 May 2020 23:51:32 &#43;0800</lastBuildDate><atom:link href="http://example.org/" rel="self" type="application/rss+xml" /><item>
-    <title>Penguin Logistics路线规划器文档</title>
-    <link>http://example.org/2020/05/document-penguin-logistics/</link>
-    <pubDate>Fri, 08 May 2020 13:13:51 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/2020/05/document-penguin-logistics/</guid>
-    <description><![CDATA[注意 从此开始，请勿将以下内容与现实联系，所有内容均为假想。 使用手册 Penguin Logistics™是泰拉大陆上的专业物流服务公司，现提供专业的旅行规划]]></description>
-</item><item>
     <title>由内存分页看CPU系统界面</title>
     <link>http://example.org/2020/05/paging-introduction/</link>
     <pubDate>Mon, 04 May 2020 20:43:15 &#43;0800</pubDate>
@@ -74,5 +67,12 @@
     <author>作者</author>
     <guid>http://example.org/2020/03/juece-dandiao/</guid>
     <description><![CDATA[艹了天天都被不知道的知识点教育，知道的又做不出来。 :lei: 在动态规划中，决策单调性指对于$j &lt; j'$，$f(j&rsquo;)$的最佳转移$f(i]]></description>
+</item><item>
+    <title>[HDU 6363] bookshelf</title>
+    <link>http://example.org/2020/03/hdu-6363-bookshelf/</link>
+    <pubDate>Sat, 21 Mar 2020 18:48:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/2020/03/hdu-6363-bookshelf/</guid>
+    <description><![CDATA[Patrick Star bought a bookshelf, he named it ZYG !! Patrick Star has N book . The ZYG has K layers (count from 1 to K) and there is no limit on the capacity of each layer ! Now Patrick want to put all N books on ZYG : Assume that the i-th layer has cnti(0≤cnti≤N) books]]></description>
 </item></channel>
 </rss>

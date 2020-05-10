@@ -2,9 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/2020/05/document-penguin-logistics/</loc><lastmod>2020-05-08T13:13:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2020-05-08T13:13:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/categories/</loc><lastmod>2020-05-04T20:43:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2020-05-04T20:43:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/2020/05/paging-introduction/</loc><lastmod>2020-05-04T20:43:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/categories/%E9%97%B2%E6%89%AF/</loc><lastmod>2020-05-04T20:43:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/</loc><lastmod>2020-05-03T23:51:32&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
