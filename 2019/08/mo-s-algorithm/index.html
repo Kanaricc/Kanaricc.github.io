@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>莫队算法 - Kanari&#39;s blog</title>
-        <meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="莫队算法" />
-<meta property="og:description" content="对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{5/3}$(带修改)内得出答案的方法。
+        <title>莫队算法 - Kanari&#39;s blog</title><meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="莫队算法" />
+<meta property="og:description" content="对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。
 主要的思路是对询问离线并分块，利用在2个区间间答案的快速转移（如果无法找到快速转移的方法，就没法用了）降低复杂度。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/2019/08/mo-s-algorithm/" />
@@ -15,7 +14,7 @@
 <meta property="article:modified_time" content="2019-08-03T13:47:41+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="莫队算法"/>
-<meta name="twitter:description" content="对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{5/3}$(带修改)内得出答案的方法。
+<meta name="twitter:description" content="对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。
 主要的思路是对询问离线并分块，利用在2个区间间答案的快速转移（如果无法找到快速转移的方法，就没法用了）降低复杂度。"/>
 <meta name="application-name" content="Kanari&#39;s blog">
 <meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -34,7 +33,7 @@
                 "url": "http:\/\/example.org\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","wordcount":  1509 ,
+            },"genre": "posts","keywords": "莫队, 分块, LCA","wordcount":  4747 ,
         "url": "http:\/\/example.org\/2019\/08\/mo-s-algorithm\/","datePublished": "2019-08-03T13:47:41+08:00","dateModified": "2019-08-03T13:47:41+08:00","publisher": {
                 "@type": "Organization",
                 "name": "Kanari",
@@ -50,7 +49,7 @@
             },"description": ""
     }
     </script></head>
-    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -113,23 +112,83 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">莫队算法</h1><div class="post-meta">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">莫队算法</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
                     <span class="post-category">收录于<a href="/categories/%E5%AD%A6%E4%B9%A0/">
                                 <i class="far fa-folder fa-fw"></i>学习
                             </a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-08-03>2019-08-03</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 1509 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;<span id="/2019/08/mo-s-algorithm/" class="leancloud_visitors" data-flag-title="莫队算法">
-                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-08-03>2019-08-03</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4747 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/2019/08/mo-s-algorithm/" class="leancloud_visitors" data-flag-title="莫队算法">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="content" id="content"><p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$n^{5/3}$(带修改)内得出答案的方法。</p>
+        </div><div class="details toc" id="toc-static">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-算法思想">1 算法思想</a></li>
+    <li><a href="#2-无修改莫队">2 无修改莫队</a>
+      <ul>
+        <li><a href="#problem-小y的袜子">Problem: 小Y的袜子</a>
+          <ul>
+            <li><a href="#分析">分析</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-带修改莫队">3 带修改莫队</a>
+      <ul>
+        <li><a href="#problem-game">Problem: Game</a>
+          <ul>
+            <li><a href="#分析-1">分析</a></li>
+            <li><a href="#代码">代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4-树上莫队转化">4 树上莫队/转化</a>
+      <ul>
+        <li><a href="#wc2013-糖果公园">WC2013 糖果公园</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-树上莫队">5 树上莫队</a>
+      <ul>
+        <li><a href="#树分块">树分块</a></li>
+        <li><a href="#回到莫队">回到莫队</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-注意">6 注意</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。</p>
 <p>主要的思路是对询问离线并分块，利用在2个区间间答案的<strong>快速转移</strong>（如果无法找到快速转移的方法，就没法用了）降低复杂度。</p>
-<h2 id="无修改莫队">无修改莫队</h2>
+<h2 id="1-算法思想">1 算法思想</h2>
+<p>莫队算法是由莫涛提出的算法，可以解决一类离线区间询问问题，适用性极为广泛。即,能够使用莫队算法处理的问题一般具有如下特征</p>
+<ul>
+<li>区间询问</li>
+<li>可以离线</li>
+<li>不同区间间的答案能够较快的互推.</li>
+</ul>
+<p>在满足以上条件是,通过合理的安排询问的处理顺序,能够获得一个优秀的总体复杂度。以下，假设区间的转移需要$O(1)$</p>
+<p>假设已知区间$[l,r]$答案，有下一个需要处理的区间$[l&rsquo;,r&rsquo;]$。进行答案在区间间的单步转移需要复杂度$O(|l-l'|+|r-r'|)$，即转移的复杂度为二者的曼哈顿距离。那么，将所有询问点铺平在二维平面上，按曼哈顿距离生成最小生成树，如此所得到的转移代价最小。</p>
+<p>但是一般情况下这种做法代码量较大，在代码量和时间复杂度间的妥协诞生了一个优秀的替代方案。分块。</p>
+<p>对区间长度按根号分块，以左端点所在的分块的序号为第一关键字，右端点为第二关键字排序。那么</p>
+<ul>
+<li>在同一分块，右端点递增，处理该分块所有询问右端点需要$O(N)$，总体为$O(N \sqrt N)$。</li>
+<li>在分块转移，右端点最多变化$N$，于是也有$O(N \sqrt N)$。</li>
+<li>在同一分块，左端点变化最多$\sqrt N$，不同分块间最多变化$\sqrt N$，于是N个询问有$O(N \sqrt N)$。</li>
+</ul>
+<p>总体复杂度$O(N\sqrt N)$</p>
+<h2 id="2-无修改莫队">2 无修改莫队</h2>
 <p>以$B=\sqrt{n}$，按照$(l/B,r)$对询问排序。</p>
 <p>之后枚举每一个询问，将答案在相邻询问区间间暴力的+1-1转移。</p>
 <h3 id="problem-小y的袜子">Problem: 小Y的袜子</h3>
-<p>没有在针对哪个人。</p>
 <p>作为一个生活散漫的人，小Z每天早上都要耗费很久从一堆五颜六色的袜子中找出一双来穿。终于有一天，小Z再也无法忍受这恼人的找袜子过程，于是他决定听天由命……</p>
 <p>具体来说，小Z把这N只袜子从1到N编号，然后从编号L到R(L 尽管小Z并不在意两只袜子是不是完整的一双，甚至不在意两只袜子是否一左一右，他却很在意袜子的颜色，毕竟穿两只不同色的袜子会很尴尬。</p>
 <p>你的任务便是告诉小Z，他有多大的概率抽到两只颜色相同的袜子。当然，小Z希望这个概率尽量高，所以他可能会询问多个(L,R)以方便自己选择。</p>
@@ -324,13 +383,17 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="带修改莫队">带修改莫队</h2>
-<blockquote>
-<p>一切都是石x门的选择！</p>
-</blockquote>
-<p>将修改操作平铺在时间线上，计算每次询问所处的时间点，以$B=\sqrt{n}$，按照$(l/B,r/B,time)$对询问排序。</p>
-<p>之后枚举每一个询问，将答案在不同时间线间暴力+1-1跳转，再暴力在相邻询问的区间间+1-1转移。</p>
-<p><del>听起来有点中二的意思。</del></p>
+</div><h2 id="3-带修改莫队">3 带修改莫队</h2>
+<p>如果对区间的查询之余，还会修改区间，且这种修改也可以快速修改、撤销。那么，可以使用莫队的一个扩展——带修改莫队实现。</p>
+<p>假设有$m$个询问，将修改操作平铺在时间线上，计算每次询问所处的时间点。将时间也作为查询的一个参数，参与分块和转移。按照$(l/B_1,r/B_2,time)$对询问排序。分块有$n^2/B_1B_2$个。</p>
+<ul>
+<li>对于每个块，$time$最多变化$m$次，有$O(m)$。总体有$O(\frac{n^2m}{B_1B_2})$。</li>
+<li>对于每个询问内，$l$和$r$最多变化$B_1$、$B_2$。有$O(mB_1+mB_2)$。</li>
+<li>对于不同块转移，有最大复杂度$O(n)$。有$O(\frac{n^3}{B_1B_2})$</li>
+</ul>
+<p>当m和n同阶，取$B_1=B_2=n^{2/3}$，达到复杂度$O(n^{5/3})$。</p>
+<p>枚举每一个询问，将答案在不同时间线间暴力+1-1跳转，再暴力在相邻询问的区间间+1-1转移。</p>
+<p><del>听起来有点长寿的意思。</del></p>
 <h3 id="problem-game">Problem: Game</h3>
 <p>Again Alice and Bob is playing a game with stones. There are N piles of stones labelled from 1 to N, the i th pile has ai stones.</p>
 <p>First Alice will choose piles of stones with consecutive labels, whose leftmost is labelled with L and the rightmost one is R. After, Bob will choose another consecutive piles labelled from l to r (L≤l≤r≤R). Then they&rsquo;re going to play game within these piles.</p>
@@ -601,7 +664,598 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="注意">注意</h2>
+</div><blockquote>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.lydsy.com/JudgeOnline/problem.php%3Fid%3D3289" target="_blank" rel="noopener noreffer">Problem 3289. &ndash; Mato的文件管理</a></p>
+</blockquote>
+<h2 id="4-树上莫队转化">4 树上莫队/转化</h2>
+<p>当对于树上的路径查询，每个点的贡献也能够快速加入/删除，那么莫队仍然可以做。</p>
+<p>一种思路是把树转化为dfs序列。</p>
+<ol>
+<li>将询问$u \to v$先按照dfs序列对u和v换位，使得小的在前。</li>
+<li>u是v的祖先，取u和v第一次出现的区间。</li>
+<li>如果u不是v的祖先，取u最后一次和v的第一次出现，还需要加入lca(u,v)。</li>
+</ol>
+<p>注意处理在u和v决定的区间内节点出现两次的情况。此时应认为该点不存在。</p>
+<h3 id="wc2013-糖果公园">WC2013 糖果公园</h3>
+<p>这道题就是典型的树上莫队.简单来说,在一个树上不同节点有不同的糖果,第$i$种糖果本身有美味度$V_i$,人们会在书上走简单路径,并品尝每个节点的糖果.同一种糖果吃多次可能会腻,定义第$i$次吃同种糖果的新奇度$W_i$,所以吃掉一个糖果的愉悦(<del>偷税</del>)度表示为糖果美味度和新奇度的乘积.在某些时刻,某些节点发的糖的类型会改变.</p>
+<p>代码写得太长了&hellip;不过还是比较清晰的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">XN</span> <span class="o">=</span> <span class="mi">200010</span><span class="p">,</span> <span class="n">XM</span> <span class="o">=</span> <span class="mi">200010</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="n">delicious</span><span class="p">[</span><span class="n">XM</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">w</span><span class="p">[</span><span class="n">XM</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">kind</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">origin</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+
+<span class="k">struct</span> <span class="nc">Q</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">idx</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">;</span>
+<span class="p">}</span><span class="n">qs</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="n">in</span><span class="p">[</span><span class="n">XN</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">ref_tick</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">fa</span><span class="p">[</span><span class="n">XN</span><span class="p">][</span><span class="mi">25</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">dep</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="n">tick</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">;</span>
+    <span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">dep</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">in</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">tick</span><span class="p">;</span>
+    <span class="n">ref_tick</span><span class="p">[</span><span class="n">tick</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">v</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">f</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">out</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span><span class="n">tick</span><span class="p">;</span>
+    <span class="n">ref_tick</span><span class="p">[</span><span class="n">tick</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">lca</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">])</span><span class="n">swap</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="n">p</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="n">p</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">dep</span><span class="p">[</span><span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">p</span><span class="p">]]</span> <span class="o">&gt;=</span> <span class="n">dep</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+            <span class="n">u</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">p</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">)</span><span class="k">return</span> <span class="n">u</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="n">p</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="n">p</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">p</span><span class="p">]</span> <span class="o">!=</span> <span class="n">fa</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">p</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">u</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">p</span><span class="p">];</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">p</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">fa</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">modified</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">cnt</span><span class="p">[</span><span class="n">XM</span><span class="p">],</span><span class="n">inq</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">ans</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="n">belongs</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">his</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+    
+    <span class="n">memset</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">ans</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">q</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span> <span class="o">&gt;&gt;</span> <span class="n">q</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">delicious</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+        <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+        <span class="n">g</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">kind</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">origin</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">kind</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">opt</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">opt</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">opt</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">modified</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+            <span class="n">modified</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">idx</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+            <span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="c1">//for (int i = 1; i &lt;= tick; i++)cout &lt;&lt; ref_tick[i] &lt;&lt; &#34; &#34;;
+</span><span class="c1"></span>    <span class="c1">//cout &lt;&lt; endl;
+</span><span class="c1"></span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">fa</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">fa</span><span class="p">[</span><span class="n">fa</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]][</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">//区间[)
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Q</span><span class="o">&amp;</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">u</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">in</span><span class="p">[</span><span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">in</span><span class="p">[</span><span class="n">cur</span><span class="p">.</span><span class="n">v</span><span class="p">])</span><span class="n">swap</span><span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">,</span> <span class="n">cur</span><span class="p">.</span><span class="n">v</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">lca</span><span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">,</span> <span class="n">cur</span><span class="p">.</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cur</span><span class="p">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">];</span>
+            <span class="n">cur</span><span class="p">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">cur</span><span class="p">.</span><span class="n">v</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">cur</span><span class="p">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">];</span>
+            <span class="n">cur</span><span class="p">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">in</span><span class="p">[</span><span class="n">cur</span><span class="p">.</span><span class="n">v</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">//cout &lt;&lt; cur.l &lt;&lt; &#34; &#34; &lt;&lt; cur.r &lt;&lt; endl;
+</span><span class="c1"></span>    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">B</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="n">tick</span><span class="p">,</span> <span class="mf">2.0</span> <span class="o">/</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">XN</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">belongs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">B</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span> <span class="n">qs</span> <span class="o">+</span> <span class="n">q</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="k">const</span> <span class="n">Q</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Q</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">belongs</span><span class="p">[</span><span class="n">a</span><span class="p">.</span><span class="n">l</span><span class="p">]</span> <span class="o">!=</span> <span class="n">belongs</span><span class="p">[</span><span class="n">b</span><span class="p">.</span><span class="n">l</span><span class="p">])</span><span class="k">return</span> <span class="n">belongs</span><span class="p">[</span><span class="n">a</span><span class="p">.</span><span class="n">l</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">belongs</span><span class="p">[</span><span class="n">b</span><span class="p">.</span><span class="n">l</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">belongs</span><span class="p">[</span><span class="n">a</span><span class="p">.</span><span class="n">r</span><span class="p">]</span> <span class="o">!=</span> <span class="n">belongs</span><span class="p">[</span><span class="n">b</span><span class="p">.</span><span class="n">r</span><span class="p">])</span><span class="k">return</span> <span class="n">belongs</span><span class="p">[</span><span class="n">a</span><span class="p">.</span><span class="n">r</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">belongs</span><span class="p">[</span><span class="n">b</span><span class="p">.</span><span class="n">r</span><span class="p">];</span>
+
+        <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">idx</span><span class="p">;</span>
+        <span class="p">});</span>
+
+    <span class="kt">int</span> <span class="n">L</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//T)
+</span><span class="c1"></span>    <span class="n">ll</span> <span class="n">wage</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Q</span><span class="o">&amp;</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="c1">//cout &lt;&lt;cur.idx&lt;&lt;&#34;,&#34;&lt;&lt; &#34;from [&#34; &lt;&lt; L &lt;&lt; &#34;,&#34; &lt;&lt; R &lt;&lt; &#34;) to [&#34; &lt;&lt; cur.l &lt;&lt; &#34;,&#34; &lt;&lt; cur.r &lt;&lt; &#34;)&#34; &lt;&lt; endl;
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">l</span> <span class="o">==</span> <span class="n">cur</span><span class="p">.</span><span class="n">r</span> <span class="o">&amp;&amp;</span> <span class="n">cur</span><span class="p">.</span><span class="n">r</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+        <span class="c1">//time
+</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">T</span><span class="o">--</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">modified</span><span class="p">[</span><span class="n">T</span><span class="p">].</span><span class="n">first</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">modified</span><span class="p">[</span><span class="n">T</span><span class="p">].</span><span class="n">first</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">modified</span><span class="p">[</span><span class="n">T</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">wage</span> <span class="o">-=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;remove &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">his</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">back</span><span class="p">();</span>
+            <span class="n">his</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">pop_back</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">wage</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;add &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">idx</span> <span class="o">&gt;</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+            
+            <span class="k">if</span> <span class="p">(</span><span class="n">modified</span><span class="p">[</span><span class="n">T</span><span class="p">].</span><span class="n">first</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">T</span><span class="o">++</span><span class="p">;</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">modified</span><span class="p">[</span><span class="n">T</span><span class="p">].</span><span class="n">first</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">modified</span><span class="p">[</span><span class="n">T</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">wage</span> <span class="o">-=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;remove &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">his</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]);</span>
+            <span class="n">kind</span><span class="p">[</span><span class="n">modified</span><span class="p">[</span><span class="n">T</span><span class="p">].</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="n">modified</span><span class="p">[</span><span class="n">T</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">wage</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;add &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>            <span class="p">}</span>
+            <span class="n">T</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">//L and R
+</span><span class="c1"></span>        <span class="c1">//[)
+</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">L</span><span class="o">--</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">ref_tick</span><span class="p">[</span><span class="n">L</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">wage</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;add &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">wage</span> <span class="o">-=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;remove &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">L</span> <span class="o">&lt;</span> <span class="n">cur</span><span class="p">.</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">ref_tick</span><span class="p">[</span><span class="n">L</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">wage</span> <span class="o">-=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;remove &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">wage</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;add &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>
+            <span class="p">}</span>
+            <span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span>
+
+            <span class="n">L</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">R</span><span class="o">--</span><span class="p">;</span>
+            <span class="n">assert</span><span class="p">(</span><span class="n">R</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">ref_tick</span><span class="p">[</span><span class="n">R</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">wage</span> <span class="o">-=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;remove &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">wage</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;add &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>
+            <span class="p">}</span>
+            <span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">R</span> <span class="o">&lt;</span> <span class="n">cur</span><span class="p">.</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">ref_tick</span><span class="p">[</span><span class="n">R</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+                <span class="n">wage</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;add &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">wage</span> <span class="o">-=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span> <span class="o">*</span> <span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]];</span>
+                <span class="c1">//cout &lt;&lt; &#34;remove &#34; &lt;&lt; u &lt;&lt; &#34;(&#34; &lt;&lt; kind[u] &lt;&lt; &#34;)&#34; &lt;&lt; (ll)delicious[kind[u]] * w[cnt[kind[u]]] &lt;&lt; endl;
+</span><span class="c1"></span>
+                <span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">u</span><span class="p">]]</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">inq</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">R</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">ans</span><span class="p">[</span><span class="n">cur</span><span class="p">.</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">wage</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">lca</span><span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">,</span> <span class="n">cur</span><span class="p">.</span><span class="n">v</span><span class="p">)</span> <span class="o">!=</span> <span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">lca</span><span class="p">(</span><span class="n">cur</span><span class="p">.</span><span class="n">u</span><span class="p">,</span> <span class="n">cur</span><span class="p">.</span><span class="n">v</span><span class="p">);</span>
+            <span class="c1">//cout &lt;&lt; &#34;finally add &#34;&lt;&lt;l&lt;&lt;&#34;(&#34;&lt;&lt;kind[l]&lt;&lt;&#34;)&#34; &lt;&lt; (ll)delicious[kind[l]] * (w[cnt[kind[l]] + 1]) &lt;&lt; endl;
+</span><span class="c1"></span>            <span class="n">ans</span><span class="p">[</span><span class="n">cur</span><span class="p">.</span><span class="n">idx</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">delicious</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span> <span class="o">*</span> <span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">cnt</span><span class="p">[</span><span class="n">kind</span><span class="p">[</span><span class="n">l</span><span class="p">]]</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">assert</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="5-树上莫队">5 树上莫队</h2>
+<blockquote>
+<p>&ldquo;一般来讲,树上莫队属于比较边缘化的东西,因为其所依赖的树分块处于比较尴尬的境地.&rdquo;</p>
+</blockquote>
+<p>为了进行下一种树上莫队,也就是真的直接在树上分块做莫队,我们第一个需要解决的问题是如何给树分块.我们对于块的要求仍然没有大的改变.</p>
+<ul>
+<li>块内点间距离不能超过块大小</li>
+<li>块内点数目适中</li>
+<li>块编号相邻,块也需要连续</li>
+</ul>
+<h3 id="树分块">树分块</h3>
+<blockquote>
+<p>BZOJ 1086 [SCOI2005]王室联邦</p>
+<p>他想把他的国家划分成若干个省，每个省都由他们王室联邦的一个成员来管理。他的国家有 个城市，编号为 。一些城市之间有道路相连，任意两个不同的城市之间有且仅有一条直接或间接的道路。</p>
+<p>每个省至少要有$B$个城市，最多只有$3B$个城市。</p>
+<p>每个省必须有一个省会，这个省会可以位于省内，也可以在该省外。但是该省的任意一个城市到达省会所经过的道路上的城市（除了最后一个城市，即该省省会）都必须属于该省。</p>
+<p>一个城市可以作为多个省的省会。</p>
+</blockquote>
+<p>这题貌似是树分块的起源.而它的做法,就是我们将要使用的树分块的基础.其做法如下.</p>
+<p>总体做法是使用dfs维护由子树节点组成的栈.当进入u时,记录当前栈顶,将子节点加入栈.当栈顶和之前记录的栈顶差达到分块界限时,就把它们弹出并组成一个块.这保证了块间联通,块不经过其他节点.这种做法总能保证分块大小在$[B,2B]$,最后一个块大小在$[B,3B]$.</p>
+<ul>
+<li>当v不形成新块时,说明v的栈大小小于B.而栈合并前,v的父节点u的栈也小于B,因此总体大小小于2B.</li>
+<li>DFS完成后,可能剩余小于B个节点.这些节点加入最后一个块,从而大小小于3B.</li>
+</ul>
+<h3 id="回到莫队">回到莫队</h3>
+<p>终于我们对树完成了分块.我们的总体思路仍然是离线排序,暴力转移.</p>
+<p>设$T_u$为$u$到根节点的边集合.那么u到v的路径为$T_u \Delta T_v$.</p>
+<p>我们的目标是从$T_u \Delta T_v$到$T_u&rsquo;\Delta T_v'$</p>
+<h2 id="6-注意">6 注意</h2>
 <ul>
 <li>关于记录当前问题的区间的开闭问题，需要谨慎安排。</li>
 <li>在确认了区间开闭后，关于最初始的状态，需要谨慎安排。</li>
@@ -622,7 +1276,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%8E%AB%E9%98%9F/">莫队</a>,&nbsp;<a href="/tags/%E5%88%86%E5%9D%97/">分块</a>,&nbsp;<a href="/tags/lca/">LCA</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -644,10 +1298,8 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
-    window.config = {"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"8nBBk4hz3GnYEEbGmLHafecq-gzGzoHsz","appKey":"LnYrhY3glo9zNm02k21R0XHb","avatar":"mp","el":"#valine","enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","noResultsFound":"没有找到结果","type":"lunr"}};
-</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', 'UA-104395871-2',{ 'storage': 'none' });ga('set', 'anonymizeIp', true);ga('send', 'pageview');
-        </script><script type="text/javascript" src="https://www.google-analytics.com/analytics.js" async></script></body>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"8nBBk4hz3GnYEEbGmLHafecq-gzGzoHsz","appKey":"LnYrhY3glo9zNm02k21R0XHb","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-104395871-2', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2" async></script></body>
 </html>
