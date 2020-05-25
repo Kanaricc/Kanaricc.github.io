@@ -9,7 +9,7 @@
         <title>Kanari&#39;s blog</title><meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="Kanari&#39;s blog" />
 <meta property="og:description" content="Kanari&#39;s blog" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://example.org/" />
+<meta property="og:url" content="https://blog.kanari.moe/" />
 <meta property="og:updated_time" content="2020-05-03T23:51:32+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kanari&#39;s blog"/>
@@ -17,15 +17,15 @@
 <meta name="application-name" content="Kanari&#39;s blog">
 <meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="Kanari&#39;s blog">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.kanari.moe/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="Kanari&#39;s blog">
     <link rel="feed" href="/index.xml" type="application/rss+xml" title="Kanari&#39;s blog"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "http:\/\/example.org\/","inLanguage": "zh-CN","author": {
+        "url": "https:\/\/blog.kanari.moe\/","inLanguage": "zh-CN","author": {
                 "@type": "Person",
                 "name": "Kanari"
-            },"description": "Kanari's blog","image": "http:\/\/example.org\/cover.png","thumbnailUrl": "http:\/\/example.org\/logo.png","name": "Kanari's blog"
+            },"description": "Kanari's blog","image": "https:\/\/blog.kanari.moe\/cover.png","thumbnailUrl": "https:\/\/blog.kanari.moe\/logo.png","name": "Kanari's blog"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -92,6 +92,24 @@
 </div>
 <main class="main">
                 <div class="container"><div class="page home" posts><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/2019/08/hdu6638-snowy-smile/">[HDU6638] Snowy Smile</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
+            发布于&nbsp;<time datetime=2019-08-07>2019-08-07</time>
+        </span>&nbsp;
+            <span class="post-category">收录于<a href="/categories/code/">
+                        <i class="far fa-folder fa-fw"></i>code
+                    </a></span></div><div class="content"><p>There are n pirate chests buried in Byteland, labeled by 1,2,…,n. The i-th chest&rsquo;s location is (xi,yi), and its value is wi, wi can be negative since the pirate can add some poisonous gases into the chest. When you open the i-th pirate chest, you will get wi value.</p>
+<p>You want to make money from these pirate chests. You can select a rectangle, the sides of which are all paralleled to the axes, and then all the chests inside it or on its border will be opened. Note that you must open all the chests within that range regardless of their values are positive or negative. But you can choose a rectangle with nothing in it to get a zero sum.</p>
+<p>Please write a program to find the best rectangle with maximum total value.</p>
+<p>The first line of the input contains an integer T(1≤T≤100), denoting the number of test cases.</p>
+<p>In each test case, there is one integer n(1≤n≤2000) in the first line, denoting the number of pirate chests.</p>
+<p>For the next n lines, each line contains three integers xi,yi,wi(−109≤xi,yi,wi≤109), denoting each pirate chest.</p>
+<p>It is guaranteed that ∑n≤10000.</p>
+<h2 id="分析">分析</h2>
+<p>首先，我没做出来。</p></div><div class="post-footer">
+        <a href="/2019/08/hdu6638-snowy-smile/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/2019/08/mo-s-algorithm/">莫队算法</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
             发布于&nbsp;<time datetime=2019-08-03>2019-08-03</time>
@@ -144,24 +162,6 @@ Then T line follows, each contains a positive prime number P (1e9≤p≤1e14)</p
                         <i class="far fa-folder fa-fw"></i>code
                     </a></span></div><div class="content">集合挑选 从给定的N个集合中各挑出一个数并求和，求出前$K$大的$K$个和。 考虑如何从2个集合$A$,$B$中选出前$K$大。降序排序后$a_</div><div class="post-footer">
         <a href="/2019/07/water-series/">阅读全文</a></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/2019/07/bupt-warmupcf-milktea/">[BUPT WARMUP|CF] 珍珠奶茶</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
-            发布于&nbsp;<time datetime=2019-07-20>2019-07-20</time>
-        </span>&nbsp;
-            <span class="post-category">收录于<a href="/categories/code/">
-                        <i class="far fa-folder fa-fw"></i>code
-                    </a></span></div><div class="content"><p>给出一个$N \times N$的非负整数矩阵，要求找到一条从左上角数字到右下角数字的路线，且</p>
-<ul>
-<li>只能向右或者下走。</li>
-<li>将经过数字相乘后得到的结果，使其末尾的“0”最少。</li>
-</ul>
-<div>$$
-N \leq 1000
-$$</div></div><div class="post-footer">
-        <a href="/2019/07/bupt-warmupcf-milktea/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">

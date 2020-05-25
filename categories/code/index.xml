@@ -1,78 +1,78 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>code - 分类 - Kanari&#39;s blog</title>
-        <link>http://example.org/categories/code/</link>
+        <link>https://blog.kanari.moe/categories/code/</link>
         <description>code - 分类 - Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Sun, 12 Apr 2020 10:54:57 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/code/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Sun, 12 Apr 2020 10:54:57 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/categories/code/" rel="self" type="application/rss+xml" /><item>
     <title>ICPC2018 Yokohama</title>
-    <link>http://example.org/2020/04/icpc2018-yokohama/</link>
+    <link>https://blog.kanari.moe/2020/04/icpc2018-yokohama/</link>
     <pubDate>Sun, 12 Apr 2020 10:54:57 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/04/icpc2018-yokohama/</guid>
+    <guid>https://blog.kanari.moe/2020/04/icpc2018-yokohama/</guid>
     <description><![CDATA[C. Emergency Evacuation 当没有人碰在一起时，耗时就是离门最远的人需要的耗时。当有人碰在一起时，才会发生其他情况。 人碰在一起的条件是他们距离门的距离一样，可以让]]></description>
 </item><item>
     <title>[CF703D] Mishka and Interesting Sum</title>
-    <link>http://example.org/2020/04/cf703d-mishka-and-interesting-sum/</link>
+    <link>https://blog.kanari.moe/2020/04/cf703d-mishka-and-interesting-sum/</link>
     <pubDate>Fri, 10 Apr 2020 14:08:41 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/04/cf703d-mishka-and-interesting-sum/</guid>
+    <guid>https://blog.kanari.moe/2020/04/cf703d-mishka-and-interesting-sum/</guid>
     <description><![CDATA[Little Mishka enjoys programming. Since her birthday has just passed, her friends decided to present her with array of non-negative integers a1, a2, &hellip;, an of n elements! Mishka loved the array and she instantly decided to determine its beauty value, but she is too little and can&rsquo;t process large arrays. Right because of that she invited you to visit her and asked you to process m queries. Each query]]></description>
 </item><item>
     <title>Prolonged Password</title>
-    <link>http://example.org/2020/04/kattis-prolonged-password/</link>
+    <link>https://blog.kanari.moe/2020/04/kattis-prolonged-password/</link>
     <pubDate>Wed, 08 Apr 2020 20:20:43 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/04/kattis-prolonged-password/</guid>
+    <guid>https://blog.kanari.moe/2020/04/kattis-prolonged-password/</guid>
     <description><![CDATA[给一个字符串，现有这么一种操作，将字符串内每一个字母替换成一给定字符串。例如$T_a=abc,T_b=ee$，那么$ab$就会被替换成$ab]]></description>
 </item><item>
     <title>[HDU 6363] bookshelf</title>
-    <link>http://example.org/2020/03/hdu-6363-bookshelf/</link>
+    <link>https://blog.kanari.moe/2020/03/hdu-6363-bookshelf/</link>
     <pubDate>Sat, 21 Mar 2020 18:48:16 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/03/hdu-6363-bookshelf/</guid>
+    <guid>https://blog.kanari.moe/2020/03/hdu-6363-bookshelf/</guid>
     <description><![CDATA[Patrick Star bought a bookshelf, he named it ZYG !! Patrick Star has N book . The ZYG has K layers (count from 1 to K) and there is no limit on the capacity of each layer ! Now Patrick want to put all N books on ZYG : Assume that the i-th layer has cnti(0≤cnti≤N) books]]></description>
 </item><item>
     <title>Spring Training 3</title>
-    <link>http://example.org/2020/03/spring-training-3/</link>
+    <link>https://blog.kanari.moe/2020/03/spring-training-3/</link>
     <pubDate>Thu, 19 Mar 2020 09:38:52 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/03/spring-training-3/</guid>
+    <guid>https://blog.kanari.moe/2020/03/spring-training-3/</guid>
     <description><![CDATA[HDU6319 Ascending Rating Before the start of contest, there are n ICPC contestants waiting in a long queue. They are labeled by 1 to n from left to right. It can be easily found that the i-th contestant&rsquo;s QodeForces rating is ai. Little Q, the coach of Quailty Normal University, is bored to just watch them waiting in the queue. He starts to compare the rating of the contestants. He]]></description>
 </item><item>
     <title>[???] Builds Sequences</title>
-    <link>http://example.org/2020/03/builds-sequences/</link>
+    <link>https://blog.kanari.moe/2020/03/builds-sequences/</link>
     <pubDate>Wed, 18 Mar 2020 11:56:43 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/03/builds-sequences/</guid>
+    <guid>https://blog.kanari.moe/2020/03/builds-sequences/</guid>
     <description><![CDATA[Alice 想要得到一个长度为 n 的序列，序列中的数都是不超过 m 的正整数，而且这 n 个数的和是 p 的倍数。 Alice 还希望，这 n 个数中，至少有一个数是质数。 Alice 想知道]]></description>
 </item><item>
     <title>[CF 1322C] Instant Noodles</title>
-    <link>http://example.org/2020/03/cf-1322c-instant-noodles/</link>
+    <link>https://blog.kanari.moe/2020/03/cf-1322c-instant-noodles/</link>
     <pubDate>Sun, 08 Mar 2020 16:32:30 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/03/cf-1322c-instant-noodles/</guid>
+    <guid>https://blog.kanari.moe/2020/03/cf-1322c-instant-noodles/</guid>
     <description><![CDATA[Wu got hungry after an intense training session, and came to a nearby store to buy his favourite instant noodles. After Wu paid for his purchase, the cashier gave him an interesting task. You are given a bipartite graph with positive integers in all vertices of the right half. For a subset 𝑆 of vertices of the left half we define 𝑁(𝑆) as the set of all]]></description>
 </item><item>
     <title>[CF 1320C] World of Darkraft: Battle for Azathoth</title>
-    <link>http://example.org/2020/03/cf-1320c-world-of-darkraft-battle-for-azathoth/</link>
+    <link>https://blog.kanari.moe/2020/03/cf-1320c-world-of-darkraft-battle-for-azathoth/</link>
     <pubDate>Sun, 08 Mar 2020 12:58:45 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/03/cf-1320c-world-of-darkraft-battle-for-azathoth/</guid>
+    <guid>https://blog.kanari.moe/2020/03/cf-1320c-world-of-darkraft-battle-for-azathoth/</guid>
     <description><![CDATA[Roma is playing a new expansion for his favorite game World of Darkraft. He made a new character and is going for his first grind. Roma has a choice to buy exactly one of 𝑛 different weapons and exactly one of 𝑚 different armor sets. Weapon 𝑖 has attack modifier 𝑎𝑖 and is worth 𝑐𝑎𝑖 coins, and armor set 𝑗 has defense modifier 𝑏𝑗 and is]]></description>
 </item><item>
     <title>[CF 1321C] Remove Adjacent 拓展</title>
-    <link>http://example.org/2020/03/cf-1321c-remove-adjacent/</link>
+    <link>https://blog.kanari.moe/2020/03/cf-1321c-remove-adjacent/</link>
     <pubDate>Mon, 02 Mar 2020 10:41:30 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/03/cf-1321c-remove-adjacent/</guid>
+    <guid>https://blog.kanari.moe/2020/03/cf-1321c-remove-adjacent/</guid>
     <description><![CDATA[没注意到数据范围是100。 You are given a string 𝑠 consisting of lowercase Latin letters. Let the length of 𝑠 be |𝑠|. You may perform several operations on this string. In one operation, you can choose some index 𝑖 and remove the 𝑖-th character of 𝑠 (𝑠𝑖) if at least one of]]></description>
 </item><item>
     <title>[CF 1295E] Permutation Separation</title>
-    <link>http://example.org/2020/02/cf-1295e-permutation-separation/</link>
+    <link>https://blog.kanari.moe/2020/02/cf-1295e-permutation-separation/</link>
     <pubDate>Fri, 28 Feb 2020 17:47:47 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/02/cf-1295e-permutation-separation/</guid>
+    <guid>https://blog.kanari.moe/2020/02/cf-1295e-permutation-separation/</guid>
     <description><![CDATA[You are given a permutation 𝑝1,𝑝2,…,𝑝𝑛 (an array where each integer from 1 to 𝑛 appears exactly once). The weight of the 𝑖-th element of this permutation is 𝑎𝑖. At first, you separate your permutation into two non-empty sets — prefix and suffix. More formally, the first set contains elements 𝑝1,𝑝2,]]></description>
 </item></channel>
 </rss>

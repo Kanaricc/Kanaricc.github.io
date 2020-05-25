@@ -1,43 +1,50 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>闲扯 - 分类 - Kanari&#39;s blog</title>
-        <link>http://example.org/categories/%E9%97%B2%E6%89%AF/</link>
+        <link>https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/</link>
         <description>闲扯 - 分类 - Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Mon, 04 May 2020 20:43:15 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E9%97%B2%E6%89%AF/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Fri, 22 May 2020 23:33:43 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>如何教好一门课</title>
+    <link>https://blog.kanari.moe/2020/05/strange-gifts-for-teachers/</link>
+    <pubDate>Fri, 22 May 2020 23:33:43 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.kanari.moe/2020/05/strange-gifts-for-teachers/</guid>
+    <description><![CDATA[你将会在打了/石乐志/标签的文章中浪费你人生的数分钟,比起看这一篇垃圾,何不去做些更有意义的事情? 本文是献给一些老师们的礼物,将从一门课程的]]></description>
+</item><item>
     <title>由内存分页看CPU系统界面</title>
-    <link>http://example.org/2020/05/paging-introduction/</link>
+    <link>https://blog.kanari.moe/2020/05/paging-introduction/</link>
     <pubDate>Mon, 04 May 2020 20:43:15 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/05/paging-introduction/</guid>
+    <guid>https://blog.kanari.moe/2020/05/paging-introduction/</guid>
     <description><![CDATA[这个东西很复杂，似乎也不好找到「恰好足够」的资料，要么讲得太浅，要么就只能去翻硬件文档。但是仅仅为了一个要求模糊而且并不好玩的作业做到那种地]]></description>
 </item><item>
     <title>由Tiddywiki说起</title>
-    <link>http://example.org/2020/04/info-dependence/</link>
+    <link>https://blog.kanari.moe/2020/04/info-dependence/</link>
     <pubDate>Tue, 07 Apr 2020 21:50:59 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/04/info-dependence/</guid>
+    <guid>https://blog.kanari.moe/2020/04/info-dependence/</guid>
     <description><![CDATA[我再换blog的后端我就是狗。 Tiddlywiki是我在寻找Mediawiki的替代品时意外发现的东西。起初我还是只惊艳于它的特殊的组织方式]]></description>
 </item><item>
     <title>使用Python分析数据</title>
-    <link>http://example.org/2020/02/python-in-data-processing/</link>
+    <link>https://blog.kanari.moe/2020/02/python-in-data-processing/</link>
     <pubDate>Sat, 22 Feb 2020 11:45:06 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/02/python-in-data-processing/</guid>
+    <guid>https://blog.kanari.moe/2020/02/python-in-data-processing/</guid>
     <description><![CDATA[本来这不是我现在该想的东西，被迫因为建模比赛看了一点。所学东西太过杂乱。 为什么不用Matlab、Mathematica 因为Mathemati]]></description>
 </item><item>
     <title>换个主题</title>
-    <link>http://example.org/2020/02/change-theme/</link>
+    <link>https://blog.kanari.moe/2020/02/change-theme/</link>
     <pubDate>Fri, 21 Feb 2020 17:43:17 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/02/change-theme/</guid>
+    <guid>https://blog.kanari.moe/2020/02/change-theme/</guid>
     <description><![CDATA[[music autoplay=&quot;0&rdquo;]40915181[/music] 上面这个改编的交响乐还不错，顺便测试一下音乐盒 这个主题还可以，有一些比较比较有趣的东西。 其实是连系统都换了……不想折腾了，还是这样算了。]]></description>
 </item><item>
     <title>康康新教务</title>
-    <link>http://example.org/2019/12/look-new-jw/</link>
+    <link>https://blog.kanari.moe/2019/12/look-new-jw/</link>
     <pubDate>Fri, 27 Dec 2019 09:08:05 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2019/12/look-new-jw/</guid>
+    <guid>https://blog.kanari.moe/2019/12/look-new-jw/</guid>
     <description><![CDATA[<p>学校换教务了?突如其来的惊喜,结果第一天教务出了个锅.</p>
 <p>扒扒代码看看开发这个教务的公司水平,彻底失望.</p>
 <p>这个教务系统的问题远不止时区,最大的问题是它表面上相比先前的系统&hellip;似乎&hellip;没啥&hellip;长进?</p>
@@ -46,24 +53,24 @@
 <p>首先,来看这教务如何处理登录信息.</p>]]></description>
 </item><item>
     <title>8年了，春物终于迎来了结局</title>
-    <link>http://example.org/2019/11/eight-years-for-chunwu/</link>
+    <link>https://blog.kanari.moe/2019/11/eight-years-for-chunwu/</link>
     <pubDate>Tue, 19 Nov 2019 10:45:45 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2019/11/eight-years-for-chunwu/</guid>
+    <guid>https://blog.kanari.moe/2019/11/eight-years-for-chunwu/</guid>
     <description><![CDATA[我觉得这件需要发一篇来庆祝一下。虽然从头到尾我就没怀疑过最终会是雪乃，（雪乃!）但是结局一出，还是非常欣慰。 真好啊.jpg。 是时候再买一套来]]></description>
 </item><item>
     <title>使用Mathematica绘制股票相关曲线</title>
-    <link>http://example.org/2019/09/mathematica-in-stocks/</link>
+    <link>https://blog.kanari.moe/2019/09/mathematica-in-stocks/</link>
     <pubDate>Fri, 20 Sep 2019 09:33:52 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2019/09/mathematica-in-stocks/</guid>
+    <guid>https://blog.kanari.moe/2019/09/mathematica-in-stocks/</guid>
     <description><![CDATA[Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本因为课程原因，研究了一下如何在Mathematica里]]></description>
 </item><item>
     <title>我把快排写错了?</title>
-    <link>http://example.org/2019/07/do-i-write-qsort-right/</link>
+    <link>https://blog.kanari.moe/2019/07/do-i-write-qsort-right/</link>
     <pubDate>Fri, 12 Jul 2019 14:02:52 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2019/07/do-i-write-qsort-right/</guid>
+    <guid>https://blog.kanari.moe/2019/07/do-i-write-qsort-right/</guid>
     <description><![CDATA[<p>众所周知，快速排序的时间复杂度是$O(n\lg n)$的。然而因为我太菜，写出来的快速排序一不小心就成了$O(n^2)$&hellip;</p>]]></description>
 </item></channel>
 </rss>

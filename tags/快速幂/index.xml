@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>快速幂 - 标签 - Kanari&#39;s blog</title>
-        <link>http://example.org/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+        <link>https://blog.kanari.moe/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
         <description>快速幂 - 标签 - Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Wed, 18 Mar 2020 11:56:43 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Wed, 18 Mar 2020 11:56:43 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="self" type="application/rss+xml" /><item>
     <title>[???] Builds Sequences</title>
-    <link>http://example.org/2020/03/builds-sequences/</link>
+    <link>https://blog.kanari.moe/2020/03/builds-sequences/</link>
     <pubDate>Wed, 18 Mar 2020 11:56:43 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>http://example.org/2020/03/builds-sequences/</guid>
+    <guid>https://blog.kanari.moe/2020/03/builds-sequences/</guid>
     <description><![CDATA[Alice 想要得到一个长度为 n 的序列，序列中的数都是不超过 m 的正整数，而且这 n 个数的和是 p 的倍数。 Alice 还希望，这 n 个数中，至少有一个数是质数。 Alice 想知道]]></description>
 </item></channel>
 </rss>
