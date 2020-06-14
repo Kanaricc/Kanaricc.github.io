@@ -33,7 +33,7 @@
                 "url": "https:\/\/blog.kanari.moe\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "莫队, 分块, LCA","wordcount":  4747 ,
+            },"genre": "posts","keywords": "莫队, 分块, LCA","wordcount":  4845 ,
         "url": "https:\/\/blog.kanari.moe\/2019\/08\/mo-s-algorithm\/","datePublished": "2019-08-03T13:47:41+08:00","dateModified": "2019-08-03T13:47:41+08:00","publisher": {
                 "@type": "Organization",
                 "name": "Kanari",
@@ -121,7 +121,7 @@
                                 <i class="far fa-folder fa-fw"></i>学习
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-08-03>2019-08-03</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4747 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4845 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/2019/08/mo-s-algorithm/" class="leancloud_visitors" data-flag-title="莫队算法">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -1254,7 +1254,11 @@
 <h3 id="回到莫队">回到莫队</h3>
 <p>终于我们对树完成了分块.我们的总体思路仍然是离线排序,暴力转移.</p>
 <p>设$T_u$为$u$到根节点的边集合.那么u到v的路径为$T_u \Delta T_v$.</p>
-<p>我们的目标是从$T_u \Delta T_v$到$T_u&rsquo;\Delta T_v'$</p>
+<p>我们的目标是从$T_u \Delta T_v$到$T_u&rsquo;\Delta T_v'$。由于对称差满足交换律和结合律，有
+$$
+T_u \Delta T_v \Delta (T_u \Delta T_u&rsquo;) \Delta (T_v\Delta T_v&rsquo;)=T_u&rsquo;\Delta T_v&rsquo;
+$$
+所以，我们可以记录每个点是否有被算入答案，然后暴力转移从$u \leadsto u'$，从$v \leadsto v'$，对于在答案中的删除，对于不在答案中的加入。</p>
 <h2 id="6-注意">6 注意</h2>
 <ul>
 <li>关于记录当前问题的区间的开闭问题，需要谨慎安排。</li>

@@ -33,18 +33,6 @@
     <guid>https://blog.kanari.moe/2020/02/change-theme/</guid>
     <description><![CDATA[[music autoplay=&quot;0&rdquo;]40915181[/music] 上面这个改编的交响乐还不错，顺便测试一下音乐盒 这个主题还可以，有一些比较比较有趣的东西。 其实是连系统都换了……不想折腾了，还是这样算了。]]></description>
 </item><item>
-    <title>康康新教务</title>
-    <link>https://blog.kanari.moe/2019/12/look-new-jw/</link>
-    <pubDate>Fri, 27 Dec 2019 09:08:05 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog.kanari.moe/2019/12/look-new-jw/</guid>
-    <description><![CDATA[<p>学校换教务了?突如其来的惊喜,结果第一天教务出了个锅.</p>
-<p>扒扒代码看看开发这个教务的公司水平,彻底失望.</p>
-<p>这个教务系统的问题远不止时区,最大的问题是它表面上相比先前的系统&hellip;似乎&hellip;没啥&hellip;长进?</p>
-<h2 id="首页">首页</h2>
-<h3 id="编码方式">编码方式</h3>
-<p>首先,来看这教务如何处理登录信息.</p>]]></description>
-</item><item>
     <title>8年了，春物终于迎来了结局</title>
     <link>https://blog.kanari.moe/2019/11/eight-years-for-chunwu/</link>
     <pubDate>Tue, 19 Nov 2019 10:45:45 &#43;0800</pubDate>
