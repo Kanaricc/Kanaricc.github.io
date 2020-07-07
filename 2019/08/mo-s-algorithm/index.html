@@ -6,15 +6,17 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>莫队算法 - Kanari&#39;s blog</title><meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="莫队算法" />
-<meta property="og:description" content="对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。
+<meta property="og:description" content="为了做课件又加了很多东西。
+对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。
 主要的思路是对询问离线并分块，利用在2个区间间答案的快速转移（如果无法找到快速转移的方法，就没法用了）降低复杂度。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.kanari.moe/2019/08/mo-s-algorithm/" />
 <meta property="article:published_time" content="2019-08-03T13:47:41+08:00" />
-<meta property="article:modified_time" content="2019-08-03T13:47:41+08:00" />
+<meta property="article:modified_time" content="2020-07-06T12:06:00+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="莫队算法"/>
-<meta name="twitter:description" content="对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。
+<meta name="twitter:description" content="为了做课件又加了很多东西。
+对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。
 主要的思路是对询问离线并分块，利用在2个区间间答案的快速转移（如果无法找到快速转移的方法，就没法用了）降低复杂度。"/>
 <meta name="application-name" content="Kanari&#39;s blog">
 <meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -33,8 +35,8 @@
                 "url": "https:\/\/blog.kanari.moe\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "莫队, 分块, LCA","wordcount":  4845 ,
-        "url": "https:\/\/blog.kanari.moe\/2019\/08\/mo-s-algorithm\/","datePublished": "2019-08-03T13:47:41+08:00","dateModified": "2019-08-03T13:47:41+08:00","publisher": {
+            },"genre": "posts","keywords": "莫队, 分块, LCA","wordcount":  5419 ,
+        "url": "https:\/\/blog.kanari.moe\/2019\/08\/mo-s-algorithm\/","datePublished": "2019-08-03T13:47:41+08:00","dateModified": "2020-07-06T12:06:00+08:00","publisher": {
                 "@type": "Organization",
                 "name": "Kanari",
                 "logo": {
@@ -121,8 +123,8 @@
                                 <i class="far fa-folder fa-fw"></i>学习
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-08-03>2019-08-03</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4845 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/2019/08/mo-s-algorithm/" class="leancloud_visitors" data-flag-title="莫队算法">
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5419 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/2019/08/mo-s-algorithm/" class="leancloud_visitors" data-flag-title="莫队算法">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static">
@@ -140,13 +142,18 @@
             <li><a href="#分析">分析</a></li>
           </ul>
         </li>
+        <li><a href="#problem-hdu-6534-chika-and-friendly-pairs">Problem: [HDU 6534] Chika and Friendly Pairs</a>
+          <ul>
+            <li><a href="#分析-1">分析</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#3-带修改莫队">3 带修改莫队</a>
       <ul>
         <li><a href="#problem-game">Problem: Game</a>
           <ul>
-            <li><a href="#分析-1">分析</a></li>
+            <li><a href="#分析-2">分析</a></li>
             <li><a href="#代码">代码</a></li>
           </ul>
         </li>
@@ -166,7 +173,8 @@
     <li><a href="#6-注意">6 注意</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。</p>
+            </div><div class="content" id="content"><p>为了做课件又加了很多东西。</p>
+<p>对于可以离线的区间询问问题，莫队算法提出了一种可以在$O(n\sqrt n)$(无修改)，$O(n^{5/3})$(带修改)内得出答案的方法。</p>
 <p>主要的思路是对询问离线并分块，利用在2个区间间答案的<strong>快速转移</strong>（如果无法找到快速转移的方法，就没法用了）降低复杂度。</p>
 <h2 id="1-算法思想">1 算法思想</h2>
 <p>莫队算法是由莫涛提出的算法，可以解决一类离线区间询问问题，适用性极为广泛。即,能够使用莫队算法处理的问题一般具有如下特征</p>
@@ -383,6 +391,215 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
+</div><h3 id="problem-hdu-6534-chika-and-friendly-pairs">Problem: [HDU 6534] Chika and Friendly Pairs</h3>
+<p>Chika gives you an integer sequence a1,a2,…,an and m tasks. For each task, you need to answer the number of &quot; friendly pairs&rdquo; in a given interval.</p>
+<p>friendly pair: for two integers ai and aj, if i &lt; j and the absolute value of ai−aj is no more than a given constant integer K, then (i,j) is called a &ldquo;friendly pair&rdquo;.A friendly pair (i,j) in a interval [L,R] should satisfy L≤i&lt;j≤R.</p>
+<h4 id="分析-1">分析</h4>
+<p>仍然是莫队，套了一个树状数组来维护答案，外加离散化解决值域问题。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span><span class="lnt">97
+</span><span class="lnt">98
+</span><span class="lnt">99
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">XN</span> <span class="o">=</span> <span class="mi">27010</span><span class="p">,</span> <span class="n">XM</span> <span class="o">=</span> <span class="mi">27010</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="n">XN</span><span class="p">],</span><span class="n">nL</span><span class="p">[</span><span class="n">XN</span><span class="p">],</span><span class="n">nR</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="n">FT</span><span class="p">[</span><span class="n">XM</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">lowbit</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="o">-</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">ftadd</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="p">(;</span> <span class="n">pos</span> <span class="o">&lt;</span> <span class="n">XM</span><span class="p">;</span> <span class="n">pos</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span>
+		<span class="n">FT</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">ftget</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(;</span> <span class="n">pos</span><span class="p">;</span> <span class="n">pos</span> <span class="o">-=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">pos</span><span class="p">))</span>
+		<span class="n">res</span> <span class="o">+=</span> <span class="n">FT</span><span class="p">[</span><span class="n">pos</span><span class="p">];</span>
+	<span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="nc">Q</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">qs</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">ans</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kt">int</span> <span class="n">x</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+		<span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+		<span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+		<span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">k</span><span class="p">);</span>
+		<span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">nL</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lower_bound</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+		<span class="n">nR</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lower_bound</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+		<span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lower_bound</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+
+		<span class="n">nL</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+		<span class="n">nR</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+		<span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">Q</span><span class="o">&amp;</span> <span class="n">q</span> <span class="o">=</span> <span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">q</span><span class="p">.</span><span class="n">l</span> <span class="o">&gt;&gt;</span> <span class="n">q</span><span class="p">.</span><span class="n">r</span><span class="p">;</span>
+		<span class="n">q</span><span class="p">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="n">B</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+	<span class="n">sort</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span> <span class="n">qs</span> <span class="o">+</span> <span class="n">m</span><span class="p">,</span> <span class="p">[</span><span class="n">B</span><span class="p">](</span><span class="k">const</span> <span class="n">Q</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">Q</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">l</span> <span class="o">/</span> <span class="n">B</span> <span class="o">!=</span> <span class="n">b</span><span class="p">.</span><span class="n">l</span> <span class="o">/</span> <span class="n">B</span><span class="p">)</span><span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">l</span> <span class="o">/</span> <span class="n">B</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">l</span> <span class="o">/</span> <span class="n">B</span><span class="p">;</span>
+		<span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">r</span><span class="p">;</span>
+		<span class="p">});</span>
+	
+	<span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">ftadd</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="mi">1</span><span class="p">);</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">Q</span> <span class="n">q</span> <span class="o">=</span> <span class="n">qs</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="k">while</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">ftadd</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+			<span class="n">res</span> <span class="o">-=</span> <span class="n">ftget</span><span class="p">(</span><span class="n">nR</span><span class="p">[</span><span class="n">l</span><span class="p">])</span> <span class="o">-</span> <span class="n">ftget</span><span class="p">(</span><span class="n">nL</span><span class="p">[</span><span class="n">l</span><span class="p">]);</span>
+			<span class="n">l</span><span class="o">++</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">while</span> <span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">l</span><span class="o">--</span><span class="p">;</span>
+			<span class="n">res</span> <span class="o">+=</span> <span class="n">ftget</span><span class="p">(</span><span class="n">nR</span><span class="p">[</span><span class="n">l</span><span class="p">])</span> <span class="o">-</span> <span class="n">ftget</span><span class="p">(</span><span class="n">nL</span><span class="p">[</span><span class="n">l</span><span class="p">]);</span>
+			<span class="n">ftadd</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="mi">1</span><span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">while</span> <span class="p">(</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">r</span><span class="o">++</span><span class="p">;</span>
+			<span class="n">res</span> <span class="o">+=</span> <span class="n">ftget</span><span class="p">(</span><span class="n">nR</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="o">-</span> <span class="n">ftget</span><span class="p">(</span><span class="n">nL</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span>
+			<span class="n">ftadd</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="mi">1</span><span class="p">);</span>
+		<span class="p">}</span>
+		<span class="k">while</span> <span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">ftadd</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+			<span class="n">res</span> <span class="o">-=</span> <span class="n">ftget</span><span class="p">(</span><span class="n">nR</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="o">-</span> <span class="n">ftget</span><span class="p">(</span><span class="n">nL</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span>
+			<span class="n">r</span><span class="o">--</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">ans</span><span class="p">[</span><span class="n">q</span><span class="p">.</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+	
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
 </div><h2 id="3-带修改莫队">3 带修改莫队</h2>
 <p>如果对区间的查询之余，还会修改区间，且这种修改也可以快速修改、撤销。那么，可以使用莫队的一个扩展——带修改莫队实现。</p>
 <p>假设有$m$个询问，将修改操作平铺在时间线上，计算每次询问所处的时间点。将时间也作为查询的一个参数，参与分块和转移。按照$(l/B_1,r/B_2,time)$对询问排序。分块有$n^2/B_1B_2$个。</p>
@@ -400,7 +617,7 @@
 <p>Here&rsquo;s the rules of the game: Alice takes first and the two will take turn to make a move: choose one pile with nonegetive stones and take at least one stone and at most all away. One who cant make a move will lose.</p>
 <p>Bob thinks this game is not so intersting because Alice always take first. So they add a new rule, which is that Bob can swap the number of two adjacent piles&rsquo; stones whenever he want before a new round. That is to say, if the i th and i+1 pile have ai and ai+1 stones respectively, after this swapping there will be ai+1 and ai.</p>
 <p>Before today&rsquo;s game with Bob, Alice wants to know, if both they play game optimally when she choose the piles from L to R, there are how many pairs (l, r) chosed by Bob that will make Alice <em>win</em>.</p>
-<h4 id="分析-1">分析</h4>
+<h4 id="分析-2">分析</h4>
 <p>nim游戏输赢就是看异或和，异或和可以看前缀异或和内有多少个值相同的点。所以它就是在问一个区间里有多少个相同点对。</p>
 <p>带单点修改的区间点对计数。</p>
 <h4 id="代码">代码</h4>
@@ -1267,7 +1484,7 @@ $$
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>本文于 2019-08-03 更新</span>
+                <span>本文于 2020-07-06 更新</span>
             </div>
             <div class="post-info-license"></div>
         </div>

@@ -4,14 +4,7 @@
         <link>https://blog.kanari.moe/posts/</link>
         <description>所有文章 | Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Mon, 04 May 2020 20:43:15 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>由内存分页看CPU系统界面</title>
-    <link>https://blog.kanari.moe/2020/05/paging-introduction/</link>
-    <pubDate>Mon, 04 May 2020 20:43:15 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog.kanari.moe/2020/05/paging-introduction/</guid>
-    <description><![CDATA[这个东西很复杂，似乎也不好找到「恰好足够」的资料，要么讲得太浅，要么就只能去翻硬件文档。但是仅仅为了一个要求模糊而且并不好玩的作业做到那种地]]></description>
-</item><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Thu, 30 Apr 2020 20:54:09 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/posts/" rel="self" type="application/rss+xml" /><item>
     <title>如何把W接上岛</title>
     <link>https://blog.kanari.moe/2020/04/pulling-w/</link>
     <pubDate>Thu, 30 Apr 2020 20:54:09 &#43;0800</pubDate>
@@ -74,5 +67,12 @@
     <author>作者</author>
     <guid>https://blog.kanari.moe/2020/03/hdu-6363-bookshelf/</guid>
     <description><![CDATA[Patrick Star bought a bookshelf, he named it ZYG !! Patrick Star has N book . The ZYG has K layers (count from 1 to K) and there is no limit on the capacity of each layer ! Now Patrick want to put all N books on ZYG : Assume that the i-th layer has cnti(0≤cnti≤N) books]]></description>
+</item><item>
+    <title>一点点拉格朗日插值</title>
+    <link>https://blog.kanari.moe/2020/03/lagrange-polynomial/</link>
+    <pubDate>Thu, 19 Mar 2020 18:18:21 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.kanari.moe/2020/03/lagrange-polynomial/</guid>
+    <description><![CDATA[抄起我的混凝土数学，复习了会上升下降积分，看了看斯特林数和伯努利数。结果误把伯努利数的递推式看成了$O(n)$的，改了半天一到3次方以上就翻]]></description>
 </item></channel>
 </rss>

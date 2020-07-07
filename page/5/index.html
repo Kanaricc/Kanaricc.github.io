@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-	<meta name="generator" content="Hugo 0.70.0" />
+	<meta name="generator" content="Hugo 0.73.0" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -10,7 +10,7 @@
 <meta property="og:description" content="Kanari&#39;s blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.kanari.moe/" />
-<meta property="og:updated_time" content="2020-05-03T23:51:32+08:00" />
+<meta property="og:updated_time" content="2020-07-06T12:06:00+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kanari&#39;s blog"/>
 <meta name="twitter:description" content="Kanari&#39;s blog"/>
@@ -92,24 +92,6 @@
 </div>
 <main class="main">
                 <div class="container"><div class="page home" posts><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/2020/01/have-fun-with-rust/">与Rust玩耍</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
-            发布于&nbsp;<time datetime=2020-01-18>2020-01-18</time>
-        </span>&nbsp;
-            <span class="post-category">收录于<a href="/categories/%E5%AD%A6%E4%B9%A0/">
-                        <i class="far fa-folder fa-fw"></i>学习
-                    </a></span></div><div class="content"><p><img
-        class="lazyload"
-        src="/svg/loading/small.min.svg"
-        data-src="/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg"
-        data-srcset="/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg, /wp-content/uploads/2020/02/unsafe_badge-300x300.jpg 1.5x, /wp-content/uploads/2020/02/unsafe_badge-300x300.jpg 2x"
-        data-sizes="auto"
-        alt="/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg"
-        title="/wp-content/uploads/2020/02/unsafe_badge-300x300.jpg" />
-把先前信息低的两篇blog给拆了,这样好点.</p></div><div class="post-footer">
-        <a href="/2020/01/have-fun-with-rust/">阅读全文</a></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/2020/01/codeforces-round-612-div-2/">Codeforces Round #612 (Div. 2)</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
             发布于&nbsp;<time datetime=2020-01-14>2020-01-14</time>
@@ -165,6 +147,24 @@
 <h2 id="分析">分析</h2>
 <p>实际上本体是个Dijkstra，但是两点是否相连需要使用到计算几何的东西。重点就在于如何判断行进过程是否穿过了百慕大三角。</p></div><div class="post-footer">
         <a href="/2019/10/liaoning-ships-voyage/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/2019/10/ccpc2017hangzhou-heathrock/">[CCPC2017杭州] Heathrock</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
+            发布于&nbsp;<time datetime=2019-10-23>2019-10-23</time>
+        </span>&nbsp;
+            <span class="post-category">收录于<a href="/categories/code/">
+                        <i class="far fa-folder fa-fw"></i>code
+                    </a></span></div><div class="content"><p>这题意太长了，我懒得复制。</p>
+<h2 id="分析">分析</h2>
+<p>额……其实就是爆搜模拟。但是状态比较多，需要记双方生命值，3个随从的生命，当前场数，魔力，体力，以及一些玄学优化。</p>
+<ul>
+<li>自选目标的牌一定会放在回合的较后出，因为其不会累加魔力。</li>
+<li>如果剩下的牌全踢脸也踢不死，直接返回。</li>
+</ul>
+<p>之后就能跑得飞快。</p></div><div class="post-footer">
+        <a href="/2019/10/ccpc2017hangzhou-heathrock/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%90%9C%E7%B4%A2/">搜索</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">
