@@ -4,7 +4,14 @@
         <link>https://blog.kanari.moe/tags/%E7%9F%B3%E4%B9%90%E5%BF%97/</link>
         <description>石乐志 - 标签 - Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Thu, 30 Apr 2020 20:54:09 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/tags/%E7%9F%B3%E4%B9%90%E5%BF%97/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Mon, 04 May 2020 20:43:15 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/tags/%E7%9F%B3%E4%B9%90%E5%BF%97/" rel="self" type="application/rss+xml" /><item>
+    <title>由内存分页看CPU系统界面</title>
+    <link>https://blog.kanari.moe/2020/05/paging-introduction/</link>
+    <pubDate>Mon, 04 May 2020 20:43:15 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.kanari.moe/2020/05/paging-introduction/</guid>
+    <description><![CDATA[这个东西很复杂，似乎也不好找到「恰好足够」的资料，要么讲得太浅，要么就只能去翻硬件文档。但是仅仅为了一个要求模糊而且并不好玩的作业做到那种地]]></description>
+</item><item>
     <title>如何把W接上岛</title>
     <link>https://blog.kanari.moe/2020/04/pulling-w/</link>
     <pubDate>Thu, 30 Apr 2020 20:54:09 &#43;0800</pubDate>

@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.kanari.moe/2020/05/paging-introduction/" />
 <meta property="article:published_time" content="2020-05-04T20:43:15+08:00" />
-<meta property="article:modified_time" content="2020-05-04T20:43:15+08:00" />
+<meta property="article:modified_time" content="2020-07-05T23:11:00+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="由内存分页看CPU系统界面"/>
 <meta name="twitter:description" content="这个东西很复杂，似乎也不好找到「恰好足够」的资料，要么讲得太浅，要么就只能去翻硬件文档。但是仅仅为了一个要求模糊而且并不好玩的作业做到那种地"/>
@@ -31,8 +31,8 @@
                 "url": "https:\/\/blog.kanari.moe\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","wordcount":  2048 ,
-        "url": "https:\/\/blog.kanari.moe\/2020\/05\/paging-introduction\/","datePublished": "2020-05-04T20:43:15+08:00","dateModified": "2020-05-04T20:43:15+08:00","publisher": {
+            },"genre": "posts","keywords": "石乐志","wordcount":  1650 ,
+        "url": "https:\/\/blog.kanari.moe\/2020\/05\/paging-introduction\/","datePublished": "2020-05-04T20:43:15+08:00","dateModified": "2020-07-05T23:11:00+08:00","publisher": {
                 "@type": "Organization",
                 "name": "Kanari",
                 "logo": {
@@ -116,11 +116,12 @@
                                 <i class="far fa-folder fa-fw"></i>闲扯
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-05-04>2020-05-04</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2048 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/2020/05/paging-introduction/" class="leancloud_visitors" data-flag-title="由内存分页看CPU系统界面">
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1650 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/2020/05/paging-introduction/" class="leancloud_visitors" data-flag-title="由内存分页看CPU系统界面">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="content" id="content"><p>这个东西很复杂，似乎也不好找到「恰好足够」的资料，要么讲得太浅，要么就只能去翻硬件文档。但是仅仅为了一个要求模糊而且并不好玩的作业做到那种地步确实是有点没意思，不过还好它解答了我的疑问。下面这些内容目的只是给我足够的底气去处理作业中并不明确的部分。更加详细或者粗略的内容在网上有很多介绍，至少短期内不会出现在这里。</p>
+        </div><div class="content" id="content"><p><del>这个东西很复杂，似乎也不好找到「恰好足够」的资料，要么讲得太浅，要么就只能去翻硬件文档。但是仅仅为了一个要求模糊而且并不好玩的作业做到那种地步确实是有点没意思，不过还好它解答了我的疑问。下面这些内容目的只是给我足够的底气去处理作业中并不明确的部分。更加详细或者粗略的内容在网上有很多介绍，至少短期内不会出现在这里。</del></p>
+<p>原本写了一堆东西去讨论这作业的意义，挺没意思的，连带着没用的都删了。课是挺好，怎么到人手里结果云泥之别呢。只能祝下一级学学妹们加油。</p>
 <h2 id="分页">分页</h2>
 <p>现代CPU基本上只支持分页式的内存管理方式了。具体为将内存划分为大小相同的块，对于一个“进程”的虚拟地址，维护其（连续的）每块虚拟地址到（可能并不连续）物理地址的转换表。这张表显然足够大，就也存在内存里。</p>
 <p>那么问题就是，在这整个过程中，到底从哪一部分开始是操作系统的事情。事实上，虚拟地址到物理地址的转换以及后续的访问、读取/写入是硬件的工作，内存分配、页表存储是操作系统的事。连接这两者的桥梁是页表格式的约定和一个特殊的寄存器。操作系统在调度进程运行前，将页表的地址送给特殊寄存器，由硬件直接按约定好的格式读取页表完成后续工作。</p>
@@ -131,24 +132,18 @@
 <p>不过系统是通过什么知道该做什么的，既然内存由系统分配，控制权交给了软件，那么系统是如何在必要时为软件分配内存。这其实是别的东西。</p>
 <p>例如异常处理。常见的段错误、除0错误。这里又是一波CPU和操作系统的约定。CPU会在出现异常情况时，将异常原因装入寄存器，将当前运行到的代码地址保存，跳转到事先约定好的异常处理代码地址，从而启动由系统自定义的异常处理流程。而内存的分配一般也是通过这种形式完成。定义一种特殊的异常<code>syscall</code>，软件把参数传给寄存器后去触发中断把控制权交出去，系统分配完内存再<code>ret</code>回去回归到软件的正常运行流程。不过现代CPU似乎用了更快速的方式。</p>
 <p>这里还挺有意思的，这种异常处理方式注定了它异常处理过程可能再发生异常。然而也不能无限套娃。一般情况下，第一次异常将进入异常处理流程，异常处理触发异常将进入二次异常处理，一般二次异常处理操作系统会初始化软件，因为先前的运行状态无法再维持了（似乎？）。二次异常过程如果再次发生异常，硬件将直接重启。</p>
+<p>中断稍微不太一样，没有这个问题。</p>
+<p>对于MIPS来说，它存在一个较短的中断位，中断发生时，在指定的寄存器的位置上设置中断信号和中断号，而后CPU会跳转到服务程序，由服务程序进一步定义不同中断的处理优先级，调起不同的处理程序。这一部分内容与协处理器相关，同时存在多条涉及协处理器的“特权指令”。</p>
 <h2 id="内核态用户态">内核态/用户态</h2>
-<p>在这之中总会感觉缺了点什么。如果说操作系统也只是一段代码，那么操作系统与普通软件的区别在哪，把操作系统分配内存的代码拿过来不久不需要它了。</p>
-<p>这涉及到了内核态/用户态的问题。操作系统运行在内核态，只有内核态可以访问关键资源，所以操作系统代码与一般软件代码有地位上的差别。但这还不够，为什么操作系统可以运行在内核态。其实这是CPU提供的功能。CPU所提供的分级保护域概念，使得操作系统在占据高特权后能够自由决定接下来运行代码的权限。这种机制诞生了所谓特权指令，即只有在高权限下才能运行的指令，一般用于访问关键资源。所以，用户软件必须通过中断，让系统来为其准备需要的资源。</p>
+<p>在这之中总会感觉缺了点什么。如果说操作系统也只是一段代码，那么操作系统与普通软件的区别在哪，把操作系统分配内存的代码拿过来不就不需要它了，系统如何承担机器和应用之间的桥梁。</p>
+<p>实际上系统一般是将应用和机器完全隔离开了。这涉及到了内核态/用户态的问题。操作系统运行在内核态，只有内核态可以访问关键资源，所以操作系统代码与一般软件代码有地位上的差别。但这还不够，为什么操作系统可以运行在内核态。其实这是CPU提供的功能。CPU所提供的分级保护域概念，使得操作系统在占据高特权后能够自由决定接下来运行代码的权限。这种机制诞生了所谓特权指令，即只有在高权限下才能运行的指令，一般用于访问关键资源。所以，用户软件必须通过中断，让系统来为其准备需要的资源。</p>
 <hr>
-<p>所以目前一个结论是，如果没有「系统」，我们根本就无从谈起软中断和「特权指令」的概念，也很难实现一般意义上的异常处理和内存管理。</p>
-<p>而如果想把<strong>编译器编译的程序</strong>直接跑在一个虚拟机上——我们先不谈实现这个真正的现代CPU模拟器的工作量——就算直接给你一个现成的模拟器，单单是准备这个能够直接跑在虚拟机上的程序也是一件麻烦的事情。这意味着你要在一个<strong>没有系统</strong>的现代CPU上跑程序</p>
-<ul>
-<li>第一，软件不能依赖标准库，因为标准库平台相关。这是最直接的难题。平时常用的<code>printf/scanf/cin/cout</code>统统GG，当然这还是最表面的，你还会发现一些你本来以为是语言特性的东西居然是平台相关的，比如你熟悉的<code>main</code>不管用了，甚至堆栈的处理都出现麻烦。</li>
-<li>第二，你要熟悉代码的真实加载流程。第一个问题，Java是有运行时的我们都知道，C有吗？如果回答是没有的话，那你就有点麻烦了。C有运行时，运行时负责为后续代码准备环境，并且调起<code>main</code>。没有运行时意味着你必须直面整个加载流程，为你的代码准备由更「底层」的代码直接调起的入口函数。</li>
-<li>第三，你要熟悉tool chain的配置。如果你熟悉代码的真实加载流程了，就知道实际上一个个可执行文件的格式是系统相关的。你必须让linker创建直接机器相关的代码。</li>
-<li>第四，你要直接接手和其他硬件的交互。想在屏幕上输出一行「hello, world」也会很麻烦。</li>
-</ul>
-<p>我不是很清楚整个流程，也许理想情况下事情就到此为止了，只要你肯自己实现CPU而且合理的偷懒…不过口嗨尚且写这么多字，真要落实到代码上我也不知道会发生什么。</p>
+<p>【DELETED】</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>本文于 2020-05-04 更新</span>
+                <span>本文于 2020-07-05 更新</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -161,7 +156,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%9F%B3%E4%B9%90%E5%BF%97/">石乐志</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
