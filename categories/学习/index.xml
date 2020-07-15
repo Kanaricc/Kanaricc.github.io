@@ -4,7 +4,14 @@
         <link>https://blog.kanari.moe/categories/%E5%AD%A6%E4%B9%A0/</link>
         <description>学习 - 分类 - Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Fri, 27 Mar 2020 21:49:59 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Tue, 14 Jul 2020 15:04:01 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/categories/%E5%AD%A6%E4%B9%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>一点线性代数</title>
+    <link>https://blog.kanari.moe/2020/07/linear-algebra/</link>
+    <pubDate>Tue, 14 Jul 2020 15:04:01 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.kanari.moe/2020/07/linear-algebra/</guid>
+    <description><![CDATA[学完就忘，重学。不过说实话，对于校内上的那种<strong><ruby>“线性代数”<rt>100以内四则运算</rt></ruby></strong>忘不忘有意义吗。 和标题一样，就只有一点，而且组织混乱。 略]]></description>
+</item><item>
     <title>一点点二维傅立叶变换</title>
     <link>https://blog.kanari.moe/2020/03/a-little-2d-fft/</link>
     <pubDate>Fri, 27 Mar 2020 21:49:59 &#43;0800</pubDate>
@@ -71,57 +78,5 @@
     <author>作者</author>
     <guid>https://blog.kanari.moe/2019/10/sam/</guid>
     <description><![CDATA[如你所见，后缀自动机。 然而就nm看不懂，先看不懂它的图是啥，又看不懂它的边是啥，现在还是看不懂它的边是咋找出来的。可是咱不想搞不清楚它是干嘛]]></description>
-</item><item>
-    <title>一些筛法的题</title>
-    <link>https://blog.kanari.moe/2019/09/some-sieve/</link>
-    <pubDate>Thu, 05 Sep 2019 20:22:11 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog.kanari.moe/2019/09/some-sieve/</guid>
-    <description><![CDATA[<h2 id="技巧">技巧</h2>
-<h3 id="自然溢出">自然溢出</h3>
-<ul>
-<li>自然溢出不会影响低位数据,所以有的时候你不需要取模,而是一个unsigned.</li>
-</ul>
-<h3 id="除法取模">除法取模</h3>
-<p>对于式子</p>
-<div>$$
-\frac {a \times b}{c} \mod p \equiv \frac{a \times b \mod cp}{c}
-$$</div>
-<h2 id="细节">细节</h2>
-<ul>
-<li>注意数据类型,例如<code>6*(ll)(1&lt;&lt;30)</code>是要出问题的</li>
-<li>注意函数在$f(1)$位置的取值,不要忘记初始化</li>
-</ul>
-<h2 id="单点phi的求解">单点$\phi$的求解</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ll</span> <span class="nf">euler_phi</span><span class="p">(</span><span class="n">ll</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ll</span> <span class="n">m</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">);</span>
-    <span class="n">ll</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">ll</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">/</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-            <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">n</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="divisor">Divisor</h2>
-<p>Given $n$ and $m$ ($1 \leq n,m \leq 5 \times 10^4$),  please calculate</p>]]></description>
 </item></channel>
 </rss>

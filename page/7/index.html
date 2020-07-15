@@ -10,7 +10,7 @@
 <meta property="og:description" content="Kanari&#39;s blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.kanari.moe/" />
-<meta property="og:updated_time" content="2020-07-06T12:06:00+08:00" />
+<meta property="og:updated_time" content="2020-07-14T15:04:01+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kanari&#39;s blog"/>
 <meta name="twitter:description" content="Kanari&#39;s blog"/>
@@ -92,6 +92,16 @@
 </div>
 <main class="main">
                 <div class="container"><div class="page home" posts><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/2019/10/cf585d-ticket-game/">[CF585D] Ticket Game</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
+            发布于&nbsp;<time datetime=2019-10-05>2019-10-05</time>
+        </span>&nbsp;
+            <span class="post-category">收录于<a href="/categories/code/">
+                        <i class="far fa-folder fa-fw"></i>code
+                    </a></span></div><div class="content">Monocarp and Bicarp live in Berland, where every bus ticket consists of n digits (n is an even number). During the evening walk Monocarp and Bicarp found a ticket where some of the digits have been erased. The number of digits that have been erased is even. Monocarp and Bicarp have decided to play a game with this ticket. Monocarp hates happy tickets, while Bicarp collects them. A ticket is</div><div class="post-footer">
+        <a href="/2019/10/cf585d-ticket-game/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/2019/10/sam/">后缀自动机</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
             发布于&nbsp;<time datetime=2019-10-04>2019-10-04</time>
@@ -147,61 +157,6 @@
                         <i class="far fa-folder fa-fw"></i>闲扯
                     </a></span></div><div class="content">Mathematica是个好东西。虽然早有耳闻功能强大，但是没想到强大到这种地步。 原本因为课程原因，研究了一下如何在Mathematica里</div><div class="post-footer">
         <a href="/2019/09/mathematica-in-stocks/">阅读全文</a></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/2019/09/some-sieve/">一些筛法的题</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;<span class="post-publish">
-            发布于&nbsp;<time datetime=2019-09-05>2019-09-05</time>
-        </span>&nbsp;
-            <span class="post-category">收录于<a href="/categories/%E5%AD%A6%E4%B9%A0/">
-                        <i class="far fa-folder fa-fw"></i>学习
-                    </a></span></div><div class="content"><h2 id="技巧">技巧</h2>
-<h3 id="自然溢出">自然溢出</h3>
-<ul>
-<li>自然溢出不会影响低位数据,所以有的时候你不需要取模,而是一个unsigned.</li>
-</ul>
-<h3 id="除法取模">除法取模</h3>
-<p>对于式子</p>
-<div>$$
-\frac {a \times b}{c} \mod p \equiv \frac{a \times b \mod cp}{c}
-$$</div>
-<h2 id="细节">细节</h2>
-<ul>
-<li>注意数据类型,例如<code>6*(ll)(1&lt;&lt;30)</code>是要出问题的</li>
-<li>注意函数在$f(1)$位置的取值,不要忘记初始化</li>
-</ul>
-<h2 id="单点phi的求解">单点$\phi$的求解</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ll</span> <span class="nf">euler_phi</span><span class="p">(</span><span class="n">ll</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ll</span> <span class="n">m</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">);</span>
-    <span class="n">ll</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">ll</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">/</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-            <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">n</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">/</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="divisor">Divisor</h2>
-<p>Given $n$ and $m$ ($1 \leq n,m \leq 5 \times 10^4$),  please calculate</p></div><div class="post-footer">
-        <a href="/2019/09/some-sieve/">阅读全文</a></div>
 </article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">

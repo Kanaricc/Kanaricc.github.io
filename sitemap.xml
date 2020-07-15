@@ -2,10 +2,13 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.kanari.moe/categories/</loc><lastmod>2020-07-06T12:06:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.kanari.moe/</loc><lastmod>2020-07-06T12:06:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.kanari.moe/posts/</loc><lastmod>2020-07-06T12:06:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.kanari.moe/tags/</loc><lastmod>2020-07-06T12:06:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.kanari.moe/categories/</loc><lastmod>2020-07-14T15:04:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.kanari.moe/</loc><lastmod>2020-07-14T15:04:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.kanari.moe/posts/</loc><lastmod>2020-07-14T15:04:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.kanari.moe/tags/</loc><lastmod>2020-07-14T15:04:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.kanari.moe/2020/07/linear-algebra/</loc><lastmod>2020-07-14T15:04:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.kanari.moe/categories/%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-07-14T15:04:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.kanari.moe/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc><lastmod>2020-07-14T15:04:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.kanari.moe/2020/05/paging-introduction/</loc><lastmod>2020-07-05T23:11:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.kanari.moe/tags/%E7%9F%B3%E4%B9%90%E5%BF%97/</loc><lastmod>2020-07-05T23:11:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.kanari.moe/categories/%E9%97%B2%E6%89%AF/</loc><lastmod>2020-07-05T23:11:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -24,7 +27,6 @@
             <loc>https://blog.kanari.moe/2020/04/info-dependence/</loc><lastmod>2020-04-07T21:50:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.kanari.moe/tags/fft/</loc><lastmod>2020-03-27T21:49:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.kanari.moe/2020/03/a-little-2d-fft/</loc><lastmod>2020-03-27T21:49:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.kanari.moe/categories/%E5%AD%A6%E4%B9%A0/</loc><lastmod>2020-07-06T12:06:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.kanari.moe/2020/03/a-littile-tree-divide/</loc><lastmod>2020-03-26T18:40:09&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.kanari.moe/2020/03/juece-dandiao/</loc><lastmod>2020-03-23T18:19:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.kanari.moe/2020/03/hdu-6363-bookshelf/</loc><lastmod>2020-03-21T18:48:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

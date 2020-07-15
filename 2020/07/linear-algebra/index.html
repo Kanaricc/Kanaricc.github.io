@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>一点线性代数 - Kanari&#39;s blog</title><meta name="Description" content="Kanari&#39;s blog"><meta property="og:title" content="一点线性代数" />
+<meta property="og:description" content="学完就忘，重学。不过说实话，对于校内上的那种[“线性代数”]^(100以内四则运算)忘不忘有意义吗。 和标题一样，就只有一点，而且组织混乱。 略" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.kanari.moe/2020/07/linear-algebra/" />
+<meta property="article:published_time" content="2020-07-14T15:04:01+08:00" />
+<meta property="article:modified_time" content="2020-07-14T15:04:01+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一点线性代数"/>
+<meta name="twitter:description" content="学完就忘，重学。不过说实话，对于校内上的那种[“线性代数”]^(100以内四则运算)忘不忘有意义吗。 和标题一样，就只有一点，而且组织混乱。 略"/>
+<meta name="application-name" content="Kanari&#39;s blog">
+<meta name="apple-mobile-web-app-title" content="Kanari&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.kanari.moe/2020/07/linear-algebra/" /><link rel="prev" href="https://blog.kanari.moe/2020/05/paging-introduction/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一点线性代数",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog.kanari.moe\/2020\/07\/linear-algebra\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.kanari.moe\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "线性代数","wordcount":  3321 ,
+        "url": "https:\/\/blog.kanari.moe\/2020\/07\/linear-algebra\/","datePublished": "2020-07-14T15:04:01+08:00","dateModified": "2020-07-14T15:04:01+08:00","publisher": {
+                "@type": "Organization",
+                "name": "Kanari",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/blog.kanari.moe\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Kanari"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Kanari&#39;s blog">Kanari&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">一点线性代数</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kanari</a></span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/%E5%AD%A6%E4%B9%A0/">
+                                <i class="far fa-folder fa-fw"></i>学习
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-07-14>2020-07-14</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3321 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/2020/07/linear-algebra/" class="leancloud_visitors" data-flag-title="一点线性代数">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#略过部分">略过部分</a></li>
+    <li><a href="#行列式">行列式</a></li>
+    <li><a href="#基">基</a>
+      <ul>
+        <li><a href="#线性基">线性基</a></li>
+      </ul>
+    </li>
+    <li><a href="#problem-exclusive-or">Problem: Exclusive OR</a></li>
+    <li><a href="#线性变换">线性变换</a></li>
+    <li><a href="#线性方程组">线性方程组</a></li>
+    <li><a href="#点积">点积</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>学完就忘，重学。不过说实话，对于校内上的那种<strong><ruby>“线性代数”<rt>100以内四则运算</rt></ruby></strong>忘不忘有意义吗。</p>
+<p>和标题一样，就只有一点，而且组织混乱。</p>
+<h2 id="略过部分">略过部分</h2>
+<ul>
+<li>线性相关</li>
+<li>Span</li>
+<li>&hellip;&hellip;</li>
+</ul>
+<p>下面所有的内容都是基于向量空间内的意义。</p>
+<h2 id="行列式">行列式</h2>
+<p>行列式评价了一个线性变换对空间的放缩程度。对于一个二维空间，它就评价了对有向面积的放缩比例，三维则是体积。</p>
+<p>所以对于行列式为0的变换，依照其意义，可以认为将空间进行了“降维”（压扁，但是它仍然在那个维度上）。那么这也是能够使用行列式判断一个向量组是否满秩（张成的空间和向量维数一致）的直观表现。</p>
+<p>这同时也是可以使用行列式计算三维空间下的体积的直观表现，如果你把平行六面体理解成是单位立方体的变换。</p>
+<p>$$
+|M_1M_2|=|M_1||M_2|
+$$</p>
+<h2 id="基">基</h2>
+<p>基是向量空间中的概念，指的是一个可以张成向量空间$V$的线性无关向量组$\mathfrak {B}$。而对于一般情况下的有限向量空间，求解其基的方法就是从向量空间内依次删除线性相关项，直到其变为线性无关组。</p>
+<p>其满足以下性质</p>
+<ul>
+<li>$V$是$\mathfrak {B}$的极小生成集，$\mathfrak {B}$的任何子集都无法张成$V$。</li>
+<li>$\mathfrak {B}$是$V$的极大线性无关组。</li>
+</ul>
+<h3 id="线性基">线性基</h3>
+<p>当计算为异或时，可以将整数以二进制分解作为向量，在这种意义下对这样的一个整数集合求基称为线性基。</p>
+<p>其求法就像上文所说的求法，依次的考虑某一个整数是否限性相关。在实际编写时通过高斯消元来完成。</p>
+<p>其具体思路为维护一个对角矩阵。由高位开始使用已有元素对新加入的元素进行消元，若完全消除，则线性相关；若未完全消除（由高位计算到第i位时无法消除），则将其计入基中，并使用所有剩余的低位对该元素对应位置继续消元，再使用该元素向上对先前的所有元素第i位进行消元。如此的复杂度$O(n\lg n)$。</p>
+<p>由这个过程，我们能够得到的信息包含但不限于</p>
+<ol>
+<li>基：一组由原整数组组成的基，由消元过程判断。</li>
+<li>线性基：一组由原整数张成空间中的标准基。</li>
+</ol>
+<p>一向量空间的所有基的长度相同，同时称为空间的维数。对于一个由n维的向量构成的向量空间，其维数不大于n。</p>
+<h2 id="problem-exclusive-or">Problem: Exclusive OR</h2>
+<p>Given $n$ integers $A_1,\cdots , A_n$. For all $1\leq i \leq n$, determine the maximum value by caculating xor of $i$ numbers that are repeatly chosen from $A$.</p>
+<p>$$1\leq n \leq 2 \times 10^5, 0 \leq A_i &lt; 2^{18}$$</p>
+<p>利用异或卷积，令a[i]表示数i是否出现过，那么</p>
+<p>$$
+b_k=\sum_i\sum_j a_ia_j[i~\text{xor}~j =k]
+$$</p>
+<p>即异或和为$k$的方案数。把$a$自己卷自己，统计每次卷完有方案的最大的$k$。</p>
+<p>对于集合A，其张成的空间维数不可能超过18，则至多选择18个向量就可以构成其基，至多有18个向量就可以取到最大的xor。而从构成最大的向量开始，接下来就只是选择一个元素加入（所以至少算到19）和抵消，即每隔1个答案相同了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;bitset&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;tuple&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">XN</span> <span class="o">=</span> <span class="mi">650000</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MOD</span> <span class="o">=</span> <span class="mi">998244353</span><span class="p">;</span>
+<span class="n">ll</span> <span class="n">INV2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="n">ll</span> <span class="nf">qpow</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">,</span> <span class="n">ll</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ll</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">a</span><span class="p">;</span> <span class="n">a</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span><span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">res</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">FWT</span><span class="p">(</span><span class="n">ll</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">T</span> <span class="n">F</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">len</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">len</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">len</span><span class="p">)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+                <span class="n">F</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Txor</span><span class="p">(</span><span class="n">ll</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="n">ll</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="n">MOD</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">Ixor</span><span class="p">(</span><span class="n">ll</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="n">ll</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">INV2</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">INV2</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">ans</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">a</span><span class="p">[</span><span class="n">XN</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">XN</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+    <span class="n">INV2</span> <span class="o">=</span> <span class="n">qpow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">MOD</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">maxx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">;</span> <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+        <span class="n">maxx</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">maxx</span><span class="p">);</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;=</span> <span class="n">maxx</span><span class="p">)</span><span class="n">t</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="n">ans</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">maxx</span><span class="p">;</span>
+    <span class="n">FWT</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Txor</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">FWT</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Txor</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ll</span><span class="p">)</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">FWT</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Ixor</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="线性变换">线性变换</h2>
+<p>这里主要考虑通过矩阵对向量空间进行线性变换。考虑的办法主要是基于对基的操作。通过将某一个变换拆解为单一动作的矩阵，我们能够方便的去玩空间。</p>
+<p>例如，计算三维空间中的某个点P按一条线$A$为轴旋转$\gamma$度后的位置。一个粗暴的思路是先将$x$轴转到$A$上去，计算$P$于原位置在新的基下的坐标$P'$，对$P'$以$x$轴旋转$\theta$度，对此时的$P'$重新逆回原基下的坐标。</p>
+<p>以三维直线在$x-y$平面上的投影和$x$轴正半轴的夹角为$\theta$，以直线与$z$轴正半轴的夹角为$\phi$，那么首先以$\theta$旋转，再以$\phi$旋转即可把$x$轴转到$A$上去。两次旋转的变换矩阵分别为</p>
+<p>以z轴旋转。</p>
+<p>$$
+M_z=\begin{bmatrix}
+\cos \theta &amp; -\sin \theta &amp; 0 \cr
+\sin \theta &amp; \cos \theta &amp; 0 \cr
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>以y轴旋转</p>
+<p>$$
+M_y=\begin{bmatrix}
+\sin \phi &amp; 0 &amp; -\cos \phi \cr
+0 &amp; 1 &amp; 0 \cr
+\cos \phi &amp; 0 &amp; \sin \phi
+\end{bmatrix}
+$$</p>
+<p>在此时，对于由$\Omega$以$M$变换到的$\Omega'$，在$\Omega'$空间下的坐标左乘变换$M$就能得到其在$\Omega$的坐标。$M$即为$\Omega'$和$\Omega$之间的桥梁。</p>
+<p>那么，考虑如何将二者复合。首先执行z轴旋转，将$x$转到$A$在$x-y$平面上的投影位置，得到空间$\Omega'$。而后，我们需要对在$\Omega$下$\Omega'$的基在$\Omega'$下的坐标再次执行$y$轴旋转将其最终转到$A$上去，称为空间$\Omega_1$，再把$\Omega'$下的$\Omega_1$的基换算回$\Omega$里，准备进行下一步的转换。这个过程即</p>
+<p>$$
+M_zM_y(M_z^{-1}M_zI)=M_zM_y
+$$</p>
+<p>然后计算$P$位于$\Omega_1$下的坐标，即求解$MP'=P \implies P'=M^{-1}P$，计算$|M|$恒非$0$，则$P'$总可求出。而后对$P'$执行以$x$轴（即A）旋转题目给定的$\gamma$角。再次计算$MP'$求出$P$即为答案。</p>
+<p>以$x$轴旋转</p>
+<p>$$
+M_x=\begin{bmatrix}
+1 &amp; 0 &amp; 0 \cr
+0 &amp; \cos \gamma &amp; \sin \gamma \cr
+0 &amp; -\sin \gamma &amp; \cos \gamma
+\end{bmatrix}
+$$</p>
+<p>这几个矩阵简单画一下图就可以推出来。逆矩阵使用高斯消元处理伴随矩阵即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//DELETED
+</span></code></pre></td></tr></table>
+</div>
+</div><p>当线性变换找不到逆时，即我们的变换对空间做了降维。此时显然我们只能由$\Omega_1$中的坐标找到其在原空间下的对应，但是反过来则“几乎”做不到，而对于恰好存在映射的原空间点，也对应着新空间内的多个点，没有唯一答案。</p>
+<p>另一个比较特殊的变换是高维向低维的转换。比如</p>
+<p>$$
+\begin{bmatrix}
+1 &amp; 3 &amp; 5 \cr
+2 &amp; 4 &amp; 6
+\end{bmatrix}
+$$</p>
+<p>这玩意会把三维直接映射成平面，你可以认为新的空间在原空间的$x-y$平面。</p>
+<p>另一个更特殊的是低维向高维的转换。</p>
+<p>$$
+\begin{bmatrix}
+1 &amp; 4 \cr
+2 &amp; 5 \cr
+3 &amp; 6
+\end{bmatrix}
+$$</p>
+<p>这东西就有些与众不同了，它把原空间射到了新空间里。因为它是满秩的，没有降维之说，所以原空间内的任意一个点都可以在新的空间里找到对应；反过来显然（当然我是指值域而不是陪域）。</p>
+<h2 id="线性方程组">线性方程组</h2>
+<p>依靠上文的线性变换意义，我们能够以这种视角去看待一个线性方程组。</p>
+<p>$$
+A\vec x = \vec v
+$$</p>
+<p>A即描述了对空间$Omega$的一个变换，我们需要找到在新的空间下v的坐标。</p>
+<blockquote>
+<p>两种不同的看待角度
+如果你把变换后的空间铺在原空间内，你可以把一个属于原空间的坐标看作拉伸到现有的位置。
+另一个看法是属于新空间的坐标向原空间的映射。我更喜欢后一种，在上面的描述中它也带来了方便。</p>
+</blockquote>
+<p>再来看A降维的情况。此时，$\Omega_1$仅在$\Omega$下占一部分空间，对于该空间外的点均找不到解，该空间内的点能找到多个解。这是直观的解读，解组成的空间子集又称为零空间。</p>
+<h2 id="点积">点积</h2>
+<p>这个目测没什么用，但是仍然可以在空间和线性变换下解释。</p>
+<p>对于$\vec u \cdot \vec v$，假设其都为2维的向量，那么我们在平面上讨论这个计算的意义。</p>
+<p>将u描述为单位向量$k\vec e$，现有空间以$k\vec e^T$进行变换，观察变换意义。</p>
+<p>$$
+k\vec e^T\begin{bmatrix}
+1 &amp; 0 \cr
+0 &amp; 1
+\end{bmatrix}=k\vec e^T
+$$</p>
+<p>虽然结果没有任何变化，但此时其意义为变换后的空间基，分别为单位向量在x和y轴上的投影长，而且发生了降维。再来看二者数值的意义。</p>
+<figure><a class="lightgallery" href="/images/linear-algebra/dot.png" title="/images/linear-algebra/dot.png" data-thumbnail="/images/linear-algebra/dot.png" data-sub-html="<h2>对称关系</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/images/linear-algebra/dot.png"
+            data-srcset="/images/linear-algebra/dot.png, /images/linear-algebra/dot.png 1.5x, /images/linear-algebra/dot.png 2x"
+            data-sizes="auto"
+            alt="/images/linear-algebra/dot.png" />
+    </a><figcaption class="image-caption">对称关系</figcaption>
+    </figure>
+<p>可以发现，经过对称，$x$轴在$\vec e$上的投影长度恰好等于$\vec e$在$x$上的投影。所以，新空间的基可以解释为原空间基在$\vec e$上的投影长度。因此新空间所有点在原空间内均对应着在$\vec e$所确定的直线上的投影。再回来看公式的另一个变形</p>
+<p>$$\vec u \cdot \vec v = k\vec e^T \vec v$$</p>
+<p>即将新空间内的坐标$\vec v$变换回原空间，即在$\vec e$上的投影长度，再乘以$\vec u$本身的长度$k$。这与点积的计算方式一致。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-07-14 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.kanari.moe/2020/07/linear-algebra/" data-title="一点线性代数"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog.kanari.moe/2020/07/linear-algebra/" data-title="一点线性代数"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/05/paging-introduction/" class="prev" rel="prev" title="由内存分页看CPU系统界面"><i class="fas fa-angle-left fa-fw"></i>由内存分页看CPU系统界面</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Kanari</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"8nBBk4hz3GnYEEbGmLHafecq-gzGzoHsz","appKey":"LnYrhY3glo9zNm02k21R0XHb","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-104395871-2', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-104395871-2" async></script></body>
+</html>
