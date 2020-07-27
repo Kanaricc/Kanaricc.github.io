@@ -4,7 +4,14 @@
         <link>https://blog.kanari.moe/</link>
         <description>Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Tue, 14 Jul 2020 15:04:01 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Mon, 27 Jul 2020 09:49:10 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/" rel="self" type="application/rss+xml" /><item>
+    <title>[牛客多校5] Interval</title>
+    <link>https://blog.kanari.moe/2020/07/problem-interval/</link>
+    <pubDate>Mon, 27 Jul 2020 09:49:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.kanari.moe/2020/07/problem-interval/</guid>
+    <description><![CDATA[给出$A_1, \cdots, A_n$。每次询问一个区间，求该区间的子区间的<strong><ruby>与<rt>&amp;</rt></ruby></strong>分别有多少不相同结果。 询问强制在线。 $$A_i &lt; 2^{30}$$ 分析 第一个要解]]></description>
+</item><item>
     <title>一点线性代数</title>
     <link>https://blog.kanari.moe/2020/07/linear-algebra/</link>
     <pubDate>Tue, 14 Jul 2020 15:04:01 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://blog.kanari.moe/2020/03/a-littile-tree-divide/</guid>
     <description><![CDATA[今天仍然是被吊起来打的一天。 点分治是一种用于解决树上路径问题的思路。它的关键就是选中一点，统计经过该点的答案后删除点，再递归到两个子树中进行]]></description>
-</item><item>
-    <title>一点点决策单调性</title>
-    <link>https://blog.kanari.moe/2020/03/juece-dandiao/</link>
-    <pubDate>Mon, 23 Mar 2020 18:19:48 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog.kanari.moe/2020/03/juece-dandiao/</guid>
-    <description><![CDATA[艹了天天都被不知道的知识点教育，知道的又做不出来。 :lei: 在动态规划中，决策单调性指对于$j &lt; j'$，$f(j&rsquo;)$的最佳转移$f(i]]></description>
 </item></channel>
 </rss>

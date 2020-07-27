@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>可持久化线段树 - 标签 - Kanari&#39;s blog</title>
+        <link>https://blog.kanari.moe/tags/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+        <description>可持久化线段树 - 标签 - Kanari&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Mon, 27 Jul 2020 09:49:10 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/tags/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="self" type="application/rss+xml" /><item>
+    <title>[牛客多校5] Interval</title>
+    <link>https://blog.kanari.moe/2020/07/problem-interval/</link>
+    <pubDate>Mon, 27 Jul 2020 09:49:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.kanari.moe/2020/07/problem-interval/</guid>
+    <description><![CDATA[给出$A_1, \cdots, A_n$。每次询问一个区间，求该区间的子区间的<strong><ruby>与<rt>&amp;</rt></ruby></strong>分别有多少不相同结果。 询问强制在线。 $$A_i &lt; 2^{30}$$ 分析 第一个要解]]></description>
+</item></channel>
+</rss>

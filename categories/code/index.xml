@@ -4,7 +4,14 @@
         <link>https://blog.kanari.moe/categories/code/</link>
         <description>code - 分类 - Kanari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
-            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Sun, 12 Apr 2020 10:54:57 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/categories/code/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Mon, 27 Jul 2020 09:49:10 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/categories/code/" rel="self" type="application/rss+xml" /><item>
+    <title>[牛客多校5] Interval</title>
+    <link>https://blog.kanari.moe/2020/07/problem-interval/</link>
+    <pubDate>Mon, 27 Jul 2020 09:49:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.kanari.moe/2020/07/problem-interval/</guid>
+    <description><![CDATA[给出$A_1, \cdots, A_n$。每次询问一个区间，求该区间的子区间的<strong><ruby>与<rt>&amp;</rt></ruby></strong>分别有多少不相同结果。 询问强制在线。 $$A_i &lt; 2^{30}$$ 分析 第一个要解]]></description>
+</item><item>
     <title>ICPC2018 Yokohama</title>
     <link>https://blog.kanari.moe/2020/04/icpc2018-yokohama/</link>
     <pubDate>Sun, 12 Apr 2020 10:54:57 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://blog.kanari.moe/2020/03/cf-1321c-remove-adjacent/</guid>
     <description><![CDATA[没注意到数据范围是100。 You are given a string 𝑠 consisting of lowercase Latin letters. Let the length of 𝑠 be |𝑠|. You may perform several operations on this string. In one operation, you can choose some index 𝑖 and remove the 𝑖-th character of 𝑠 (𝑠𝑖) if at least one of]]></description>
-</item><item>
-    <title>[CF 1295E] Permutation Separation</title>
-    <link>https://blog.kanari.moe/2020/02/cf-1295e-permutation-separation/</link>
-    <pubDate>Fri, 28 Feb 2020 17:47:47 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog.kanari.moe/2020/02/cf-1295e-permutation-separation/</guid>
-    <description><![CDATA[You are given a permutation 𝑝1,𝑝2,…,𝑝𝑛 (an array where each integer from 1 to 𝑛 appears exactly once). The weight of the 𝑖-th element of this permutation is 𝑎𝑖. At first, you separate your permutation into two non-empty sets — prefix and suffix. More formally, the first set contains elements 𝑝1,𝑝2,]]></description>
 </item></channel>
 </rss>
