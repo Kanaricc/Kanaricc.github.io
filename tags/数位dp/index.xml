@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>数位DP - 标签 - Kanari&#39;s blog</title>
+        <link>https://blog.kanari.moe/tags/%E6%95%B0%E4%BD%8Ddp/</link>
+        <description>数位DP - 标签 - Kanari&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>iovo7c@gmail.com (Kanari)</managingEditor>
+            <webMaster>iovo7c@gmail.com (Kanari)</webMaster><lastBuildDate>Wed, 06 Nov 2019 19:46:23 &#43;0800</lastBuildDate><atom:link href="https://blog.kanari.moe/tags/%E6%95%B0%E4%BD%8Ddp/" rel="self" type="application/rss+xml" /><item>
+    <title>数位DP</title>
+    <link>https://blog.kanari.moe/2019/11/digital-dp/</link>
+    <pubDate>Wed, 06 Nov 2019 19:46:23 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog.kanari.moe/2019/11/digital-dp/</guid>
+    <description><![CDATA[<h2 id="例题-4-hdu2089-不要62">例题-4 HDU2089 不要62</h2>
+<p>统计数位中没有出现4和62的数字个数。</p>
+<h3 id="分析">分析</h3>
+<p>不要4，可以在4时直接不转移。对于62，可以维护一个上一个数字填了啥，就可以像4一样判断了。</p>]]></description>
+</item></channel>
+</rss>
